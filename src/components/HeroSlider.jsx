@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function HeroSlider() {
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2400&q=90",
       eyebrow: "PHYSIO & HEALTH CARE • SINCE 2019",
       titleLine1: "Move Better.",
       titleLine2: "Recover With Confidence.",
@@ -14,7 +14,7 @@ export default function HeroSlider() {
       link: "/physiotherapy"
     },
     {
-      image: "https://tamanyahealth.com/wp-content/uploads/2024/09/image3.jpeg",
+      image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=2400&q=90",
       eyebrow: "SPECIALISED WOMEN'S HEALTH",
       titleLine1: "Pelvic & Maternal Care",
       titleLine2: "Restoring Female Vitality.",
@@ -24,7 +24,7 @@ export default function HeroSlider() {
       link: "/womens-health"
     },
     {
-      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=2400&q=90",
       eyebrow: "EVIDENCE-BASED REHABILITATION",
       titleLine1: "Root-Cause Diagnosis",
       titleLine2: "Beyond Symptom Masking.",
@@ -34,7 +34,7 @@ export default function HeroSlider() {
       link: "/about"
     },
     {
-      image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=2400&q=90",
       eyebrow: "HOLISTIC WELLNESS & BODY CARE",
       titleLine1: "Slimming & Aesthetics",
       titleLine2: "Empowering Body & Mind.",

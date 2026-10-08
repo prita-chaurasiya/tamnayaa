@@ -55,6 +55,25 @@
   }
 }
 
+/* Ken Burns Cinematic Zoom Effect */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-0.8%, -0.5%);
+  }
+  100% {
+    transform: scale(1.14) translate(0.8%, 0.5%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenburns 14s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+
 /* Accessibility: Respect Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
@@ -70,3 +89,4 @@
     transform: none !important;
   }
 }
+
