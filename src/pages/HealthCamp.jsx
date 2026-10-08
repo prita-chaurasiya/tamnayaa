@@ -5,7 +5,7 @@ import campImg from '../assets/camp.webp';
 
 export default function HealthCamp() {
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -101,7 +101,7 @@ export default function HealthCamp() {
       </section>
 
       {/* Camp Services & Features */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F8F9FA]">
         <div className="max-w-[1500px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#B79657] uppercase tracking-[0.25em] text-xs font-bold block mb-4">WHAT WE OFFER</span>
@@ -186,7 +186,7 @@ export default function HealthCamp() {
       </section>
 
       {/* Pre-Footer CTA */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F7F4EE]">
+      <section className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-5xl mx-auto rounded-3xl bg-[#17242D] text-white p-10 md:p-16 text-center shadow-2xl border border-[#B79657]/30 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#B79657]/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative z-10 space-y-6">

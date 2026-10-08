@@ -136,7 +136,7 @@ export default function HeroSlider() {
 
         {/* Right Layered Foreground Card (5 Cols) with Subtle Micro-Float */}
         <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 justify-end relative">
-          <div className="bg-[#F7F4EE] p-7 sm:p-8 rounded-[24px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] border border-white/80 max-w-sm border-t-4 border-t-[#B79657] animate-float-gentle relative z-30 transition-all duration-500 hover:scale-[1.02]">
+          <div className="bg-white p-7 sm:p-8 rounded-[24px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] border border-white/80 max-w-sm border-t-4 border-t-[#B79657] animate-float-gentle relative z-30 transition-all duration-500 hover:scale-[1.02]">
             
             <div className="flex items-center gap-2 mb-3">
               <span className="w-5 h-[2px] bg-[#B79657] block"></span>

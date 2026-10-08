@@ -31,7 +31,7 @@ export default function SlimmingWellness() {
   ];
 
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -54,14 +54,14 @@ export default function SlimmingWellness() {
           <p className="text-[#17242D]/75 text-base sm:text-lg font-light leading-relaxed mb-8">
             Our non-invasive slimming therapies combine advanced equipment with tailored clinical guidance. Every treatment plan is individualized following a thorough physical evaluation at our Pandeypur clinic.
           </p>
-          <div className="bg-[#F7F4EE] p-5 rounded-[16px] border border-[#E8E5DF] inline-block text-xs font-semibold text-[#17242D]/80 tracking-wide">
+          <div className="bg-[#F8F9FA] p-5 rounded-[16px] border border-[#E8E5DF] inline-block text-xs font-semibold text-[#17242D]/80 tracking-wide">
             • All body shaping consultations are conducted confidentially by Dr. Neha Gupta.
           </div>
         </div>
       </section>
 
       {/* 4 Visual Treatment Cards */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-16">

@@ -55,7 +55,7 @@ export default function Physiotherapy() {
   ];
 
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Hero with Breadcrumbs */}
       <PageHero 
@@ -67,7 +67,7 @@ export default function Physiotherapy() {
       />
 
       {/* Orthopaedic Section */}
-      <section className="bg-[#F7F4EE] py-24 lg:py-32 px-6 lg:px-12 border-b border-[#E8E5DF]">
+      <section className="bg-white py-24 lg:py-32 px-6 lg:px-12 border-b border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto">
           <div className="max-w-3xl mb-20 text-center mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -142,7 +142,7 @@ export default function Physiotherapy() {
       </section>
 
       {/* Advanced Modalities Directory */}
-      <section className="bg-[#F7F4EE] py-24 lg:py-32 px-6 lg:px-12 border-t border-[#E8E5DF]">
+      <section className="bg-[#F8F9FA] py-24 lg:py-32 px-6 lg:px-12 border-t border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -184,7 +184,7 @@ export default function Physiotherapy() {
               { num: "02", title: "Targeted Mechanical Repair", desc: "Focusing on postural alignment, joint mechanics, and core stabilization rather than short-term relief." },
               { num: "03", title: "Modern Private Suite", desc: "Clean, comfortable clinical setting in Pandeypur, Varanasi equipped with advanced therapeutic modalities." }
             ].map((item, i) => (
-              <div key={i} className="bg-[#F7F4EE] p-8 rounded-[20px] border border-[#E8E5DF] shadow-sm hover:shadow-md transition-all">
+              <div key={i} className="bg-[#F8F9FA] p-8 rounded-[20px] border border-[#E8E5DF] shadow-sm hover:shadow-md transition-all">
                 <span className="text-3xl font-serif font-bold text-[#B79657] block mb-3">{item.num}</span>
                 <h3 className="font-serif text-xl font-bold text-[#17242D] mb-3">{item.title}</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">{item.desc}</p>
@@ -195,7 +195,7 @@ export default function Physiotherapy() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-t border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#B79657] uppercase tracking-[0.25em] text-[11px] font-bold block mb-4">PHYSIOTHERAPY FAQ</span>

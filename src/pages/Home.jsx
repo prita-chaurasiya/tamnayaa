@@ -62,13 +62,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* 1. Full-Bleed Cinematic Hero */}
       <HeroSlider />
 
       {/* 4 Clinical Pillars Grid Section */}
-      <section className="py-16 px-6 lg:px-12 bg-[#F7F4EE] border-b border-[#E8E5DF]">
+      <section className="py-16 px-6 lg:px-12 bg-white border-b border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* 2. Get Back to the Life You Love Section (Matching Client Screenshot) */}
-      <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#F7F4EE]">
+      <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#F8F9FA]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
@@ -317,7 +317,7 @@ export default function Home() {
               <Link 
                 key={i} 
                 to={card.link}
-                className="bg-[#F7F4EE] rounded-[20px] overflow-hidden shadow-md border border-[#E8E5DF] hover:border-[#B79657] transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between block relative"
+                className="bg-white rounded-[20px] overflow-hidden shadow-md border border-[#E8E5DF] hover:border-[#B79657] transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between block relative"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -349,7 +349,7 @@ export default function Home() {
       <InsideTamanya />
 
       {/* 4. Doctor Section: Meet Your Practitioner (Screenshot 2) */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-t border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           <div className="lg:col-span-7 space-y-6">
@@ -439,7 +439,7 @@ export default function Home() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">01</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Personalized Care</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -447,7 +447,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">02</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Specialised Women's Health</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -455,7 +455,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">03</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Holistic Rehabilitation</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -463,7 +463,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">04</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Experience & Education</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -500,7 +500,7 @@ export default function Home() {
             ].map((item, i) => (
               <div 
                 key={i} 
-                className="bg-[#F7F4EE] p-8 rounded-[24px] border-2 border-[#E8E5DF] hover:border-[#B79657] shadow-[0_10px_30px_rgba(23,36,45,0.04)] hover:shadow-[0_25px_50px_rgba(183,150,87,0.20)] transform hover:-translate-y-2 hover:bg-white transition-all duration-500 group relative flex flex-col justify-between"
+                className="bg-[#F8F9FA] p-8 rounded-[24px] border-2 border-[#E8E5DF] hover:border-[#B79657] shadow-[0_10px_30px_rgba(23,36,45,0.04)] hover:shadow-[0_25px_50px_rgba(183,150,87,0.20)] transform hover:-translate-y-2 hover:bg-white transition-all duration-500 group relative flex flex-col justify-between"
               >
                 <div>
                   <span className="inline-block bg-[#E8E2D5] text-[#B79657] px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase mb-6 border border-[#B79657]/30">
@@ -610,7 +610,7 @@ export default function Home() {
       </section>
 
       {/* 7. Patient Stories (Matching Image 3 & 4) */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-t border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -681,7 +681,7 @@ export default function Home() {
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-[#F7F4EE] rounded-[16px] border border-[#E8E5DF] hover:border-[#B79657] overflow-hidden shadow-sm transition-colors">
+              <div key={i} className="bg-[#F8F9FA] rounded-[16px] border border-[#E8E5DF] hover:border-[#B79657] overflow-hidden shadow-sm transition-colors">
                 <button
                   onClick={() => toggleFaq(i)}
                   className="w-full p-6 text-left flex justify-between items-center focus:outline-none group"

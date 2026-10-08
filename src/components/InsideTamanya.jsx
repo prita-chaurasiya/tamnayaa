@@ -102,7 +102,7 @@ export default function InsideTamanya() {
   }, [filteredItems.length]);
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-t border-[#E8E5DF] relative overflow-hidden">
+    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF] relative overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
         
         {/* Header Section (Matching Screenshot) */}

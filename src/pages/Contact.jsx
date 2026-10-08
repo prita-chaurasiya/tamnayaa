@@ -5,7 +5,7 @@ import cliImg from '../assets/cli.jpeg';
 
 export default function Contact() {
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -35,7 +35,7 @@ export default function Contact() {
             <div className="space-y-6 pt-2">
               
               {/* Phone Call */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F7F4EE] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-[#E8E5DF] flex items-center justify-center text-xl shrink-0 text-[#17242D]">
                   📞
                 </div>
@@ -48,7 +48,7 @@ export default function Contact() {
               </div>
 
               {/* WhatsApp */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F7F4EE] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-[#E8E5DF] flex items-center justify-center text-xl shrink-0 text-[#25D366]">
                   💬
                 </div>
@@ -61,7 +61,7 @@ export default function Contact() {
               </div>
 
               {/* Address */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F7F4EE] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-[#E8E5DF] flex items-center justify-center text-xl shrink-0 text-[#17242D]">
                   🗺️
                 </div>
@@ -79,7 +79,7 @@ export default function Contact() {
               </div>
 
               {/* Opening Hours */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F7F4EE] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-[#E8E5DF] flex items-center justify-center text-xl shrink-0 text-[#17242D]">
                   ⏰
                 </div>
@@ -91,7 +91,7 @@ export default function Contact() {
               </div>
 
               {/* Email Enquiries */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F7F4EE] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-[#E8E5DF] hover:border-[#B79657] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-[#E8E5DF] flex items-center justify-center text-xl shrink-0 text-[#17242D]">
                   ✉️
                 </div>

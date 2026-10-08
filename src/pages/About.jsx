@@ -8,7 +8,7 @@ import prizeImg from '../assets/prize.png';
 
 export default function About() {
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -77,7 +77,7 @@ export default function About() {
       </section>
 
       {/* 2. SECTION 2: MEET YOUR PRACTITIONER - DR. NEHA GUPTA (Exact Screenshot 2) */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-b border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-b border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           <div className="lg:col-span-7 space-y-6">
@@ -165,7 +165,7 @@ export default function About() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">01</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Personalized Care</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -173,7 +173,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">02</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Specialised Women's Health</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -181,7 +181,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">03</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Holistic Rehabilitation</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -189,7 +189,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
+              <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] space-y-2 hover:border-[#B79657] transition-colors">
                 <span className="text-2xl font-serif font-bold text-[#B79657] block">04</span>
                 <h3 className="font-serif text-lg font-bold text-[#17242D]">Experience & Education</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">
@@ -207,7 +207,7 @@ export default function About() {
       <InsideTamanya />
 
       {/* Visual Journey & Milestones */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-b border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-b border-[#E8E5DF]">
         <div className="max-w-[1300px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-[#B79657] uppercase tracking-[0.25em] text-xs font-bold block mb-4">OUR JOURNEY</span>

@@ -19,7 +19,7 @@ export default function WomensHealth() {
   ];
 
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -31,7 +31,7 @@ export default function WomensHealth() {
       />
 
       {/* Mini Cards Grid: Pure White High-Contrast Premium Cards with Clay & Champagne Accents */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-b border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-b border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">

@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply font-sans text-[#17242D] bg-[#F7F4EE] antialiased selection:bg-[#B79657]/20 selection:text-[#17242D];
+    @apply font-sans text-[#17242D] bg-white antialiased selection:bg-[#B79657]/20 selection:text-[#17242D];
     line-height: 1.7;
     overflow-x: hidden;
   }

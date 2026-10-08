@@ -86,7 +86,7 @@ export default function BookAppointment() {
   };
 
   return (
-    <div className="bg-[#F7F4EE] min-h-screen font-sans text-[#17242D]">
+    <div className="bg-white min-h-screen font-sans text-[#17242D]">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -195,7 +195,7 @@ export default function BookAppointment() {
                 Are you a new or returning patient?
               </h3>
               
-              <div className="inline-flex p-1.5 bg-[#F7F4EE] rounded-2xl border border-[#E8E5DF] max-w-md w-full">
+              <div className="inline-flex p-1.5 bg-[#F8F9FA] rounded-2xl border border-[#E8E5DF] max-w-md w-full">
                 <button
                   type="button"
                   onClick={() => setPatientType('new')}
@@ -241,7 +241,7 @@ export default function BookAppointment() {
                       }`}
                     >
                       <div>
-                        <div className="w-14 h-14 rounded-2xl bg-[#F7F4EE] flex items-center justify-center mb-4">
+                        <div className="w-14 h-14 rounded-2xl bg-[#F8F9FA] flex items-center justify-center mb-4">
                           {item.icon}
                         </div>
                         <h4 className="font-serif text-lg font-bold text-[#17242D] mb-2">
@@ -283,7 +283,7 @@ export default function BookAppointment() {
                         onClick={() => setPainLevel(item.level)}
                         className={`flex flex-col items-center p-3 rounded-2xl transition-all border-2 ${
                           isSelected 
-                            ? `${item.border} bg-[#F7F4EE] ring-4 ring-black/5 scale-105 shadow-md` 
+                            ? `${item.border} bg-[#F8F9FA] ring-4 ring-black/5 scale-105 shadow-md` 
                             : 'border-transparent hover:bg-stone-50'
                         }`}
                       >
@@ -342,7 +342,7 @@ export default function BookAppointment() {
                   type="date"
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
-                  className="w-full bg-[#F7F4EE] border border-[#E8E5DF] p-4 rounded-xl text-center text-sm font-semibold text-[#17242D] focus:outline-none focus:border-[#B79657]"
+                  className="w-full bg-[#F8F9FA] border border-[#E8E5DF] p-4 rounded-xl text-center text-sm font-semibold text-[#17242D] focus:outline-none focus:border-[#B79657]"
                 />
               </div>
 
@@ -363,7 +363,7 @@ export default function BookAppointment() {
                         className={`py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all border ${
                           isSelected
                             ? 'bg-[#17242D] text-white border-[#17242D] shadow-md scale-105'
-                            : 'bg-[#F7F4EE] text-[#17242D] border-[#E8E5DF] hover:border-[#B79657]'
+                            : 'bg-[#F8F9FA] text-[#17242D] border-[#E8E5DF] hover:border-[#B79657]'
                         }`}
                       >
                         {slot}
@@ -417,7 +417,7 @@ export default function BookAppointment() {
                 </p>
 
                 {/* Summary Card */}
-                <div className="bg-[#F7F4EE] p-6 rounded-2xl border border-[#E8E5DF] text-left max-w-md mx-auto mb-8 text-xs space-y-2.5">
+                <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-[#E8E5DF] text-left max-w-md mx-auto mb-8 text-xs space-y-2.5">
                   <div className="flex justify-between border-b border-[#E8E5DF] pb-2">
                     <span className="text-[#17242D]/60 uppercase tracking-wider font-bold">Service:</span>
                     <span className="font-bold text-[#17242D]">{selectedService}</span>
@@ -460,7 +460,7 @@ export default function BookAppointment() {
                 </div>
 
                 {/* Selected Summary Badge */}
-                <div className="bg-[#F7F4EE] p-4 rounded-xl border border-[#E8E5DF] flex flex-wrap justify-between items-center text-xs text-[#17242D]/80">
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-[#E8E5DF] flex flex-wrap justify-between items-center text-xs text-[#17242D]/80">
                   <span><strong>Service:</strong> {selectedService}</span>
                   <span><strong>Slot:</strong> {selectedTime}</span>
                 </div>
@@ -475,7 +475,7 @@ export default function BookAppointment() {
                     placeholder="Enter your full name"
                     value={patientDetails.fullName}
                     onChange={(e) => setPatientDetails({ ...patientDetails, fullName: e.target.value })}
-                    className="w-full bg-[#F7F4EE] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657]"
+                    className="w-full bg-[#F8F9FA] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657]"
                   />
                 </div>
 
@@ -490,7 +490,7 @@ export default function BookAppointment() {
                       placeholder="+91 00000 00000"
                       value={patientDetails.phone}
                       onChange={(e) => setPatientDetails({ ...patientDetails, phone: e.target.value })}
-                      className="w-full bg-[#F7F4EE] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657]"
+                      className="w-full bg-[#F8F9FA] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657]"
                     />
                   </div>
 
@@ -503,7 +503,7 @@ export default function BookAppointment() {
                       placeholder="name@example.com"
                       value={patientDetails.email}
                       onChange={(e) => setPatientDetails({ ...patientDetails, email: e.target.value })}
-                      className="w-full bg-[#F7F4EE] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657]"
+                      className="w-full bg-[#F8F9FA] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657]"
                     />
                   </div>
                 </div>
@@ -517,7 +517,7 @@ export default function BookAppointment() {
                     placeholder="Describe your symptoms or history..."
                     value={patientDetails.notes}
                     onChange={(e) => setPatientDetails({ ...patientDetails, notes: e.target.value })}
-                    className="w-full bg-[#F7F4EE] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657] resize-none"
+                    className="w-full bg-[#F8F9FA] border border-[#E8E5DF] p-3.5 rounded-xl text-sm font-medium text-[#17242D] focus:outline-none focus:border-[#B79657] resize-none"
                   ></textarea>
                 </div>
 

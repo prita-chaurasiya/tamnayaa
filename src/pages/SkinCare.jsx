@@ -25,7 +25,7 @@ export default function SkinCare() {
   ];
 
   return (
-    <div className="bg-[#F7F4EE] text-[#17242D] min-h-screen font-sans">
+    <div className="bg-white text-[#17242D] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -52,7 +52,7 @@ export default function SkinCare() {
       </section>
 
       {/* Services Section: Luxury 3D Cards */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-b border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F8F9FA] border-b border-[#E8E5DF]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -72,7 +72,7 @@ export default function SkinCare() {
                     <span className="w-12 h-12 rounded-[14px] bg-[#17242D] text-[#B79657] flex items-center justify-center font-serif font-bold text-base shadow-md group-hover:bg-[#B79657] group-hover:text-[#17242D] transition-colors">
                       0{i+1}
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#B79657] bg-[#F7F4EE] px-3 py-1 rounded-full border border-[#E8E5DF]">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#B79657] bg-[#F8F9FA] px-3 py-1 rounded-full border border-[#E8E5DF]">
                       {item.cat}
                     </span>
                   </div>
@@ -108,7 +108,7 @@ export default function SkinCare() {
               { num: "02", title: "Non-Surgical Focus", desc: "Gentle, non-invasive therapies designed to stimulate natural collagen without harsh recovery periods." },
               { num: "03", title: "Hygienic Clinical Environment", desc: "Strict sterilization and medical-grade instruments used for all procedures in Pandeypur, Varanasi." }
             ].map((item, i) => (
-              <div key={i} className="bg-[#F7F4EE] p-8 rounded-[20px] border border-[#E8E5DF] shadow-sm hover:shadow-md transition-all">
+              <div key={i} className="bg-[#F8F9FA] p-8 rounded-[20px] border border-[#E8E5DF] shadow-sm hover:shadow-md transition-all">
                 <span className="text-3xl font-serif font-bold text-[#B79657] block mb-3">{item.num}</span>
                 <h3 className="font-serif text-xl font-bold text-[#17242D] mb-3">{item.title}</h3>
                 <p className="text-[#17242D]/75 text-xs font-light leading-relaxed">{item.desc}</p>
@@ -119,7 +119,7 @@ export default function SkinCare() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F7F4EE] border-t border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#B79657] uppercase tracking-[0.25em] text-[11px] font-bold block mb-4">SKIN CARE FAQ</span>

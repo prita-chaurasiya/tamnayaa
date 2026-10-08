@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       {/* Large Premium Pre-Footer CTA */}
-      <section className="bg-[#F7F4EE] py-20 px-6 lg:px-12 border-t border-[#E8E5DF]">
+      <section className="bg-white py-20 px-6 lg:px-12 border-t border-[#E8E5DF]">
         <div className="max-w-5xl mx-auto rounded-[28px] bg-[#17242D] text-white p-10 sm:p-14 lg:p-16 text-center shadow-2xl border-2 border-[#B79657]/40 relative overflow-hidden">
           {/* Background Ambient Glow */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#B79657]/15 rounded-full blur-3xl pointer-events-none"></div>
