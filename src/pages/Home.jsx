@@ -21,19 +21,19 @@ export default function Home() {
   const faqs = [
     {
       q: "01. What services does Tamanya Physio & Health Clinic provide?",
-      a: "Tamanya provides personalised physiotherapy and rehabilitation services, including orthopaedic, neurological, sports injury, musculoskeletal and women's health care. The clinic also offers specialised pelvic rehabilitation and wellness-focused services."
+      a: "Tamanya provides personalised physiotherapy and rehabilitation services, including orthopaedic, neurological, sports injury, musculoskeletal and women's health care. The clinic also offers specialised pelvic rehabilitation, aesthetic skin care, and slimming therapies."
     },
     {
       q: "02. Do I need a doctor's referral before visiting?",
-      a: "No doctor referral is required. You can book an appointment directly with us for any physiotherapy, pelvic health, or wellness consultation."
+      a: "No doctor referral is required. You can book an appointment directly with us for any physiotherapy, pelvic health, skin care, or wellness consultation."
     },
     {
       q: "03. What conditions can physiotherapy help with?",
-      a: "Physiotherapy helps with back and neck pain, joint stiffness, post-surgical recovery, sports injuries, postural issues, nerve pain, and mobility restrictions."
+      a: "Physiotherapy helps with back and neck pain, joint stiffness, post-surgical recovery (TKR/THR), sports injuries, postural issues, nerve pain, and mobility restrictions."
     },
     {
-      q: "04. Does Tamanya provide women's health physiotherapy?",
-      a: "Yes, we specialize in female pelvic floor rehabilitation, prenatal and postnatal care, diastasis recti management, and pelvic pain relief."
+      q: "04. Does Tamanya provide specialised women's health physiotherapy?",
+      a: "Yes, we specialize in female pelvic floor rehabilitation, prenatal and postnatal care, diastasis recti management, PCOD/PCOS support, and pelvic pain relief."
     },
     {
       q: "05. Can I visit Tamanya for pregnancy-related rehabilitation?",
@@ -41,15 +41,15 @@ export default function Home() {
     },
     {
       q: "06. What happens during my first visit?",
-      a: "Your first visit includes a detailed assessment of your medical history, posture, range of motion, and physical concerns followed by a customized care plan."
+      a: "Your first visit includes a detailed clinical assessment of your medical history, posture, range of motion, and physical concerns followed by a customized care plan."
     },
     {
       q: "07. How long does a physiotherapy session take?",
       a: "Initial consultations take approximately 45–60 minutes for a complete clinical evaluation, while follow-up therapy sessions typically last 30–45 minutes depending on your treatment protocol."
     },
     {
-      q: "08. Does Tamanya treat sports injuries?",
-      a: "Yes, we provide targeted sports rehabilitation, muscle tear management, ligament recovery, and joint stabilization programs for athletes and active individuals."
+      q: "08. Does Tamanya treat sports injuries and post-surgical cases?",
+      a: "Yes, we provide targeted sports rehabilitation, muscle tear management, ligament recovery (ACL/MCL), and joint stabilization programs alongside phased post-surgical rehabilitation."
     },
     {
       q: "09. What specialised physiotherapy techniques are available?",
@@ -62,15 +62,15 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#FFF9F6] text-[#351D2B] min-h-screen font-sans">
+    <div className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
       
-      {/* 1. Full-Bleed Cinematic Hero */}
+      {/* 01. Full-Bleed Cinematic Hero */}
       <HeroSlider />
 
-      {/* 4 Clinical Pillars Grid Section */}
-      <section className="py-16 px-6 lg:px-12 bg-white border-b border-[#F6DCE4]">
+      {/* 02. Trust & Clinical Strip — Warm Linen & Olive Accents */}
+      <section className="py-16 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 card-3d-wrapper">
             {[
               {
                 num: "01",
@@ -99,25 +99,25 @@ export default function Home() {
             ].map((card, i) => (
               <div 
                 key={i} 
-                className="bg-[#FFF9F6] p-7 rounded-[22px] border-2 border-[#F6DCE4] hover:border-[#C94F78] shadow-[0_10px_25px_rgba(53,29,43,0.03)] hover:shadow-[0_20px_45px_rgba(201,79,120,0.18)] transform hover:-translate-y-1.5 transition-all duration-400 group flex flex-col justify-between"
+                className="bg-[#F4EFE6] p-7 rounded-[22px] border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-[0_10px_30px_rgba(41,50,37,0.06)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.3)] transition-all duration-500 group flex flex-col justify-between card-3d-element cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-serif font-bold text-[#C94F78] group-hover:scale-110 transition-transform">{card.num}</span>
-                    <span className="bg-[#7D294B] text-[#FFF9F6] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#E8A6B8]/30">
+                    <span className="text-2xl font-serif font-bold text-[#5F6B45] group-hover:scale-110 group-hover:text-[#B89A5A] transition-all">{card.num}</span>
+                    <span className="bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/40 shadow-sm">
                       {card.highlight}
                     </span>
                   </div>
-                  <h3 className="font-serif text-base font-bold text-[#351D2B] mb-2 leading-snug group-hover:text-[#C94F78] transition-colors">
+                  <h3 className="font-serif text-base font-bold text-[#293225] mb-2 leading-snug group-hover:text-[#5F6B45] transition-colors">
                     {card.title}
                   </h3>
-                  <p className="text-[#351D2B]/75 text-xs leading-relaxed font-light">
+                  <p className="text-[#252822]/80 text-xs leading-relaxed font-light">
                     {card.desc}
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#F6DCE4] flex items-center justify-between text-[10px] uppercase tracking-widest font-bold text-[#9E3D63]">
+                <div className="mt-5 pt-3 border-t border-[#D8D0C3] flex items-center justify-between text-[10px] uppercase tracking-widest font-bold text-[#5F6B45]">
                   <span>TAMANYA PILLAR</span>
-                  <span className="group-hover:translate-x-1 transition-transform text-[#C94F78]">→</span>
+                  <span className="group-hover:translate-x-2 transition-transform duration-300 text-[#B89A5A] font-extrabold text-xs">→</span>
                 </div>
               </div>
             ))}
@@ -125,8 +125,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Get Back to the Life You Love Section */}
-      <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#FFF9F6]">
+      {/* 03. Introduction & Symptom Cards — Olive & Linen Theme */}
+      <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#F4EFE6]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
@@ -134,88 +134,59 @@ export default function Home() {
             {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-6">
               <div>
-                <span className="inline-block bg-[#F6DCE4] text-[#7D294B] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-[#E8A6B8]/40">
+                <span className="inline-block bg-[#E8ECDF] text-[#5F6B45] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-[#5F6B45]/30">
                   PHYSIO & HEALTH CARE • SINCE 2019
                 </span>
               </div>
               
-              <h2 className="font-serif text-4xl sm:text-6xl text-[#351D2B] font-bold tracking-tight leading-tight">
+              <h2 className="font-serif text-4xl sm:text-6xl text-[#293225] font-bold tracking-tight leading-tight">
                 Get Back to the Life You Love.
               </h2>
               
-              <p className="text-[#9E3D63] italic text-base sm:text-lg font-medium leading-relaxed">
+              <p className="text-[#5F6B45] italic text-base sm:text-lg font-medium leading-relaxed">
                 Personalised physiotherapy and specialised rehabilitation to help you move better, recover with confidence, and understand your health.
               </p>
               
-              <p className="text-[#351D2B]/75 text-sm sm:text-base font-light leading-relaxed">
-                From orthopaedic and sports rehabilitation to women's health and pelvic care, Tamanya provides personalised support designed around your needs, your recovery, and your everyday life in Pandeypur, Varanasi.
+              <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed">
+                Led by Dr. Neha Gupta (M.P.T Orthopaedics), Tamanya Physio & Health Clinic provides evidence-based rehabilitation, specialized pelvic health care, and non-surgical pain management tailored to your personal goals in Pandeypur, Varanasi.
               </p>
-              
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Link 
-                  to="/book-appointment" 
-                  className="bg-gradient-to-r from-[#C94F78] via-[#9E3D63] to-[#7D294B] hover:from-[#9E3D63] hover:to-[#351D2B] text-white font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider shadow-md transition-all hover:scale-105"
-                >
-                  Book an Appointment
+
+              <div className="pt-2 flex flex-wrap gap-4">
+                <Link to="/book-appointment" className="btn-olive">
+                  BOOK CONSULTATION
                 </Link>
-                <Link 
-                  to="/physiotherapy" 
-                  className="border-2 border-[#9E3D63] text-[#351D2B] hover:bg-[#9E3D63]/10 font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all"
-                >
-                  Explore Our Care
+                <Link to="/physiotherapy" className="btn-linen">
+                  EXPLORE CARE
                 </Link>
               </div>
-
-              {/* Feature Checkmarks Strip */}
-              <div className="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm font-semibold text-[#351D2B]/80">
-                <span className="flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-[#9E3D63] text-white flex items-center justify-center text-[10px] font-bold">✓</span> Serving since 2019
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-[#9E3D63] text-white flex items-center justify-center text-[10px] font-bold">✓</span> Personalized Care
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-[#9E3D63] text-white flex items-center justify-center text-[10px] font-bold">✓</span> Professional Guidance
-                </span>
-              </div>
-
             </div>
 
-            {/* Right Image Column with Storefront Photo & Floating Est. 2019 Card */}
+            {/* Right Clinic Image Card with Ken Burns */}
             <div className="lg:col-span-6 relative">
-              <div className="aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl border-4 border-white relative group">
+              <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative group">
                 <img 
                   src={cliImg} 
-                  alt="Tamanya Physio & Health Clinic Storefront in Varanasi" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                  alt="Tamanya Health Clinic Varanasi" 
+                  className="w-full h-full object-cover animate-ken-burns" 
                 />
-                
-                {/* Floating Est. 2019 Badge Card */}
-                <div className="absolute bottom-6 left-6 bg-white p-4 rounded-2xl shadow-xl border border-[#F6DCE4] flex items-center gap-3.5 max-w-xs transform hover:-translate-y-1 transition-transform">
-                  <div className="w-10 h-10 rounded-xl bg-[#7D294B] text-white flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-[#E8A6B8]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-base text-[#351D2B]">Est. 2019</h4>
-                    <p className="text-xs text-[#351D2B]/75 font-light leading-snug">Trusted Physiotherapy & Wellness Care</p>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <span className="text-[#B89A5A] text-[10px] font-bold uppercase tracking-widest block">PRIVATE CLINIC CAMPUS</span>
+                  <p className="font-serif text-xl font-bold text-[#FAF7F1]">Pandeypur Chauraha, Varanasi</p>
                 </div>
-
               </div>
             </div>
 
           </div>
 
-          {/* 3 Overlapping Symptom Cards with 3D Interaction */}
+          {/* 3 Symptom Cards with 3D Interaction */}
           <div className="pt-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block mb-3">UNDERSTANDING YOUR BODY</span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-4">
+              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">UNDERSTANDING YOUR BODY</span>
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">
                 Your Body Has a Way of Telling You Something.
               </h2>
-              <p className="text-[#351D2B]/75 text-sm sm:text-base font-light leading-relaxed">
+              <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed">
                 Pain, stiffness, reduced mobility, or recurring physical discomfort can affect how you move, work, and live. Understanding the concern is the first step toward appropriate care.
               </p>
             </div>
@@ -244,19 +215,19 @@ export default function Home() {
                 <Link
                   key={i} 
                   to={card.link}
-                  className="bg-white p-8 sm:p-10 rounded-[24px] border-2 border-[#F6DCE4] hover:border-[#C94F78] shadow-[0_10px_30px_rgba(53,29,43,0.04)] hover:shadow-[0_25px_50px_rgba(201,79,120,0.20)] transform hover:-translate-y-2 hover:bg-[#FFF9F6] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between block"
+                  className="bg-[#FAF7F1] p-8 sm:p-10 rounded-[24px] border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-[0_10px_30px_rgba(41,50,37,0.04)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.22)] transform hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden flex flex-col justify-between block"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-3xl font-serif font-bold text-[#C94F78] group-hover:scale-110 transition-transform">{card.num}</span>
-                      <span className="w-10 h-[2px] bg-[#C94F78]/40 group-hover:w-16 group-hover:bg-[#C94F78] transition-all"></span>
+                      <span className="text-3xl font-serif font-bold text-[#5F6B45] group-hover:scale-110 transition-transform">{card.num}</span>
+                      <span className="w-10 h-[2px] bg-[#5F6B45]/40 group-hover:w-16 group-hover:bg-[#B89A5A] transition-all"></span>
                     </div>
-                    <h3 className="font-serif text-xl sm:text-2xl text-[#351D2B] font-bold mb-3 group-hover:text-[#C94F78] transition-colors">{card.title}</h3>
-                    <p className="text-[#351D2B]/75 text-xs sm:text-sm font-light leading-relaxed mb-8">{card.desc}</p>
+                    <h3 className="font-serif text-xl sm:text-2xl text-[#293225] font-bold mb-3 group-hover:text-[#5F6B45] transition-colors">{card.title}</h3>
+                    <p className="text-[#252822]/80 text-xs sm:text-sm font-light leading-relaxed mb-8">{card.desc}</p>
                   </div>
-                  <div className="pt-4 border-t border-[#F6DCE4] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#9E3D63] group-hover:text-[#351D2B] transition-colors">
+                  <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#5F6B45] group-hover:text-[#293225] transition-colors">
                     <span>CLINICAL ASSESSMENT</span>
-                    <span className="group-hover:translate-x-1.5 transition-transform text-[#C94F78]">→</span>
+                    <span className="group-hover:translate-x-1.5 transition-transform text-[#B89A5A]">→</span>
                   </div>
                 </Link>
               ))}
@@ -266,18 +237,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Clinical Services Section */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#F6DCE4]">
+      {/* 04 & 05. Clinical Offerings & Physiotherapy Section — Warm Linen & Olive */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-6 h-[2px] bg-[#9E3D63] block"></span>
-              <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-[11px] font-bold">OUR SPECIALISED CARE</span>
-              <span className="w-6 h-[2px] bg-[#9E3D63] block"></span>
+              <span className="w-6 h-[2px] bg-[#5F6B45] block"></span>
+              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-[11px] font-bold">OUR SPECIALISED CARE</span>
+              <span className="w-6 h-[2px] bg-[#5F6B45] block"></span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-6 tracking-tight">Care That Goes Beyond Pain Relief</h2>
-            <p className="text-[#351D2B]/75 text-base sm:text-lg font-light leading-relaxed">
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-6 tracking-tight">Care That Goes Beyond Pain Relief</h2>
+            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               Tailored rehabilitation and aesthetic wellness treatments delivered with precision clinical expertise in Pandeypur, Varanasi.
             </p>
           </div>
@@ -317,25 +288,25 @@ export default function Home() {
               <Link 
                 key={i} 
                 to={card.link}
-                className="bg-white rounded-[20px] overflow-hidden shadow-md border border-[#F6DCE4] hover:border-[#C94F78] transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between block relative"
+                className="bg-[#F4EFE6] rounded-[20px] overflow-hidden shadow-md border border-[#D8D0C3] hover:border-[#5F6B45] transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between block relative"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#351D2B]/60 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 bg-[#7D294B] text-[#FFF9F6] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#E8A6B8]/30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
+                  <span className="absolute top-4 left-4 bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/30">
                     {card.cat}
                   </span>
                 </div>
                 
                 <div className="p-7 flex flex-col flex-grow justify-between">
                   <div>
-                    <h3 className="font-serif text-xl text-[#351D2B] font-bold mb-3 group-hover:text-[#C94F78] transition-colors">{card.title}</h3>
-                    <p className="text-[#351D2B]/75 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
+                    <h3 className="font-serif text-xl text-[#293225] font-bold mb-3 group-hover:text-[#5F6B45] transition-colors">{card.title}</h3>
+                    <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
                   </div>
                   
-                  <div className="pt-4 border-t border-[#F6DCE4] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#351D2B] group-hover:text-[#C94F78] transition-colors">
+                  <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#252822] group-hover:text-[#5F6B45] transition-colors">
                     <span>EXPLORE CARE</span>
-                    <span className="group-hover:translate-x-1.5 transition-transform text-[#C94F78]">→</span>
+                    <span className="group-hover:translate-x-1.5 transition-transform text-[#B89A5A]">→</span>
                   </div>
                 </div>
               </Link>
@@ -345,32 +316,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Inside Tamanya Interactive Gallery Slider */}
+      {/* 06. Orthopaedic & Neurological Rehabilitation Spotlight */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-t border-[#D8D0C3]">
+        <div className="max-w-[1600px] mx-auto">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">CLINICAL SPECIALISATIONS</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Orthopaedic & Neurological Recovery</h2>
+            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
+              Targeted clinical pathways designed for structural spine, joint, nerve, and brain recovery.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Spine & Sciatica Care",
+                desc: "Disc herniation, sciatica radiation, lumbar stiffness, and cervical spondylosis rehabilitation.",
+                tag: "ORTHOPAEDIC"
+              },
+              {
+                title: "Pre & Post Surgery (TKR / THR)",
+                desc: "Phased post-surgical rehabilitation for Total Knee & Hip replacements, restoring gait and strength.",
+                tag: "REHABILITATION"
+              },
+              {
+                title: "Stroke & Neurological Rehab",
+                desc: "Neuromuscular re-education, post-stroke motor recovery, Parkinson's gait support, and nerve compression.",
+                tag: "NEUROLOGY"
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-[#FAF7F1] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm hover:shadow-xl">
+                <span className="bg-[#E8ECDF] text-[#5F6B45] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold inline-block mb-4 border border-[#5F6B45]/20">
+                  {item.tag}
+                </span>
+                <h3 className="font-serif text-xl font-bold text-[#293225] mb-3">{item.title}</h3>
+                <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{item.desc}</p>
+                <Link to="/physiotherapy" className="text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#293225] flex items-center gap-1">
+                  <span>LEARN MORE</span> <span>→</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 13. Inside Tamanya Interactive Gallery Slider */}
       <InsideTamanya />
 
-      {/* 4. Doctor Section: Meet Your Practitioner */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#F6DCE4]">
-        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      {/* 11 & 13. Doctor Section: Meet Your Practitioner (International Editorial Composition) */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3] relative overflow-hidden">
+        
+        {/* Oversized Background Moving Editorial Typography */}
+        <div className="absolute top-10 left-0 w-full overflow-hidden pointer-events-none opacity-[0.035] select-none">
+          <span className="font-serif text-[180px] lg:text-[250px] font-bold text-[#293225] whitespace-nowrap block tracking-widest leading-none parallax-float">
+            PRACTITIONER FOUNDER
+          </span>
+        </div>
+
+        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
           
+          {/* Left Text & Bio Content */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block">WHO YOU'LL SEE</span>
+            
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 reveal-up">
+              <span className="w-8 h-[2px] bg-[#B89A5A] block"></span>
+              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-extrabold block">CLINICAL DIRECTOR</span>
+            </div>
+
+            {/* Masked Line Reveal Headings */}
             <div>
-              <h2 className="font-serif text-4xl sm:text-6xl text-[#351D2B] font-bold tracking-tight">
-                Meet Your Practitioner
-              </h2>
-              <p className="font-serif italic text-3xl sm:text-4xl text-[#C94F78] font-semibold mt-2">
+              <div className="overflow-hidden">
+                <h2 className="font-serif text-4xl sm:text-6xl text-[#293225] font-bold tracking-tight reveal-up leading-tight">
+                  Meet Your Practitioner
+                </h2>
+              </div>
+              <p className="font-serif italic text-3xl sm:text-4xl text-[#5F6B45] font-semibold mt-2 reveal-up text-gradient-gold">
                 Dr. Neha Gupta
               </p>
             </div>
 
-            {/* Checkmarks line */}
-            <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#351D2B] py-2 border-y border-[#F6DCE4]">
-              <span className="flex items-center gap-1.5"><span className="text-[#C94F78]">✓</span> Physiotherapist</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#C94F78]">✓</span> Women's Health Specialist</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#C94F78]">✓</span> Founder, Tamanya</span>
+            {/* Qualifications & Credentials List with Expanding Border */}
+            <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3] reveal-up">
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Physiotherapist</span>
+              <span className="text-[#B89A5A] font-bold">•</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Women's Health Specialist</span>
+              <span className="text-[#B89A5A] font-bold">•</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Founder, Tamanya</span>
             </div>
 
-            <div className="space-y-4 text-[#351D2B]/80 font-light leading-relaxed text-sm sm:text-base">
+            {/* Biography Paragraphs with Progressive Stagger */}
+            <div className="space-y-4 text-[#252822]/85 font-light leading-relaxed text-sm sm:text-base reveal-up">
               <p>
                 Dr. Neha Gupta's journey has grown from a foundation in physiotherapy into a broader commitment to rehabilitation, women's health, and preventive healthcare. With <strong>7+ years of clinical experience</strong>, a <strong>Master's in Physiotherapy with an Orthopaedics specialisation</strong>, and advanced training in <strong>pelvic floor, prenatal and postnatal rehabilitation</strong>, she has built her practice around personalised, patient-focused care.
               </p>
@@ -382,91 +420,110 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            {/* CTAs */}
+            <div className="pt-4 flex flex-wrap items-center gap-4 reveal-up">
               <Link 
                 to="/about" 
-                className="bg-[#351D2B] hover:bg-[#7D294B] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-md hover:-translate-y-0.5"
+                className="btn-deep-olive"
               >
                 READ FULL BIOGRAPHY
               </Link>
               <Link 
                 to="/book-appointment" 
-                className="bg-gradient-to-r from-[#C94F78] to-[#9E3D63] hover:from-[#9E3D63] hover:to-[#7D294B] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:-translate-y-0.5"
+                className="btn-olive"
               >
                 BOOK CONSULTATION WITH DR. NEHA
               </Link>
             </div>
           </div>
 
+          {/* Right Portrait & Floating Detail Card */}
           <div className="lg:col-span-5 relative">
             <Link to="/about" className="block group">
-              <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-white relative z-10">
-                <img src={nehaImg} alt="Dr. Neha Gupta" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+              
+              {/* Photo with Mask Reveal & Ken Burns Zoom */}
+              <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative z-10 img-mask-reveal bg-[#FAF7F1]">
+                <img 
+                  src={nehaImg} 
+                  alt="Dr. Neha Gupta - Clinical Director & Founder Tamanya Health" 
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/40 via-transparent to-transparent opacity-30 group-hover:opacity-10 transition-opacity pointer-events-none" />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C94F78] rounded-[28px] z-0 hidden sm:block"></div>
+
+              {/* Decorative Champagne Border Accent */}
+              <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#B89A5A] rounded-[28px] z-0 hidden sm:block group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+
+              {/* Floating Experience Badge */}
+              <div className="absolute bottom-6 left-6 z-20 bg-[#293225]/95 text-white p-4 sm:p-5 rounded-[20px] border border-[#B89A5A]/50 shadow-2xl backdrop-blur-md animate-float-up-down">
+                <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">CLINICAL EXPERTISE</span>
+                <p className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">7+ Years Practice</p>
+                <p className="text-[10px] text-white/80 font-light mt-1">M.P.T Orthopaedics • MIAP</p>
+              </div>
+
             </Link>
           </div>
 
         </div>
       </section>
 
-      {/* 5. Why Choose Us — Care Built Around You */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FFF9F6] border-t border-[#F6DCE4]">
+      {/* 10. Why Choose Us — Care Built Around You */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-t border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Left Award Badge Frame / Image */}
           <div className="lg:col-span-5 relative">
-            <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-white bg-white relative z-10 group">
+            <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] bg-[#FAF7F1] relative z-10 group">
               <img 
                 src={prizeImg} 
                 alt="Best Clinician Award - Dr. Neha Gupta" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C94F78] rounded-[28px] z-0 hidden sm:block"></div>
+            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#5F6B45] rounded-[28px] z-0 hidden sm:block"></div>
           </div>
 
           {/* Right Why Choose Us Content & 4 Cards */}
           <div className="lg:col-span-7 space-y-8">
             <div>
-              <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block mb-2">WHY CHOOSE US</span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-4">
+              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-2">WHY CHOOSE US</span>
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">
                 Care Built Around You.
               </h2>
-              <p className="text-[#351D2B]/80 text-sm sm:text-base font-light leading-relaxed">
+              <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed">
                 Every person's recovery is different. Tamanya combines personalised physiotherapy, specialised women's health expertise, rehabilitation, and patient education to support care that is tailored to individual needs.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
-              <div className="bg-white p-6 rounded-2xl border border-[#F6DCE4] space-y-2 hover:border-[#C94F78] transition-colors shadow-sm">
-                <span className="text-2xl font-serif font-bold text-[#C94F78] block">01</span>
-                <h3 className="font-serif text-lg font-bold text-[#351D2B]">Personalized Care</h3>
-                <p className="text-[#351D2B]/75 text-xs font-light leading-relaxed">
+              <div className="bg-[#FAF7F1] p-6 rounded-2xl border border-[#D8D0C3] space-y-2 hover:border-[#5F6B45] transition-colors shadow-sm">
+                <span className="text-2xl font-serif font-bold text-[#5F6B45] block">01</span>
+                <h3 className="font-serif text-lg font-bold text-[#293225]">Personalized Care</h3>
+                <p className="text-[#252822]/80 text-xs font-light leading-relaxed">
                   Our approach focuses on your individual concerns, movement, recovery needs, and everyday goals rather than treating every patient the same way.
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border border-[#F6DCE4] space-y-2 hover:border-[#C94F78] transition-colors shadow-sm">
-                <span className="text-2xl font-serif font-bold text-[#C94F78] block">02</span>
-                <h3 className="font-serif text-lg font-bold text-[#351D2B]">Specialised Women's Health</h3>
-                <p className="text-[#351D2B]/75 text-xs font-light leading-relaxed">
+              <div className="bg-[#FAF7F1] p-6 rounded-2xl border border-[#D8D0C3] space-y-2 hover:border-[#5F6B45] transition-colors shadow-sm">
+                <span className="text-2xl font-serif font-bold text-[#5F6B45] block">02</span>
+                <h3 className="font-serif text-lg font-bold text-[#293225]">Specialised Women's Health</h3>
+                <p className="text-[#252822]/80 text-xs font-light leading-relaxed">
                   Tamanya has a specialised focus on women's health and pelvic rehabilitation, including prenatal and postnatal rehabilitation, pelvic floor care, urinary incontinence, and pelvic health management.
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border border-[#F6DCE4] space-y-2 hover:border-[#C94F78] transition-colors shadow-sm">
-                <span className="text-2xl font-serif font-bold text-[#C94F78] block">03</span>
-                <h3 className="font-serif text-lg font-bold text-[#351D2B]">Holistic Rehabilitation</h3>
-                <p className="text-[#351D2B]/75 text-xs font-light leading-relaxed">
+              <div className="bg-[#FAF7F1] p-6 rounded-2xl border border-[#D8D0C3] space-y-2 hover:border-[#5F6B45] transition-colors shadow-sm">
+                <span className="text-2xl font-serif font-bold text-[#5F6B45] block">03</span>
+                <h3 className="font-serif text-lg font-bold text-[#293225]">Holistic Rehabilitation</h3>
+                <p className="text-[#252822]/80 text-xs font-light leading-relaxed">
                   Our rehabilitation approach focuses on mobility, functional independence, recovery, and quality of life, helping patients better understand their physical health along the way.
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border border-[#F6DCE4] space-y-2 hover:border-[#C94F78] transition-colors shadow-sm">
-                <span className="text-2xl font-serif font-bold text-[#C94F78] block">04</span>
-                <h3 className="font-serif text-lg font-bold text-[#351D2B]">Experience & Education</h3>
-                <p className="text-[#351D2B]/75 text-xs font-light leading-relaxed">
+              <div className="bg-[#FAF7F1] p-6 rounded-2xl border border-[#D8D0C3] space-y-2 hover:border-[#5F6B45] transition-colors shadow-sm">
+                <span className="text-2xl font-serif font-bold text-[#5F6B45] block">04</span>
+                <h3 className="font-serif text-lg font-bold text-[#293225]">Experience & Education</h3>
+                <p className="text-[#252822]/80 text-xs font-light leading-relaxed">
                   Dr. Neha Gupta brings seven years of clinical experience alongside multidisciplinary training in physiotherapy, orthopaedics, women's health, and rehabilitation. Her work also places strong emphasis on patient counselling and healthcare awareness.
                 </p>
               </div>
@@ -477,56 +534,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Process Section */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#F6DCE4]">
+      {/* 14. Patient Journey Process Section — Warm Linen & Olive Accent */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block mb-3">THE PROCESS</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-4 leading-tight">
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">THE PROCESS</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4 leading-tight">
               Your Journey Starts With One Conversation.
             </h2>
-            <p className="text-[#351D2B]/75 text-base sm:text-lg font-light leading-relaxed">
+            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               From understanding your concern to creating a personalised care plan, every step is focused on helping you move toward better recovery and wellbeing.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
             {[
-              { num: "STEP 01", title: "Understand Your Needs", desc: "We begin by understanding your concern, symptoms, health history, lifestyle, and everyday challenges." },
-              { num: "STEP 02", title: "Assess & Identify", desc: "A personalised assessment helps understand your movement, functional needs, and the areas that may require professional attention." },
-              { num: "STEP 03", title: "Personalise Your Care", desc: "Based on your individual needs, we guide you toward an appropriate physiotherapy, rehabilitation, women's health, or wellness approach." },
-              { num: "STEP 04", title: "Support Your Progress", desc: "Your care is focused on recovery, mobility, functional independence, and helping you return to everyday life with greater confidence." }
+              { num: "01 UNDERSTAND", title: "Understand Your Needs", desc: "We begin by understanding your concern, symptoms, health history, lifestyle, and everyday challenges." },
+              { num: "02 ASSESS", title: "Assess & Identify", desc: "A personalised assessment helps understand your movement, functional needs, and the areas that may require professional attention." },
+              { num: "03 PERSONALISE", title: "Personalise Your Care", desc: "Based on your individual needs, we guide you toward an appropriate physiotherapy, rehabilitation, women's health, or wellness approach." },
+              { num: "04 PROGRESS", title: "Support Your Progress", desc: "Your care is focused on recovery, mobility, functional independence, and helping you return to everyday life with greater confidence." }
             ].map((item, i) => (
               <div 
                 key={i} 
-                className="bg-[#FFF9F6] p-8 rounded-[24px] border-2 border-[#F6DCE4] hover:border-[#C94F78] shadow-[0_10px_30px_rgba(53,29,43,0.04)] hover:shadow-[0_25px_50px_rgba(201,79,120,0.20)] transform hover:-translate-y-2 hover:bg-white transition-all duration-500 group relative flex flex-col justify-between"
+                className="bg-[#F4EFE6] p-8 rounded-[24px] border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-[0_10px_30px_rgba(41,50,37,0.04)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.20)] transform hover:-translate-y-2 transition-all duration-500 group relative flex flex-col justify-between"
               >
                 <div>
-                  <span className="inline-block bg-[#F6DCE4] text-[#7D294B] px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase mb-6 border border-[#E8A6B8]/40">
+                  <span className="inline-block bg-[#E8ECDF] text-[#5F6B45] px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase mb-6 border border-[#5F6B45]/30">
                     {item.num}
                   </span>
-                  <h3 className="font-serif text-xl font-bold text-[#351D2B] mb-3 group-hover:text-[#C94F78] transition-colors">{item.title}</h3>
-                  <p className="text-[#351D2B]/75 text-xs leading-relaxed font-light mb-6">{item.desc}</p>
+                  <h3 className="font-serif text-xl font-bold text-[#293225] mb-3 group-hover:text-[#5F6B45] transition-colors">{item.title}</h3>
+                  <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <Link 
-              to="/book-appointment" 
-              className="inline-block bg-gradient-to-r from-[#C94F78] via-[#9E3D63] to-[#7D294B] text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-xl hover:scale-105"
-            >
-              Book an Appointment
+            <Link to="/book-appointment" className="btn-olive">
+              BOOK AN APPOINTMENT
             </Link>
           </div>
 
         </div>
       </section>
 
-      {/* 6. Community Health Camp Feature */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gradient-to-br from-[#7D294B] via-[#5C1D36] to-[#351D2B] text-white border-t border-[#F6DCE4] relative overflow-hidden">
+      {/* 15. Community Health Camp Feature */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gradient-to-br from-[#3F4A32] via-[#293225] to-[#1F261C] text-white border-t border-[#D8D0C3] relative overflow-hidden">
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Left Column: Image camp.webp */}
@@ -535,7 +589,7 @@ export default function Home() {
               <img 
                 src={campImg} 
                 alt="Tamanya Physio & Health Clinic Community Camp" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" 
               />
             </div>
           </div>
@@ -543,10 +597,10 @@ export default function Home() {
           {/* Right Column: Event Info */}
           <div className="lg:col-span-6 space-y-6">
             <div>
-              <span className="bg-white/20 text-[#E8A6B8] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase inline-block mb-3 border border-white/30">
+              <span className="bg-white/20 text-[#B89A5A] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase inline-block mb-3 border border-white/30">
                 COMMUNITY INITIATIVE
               </span>
-              <p className="text-[#E8A6B8] uppercase tracking-[0.2em] text-xs font-bold mb-2">JOIN OUR UPCOMING HEALTH CAMP</p>
+              <p className="text-[#B89A5A] uppercase tracking-[0.2em] text-xs font-bold mb-2">JOIN OUR UPCOMING HEALTH CAMP</p>
               <h2 className="font-serif text-3xl sm:text-5xl text-white font-bold leading-tight">
                 Your Health Deserves Attention.
               </h2>
@@ -557,14 +611,14 @@ export default function Home() {
             </p>
 
             {/* Dark Styled Box */}
-            <div className="bg-[#24121C] border-2 border-[#C94F78]/40 p-6 sm:p-8 rounded-[24px] space-y-6 shadow-2xl relative">
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#E8A6B8]">
+            <div className="bg-[#1F261C] border-2 border-[#B89A5A]/40 p-6 sm:p-8 rounded-[24px] space-y-6 shadow-2xl relative">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#B89A5A]">
                 Community Mobility & Spine Screening Camp
               </h3>
 
               <div className="grid sm:grid-cols-2 gap-6 text-xs text-white/90">
                 <div className="flex items-start gap-3">
-                  <span className="text-[#C94F78] text-lg">📅</span>
+                  <span className="text-[#B89A5A] text-lg">📅</span>
                   <div>
                     <p className="font-bold text-white text-sm mb-0.5">Date</p>
                     <p className="text-white/70 font-light">Upcoming Session / Contact Clinic</p>
@@ -572,7 +626,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <span className="text-[#C94F78] text-lg">🕒</span>
+                  <span className="text-[#B89A5A] text-lg">🕒</span>
                   <div>
                     <p className="font-bold text-white text-sm mb-0.5">Time</p>
                     <p className="text-white/70 font-light">09:00 AM – 02:00 PM</p>
@@ -580,7 +634,7 @@ export default function Home() {
                 </div>
 
                 <div className="sm:col-span-2 flex items-start gap-3">
-                  <span className="text-[#C94F78] text-lg">📍</span>
+                  <span className="text-[#B89A5A] text-lg">📍</span>
                   <div>
                     <p className="font-bold text-white text-sm mb-0.5">Location</p>
                     <p className="text-white/70 font-light">Tamanya Clinic Campus & Community Center, Pandeypur, Varanasi</p>
@@ -592,7 +646,7 @@ export default function Home() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link 
                 to="/book-appointment" 
-                className="bg-[#C94F78] hover:bg-[#9E3D63] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:scale-105"
+                className="bg-[#5F6B45] hover:bg-[#3F4A32] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:scale-105 border border-[#B89A5A]/50"
               >
                 Book an Appointment
               </Link>
@@ -609,14 +663,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Patient Stories */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#F6DCE4]">
+      {/* 16. Patient Stories — Warm Linen & Olive Accent */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-t border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block mb-3">PATIENT STORIES</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-4">Real Experiences. Real Journeys.</h2>
-            <p className="text-[#351D2B]/75 text-base sm:text-lg font-light leading-relaxed">
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">PATIENT STORIES</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Real Experiences. Real Journeys.</h2>
+            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               Hear from people who have chosen Tamanya for their physiotherapy, rehabilitation, women's health, and wellness needs.
             </p>
           </div>
@@ -642,21 +696,21 @@ export default function Home() {
                 tag: "Verified Patient"
               }
             ].map((review, i) => (
-              <div key={i} className="bg-[#FFF9F6] p-8 sm:p-10 rounded-[24px] border-2 border-[#F6DCE4] hover:border-[#C94F78] shadow-[0_10px_30px_rgba(53,29,43,0.04)] hover:shadow-[0_25px_50px_rgba(201,79,120,0.20)] transition-all duration-300 flex flex-col justify-between group">
+              <div key={i} className="bg-[#FAF7F1] p-8 sm:p-10 rounded-[24px] border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-[0_10px_30px_rgba(41,50,37,0.04)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.20)] transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center gap-1 text-[#C94F78] text-lg mb-4">
+                  <div className="flex items-center gap-1 text-[#B89A5A] text-lg mb-4">
                     ★★★★★
                   </div>
-                  <p className="text-[#351D2B]/85 font-serif italic text-xs sm:text-sm leading-relaxed mb-8">
+                  <p className="text-[#252822]/90 font-serif italic text-xs sm:text-sm leading-relaxed mb-8">
                     "{review.quote}"
                   </p>
                 </div>
-                <div className="pt-6 border-t border-[#F6DCE4] flex items-center justify-between">
+                <div className="pt-6 border-t border-[#D8D0C3] flex items-center justify-between">
                   <div>
-                    <h4 className="font-serif font-bold text-[#351D2B] text-base sm:text-lg group-hover:text-[#C94F78] transition-colors">{review.name}</h4>
-                    <span className="text-xs text-[#351D2B]/60 font-medium">{review.service}</span>
+                    <h4 className="font-serif font-bold text-[#293225] text-base sm:text-lg group-hover:text-[#5F6B45] transition-colors">{review.name}</h4>
+                    <span className="text-xs text-[#252822]/60 font-medium">{review.service}</span>
                   </div>
-                  <span className="bg-[#F6DCE4] text-[#7D294B] text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#E8A6B8]/40">
+                  <span className="bg-[#E8ECDF] text-[#5F6B45] text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#5F6B45]/30">
                     {review.tag}
                   </span>
                 </div>
@@ -667,34 +721,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. FAQ Accordion */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FFF9F6] border-t border-[#F6DCE4]">
+      {/* 18. FAQ Accordion — Warm Linen & Olive Accent */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">
         <div className="max-w-4xl mx-auto">
           
           <div className="text-center mb-16">
-            <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block mb-3">CLINICAL ARTICLES & FAQS</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-4">Questions You May Have.</h2>
-            <p className="text-[#351D2B]/75 text-base sm:text-lg font-light leading-relaxed">
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">CLINICAL ARTICLES & FAQS</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Questions You May Have.</h2>
+            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               Clear answers about treatments, clinical appointments, and visiting Tamanya.
             </p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white rounded-[16px] border border-[#F6DCE4] hover:border-[#C94F78] overflow-hidden shadow-sm transition-colors">
+              <div key={i} className="bg-[#F4EFE6] rounded-[16px] border border-[#D8D0C3] hover:border-[#5F6B45] overflow-hidden shadow-sm transition-colors">
                 <button
                   onClick={() => toggleFaq(i)}
                   className="w-full p-6 text-left flex justify-between items-center focus:outline-none group"
                 >
-                  <span className="font-serif text-base sm:text-lg text-[#351D2B] font-bold flex items-center gap-4 group-hover:text-[#C94F78] transition-colors">
+                  <span className="font-serif text-base sm:text-lg text-[#293225] font-bold flex items-center gap-4 group-hover:text-[#5F6B45] transition-colors">
                     {faq.q}
                   </span>
-                  <span className={`text-[#C94F78] text-xl font-bold transform transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}>
+                  <span className={`text-[#B89A5A] text-xl font-bold transform transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}>
                     +
                   </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-6 pt-2 text-[#351D2B]/80 text-sm font-light leading-relaxed border-t border-[#F6DCE4]/60 bg-[#FFF9F6]">
+                  <div className="px-6 pb-6 pt-2 text-[#252822]/85 text-sm font-light leading-relaxed border-t border-[#D8D0C3]/60 bg-[#FAF7F1]">
                     {faq.a}
                   </div>
                 )}
@@ -708,5 +762,3 @@ export default function Home() {
     </div>
   );
 }
-
-

@@ -66,11 +66,11 @@ export default function HeroSlider() {
 
   return (
     <div 
-      className="relative w-full min-h-[700px] sm:min-h-[740px] lg:min-h-[780px] bg-[#FFF9F6] overflow-hidden flex items-center pt-36 sm:pt-40 lg:pt-48 pb-20 sm:pb-24 font-sans border-b border-[#F6DCE4]"
+      className="relative w-full min-h-[700px] sm:min-h-[740px] lg:min-h-[780px] bg-[#F4EFE6] overflow-hidden flex items-center pt-36 sm:pt-40 lg:pt-48 pb-20 sm:pb-24 font-sans border-b border-[#D8D0C3]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Image Slider with Cinematic Ken Burns & Soft Luminous Pink Overlay */}
+      {/* Background Image Slider with Cinematic Ken Burns & Soft Luminous Linen Overlay */}
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -85,48 +85,48 @@ export default function HeroSlider() {
               index === currentSlide ? 'animate-ken-burns' : 'scale-100'
             }`}
           />
-          {/* Luminous Soft Blush & Warm Ivory Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FFF9F6]/95 via-[#FFF9F6]/85 to-[#F6DCE4]/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FFF9F6] via-transparent to-[#F6DCE4]/30 opacity-70 pointer-events-none" />
+          {/* Soft Dark Olive & Luminous Overlay — Images are clearly visible! */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#293225]/90 via-[#293225]/60 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/80 via-transparent to-black/40 pointer-events-none" />
         </div>
       ))}
 
       {/* Hero Content Container */}
-      <div className="relative z-20 max-w-[1600px] mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-12 gap-8 items-center">
+      <div className="relative z-20 max-w-[1600px] mx-auto px-6 lg:px-12 w-full">
         
-        {/* Left Editorial Content (7 Cols) */}
-        <div className="lg:col-span-8 xl:col-span-7 flex flex-col items-start text-left text-[#351D2B] pr-4">
+        {/* Editorial Content (Full Width / Max 4XL) */}
+        <div className="max-w-3xl flex flex-col items-start text-left text-[#FAF7F1]">
           
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-4 animate-fade-in-up">
-            <span className="w-8 h-[2px] bg-[#C94F78] block"></span>
-            <span className="text-[#C94F78] uppercase tracking-[0.25em] text-[11px] font-bold">
+            <span className="w-8 h-[2px] bg-[#B89A5A] block"></span>
+            <span className="text-[#B89A5A] uppercase tracking-[0.25em] text-[11px] font-extrabold">
               {slides[currentSlide].eyebrow}
             </span>
           </div>
 
           {/* Large Editorial Serif Heading */}
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#351D2B] mb-4 leading-[1.06] animate-fade-in-up">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#FAF7F1] mb-5 leading-[1.06] drop-shadow-md animate-fade-in-up">
             {slides[currentSlide].titleLine1} <br />
-            <span className="text-[#9E3D63] italic font-normal">{slides[currentSlide].titleLine2}</span>
+            <span className="text-[#B89A5A] italic font-normal">{slides[currentSlide].titleLine2}</span>
           </h1>
 
           {/* Supporting Description */}
-          <p className="text-[#351D2B]/85 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-xl mb-8 animate-fade-in-up">
+          <p className="text-[#FAF7F1]/90 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-8 drop-shadow animate-fade-in-up">
             {slides[currentSlide].subtitle}
           </p>
 
-          {/* Buttons: Vibrant Primary + White Glass Secondary */}
+          {/* Buttons: Primary Champagne + Dark Olive Border Secondary */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-fade-in-up mb-6">
             <Link 
               to="/book-appointment" 
-              className="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-[#C94F78] via-[#9E3D63] to-[#7D294B] text-white font-extrabold px-8 py-3.5 rounded-[16px] text-xs uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-[0_6px_35px_rgba(201,79,120,0.5)] hover:scale-[1.03] border border-[#E8A6B8]/40"
+              className="inline-flex justify-center items-center gap-2 bg-[#B89A5A] hover:bg-[#a3864c] text-[#293225] font-extrabold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_25px_rgba(184,154,90,0.5)] hover:shadow-[0_6px_35px_rgba(184,154,90,0.7)] hover:scale-[1.03] border border-white/40"
             >
               BOOK APPOINTMENT
             </Link>
             <Link 
               to={slides[currentSlide].link} 
-              className="inline-flex justify-center items-center gap-2 bg-white/80 hover:bg-white text-[#351D2B] border border-[#F6DCE4] font-semibold px-8 py-3.5 rounded-[16px] text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 hover:scale-[1.03] shadow-sm"
+              className="inline-flex justify-center items-center gap-2 bg-[#293225]/80 hover:bg-[#293225] text-[#FAF7F1] border border-[#D8D0C3]/40 font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 hover:scale-[1.03] shadow-sm"
             >
               EXPLORE OUR CARE
             </Link>
@@ -134,39 +134,12 @@ export default function HeroSlider() {
 
         </div>
 
-        {/* Right Layered Foreground Card (5 Cols) with Subtle Micro-Float */}
-        <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 justify-end relative">
-          <div className="bg-white p-7 sm:p-8 rounded-[24px] shadow-[0_30px_60px_-15px_rgba(53,29,43,0.4)] border border-[#F6DCE4] max-w-sm border-t-4 border-t-[#C94F78] animate-float-gentle relative z-30 transition-all duration-500 hover:scale-[1.02]">
-            
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-[2px] bg-[#C94F78] block"></span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9E3D63] font-bold">
-                {slides[currentSlide].floatingText}
-              </span>
-            </div>
-
-            <h3 className="font-serif text-xl sm:text-2xl text-[#351D2B] font-bold leading-snug mb-3">
-              {slides[currentSlide].floatingSub}
-            </h3>
-
-            <p className="text-[#351D2B]/75 text-xs leading-relaxed font-light mb-6">
-              Clinical practice led by Dr. Neha Gupta (B.P.T, M.P.T Ortho, MIAP), providing evidence-led patient care in Pandeypur, Varanasi.
-            </p>
-
-            <Link to="/about" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#351D2B] hover:text-[#C94F78] transition-colors group">
-              <span>MEET CLINICAL DIRECTOR</span>
-              <svg className="w-3.5 h-3.5 text-[#C94F78] transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </Link>
-
-          </div>
-        </div>
-
       </div>
 
       {/* Side Arrow Navigation Buttons */}
       <button 
         onClick={prevSlide}
-        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-[#C94F78] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
+        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
         aria-label="Previous Slide"
       >
         <svg className="w-5 h-5 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -176,7 +149,7 @@ export default function HeroSlider() {
 
       <button 
         onClick={nextSlide}
-        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-[#C94F78] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
+        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
         aria-label="Next Slide"
       >
         <svg className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -185,7 +158,7 @@ export default function HeroSlider() {
       </button>
 
       {/* Numerical Progress Indicator */}
-      <div className="absolute bottom-5 left-6 lg:left-12 z-30 flex items-center gap-6 bg-[#351D2B]/80 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10">
+      <div className="absolute bottom-5 left-6 lg:left-12 z-30 flex items-center gap-6 bg-[#293225]/85 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -194,13 +167,13 @@ export default function HeroSlider() {
             aria-label={`Go to slide ${index + 1}`}
           >
             <span className={`text-[11px] font-bold font-mono transition-colors ${
-              index === currentSlide ? 'text-[#E8A6B8]' : 'text-white/40 group-hover:text-white'
+              index === currentSlide ? 'text-[#B89A5A]' : 'text-white/40 group-hover:text-white'
             }`}>
               0{index + 1}
             </span>
-            <div className={`h-[2px] transition-all duration-500 rounded-full ${
+            <div className={`h-[2.5px] transition-all duration-500 rounded-full ${
               index === currentSlide 
-                ? 'w-12 bg-[#C94F78]' 
+                ? 'w-12 bg-[#B89A5A]' 
                 : 'w-6 bg-white/20 group-hover:bg-white/50'
             }`} />
           </button>
@@ -210,8 +183,3 @@ export default function HeroSlider() {
     </div>
   );
 }
-
-
-
-
-

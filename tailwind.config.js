@@ -7,90 +7,100 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Sophisticated Luxury Pink & Berry Palette
+        // APPROVED EDITORIAL OLIVE & LINEN PALETTE
+        olive: {
+          DEFAULT: '#5F6B45', // PRIMARY OLIVE
+          deep: '#3F4A32',    // DEEP OLIVE
+          dark: '#293225',    // DARK OLIVE
+          muted: '#7D8765',   // MUTED OLIVE
+          sage: '#A8B09A',    // SAGE
+          soft: '#E8ECDF',    // SOFT OLIVE TINT
+          vibrant: '#5F6B45',
+        },
+        linen: {
+          DEFAULT: '#F4EFE6', // LINEN
+          light: '#FAF7F1',   // LIGHT LINEN
+          dark: '#E8E1D5',    // DEEP LINEN
+          border: '#D8D0C3',  // WARM TAUPE BORDER
+        },
+        sage: '#A8B09A',
+        taupe: '#D8D0C3',
+        champagne: {
+          DEFAULT: '#B89A5A', // CHAMPAGNE ACCENT
+          light: '#D4BC82',
+          dark: '#967839',
+          glow: 'rgba(184, 154, 90, 0.25)',
+        },
+        charcoal: '#252822',
+        
+        // Remap legacy color tokens to Olive + Linen palette for safety
         rose: {
-          DEFAULT: '#9E3D63', // PRIMARY DEEP ROSE
-          dark: '#7D294B',
-          vibrant: '#C94F78',
-          light: '#E8A6B8',
-          soft: '#F6DCE4',
+          DEFAULT: '#5F6B45',
+          dark: '#3F4A32',
+          vibrant: '#5F6B45',
+          light: '#A8B09A',
+          soft: '#E8ECDF',
         },
         berry: {
-          DEFAULT: '#7D294B', // RICH BERRY
-          dark: '#5C1D36',
-          light: '#9E3D63',
+          DEFAULT: '#3F4A32',
+          dark: '#293225',
+          light: '#5F6B45',
         },
         vibrant: {
-          DEFAULT: '#C94F78', // VIBRANT ROSE
+          DEFAULT: '#5F6B45',
         },
         blush: {
-          DEFAULT: '#E8A6B8', // BLUSH PINK
-          soft: '#F6DCE4', // SOFT BLUSH
+          DEFAULT: '#A8B09A',
+          soft: '#E8ECDF',
         },
         ivory: {
-          DEFAULT: '#FFF9F6', // WARM IVORY
-          dark: '#F4ECE8',
+          DEFAULT: '#FAF7F1',
+          dark: '#F4EFE6',
         },
         plum: {
-          DEFAULT: '#351D2B', // DEEP PLUM
-          dark: '#24121C',
-          light: '#4A283C',
+          DEFAULT: '#293225',
+          dark: '#252822',
+          light: '#3F4A32',
         },
-        taupe: {
-          DEFAULT: '#D8C4C8', // SOFT TAUPE
-          dark: '#BFA8AC',
-        },
-        champagne: {
-          DEFAULT: '#B79555', // CHAMPAGNE ACCENT
-          light: '#CBB075',
-          dark: '#967839',
-          glow: 'rgba(183, 149, 85, 0.25)',
-        },
-        // Legacy color tokens remapped for safety
         navy: {
-          DEFAULT: '#351D2B',
-          dark: '#24121C',
-          light: '#7D294B',
-        },
-        charcoal: {
-          DEFAULT: '#351D2B',
-          light: '#4A283C',
+          DEFAULT: '#293225',
+          dark: '#252822',
+          light: '#3F4A32',
         },
         white: '#FFFFFF',
         clay: {
-          DEFAULT: '#9E3D63',
-          light: '#C94F78',
+          DEFAULT: '#5F6B45',
+          light: '#7D8765',
         },
         softgrey: {
-          DEFAULT: '#F6DCE4',
-          dark: '#D8C4C8',
+          DEFAULT: '#E8ECDF',
+          dark: '#D8D0C3',
         },
-        primary: '#9E3D63',
-        'primary-dark': '#7D294B',
-        secondary: '#C94F78',
-        stone: '#D8C4C8',
-        bg: '#FFF9F6',
-        cream: '#FFF9F6',
-        accent: '#B79555',
-        'accent-gold': '#B79555',
+        primary: '#5F6B45',
+        'primary-dark': '#3F4A32',
+        secondary: '#3F4A32',
+        stone: '#D8D0C3',
+        bg: '#F4EFE6',
+        cream: '#F4EFE6',
+        accent: '#B89A5A',
+        'accent-gold': '#B89A5A',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       boxShadow: {
-        'luxury': '0 20px 40px -15px rgba(125, 41, 75, 0.08), 0 4px 15px rgba(158, 61, 99, 0.10)',
-        'luxury-hover': '0 30px 60px -20px rgba(125, 41, 75, 0.16), 0 8px 30px rgba(201, 79, 120, 0.22)',
-        'pink-glow': '0 0 25px rgba(201, 79, 120, 0.35)',
-        'champagne-glow': '0 0 25px rgba(183, 149, 85, 0.35)',
-        '3d-card': '0 20px 35px -10px rgba(53, 29, 43, 0.08), 0 0 1px rgba(158, 61, 99, 0.2)',
-        '3d-hover': '0 30px 55px -12px rgba(53, 29, 43, 0.18), 0 10px 30px rgba(201, 79, 120, 0.25)',
+        'luxury': '0 20px 40px -15px rgba(41, 50, 37, 0.10), 0 4px 15px rgba(95, 107, 69, 0.08)',
+        'luxury-hover': '0 30px 60px -20px rgba(41, 50, 37, 0.20), 0 8px 30px rgba(95, 107, 69, 0.25)',
+        'champagne-glow': '0 0 25px rgba(184, 154, 90, 0.35)',
+        '3d-card': '0 20px 35px -10px rgba(41, 50, 37, 0.08), 0 0 1px rgba(95, 107, 69, 0.2)',
+        '3d-hover': '0 30px 55px -12px rgba(41, 50, 37, 0.18), 0 10px 30px rgba(95, 107, 69, 0.25)',
       },
       keyframes: {
         'ken-burns': {
           '0%': { transform: 'scale(1.00) translate(0, 0)' },
           '50%': { transform: 'scale(1.03) translate(-0.4%, -0.4%)' },
-          '100%': { transform: 'scale(1.06) translate(0.4%, 0.4%)' },
+          '100%': { transform: 'scale(1.05) translate(0.4%, 0.4%)' },
         },
         'fade-in-up': {
           '0%': { opacity: '0', transform: 'translateY(24px)' },

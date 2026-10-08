@@ -86,7 +86,7 @@ export default function BookAppointment() {
   };
 
   return (
-    <div className="bg-white min-h-screen font-sans text-[#17242D]">
+    <div className="bg-[#F8F5EE] min-h-screen font-sans text-[#2F3D33]">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -102,17 +102,17 @@ export default function BookAppointment() {
           
           {/* Section Heading */}
           <div className="text-center mb-12">
-            <span className="text-[#B79657] uppercase tracking-[0.25em] text-xs font-bold block mb-3">PRIVATE CLINIC REGISTRATION</span>
-            <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#17242D] mb-4">
+            <span className="text-[#4A5D4E] uppercase tracking-[0.25em] text-xs font-bold block mb-3">PRIVATE CLINIC REGISTRATION</span>
+            <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#351D2B] mb-4">
               Schedule Your Visit
             </h1>
-            <p className="text-[#17242D]/75 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-[#2F3D33]/80 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
               Select your consultation type, date, and preferred time slot below for a seamless clinic experience.
             </p>
           </div>
 
         {/* 3-Step Wizard Navigation */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-[#E8E5DF] mb-10">
+        <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 shadow-sm border border-[#E1D8C9] mb-10">
           <div className="flex items-center justify-between max-w-2xl mx-auto relative">
             {/* Connecting Bar */}
             <div className="absolute top-5 left-8 right-8 h-0.5 bg-[#E8E5DF] -z-0">

@@ -12,78 +12,243 @@
   }
 
   body {
-    @apply font-sans text-[#351D2B] bg-[#FFF9F6] antialiased selection:bg-[#9E3D63]/20 selection:text-[#351D2B];
+    @apply font-sans text-[#252822] bg-[#F4EFE6] antialiased selection:bg-[#5F6B45]/20 selection:text-[#252822];
     line-height: 1.7;
     overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight text-[#351D2B];
+    @apply font-serif tracking-tight text-[#293225];
   }
 }
 
 @layer components {
-  /* Luxury Pink & Berry Button System */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-[#9E3D63] hover:bg-[#7D294B] text-white font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#9E3D63]/20 hover:-translate-y-0.5 active:translate-y-0 text-center;
+  /* Editorial Olive Green, Linen & Champagne Button System */
+  .btn-olive {
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#5F6B45] hover:bg-[#3F4A32] text-white font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#5F6B45]/25 hover:-translate-y-0.5 active:translate-y-0 text-center border border-[#7D8765]/40;
   }
 
-  .btn-vibrant {
-    @apply inline-flex items-center justify-center gap-2 bg-[#C94F78] hover:bg-[#9E3D63] text-white font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#C94F78]/25 hover:-translate-y-0.5 text-center;
+  .btn-deep-olive {
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#3F4A32] hover:bg-[#293225] text-[#FAF7F1] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center border border-[#5F6B45]/40;
   }
 
-  .btn-berry {
-    @apply inline-flex items-center justify-center gap-2 bg-[#7D294B] hover:bg-[#351D2B] text-white font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center;
+  .btn-linen {
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#FAF7F1] hover:bg-[#F4EFE6] text-[#293225] border border-[#D8D0C3] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-center;
   }
-  
+
   .btn-champagne {
-    @apply inline-flex items-center justify-center gap-2 bg-[#B79555] hover:bg-[#967839] text-[#351D2B] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#B89A5A] hover:bg-[#967839] text-[#293225] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 text-center border border-[#B89A5A]/50;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 bg-transparent text-[#351D2B] border border-[#9E3D63]/30 hover:border-[#9E3D63] hover:bg-[#9E3D63]/5 px-8 py-3.5 rounded-[16px] font-bold tracking-widest uppercase text-[11px] transition-all duration-300 hover:-translate-y-0.5 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 bg-transparent text-[#293225] border border-[#5F6B45]/40 hover:border-[#5F6B45] hover:bg-[#5F6B45]/10 px-8 py-3.5 rounded-[16px] font-bold tracking-[0.18em] uppercase text-[11px] transition-all duration-300 hover:-translate-y-0.5 text-center;
+  }
+
+  .btn-primary {
+    @apply btn-olive;
+  }
+
+  .btn-vibrant {
+    @apply btn-olive;
+  }
+
+  .btn-berry {
+    @apply btn-deep-olive;
   }
 
   .btn-dark {
-    @apply inline-flex items-center justify-center gap-2 bg-[#351D2B] hover:bg-[#7D294B] text-[#FFF9F6] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#293225] hover:bg-[#3F4A32] text-[#FAF7F1] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center border border-[#5F6B45]/30;
   }
   
   .eyebrow {
-    @apply text-[#9E3D63] uppercase tracking-[0.25em] font-bold text-[10px] md:text-xs mb-4 block;
+    @apply text-[#5F6B45] uppercase tracking-[0.25em] font-bold text-[10px] md:text-xs mb-4 block;
   }
 
-  /* 3D Depth Card Wrapper */
+  .eyebrow-olive {
+    @apply text-[#5F6B45] uppercase tracking-[0.25em] font-bold text-[10px] md:text-xs mb-4 block;
+  }
+
+  .eyebrow-champagne {
+    @apply text-[#B89A5A] uppercase tracking-[0.25em] font-bold text-[10px] md:text-xs mb-4 block;
+  }
+
+  /* 3D Depth Card System */
   .card-3d-wrapper {
-    perspective: 1000px;
+    perspective: 1200px;
   }
 
   .card-3d-element {
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease, border-color 0.4s ease;
     transform-style: preserve-3d;
+    will-change: transform, box-shadow;
   }
 
   .card-3d-element:hover {
-    transform: translateY(-6px) rotateX(1deg) rotateY(-1deg) scale(1.012);
+    transform: perspective(1000px) translateY(-10px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(41, 50, 37, 0.25), 0 0 25px rgba(184, 154, 90, 0.25);
+    border-color: rgba(184, 154, 90, 0.6);
   }
 }
 
 /* Ken Burns Cinematic Zoom Effect */
 @keyframes kenburns {
   0% {
-    transform: scale(1) translate(0, 0);
+    transform: scale(1.00) translate(0, 0);
   }
   50% {
-    transform: scale(1.04) translate(-0.4%, -0.3%);
+    transform: scale(1.04) translate(-0.3%, -0.2%);
   }
   100% {
-    transform: scale(1.07) translate(0.4%, 0.3%);
+    transform: scale(1.08) translate(0.3%, 0.2%);
   }
 }
 
 .animate-ken-burns {
-  animation: kenburns 14s ease-in-out infinite alternate;
+  animation: kenburns 16s ease-in-out infinite alternate;
   transform-origin: center center;
   will-change: transform;
+}
+
+/* Shimmer Light Reflection Effect */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  h-full: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 4s infinite;
+}
+
+/* Floating Physics Animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* High-Impact International Scroll Reveal Animations (Luxurious Fade Up/Down) */
+.reveal-up,
+.reveal-on-scroll,
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px) translateY(10px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px) translateY(10px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.92) translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.card-3d-scroll {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(6deg) translateY(35px) scale(0.96);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  will-change: opacity, transform;
+  transform-style: preserve-3d;
+}
+
+.img-mask-reveal {
+  opacity: 0;
+  transform: scale(1.04) translateY(25px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Triggered Visible State via Observer (Scroll Up and Down) */
+.reveal-up.is-visible,
+.reveal-on-scroll.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-zoom.is-visible,
+.card-3d-scroll.is-visible,
+.img-mask-reveal.is-visible,
+.fade-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.card-3d-scroll:hover {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-14px) scale(1.03) !important;
+  box-shadow: 0 30px 65px -10px rgba(41, 50, 37, 0.35), 0 0 35px rgba(184, 154, 90, 0.4) !important;
+  border-color: rgba(184, 154, 90, 0.8) !important;
+}
+
+/* Youngiverse International Image Zoom & Hover Physics */
+.img-editorial-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-editorial-wrapper img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  will-change: transform;
+}
+
+.img-editorial-wrapper:hover img {
+  transform: scale(1.07);
+}
+
+/* Luxurious Champagne-Gold Text Gradient */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FAF7F1 0%, #B89A5A 50%, #FAF7F1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShimmer 6s linear infinite;
+}
+
+@keyframes textShimmer {
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* Accessibility: Respect Reduced Motion */
@@ -96,10 +261,11 @@
   }
   
   .animate-ken-burns,
-  .animate-float-gentle {
+  .animate-float-gentle,
+  .animate-float-up-down,
+  .animate-gold-pulse,
+  .animate-shimmer::after {
     animation: none !important;
     transform: none !important;
   }
 }
-
-
