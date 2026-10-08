@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-[#17242D] bg-[#F7F4EE] antialiased selection:bg-[#B79657]/20 selection:text-[#17242D];
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-[#17242D];
+  }
+}
+
+@layer components {
+  /* Luxury Button System */
+  .btn-champagne {
+    @apply inline-flex items-center justify-center gap-2 bg-[#B79657] hover:bg-[#a38343] text-[#17242D] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 text-center;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-[#17242D] border border-[#17242D]/25 hover:border-[#17242D] px-8 py-3.5 rounded-[16px] font-bold tracking-widest uppercase text-[11px] transition-all duration-300 hover:bg-[#17242D]/5 hover:-translate-y-0.5 text-center;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-[#17242D] hover:bg-[#202B31] text-[#F7F4EE] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center;
+  }
+  
+  .eyebrow {
+    @apply text-[#B79657] uppercase tracking-[0.25em] font-bold text-[10px] md:text-xs mb-4 block;
+  }
+
+  /* 3D Depth Card Wrapper */
+  .card-3d-wrapper {
+    perspective: 1000px;
+  }
+
+  .card-3d-element {
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d-element:hover {
+    transform: translateY(-6px) rotateX(1deg) rotateY(-1deg) scale(1.012);
+  }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-ken-burns,
+  .animate-float-gentle {
+    animation: none !important;
+    transform: none !important;
+  }
+}
