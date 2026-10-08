@@ -145,48 +145,56 @@ export default function Navbar() {
                 }`}></span>
 
                 {/* Dropdown Menu Panel */}
-                <div className={`absolute top-full left-0 mt-3 w-72 bg-[#24121C]/98 border border-[#C94F78]/40 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.75)] py-3 px-2 z-50 transition-all duration-200 backdrop-blur-2xl ${
+                <div className={`absolute top-full left-0 mt-3 w-72 bg-[#24121C] border-2 border-[#C94F78]/50 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.85)] py-3 px-2.5 z-50 transition-all duration-200 ${
                   servicesDropdownOpen ? 'block animate-fade-in-up' : 'hidden group-hover:block'
                 }`}>
                   <Link 
                     to="/physiotherapy" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/physiotherapy') ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white' : 'text-[#FFF9F6] hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
+                      isActive('/physiotherapy') 
+                        ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white shadow-md' 
+                        : 'text-white hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
                     }`}
                   >
                     <span>PHYSIOTHERAPY</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-[#E8A6B8] group-hover/item:text-white text-xs group-hover/item:translate-x-1 transition-all font-bold">→</span>
                   </Link>
                   <Link 
                     to="/womens-health" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/womens-health') ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white' : 'text-[#FFF9F6] hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
+                      isActive('/womens-health') 
+                        ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white shadow-md' 
+                        : 'text-white hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
                     }`}
                   >
                     <span>WOMEN'S HEALTH</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-[#E8A6B8] group-hover/item:text-white text-xs group-hover/item:translate-x-1 transition-all font-bold">→</span>
                   </Link>
                   <Link 
                     to="/skin-care" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/skin-care') ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white' : 'text-[#FFF9F6] hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
+                      isActive('/skin-care') 
+                        ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white shadow-md' 
+                        : 'text-white hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
                     }`}
                   >
                     <span>SKIN CARE</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-[#E8A6B8] group-hover/item:text-white text-xs group-hover/item:translate-x-1 transition-all font-bold">→</span>
                   </Link>
                   <Link 
                     to="/slimming-wellness" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/slimming-wellness') ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white' : 'text-[#FFF9F6] hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
+                      isActive('/slimming-wellness') 
+                        ? 'bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white shadow-md' 
+                        : 'text-white hover:bg-gradient-to-r hover:from-[#C94F78] hover:to-[#9E3D63] hover:text-white'
                     }`}
                   >
                     <span>SLIMMING & WELLNESS</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-[#E8A6B8] group-hover/item:text-white text-xs group-hover/item:translate-x-1 transition-all font-bold">→</span>
                   </Link>
                 </div>
               </div>
