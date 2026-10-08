@@ -155,49 +155,49 @@
   animation: floatGentle 5s ease-in-out infinite;
 }
 
-/* High-Impact International Scroll Reveal Animations (Luxurious Fade Up/Down) */
-.reveal-up,
-.reveal-on-scroll,
-.fade-scroll {
-  opacity: 0;
-  transform: translateY(38px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
+/* High-Impact International Scroll Reveal Animations (Text Left, Image Right, Smooth Up/Down) */
 .reveal-left {
   opacity: 0;
-  transform: translateX(-35px) translateY(10px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-55px) translateY(8px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(35px) translateY(10px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(55px) translateY(8px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up,
+.reveal-on-scroll,
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-zoom {
   opacity: 0;
   transform: scale(0.92) translateY(20px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .card-3d-scroll {
   opacity: 0;
   transform: perspective(1000px) rotateX(6deg) translateY(35px) scale(0.96);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
   will-change: opacity, transform;
   transform-style: preserve-3d;
 }
 
 .img-mask-reveal {
   opacity: 0;
-  transform: scale(1.04) translateY(25px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(55px) scale(1.02);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -267,5 +267,25 @@
   .animate-shimmer::after {
     animation: none !important;
     transform: none !important;
+  }
+}
+
+/* Premium Mobile-Optimized Motion & Touch Physics */
+@media (max-width: 768px) {
+  .reveal-left {
+    transform: translateX(-24px) translateY(10px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right {
+    transform: translateX(24px) translateY(10px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-up,
+  .card-3d-scroll,
+  .img-mask-reveal {
+    transform: translateY(24px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
