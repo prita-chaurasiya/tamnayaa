@@ -102,27 +102,27 @@ export default function InsideTamanya() {
   }, [filteredItems.length]);
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF] relative overflow-hidden">
+    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#F6DCE4] relative overflow-hidden font-sans">
       <div className="max-w-[1600px] mx-auto">
         
-        {/* Header Section (Matching Screenshot) */}
+        {/* Header Section */}
         <div className="grid lg:grid-cols-12 gap-8 items-end mb-12">
           
           <div className="lg:col-span-8 space-y-4">
-            <span className="text-[#B79657] uppercase tracking-[0.25em] text-xs font-bold block">INSIDE TAMANYA</span>
-            <h2 className="font-serif text-4xl sm:text-6xl text-[#17242D] font-bold tracking-tight leading-tight">
+            <span className="text-[#9E3D63] uppercase tracking-[0.25em] text-xs font-bold block">INSIDE TAMANYA</span>
+            <h2 className="font-serif text-4xl sm:text-6xl text-[#351D2B] font-bold tracking-tight leading-tight">
               Care You Can See. <br className="hidden sm:inline" />
               People You Can Trust.
             </h2>
-            <p className="text-[#17242D]/80 text-sm sm:text-base font-light leading-relaxed max-w-3xl">
+            <p className="text-[#351D2B]/80 text-sm sm:text-base font-light leading-relaxed max-w-3xl">
               Step inside Tamanya and see the people, spaces, and care behind every patient journey. From personalised assessments and physiotherapy sessions to advanced rehabilitation techniques and community health initiatives, our approach is centred around understanding people, not just treating symptoms.
             </p>
           </div>
 
           <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-between space-y-6">
-            <div className="font-serif italic text-3xl sm:text-4xl text-[#17242D]/60 leading-snug text-left lg:text-right">
+            <div className="font-serif italic text-3xl sm:text-4xl text-[#351D2B]/60 leading-snug text-left lg:text-right">
               Healing <br />
-              <span className="text-[#B79657] font-semibold">Movement</span> <br />
+              <span className="text-[#C94F78] font-semibold">Movement</span> <br />
               Better lives
             </div>
 
@@ -130,14 +130,14 @@ export default function InsideTamanya() {
             <div className="flex items-center gap-3">
               <button 
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-full border-2 border-[#17242D] text-[#17242D] hover:bg-[#17242D] hover:text-white flex items-center justify-center transition-all duration-300 shadow-md"
+                className="w-12 h-12 rounded-full border-2 border-[#351D2B] text-[#351D2B] hover:bg-[#351D2B] hover:text-white flex items-center justify-center transition-all duration-300 shadow-md"
                 aria-label="Previous Slide"
               >
                 ←
               </button>
               <button 
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-full bg-[#B79657] text-white hover:bg-[#a3844a] flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-105"
+                className="w-12 h-12 rounded-full bg-gradient-to-r from-[#C94F78] to-[#9E3D63] text-white hover:from-[#9E3D63] hover:to-[#7D294B] flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-105"
                 aria-label="Next Slide"
               >
                 →
@@ -148,7 +148,7 @@ export default function InsideTamanya() {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-3 mb-10 border-b border-[#E8E5DF] pb-4">
+        <div className="flex flex-wrap items-center gap-3 mb-10 border-b border-[#F6DCE4] pb-4">
           {categories.map((tab) => (
             <button
               key={tab}
@@ -158,8 +158,8 @@ export default function InsideTamanya() {
               }}
               className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeTab === tab
-                  ? 'bg-[#17242D] text-[#B79657] shadow-md'
-                  : 'bg-white text-[#17242D]/70 hover:bg-[#E8E2D5] border border-[#E8E5DF]'
+                  ? 'bg-[#7D294B] text-white shadow-md'
+                  : 'bg-[#FFF9F6] text-[#351D2B]/75 hover:bg-[#F6DCE4] border border-[#F6DCE4]'
               }`}
             >
               {tab}
@@ -170,10 +170,10 @@ export default function InsideTamanya() {
         {/* Main Interactive Grid & Slider Display */}
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Featured Large Slide Card (01 / Main Focus) */}
+          {/* Featured Large Slide Card */}
           {filteredItems.length > 0 && (
             <div 
-              className="lg:col-span-7 bg-white rounded-[28px] overflow-hidden shadow-2xl border-2 border-[#E8E5DF] hover:border-[#B79657] transition-all duration-500 relative group cursor-pointer flex flex-col justify-end min-h-[420px] sm:min-h-[500px]"
+              className="lg:col-span-7 bg-white rounded-[28px] overflow-hidden shadow-2xl border-2 border-[#F6DCE4] hover:border-[#C94F78] transition-all duration-500 relative group cursor-pointer flex flex-col justify-end min-h-[420px] sm:min-h-[500px]"
               onClick={() => setLightboxImg(filteredItems[currentIndex % filteredItems.length].img)}
             >
               <img 
@@ -181,15 +181,15 @@ export default function InsideTamanya() {
                 alt={filteredItems[currentIndex % filteredItems.length].title}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#17242D]/90 via-[#17242D]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#351D2B]/90 via-[#351D2B]/40 to-transparent" />
 
               <div className="relative z-10 p-8 sm:p-10 space-y-3">
-                <span className="bg-[#B79657] text-[#17242D] text-[10px] uppercase tracking-widest px-3.5 py-1 rounded-full font-bold">
+                <span className="bg-[#7D294B] text-[#FFF9F6] text-[10px] uppercase tracking-widest px-3.5 py-1 rounded-full font-bold border border-[#E8A6B8]/30">
                   {filteredItems[currentIndex % filteredItems.length].badge}
                 </span>
 
                 <div className="flex items-baseline gap-4">
-                  <span className="font-serif text-4xl sm:text-5xl font-bold text-[#B79657]">
+                  <span className="font-serif text-4xl sm:text-5xl font-bold text-[#C94F78]">
                     {filteredItems[currentIndex % filteredItems.length].num}
                   </span>
                   <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white">
@@ -201,7 +201,7 @@ export default function InsideTamanya() {
                   {filteredItems[currentIndex % filteredItems.length].subtitle}
                 </p>
 
-                <div className="pt-2 text-xs text-[#B79657] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-1.5 transition-transform">
+                <div className="pt-2 text-xs text-[#E8A6B8] font-bold uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-1.5 transition-transform">
                   <span>CLICK TO VIEW FULL PHOTO</span>
                   <span>🔍</span>
                 </div>
@@ -214,7 +214,7 @@ export default function InsideTamanya() {
             {filteredItems.slice(1, 5).map((item, idx) => (
               <div 
                 key={idx}
-                className="bg-white rounded-[24px] overflow-hidden border-2 border-[#E8E5DF] hover:border-[#B79657] shadow-lg hover:shadow-2xl transition-all duration-400 relative group cursor-pointer aspect-[4/3] flex flex-col justify-end"
+                className="bg-white rounded-[24px] overflow-hidden border-2 border-[#F6DCE4] hover:border-[#C94F78] shadow-lg hover:shadow-2xl transition-all duration-400 relative group cursor-pointer aspect-[4/3] flex flex-col justify-end"
                 onClick={() => setLightboxImg(item.img)}
               >
                 <img 
@@ -222,12 +222,12 @@ export default function InsideTamanya() {
                   alt={item.title} 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17242D]/90 via-[#17242D]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#351D2B]/90 via-[#351D2B]/30 to-transparent" />
 
                 <div className="relative z-10 p-5 space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-serif text-xl font-bold text-[#B79657]">{item.num}</span>
-                    <h4 className="font-serif text-base font-bold text-white group-hover:text-[#B79657] transition-colors">{item.title}</h4>
+                    <span className="font-serif text-xl font-bold text-[#C94F78]">{item.num}</span>
+                    <h4 className="font-serif text-base font-bold text-white group-hover:text-[#E8A6B8] transition-colors">{item.title}</h4>
                   </div>
                   <p className="text-white/75 text-[11px] font-light leading-snug line-clamp-2">{item.subtitle}</p>
                 </div>
@@ -245,8 +245,8 @@ export default function InsideTamanya() {
               onClick={() => setCurrentIndex(i)}
               className={`h-2.5 rounded-full transition-all duration-300 ${
                 currentIndex === i 
-                  ? 'w-10 bg-[#B79657]' 
-                  : 'w-2.5 bg-[#17242D]/20 hover:bg-[#17242D]/40'
+                  ? 'w-10 bg-[#C94F78]' 
+                  : 'w-2.5 bg-[#351D2B]/20 hover:bg-[#351D2B]/40'
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -258,7 +258,7 @@ export default function InsideTamanya() {
       {/* Lightbox Modal Preview */}
       {lightboxImg && (
         <div 
-          className="fixed inset-0 z-50 bg-[#0F171E]/95 backdrop-blur-md flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-[#351D2B]/95 backdrop-blur-md flex items-center justify-center p-4"
           onClick={() => setLightboxImg(null)}
         >
           <div className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center p-2">
@@ -269,7 +269,7 @@ export default function InsideTamanya() {
             />
             <button 
               onClick={() => setLightboxImg(null)}
-              className="absolute top-4 right-4 bg-[#17242D] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border-2 border-[#B79657] hover:bg-[#B79657] transition-colors"
+              className="absolute top-4 right-4 bg-[#351D2B] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border-2 border-[#C94F78] hover:bg-[#C94F78] transition-colors"
             >
               ✕
             </button>
@@ -280,3 +280,4 @@ export default function InsideTamanya() {
     </section>
   );
 }
+

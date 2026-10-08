@@ -5,7 +5,7 @@ import campImg from '../assets/camp.webp';
 
 export default function HealthCamp() {
   return (
-    <div className="bg-white text-[#17242D] min-h-screen font-sans">
+    <div className="bg-[#FFF9F6] text-[#351D2B] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -16,13 +16,13 @@ export default function HealthCamp() {
         pageName="COMMUNITY"
       />
 
-      {/* Main Feature & Premium Event Card (Exact Image 2) */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-b border-[#E8E5DF]">
+      {/* Main Feature & Premium Event Card */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-b border-[#F6DCE4]">
         <div className="max-w-[1500px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Left Column: Real Camp Photo camp.webp */}
           <div className="lg:col-span-6 relative">
-            <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#17242D] group">
+            <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#7D294B] group">
               <img 
                 src={campImg} 
                 alt="Tamanya Physio & Health Clinic Community Camp" 
@@ -34,47 +34,47 @@ export default function HealthCamp() {
           {/* Right Column: Event Info & Card */}
           <div className="lg:col-span-6 space-y-6">
             <div>
-              <span className="bg-[#B79657]/20 text-[#B79657] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase inline-block mb-3 border border-[#B79657]/40">
+              <span className="bg-[#F6DCE4] text-[#7D294B] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase inline-block mb-3 border border-[#E8A6B8]/40">
                 COMMUNITY INITIATIVE
               </span>
-              <p className="text-[#B79657] uppercase tracking-[0.2em] text-xs font-bold mb-2">JOIN OUR UPCOMING HEALTH CAMP</p>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#17242D] font-bold leading-tight">
+              <p className="text-[#C94F78] uppercase tracking-[0.2em] text-xs font-bold mb-2">JOIN OUR UPCOMING HEALTH CAMP</p>
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold leading-tight">
                 Your Health Deserves Attention.
               </h2>
             </div>
 
-            <p className="text-[#17242D]/80 font-light text-base sm:text-lg leading-relaxed">
+            <p className="text-[#351D2B]/80 font-light text-base sm:text-lg leading-relaxed">
               Take the opportunity to learn more about your health, discuss your physical concerns, and receive professional clinical screenings from our dedicated team.
             </p>
 
-            {/* Dark Green Styled Box */}
-            <div className="bg-[#17242D] text-white border-2 border-[#B79657]/40 p-6 sm:p-8 rounded-[24px] space-y-6 shadow-2xl relative">
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#B79657]">
+            {/* Deep Plum & Berry Styled Box */}
+            <div className="bg-[#351D2B] text-white border-2 border-[#C94F78]/40 p-6 sm:p-8 rounded-[24px] space-y-6 shadow-2xl relative">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#E8A6B8]">
                 Community Mobility & Spine Screening Camp
               </h3>
 
               <div className="grid sm:grid-cols-2 gap-6 text-xs text-white/90">
                 <div className="flex items-start gap-3">
-                  <span className="text-[#B79657] text-lg">📅</span>
+                  <span className="text-[#C94F78] text-lg">📅</span>
                   <div>
                     <p className="font-bold text-white text-sm mb-0.5">Date</p>
-                    <p className="text-white/70 font-light">Upcoming Session / Contact Clinic</p>
+                    <p className="text-[#FFF9F6]/80 font-light">Upcoming Session / Contact Clinic</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <span className="text-[#B79657] text-lg">🕒</span>
+                  <span className="text-[#C94F78] text-lg">🕒</span>
                   <div>
                     <p className="font-bold text-white text-sm mb-0.5">Time</p>
-                    <p className="text-white/70 font-light">09:00 AM – 02:00 PM</p>
+                    <p className="text-[#FFF9F6]/80 font-light">09:00 AM – 02:00 PM</p>
                   </div>
                 </div>
 
                 <div className="sm:col-span-2 flex items-start gap-3">
-                  <span className="text-[#B79657] text-lg">📍</span>
+                  <span className="text-[#C94F78] text-lg">📍</span>
                   <div>
                     <p className="font-bold text-white text-sm mb-0.5">Location</p>
-                    <p className="text-white/70 font-light">Tamanya Clinic Campus & Community Center, Pandeypur, Varanasi</p>
+                    <p className="text-[#FFF9F6]/80 font-light">Tamanya Clinic Campus & Community Center, Pandeypur, Varanasi</p>
                   </div>
                 </div>
               </div>
@@ -83,13 +83,13 @@ export default function HealthCamp() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link 
                 to="/book-appointment" 
-                className="bg-[#B79657] hover:bg-[#a3844a] text-[#17242D] px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:scale-105"
+                className="bg-[#C94F78] hover:bg-[#9E3D63] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:scale-105"
               >
                 Book an Appointment
               </Link>
               <a 
                 href="tel:+917007667808" 
-                className="border-2 border-[#17242D] text-[#17242D] hover:bg-[#17242D] hover:text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all"
+                className="border-2 border-[#7D294B] text-[#7D294B] hover:bg-[#7D294B] hover:text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all"
               >
                 Call for Details
               </a>
@@ -101,12 +101,12 @@ export default function HealthCamp() {
       </section>
 
       {/* Camp Services & Features */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F8F9FA]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FFF9F6]">
         <div className="max-w-[1500px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#B79657] uppercase tracking-[0.25em] text-xs font-bold block mb-4">WHAT WE OFFER</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#17242D] font-bold mb-6">Health Camp Services</h2>
-            <p className="text-[#17242D]/70 text-base font-light">
+            <span className="text-[#C94F78] uppercase tracking-[0.25em] text-xs font-bold block mb-4">WHAT WE OFFER</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-6">Health Camp Services</h2>
+            <p className="text-[#351D2B]/80 text-base font-light">
               Comprehensive baseline screenings provided free of charge during our public wellness days.
             </p>
           </div>
@@ -131,19 +131,19 @@ export default function HealthCamp() {
             ].map((item, idx) => (
               <div 
                 key={idx} 
-                className="bg-white p-8 sm:p-10 rounded-[24px] border-2 border-[#E8E5DF] hover:border-[#B79657] shadow-[0_10px_30px_rgba(23,36,45,0.04)] hover:shadow-[0_25px_50px_rgba(183,150,87,0.22)] transform hover:-translate-y-2 hover:bg-[#FAF8F5] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between"
+                className="bg-white p-8 sm:p-10 rounded-[24px] border-2 border-[#F6DCE4] hover:border-[#C94F78] shadow-[0_10px_30px_rgba(53,29,43,0.04)] hover:shadow-[0_25px_50px_rgba(201,79,120,0.18)] transform hover:-translate-y-2 hover:bg-[#FFF9F6] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-serif font-bold text-[#B79657] group-hover:scale-110 transition-transform">{item.num}</span>
-                    <span className="w-10 h-[2px] bg-[#B79657]/40 group-hover:w-16 group-hover:bg-[#B79657] transition-all"></span>
+                    <span className="text-3xl font-serif font-bold text-[#C94F78] group-hover:scale-110 transition-transform">{item.num}</span>
+                    <span className="w-10 h-[2px] bg-[#C94F78]/40 group-hover:w-16 group-hover:bg-[#C94F78] transition-all"></span>
                   </div>
-                  <h3 className="font-serif text-xl sm:text-2xl text-[#17242D] font-bold mb-3 group-hover:text-[#B79657] transition-colors">{item.title}</h3>
-                  <p className="text-[#17242D]/75 text-xs sm:text-sm font-light leading-relaxed mb-8">{item.desc}</p>
+                  <h3 className="font-serif text-xl sm:text-2xl text-[#351D2B] font-bold mb-3 group-hover:text-[#9E3D63] transition-colors">{item.title}</h3>
+                  <p className="text-[#351D2B]/75 text-xs sm:text-sm font-light leading-relaxed mb-8">{item.desc}</p>
                 </div>
-                <div className="pt-4 border-t border-[#E8E5DF] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#B79657] group-hover:text-[#17242D] transition-colors">
+                <div className="pt-4 border-t border-[#F6DCE4] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#9E3D63] group-hover:text-[#C94F78] transition-colors">
                   <span>FREE SCREENING</span>
-                  <span className="group-hover:translate-x-1.5 transition-transform text-[#B79657]">→</span>
+                  <span className="group-hover:translate-x-1.5 transition-transform text-[#C94F78]">→</span>
                 </div>
               </div>
             ))}
@@ -152,11 +152,11 @@ export default function HealthCamp() {
       </section>
 
       {/* Visually Rich Community Gallery */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#E8E5DF]">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-[#F6DCE4]">
         <div className="max-w-[1500px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#B79657] uppercase tracking-[0.25em] text-xs font-bold block mb-4">COMMUNITY IMPACT</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#17242D] font-bold mb-6">Gallery of Care & Outreach</h2>
+            <span className="text-[#C94F78] uppercase tracking-[0.25em] text-xs font-bold block mb-4">COMMUNITY IMPACT</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#351D2B] font-bold mb-6">Gallery of Care & Outreach</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">

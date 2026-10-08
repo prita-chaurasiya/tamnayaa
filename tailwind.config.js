@@ -7,61 +7,84 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Strict Luxury Color Palette
-        navy: {
-          DEFAULT: '#17242D', // MIDNIGHT NAVY
-          dark: '#0F171E',
-          light: '#223440',
+        // Sophisticated Luxury Pink & Berry Palette
+        rose: {
+          DEFAULT: '#9E3D63', // PRIMARY DEEP ROSE
+          dark: '#7D294B',
+          vibrant: '#C94F78',
+          light: '#E8A6B8',
+          soft: '#F6DCE4',
         },
-        charcoal: {
-          DEFAULT: '#202B31', // DEEP CHARCOAL
-          light: '#2B3840',
+        berry: {
+          DEFAULT: '#7D294B', // RICH BERRY
+          dark: '#5C1D36',
+          light: '#9E3D63',
+        },
+        vibrant: {
+          DEFAULT: '#C94F78', // VIBRANT ROSE
+        },
+        blush: {
+          DEFAULT: '#E8A6B8', // BLUSH PINK
+          soft: '#F6DCE4', // SOFT BLUSH
         },
         ivory: {
-          DEFAULT: '#F7F4EE', // WARM IVORY
-          light: '#FDFBF7',
-          dark: '#EBE6DC',
+          DEFAULT: '#FFF9F6', // WARM IVORY
+          dark: '#F4ECE8',
         },
-        white: '#FFFFFF',
-        champagne: {
-          DEFAULT: '#B79657', // CHAMPAGNE ACCENT
-          light: '#C9A96B',
-          dark: '#9F7E41',
-          glow: 'rgba(183, 150, 87, 0.25)',
+        plum: {
+          DEFAULT: '#351D2B', // DEEP PLUM
+          dark: '#24121C',
+          light: '#4A283C',
         },
         taupe: {
-          DEFAULT: '#D8CEC0', // WARM TAUPE
-          light: '#E6DFC8',
-          dark: '#C4B7A5',
+          DEFAULT: '#D8C4C8', // SOFT TAUPE
+          dark: '#BFA8AC',
         },
+        champagne: {
+          DEFAULT: '#B79555', // CHAMPAGNE ACCENT
+          light: '#CBB075',
+          dark: '#967839',
+          glow: 'rgba(183, 149, 85, 0.25)',
+        },
+        // Legacy color tokens remapped for safety
+        navy: {
+          DEFAULT: '#351D2B',
+          dark: '#24121C',
+          light: '#7D294B',
+        },
+        charcoal: {
+          DEFAULT: '#351D2B',
+          light: '#4A283C',
+        },
+        white: '#FFFFFF',
         clay: {
-          DEFAULT: '#A97868', // MUTED CLAY
-          light: '#B98979',
+          DEFAULT: '#9E3D63',
+          light: '#C94F78',
         },
         softgrey: {
-          DEFAULT: '#E8E5DF', // SOFT GREY
-          dark: '#D5D1C7',
+          DEFAULT: '#F6DCE4',
+          dark: '#D8C4C8',
         },
-        // Mapped legacy color tokens for safety
-        primary: '#17242D',
-        'primary-dark': '#202B31',
-        secondary: '#A97868',
-        stone: '#E8E5DF',
-        bg: '#F7F4EE',
-        cream: '#FFFFFF',
-        accent: '#B79657',
-        'accent-gold': '#B79657',
+        primary: '#9E3D63',
+        'primary-dark': '#7D294B',
+        secondary: '#C94F78',
+        stone: '#D8C4C8',
+        bg: '#FFF9F6',
+        cream: '#FFF9F6',
+        accent: '#B79555',
+        'accent-gold': '#B79555',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       boxShadow: {
-        'luxury': '0 20px 40px -15px rgba(23, 36, 45, 0.07), 0 4px 15px rgba(183, 150, 87, 0.08)',
-        'luxury-hover': '0 30px 60px -20px rgba(23, 36, 45, 0.14), 0 8px 30px rgba(183, 150, 87, 0.18)',
-        'champagne-glow': '0 0 25px rgba(183, 150, 87, 0.3)',
-        '3d-card': '0 20px 35px -10px rgba(23, 36, 45, 0.08), 0 0 1px rgba(183, 150, 87, 0.2)',
-        '3d-hover': '0 30px 55px -12px rgba(23, 36, 45, 0.16), 0 10px 30px rgba(183, 150, 87, 0.2)',
+        'luxury': '0 20px 40px -15px rgba(125, 41, 75, 0.08), 0 4px 15px rgba(158, 61, 99, 0.10)',
+        'luxury-hover': '0 30px 60px -20px rgba(125, 41, 75, 0.16), 0 8px 30px rgba(201, 79, 120, 0.22)',
+        'pink-glow': '0 0 25px rgba(201, 79, 120, 0.35)',
+        'champagne-glow': '0 0 25px rgba(183, 149, 85, 0.35)',
+        '3d-card': '0 20px 35px -10px rgba(53, 29, 43, 0.08), 0 0 1px rgba(158, 61, 99, 0.2)',
+        '3d-hover': '0 30px 55px -12px rgba(53, 29, 43, 0.18), 0 10px 30px rgba(201, 79, 120, 0.25)',
       },
       keyframes: {
         'ken-burns': {
