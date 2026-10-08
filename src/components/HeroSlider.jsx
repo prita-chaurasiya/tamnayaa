@@ -66,11 +66,11 @@ export default function HeroSlider() {
 
   return (
     <div 
-      className="relative w-full min-h-[720px] sm:min-h-[760px] lg:min-h-[820px] bg-[#351D2B] overflow-hidden flex items-center pt-36 sm:pt-40 lg:pt-48 pb-20 sm:pb-24 font-sans"
+      className="relative w-full min-h-[700px] sm:min-h-[740px] lg:min-h-[780px] bg-[#FFF9F6] overflow-hidden flex items-center pt-36 sm:pt-40 lg:pt-48 pb-20 sm:pb-24 font-sans border-b border-[#F6DCE4]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Image Slider with Cinematic Ken Burns & Luxury Pink Overlay */}
+      {/* Background Image Slider with Cinematic Ken Burns & Soft Luminous Pink Overlay */}
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -85,9 +85,9 @@ export default function HeroSlider() {
               index === currentSlide ? 'animate-ken-burns' : 'scale-100'
             }`}
           />
-          {/* Deep Plum & Rich Berry Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#351D2B]/95 via-[#7D294B]/80 to-[#9E3D63]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#351D2B] via-transparent to-[#351D2B]/40 opacity-60 pointer-events-none" />
+          {/* Luminous Soft Blush & Warm Ivory Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FFF9F6]/95 via-[#FFF9F6]/85 to-[#F6DCE4]/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FFF9F6] via-transparent to-[#F6DCE4]/30 opacity-70 pointer-events-none" />
         </div>
       ))}
 
@@ -95,38 +95,38 @@ export default function HeroSlider() {
       <div className="relative z-20 max-w-[1600px] mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-12 gap-8 items-center">
         
         {/* Left Editorial Content (7 Cols) */}
-        <div className="lg:col-span-8 xl:col-span-7 flex flex-col items-start text-left text-white pr-4">
+        <div className="lg:col-span-8 xl:col-span-7 flex flex-col items-start text-left text-[#351D2B] pr-4">
           
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-4 animate-fade-in-up">
             <span className="w-8 h-[2px] bg-[#C94F78] block"></span>
-            <span className="text-[#E8A6B8] uppercase tracking-[0.25em] text-[11px] font-bold">
+            <span className="text-[#C94F78] uppercase tracking-[0.25em] text-[11px] font-bold">
               {slides[currentSlide].eyebrow}
             </span>
           </div>
 
           {/* Large Editorial Serif Heading */}
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-4 leading-[1.06] drop-shadow-md animate-fade-in-up">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#351D2B] mb-4 leading-[1.06] animate-fade-in-up">
             {slides[currentSlide].titleLine1} <br />
-            <span className="text-[#FFF9F6] italic font-normal">{slides[currentSlide].titleLine2}</span>
+            <span className="text-[#9E3D63] italic font-normal">{slides[currentSlide].titleLine2}</span>
           </h1>
 
           {/* Supporting Description */}
-          <p className="text-[#FFF9F6]/85 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-xl mb-8 animate-fade-in-up">
+          <p className="text-[#351D2B]/85 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-xl mb-8 animate-fade-in-up">
             {slides[currentSlide].subtitle}
           </p>
 
-          {/* Buttons: Vibrant Primary + Ivory Glass Secondary */}
+          {/* Buttons: Vibrant Primary + White Glass Secondary */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-fade-in-up mb-6">
             <Link 
               to="/book-appointment" 
-              className="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-[#C94F78] via-[#9E3D63] to-[#7D294B] text-white font-extrabold px-8 py-3.5 rounded-[16px] text-xs uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-[0_6px_35px_rgba(201,79,120,0.6)] hover:scale-[1.03] border border-[#E8A6B8]/40"
+              className="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-[#C94F78] via-[#9E3D63] to-[#7D294B] text-white font-extrabold px-8 py-3.5 rounded-[16px] text-xs uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-[0_6px_35px_rgba(201,79,120,0.5)] hover:scale-[1.03] border border-[#E8A6B8]/40"
             >
               BOOK APPOINTMENT
             </Link>
             <Link 
               to={slides[currentSlide].link} 
-              className="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 text-[#FFF9F6] border border-white/30 font-semibold px-8 py-3.5 rounded-[16px] text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 hover:scale-[1.03]"
+              className="inline-flex justify-center items-center gap-2 bg-white/80 hover:bg-white text-[#351D2B] border border-[#F6DCE4] font-semibold px-8 py-3.5 rounded-[16px] text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 hover:scale-[1.03] shadow-sm"
             >
               EXPLORE OUR CARE
             </Link>
