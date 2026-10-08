@@ -41,45 +41,49 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 font-sans shadow-[0_15px_45px_rgba(0,0,0,0.6)]">
+      <header className="sticky top-0 w-full z-50 font-sans border-b border-[rgba(197,160,90,0.14)]">
         
-        {/* Top Utility / Announcement Bar — Smoothly Hides on Scroll */}
-        <div className={`bg-[#07111A] text-white border-b border-[#D4AF37]/30 transition-all duration-300 ease-in-out overflow-hidden ${
-          scrolled ? 'max-h-0 py-0 opacity-0 border-none pointer-events-none' : 'max-h-32 py-1.5 sm:py-2.5 opacity-100'
+        {/* TOP UTILITY BAR (42px–46px desktop) */}
+        <div className={`bg-[#0C151C] text-white border-b border-[rgba(196,158,88,0.16)] transition-all duration-300 ease-in-out overflow-hidden ${
+          scrolled ? 'max-h-0 py-0 opacity-0 border-none pointer-events-none' : 'max-h-16 py-2 opacity-100'
         }`}>
-          <div className="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-12 flex flex-row items-center justify-between text-[11px] sm:text-xs font-sans tracking-wide gap-2">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-row items-center justify-between text-xs font-sans tracking-wide">
             
             {/* Left: Location & Specialist Badge */}
-            <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
-              <span className="inline-flex items-center gap-1 bg-gradient-to-r from-[#D4AF37]/25 via-[#F5D061]/20 to-[#D4AF37]/15 border border-[#F5D061]/70 text-[#F5D061] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-xs uppercase font-extrabold tracking-wider shadow-[0_0_12px_rgba(245,208,97,0.3)] shrink-0">
-                <svg className="w-3 h-3 text-[#F5D061]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+              {/* SPECIALIST CLINIC BADGE */}
+              <span className="inline-flex items-center gap-1.5 bg-[rgba(190,152,84,0.10)] border border-[rgba(190,152,84,0.42)] text-[#C19A55] px-3.5 py-1 rounded-full text-[11px] uppercase font-semibold tracking-[0.04em]">
+                <svg className="w-3.5 h-3.5 text-[#C19A55]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4z" />
                 </svg>
                 <span>SPECIALIST CLINIC</span>
               </span>
+
+              {/* Location Link with MapPin Icon */}
               <a 
                 href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-[#F7F4EE] hover:text-[#F5D061] transition-colors flex items-center gap-1 font-medium text-[10px] sm:text-xs md:text-sm"
+                className="text-white/86 hover:text-[#C19A55] transition-colors flex items-center gap-1.5 font-medium text-[11px] sm:text-xs"
               >
-                <svg className="w-3.5 h-3.5 text-[#F5D061] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                <svg className="w-4 h-4 text-[#C19A55] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
                 <span>Pandeypur, Varanasi</span>
-                <span className="hidden md:inline text-[#F5D061] px-1">•</span>
-                <span className="hidden md:inline text-[#F7F4EE]/90">Same-Day Appointments</span>
+                <span className="hidden md:inline text-[#C19A55] px-1">•</span>
+                <span className="hidden md:inline text-white/70">Same-Day Appointments</span>
               </a>
             </div>
 
-            {/* Right: Direct Phone Link */}
+            {/* Right: Phone Link with Phone Icon */}
             <div className="flex items-center gap-2 shrink-0">
               <a 
                 href="tel:+917007667808" 
-                className="inline-flex items-center gap-1.5 text-[#F5D061] hover:text-white transition-colors font-bold tracking-wider text-[11px] sm:text-xs md:text-sm bg-white/5 sm:bg-transparent px-2 py-0.5 sm:p-0 rounded-lg sm:rounded-none border border-white/10 sm:border-none"
+                className="inline-flex items-center gap-2 text-white/86 hover:text-[#C19A55] transition-colors font-semibold tracking-wider text-[11px] sm:text-xs"
               >
-                <svg className="w-3.5 h-3.5 text-[#F5D061] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                <svg className="w-4 h-4 text-[#C19A55] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
                 <span>+91 70076 67808</span>
               </a>
@@ -88,42 +92,49 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Main Navbar — Pure Royal Navy & Radiant Gold Glassmorphism */}
-        <div className="w-full bg-[#0E1B26]/95 backdrop-blur-2xl border-b border-[#D4AF37]/35 py-3.5 lg:py-4 shadow-2xl transition-colors">
+        {/* MAIN NAVIGATION BAR (Desktop Height 92px–102px) */}
+        <div className={`w-full transition-all duration-300 ease-in-out ${
+          scrolled 
+            ? 'bg-[#0D1C25]/96 backdrop-blur-md py-3 lg:py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.10)]' 
+            : 'bg-[#10212B]/97 backdrop-blur-sm py-4 lg:py-5'
+        }`}>
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex justify-between items-center">
             
-            {/* LEFT: Clean Brand Logo */}
-            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center group">
+            {/* LEFT: LOGO */}
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center group py-1">
               <img 
                 src={logoImg} 
-                alt="Tamanya Health" 
-                className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+                alt="Tamanya Health Specialist Clinic" 
+                className="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02] filter drop-shadow-[0_3px_10px_rgba(190,152,84,0.10)]"
               />
             </Link>
 
-            {/* CENTER: Navigation Links with Radiant Gold Underline */}
-            <nav className="hidden xl:flex items-center space-x-8 lg:space-x-10 text-xs uppercase tracking-[0.18em] font-bold text-[#F7F4EE]">
+            {/* CENTER: NAVIGATION LINKS */}
+            <nav className="hidden xl:flex items-center space-x-9 lg:space-x-12 text-[14px] lg:text-[15px] uppercase tracking-[0.14em] font-semibold text-white/90">
+              
+              {/* HOME */}
               <Link 
                 to="/" 
-                className={`relative py-2 transition-colors group ${isActive('/') ? 'text-[#F5D061]' : 'hover:text-[#F5D061]'}`}
+                className={`relative py-2 transition-colors duration-300 group ${isActive('/') ? 'text-[#C19A55]' : 'hover:text-[#C19A55]'}`}
               >
                 <span>HOME</span>
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#B79657] shadow-[0_0_12px_rgba(245,208,97,0.8)] transition-all duration-300 rounded-full ${
-                  isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#C19A55] transition-all duration-300 rounded-full ${
+                  isActive('/') ? 'w-[65%]' : 'w-0 group-hover:w-[65%]'
                 }`}></span>
               </Link>
               
+              {/* ABOUT */}
               <Link 
                 to="/about" 
-                className={`relative py-2 transition-colors group ${isActive('/about') ? 'text-[#F5D061]' : 'hover:text-[#F5D061]'}`}
+                className={`relative py-2 transition-colors duration-300 group ${isActive('/about') ? 'text-[#C19A55]' : 'hover:text-[#C19A55]'}`}
               >
                 <span>ABOUT</span>
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#B79657] shadow-[0_0_12px_rgba(245,208,97,0.8)] transition-all duration-300 rounded-full ${
-                  isActive('/about') ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#C19A55] transition-all duration-300 rounded-full ${
+                  isActive('/about') ? 'w-[65%]' : 'w-0 group-hover:w-[65%]'
                 }`}></span>
               </Link>
 
-              {/* SERVICES Dropdown Menu */}
+              {/* SERVICES DROPDOWN */}
               <div 
                 ref={dropdownRef}
                 className="relative py-2 cursor-pointer group"
@@ -131,117 +142,120 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                  className={`flex items-center gap-2 focus:outline-none transition-colors uppercase tracking-[0.18em] font-bold ${
-                    isServicesActive() || servicesDropdownOpen ? 'text-[#F5D061]' : 'group-hover:text-[#F5D061]'
+                  className={`flex items-center gap-1.5 focus:outline-none transition-colors duration-300 uppercase tracking-[0.14em] font-semibold ${
+                    isServicesActive() || servicesDropdownOpen ? 'text-[#C19A55]' : 'group-hover:text-[#C19A55]'
                   }`}
                 >
                   <span>SERVICES</span>
-                  <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180 text-[#F5D061]' : 'group-hover:rotate-180'}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <svg className={`w-4 h-4 transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180 text-[#C19A55]' : 'group-hover:rotate-180'}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#B79657] shadow-[0_0_12px_rgba(245,208,97,0.8)] transition-all duration-300 rounded-full ${
-                  isServicesActive() ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#C19A55] transition-all duration-300 rounded-full ${
+                  isServicesActive() ? 'w-[65%]' : 'w-0 group-hover:w-[65%]'
                 }`}></span>
 
-                {/* Dropdown Menu Panel */}
-                <div className={`absolute top-full left-0 mt-3 w-72 bg-[#08121C]/98 border border-[#D4AF37]/40 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.75)] py-3 px-2 z-50 transition-all duration-200 backdrop-blur-2xl ${
-                  servicesDropdownOpen ? 'block animate-fade-in-up' : 'hidden group-hover:block'
+                {/* Dropdown Menu Panel (Warm Ivory background as requested) */}
+                <div className={`absolute top-full left-0 mt-3 w-72 bg-[#F8F6F1]/98 border border-[rgba(190,152,84,0.20)] rounded-[16px] shadow-[0_18px_50px_rgba(4,16,24,0.16)] p-2.5 z-50 transition-all duration-200 backdrop-blur-md ${
+                  servicesDropdownOpen ? 'block opacity-100 translate-y-0' : 'hidden group-hover:block opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0'
                 }`}>
                   <Link 
                     to="/physiotherapy" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/physiotherapy') ? 'bg-gradient-to-r from-[#F5D061] to-[#D4AF37] text-[#081017]' : 'text-[#F7F4EE] hover:bg-gradient-to-r hover:from-[#F5D061] hover:to-[#D4AF37] hover:text-[#081017]'
+                    className={`flex items-center justify-between px-4 py-3 rounded-[9px] text-[13px] font-semibold transition-all duration-200 ${
+                      isActive('/physiotherapy') ? 'bg-[rgba(190,152,84,0.12)] text-[#9B783C]' : 'text-[#13242D] hover:bg-[rgba(190,152,84,0.08)] hover:text-[#9B783C]'
                     }`}
                   >
                     <span>PHYSIOTHERAPY</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-xs text-[#9B783C]">→</span>
                   </Link>
                   <Link 
                     to="/womens-health" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/womens-health') ? 'bg-gradient-to-r from-[#F5D061] to-[#D4AF37] text-[#081017]' : 'text-[#F7F4EE] hover:bg-gradient-to-r hover:from-[#F5D061] hover:to-[#D4AF37] hover:text-[#081017]'
+                    className={`flex items-center justify-between px-4 py-3 rounded-[9px] text-[13px] font-semibold transition-all duration-200 ${
+                      isActive('/womens-health') ? 'bg-[rgba(190,152,84,0.12)] text-[#9B783C]' : 'text-[#13242D] hover:bg-[rgba(190,152,84,0.08)] hover:text-[#9B783C]'
                     }`}
                   >
                     <span>WOMEN'S HEALTH</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-xs text-[#9B783C]">→</span>
                   </Link>
                   <Link 
                     to="/skin-care" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/skin-care') ? 'bg-gradient-to-r from-[#F5D061] to-[#D4AF37] text-[#081017]' : 'text-[#F7F4EE] hover:bg-gradient-to-r hover:from-[#F5D061] hover:to-[#D4AF37] hover:text-[#081017]'
+                    className={`flex items-center justify-between px-4 py-3 rounded-[9px] text-[13px] font-semibold transition-all duration-200 ${
+                      isActive('/skin-care') ? 'bg-[rgba(190,152,84,0.12)] text-[#9B783C]' : 'text-[#13242D] hover:bg-[rgba(190,152,84,0.08)] hover:text-[#9B783C]'
                     }`}
                   >
                     <span>SKIN CARE</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-xs text-[#9B783C]">→</span>
                   </Link>
                   <Link 
                     to="/slimming-wellness" 
                     onClick={() => setServicesDropdownOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-all group/item ${
-                      isActive('/slimming-wellness') ? 'bg-gradient-to-r from-[#F5D061] to-[#D4AF37] text-[#081017]' : 'text-[#F7F4EE] hover:bg-gradient-to-r hover:from-[#F5D061] hover:to-[#D4AF37] hover:text-[#081017]'
+                    className={`flex items-center justify-between px-4 py-3 rounded-[9px] text-[13px] font-semibold transition-all duration-200 ${
+                      isActive('/slimming-wellness') ? 'bg-[rgba(190,152,84,0.12)] text-[#9B783C]' : 'text-[#13242D] hover:bg-[rgba(190,152,84,0.08)] hover:text-[#9B783C]'
                     }`}
                   >
                     <span>SLIMMING & WELLNESS</span>
-                    <span className="text-[10px] opacity-70 group-hover/item:translate-x-1 transition-transform">→</span>
+                    <span className="text-xs text-[#9B783C]">→</span>
                   </Link>
                 </div>
               </div>
 
+              {/* SKIN CARE */}
               <Link 
                 to="/skin-care" 
-                className={`relative py-2 transition-colors group ${isActive('/skin-care') ? 'text-[#F5D061]' : 'hover:text-[#F5D061]'}`}
+                className={`relative py-2 transition-colors duration-300 group ${isActive('/skin-care') ? 'text-[#C19A55]' : 'hover:text-[#C19A55]'}`}
               >
                 <span>SKIN CARE</span>
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#B79657] shadow-[0_0_12px_rgba(245,208,97,0.8)] transition-all duration-300 rounded-full ${
-                  isActive('/skin-care') ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#C19A55] transition-all duration-300 rounded-full ${
+                  isActive('/skin-care') ? 'w-[65%]' : 'w-0 group-hover:w-[65%]'
                 }`}></span>
               </Link>
 
+              {/* COMMUNITY */}
               <Link 
                 to="/health-camp" 
-                className={`relative py-2 transition-colors group ${isActive('/health-camp') ? 'text-[#F5D061]' : 'hover:text-[#F5D061]'}`}
+                className={`relative py-2 transition-colors duration-300 group ${isActive('/health-camp') ? 'text-[#C19A55]' : 'hover:text-[#C19A55]'}`}
               >
                 <span>COMMUNITY</span>
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#B79657] shadow-[0_0_12px_rgba(245,208,97,0.8)] transition-all duration-300 rounded-full ${
-                  isActive('/health-camp') ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#C19A55] transition-all duration-300 rounded-full ${
+                  isActive('/health-camp') ? 'w-[65%]' : 'w-0 group-hover:w-[65%]'
                 }`}></span>
               </Link>
 
+              {/* CONTACT US */}
               <Link 
                 to="/contact" 
-                className={`relative py-2 transition-colors group ${isActive('/contact') ? 'text-[#F5D061]' : 'hover:text-[#F5D061]'}`}
+                className={`relative py-2 transition-colors duration-300 group ${isActive('/contact') ? 'text-[#C19A55]' : 'hover:text-[#C19A55]'}`}
               >
                 <span>CONTACT US</span>
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#B79657] shadow-[0_0_12px_rgba(245,208,97,0.8)] transition-all duration-300 rounded-full ${
-                  isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#C19A55] transition-all duration-300 rounded-full ${
+                  isActive('/contact') ? 'w-[65%]' : 'w-0 group-hover:w-[65%]'
                 }`}></span>
               </Link>
             </nav>
 
-            {/* RIGHT: Glowing Radiant Gold Book Appointment Button */}
+            {/* RIGHT: BOOK APPOINTMENT CTA BUTTON */}
             <div className="flex items-center gap-3">
               <Link 
                 to="/book-appointment" 
-                className="bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#C59B27] text-[#081017] font-extrabold px-6 py-2.5 sm:px-7 sm:py-3 rounded-full text-[11px] sm:text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_25px_rgba(245,208,97,0.45)] hover:shadow-[0_6px_35px_rgba(245,208,97,0.7)] hover:scale-[1.04] active:scale-100 text-center shrink-0 border border-[#FFF3C4]/60"
+                className="bg-gradient-to-r from-[#C6A15D] to-[#B88D48] text-[#10202A] font-bold px-7 py-3 sm:px-8 sm:py-3.5 rounded-[18px] text-[13px] sm:text-[14px] uppercase tracking-[0.12em] transition-all duration-300 shadow-[0_10px_30px_rgba(181,139,70,0.14)] hover:shadow-[0_14px_34px_rgba(181,139,70,0.22)] hover:-translate-y-[2px] active:translate-y-0 text-center shrink-0 border border-[#D8B470]/30"
               >
                 BOOK APPOINTMENT
               </Link>
             </div>
 
-            {/* Mobile Menu Toggle Button */}
+            {/* MOBILE MENU TOGGLE BUTTON */}
             <button 
-              className="xl:hidden text-white focus:outline-none p-2.5 rounded-xl bg-white/10 border border-white/20 hover:border-[#F5D061]/50 transition-colors"
+              className="xl:hidden text-white focus:outline-none p-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#C19A55]/40 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? (
-                <svg className="w-6 h-6 text-[#F5D061]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                <svg className="w-6 h-6 text-[#C19A55]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/></svg>
               ) : (
-                <svg className="w-6 h-6 text-[#F7F4EE]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg className="w-6 h-6 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
               )}
             </button>
 
@@ -250,13 +264,13 @@ export default function Navbar() {
 
       </header>
 
-      {/* Solid Dark Mobile Navigation Drawer */}
-      <div className={`fixed inset-0 bg-[#0E1B26] text-[#F7F4EE] z-40 transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} xl:hidden overflow-y-auto pt-28 px-6 sm:px-8 pb-12 shadow-2xl`}>
-        <nav className="flex flex-col space-y-4 text-base sm:text-lg font-serif">
+      {/* MOBILE NAVIGATION DRAWER */}
+      <div className={`fixed inset-0 bg-[#10212B] text-white/90 z-40 transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} xl:hidden overflow-y-auto pt-28 px-6 sm:px-8 pb-12 shadow-2xl`}>
+        <nav className="flex flex-col space-y-4 text-base sm:text-lg font-sans">
           <Link 
             to="/" 
             onClick={() => setMobileMenuOpen(false)} 
-            className={`py-2 border-b border-white/10 ${isActive('/') ? 'text-[#F5D061]' : 'text-white hover:text-[#F5D061]'}`}
+            className={`py-2 border-b border-white/10 ${isActive('/') ? 'text-[#C19A55] font-semibold' : 'text-white hover:text-[#C19A55]'}`}
           >
             HOME
           </Link>
@@ -264,7 +278,7 @@ export default function Navbar() {
           <Link 
             to="/about" 
             onClick={() => setMobileMenuOpen(false)} 
-            className={`py-2 border-b border-white/10 ${isActive('/about') ? 'text-[#F5D061]' : 'text-white hover:text-[#F5D061]'}`}
+            className={`py-2 border-b border-white/10 ${isActive('/about') ? 'text-[#C19A55] font-semibold' : 'text-white hover:text-[#C19A55]'}`}
           >
             ABOUT US
           </Link>
@@ -274,42 +288,42 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className="w-full flex items-center justify-between text-left py-1 text-[#F5D061] font-bold tracking-wide focus:outline-none"
+              className="w-full flex items-center justify-between text-left py-1 text-[#C19A55] font-semibold tracking-wide focus:outline-none"
             >
               <span>SERVICES & CLINICAL PILLARS</span>
-              <svg className={`w-5 h-5 text-[#F5D061] transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <svg className={`w-5 h-5 text-[#C19A55] transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
             {/* Mobile Sub-Menu Items */}
             {mobileServicesOpen && (
-              <div className="mt-3 ml-3 pl-3 border-l-2 border-[#F5D061] space-y-3 py-2 text-sm font-sans">
+              <div className="mt-3 ml-3 pl-3 border-l-2 border-[#C19A55] space-y-3 py-2 text-sm font-sans">
                 <Link 
                   to="/physiotherapy" 
                   onClick={() => setMobileMenuOpen(false)} 
-                  className="block text-white hover:text-[#F5D061] font-semibold tracking-wide py-1"
+                  className="block text-white hover:text-[#C19A55] font-semibold tracking-wide py-1"
                 >
                   • Physiotherapy Services
                 </Link>
                 <Link 
                   to="/womens-health" 
                   onClick={() => setMobileMenuOpen(false)} 
-                  className="block text-white hover:text-[#F5D061] font-semibold tracking-wide py-1"
+                  className="block text-white hover:text-[#C19A55] font-semibold tracking-wide py-1"
                 >
                   • Female Pelvic Rehabilitation
                 </Link>
                 <Link 
                   to="/skin-care" 
                   onClick={() => setMobileMenuOpen(false)} 
-                  className="block text-white hover:text-[#F5D061] font-semibold tracking-wide py-1"
+                  className="block text-white hover:text-[#C19A55] font-semibold tracking-wide py-1"
                 >
                   • Skin Care & Aesthetics
                 </Link>
                 <Link 
                   to="/slimming-wellness" 
                   onClick={() => setMobileMenuOpen(false)} 
-                  className="block text-white hover:text-[#F5D061] font-semibold tracking-wide py-1"
+                  className="block text-white hover:text-[#C19A55] font-semibold tracking-wide py-1"
                 >
                   • Slimming Therapy
                 </Link>
@@ -320,7 +334,7 @@ export default function Navbar() {
           <Link 
             to="/skin-care" 
             onClick={() => setMobileMenuOpen(false)} 
-            className={`py-2 border-b border-white/10 ${isActive('/skin-care') ? 'text-[#F5D061]' : 'text-white hover:text-[#F5D061]'}`}
+            className={`py-2 border-b border-white/10 ${isActive('/skin-care') ? 'text-[#C19A55] font-semibold' : 'text-white hover:text-[#C19A55]'}`}
           >
             SKIN CARE
           </Link>
@@ -328,7 +342,7 @@ export default function Navbar() {
           <Link 
             to="/health-camp" 
             onClick={() => setMobileMenuOpen(false)} 
-            className={`py-2 border-b border-white/10 ${isActive('/health-camp') ? 'text-[#F5D061]' : 'text-white hover:text-[#F5D061]'}`}
+            className={`py-2 border-b border-white/10 ${isActive('/health-camp') ? 'text-[#C19A55] font-semibold' : 'text-white hover:text-[#C19A55]'}`}
           >
             COMMUNITY CAMP
           </Link>
@@ -336,7 +350,7 @@ export default function Navbar() {
           <Link 
             to="/contact" 
             onClick={() => setMobileMenuOpen(false)} 
-            className={`py-2 ${isActive('/contact') ? 'text-[#F5D061]' : 'text-white hover:text-[#F5D061]'}`}
+            className={`py-2 ${isActive('/contact') ? 'text-[#C19A55] font-semibold' : 'text-white hover:text-[#C19A55]'}`}
           >
             CONTACT US
           </Link>
@@ -344,15 +358,15 @@ export default function Navbar() {
 
         {/* Mobile Contact & Appointment CTA */}
         <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
-          <p className="text-[#F5D061] text-xs uppercase tracking-widest font-bold font-sans">TAMANYA HEALTH CLINIC</p>
-          <p className="text-xs text-white/90 font-sans leading-relaxed">Pandeypur, Varanasi, Uttar Pradesh</p>
-          <a href="tel:+917007667808" className="block text-sm text-[#F5D061] font-bold font-sans hover:underline">+91 70076 67808</a>
-          <a href="mailto:dr.neha25btr@gmail.com" className="block text-xs text-white/80 font-sans break-all hover:underline">dr.neha25btr@gmail.com</a>
+          <p className="text-[#C19A55] text-xs uppercase tracking-widest font-bold font-sans">TAMANYA HEALTH CLINIC</p>
+          <p className="text-xs text-white/80 font-sans leading-relaxed">Pandeypur, Varanasi, Uttar Pradesh</p>
+          <a href="tel:+917007667808" className="block text-sm text-[#C19A55] font-bold font-sans hover:underline">+91 70076 67808</a>
+          <a href="mailto:dr.neha25btr@gmail.com" className="block text-xs text-white/70 font-sans break-all hover:underline">dr.neha25btr@gmail.com</a>
           
           <Link 
             to="/book-appointment" 
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-center bg-gradient-to-r from-[#F5D061] via-[#D4AF37] to-[#C59B27] text-[#081017] font-extrabold py-3.5 rounded-full text-xs uppercase tracking-widest shadow-[0_4px_25px_rgba(245,208,97,0.45)] mt-6"
+            className="block text-center bg-gradient-to-r from-[#C6A15D] to-[#B88D48] text-[#10202A] font-bold py-3.5 rounded-[18px] text-xs uppercase tracking-widest shadow-[0_10px_30px_rgba(181,139,70,0.14)] mt-6"
           >
             BOOK APPOINTMENT
           </Link>
