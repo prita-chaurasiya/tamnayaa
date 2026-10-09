@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import LenisProvider from './components/LenisProvider';
+import GlobalBackgroundMotion from './components/GlobalBackgroundMotion';
+import CustomCursor from './components/CustomCursor';
 
 // Pages
 import Home from './pages/Home';
@@ -27,7 +30,7 @@ function ScrollToTop() {
 
     const viewportHeight = window.innerHeight;
 
-    // 1. Intelligent Directional Reveal Assignment across all pages:
+    // Intelligent Directional Reveal Assignment across all pages
     const gridSections = document.querySelectorAll('.grid');
     gridSections.forEach((grid) => {
       const children = Array.from(grid.children);
@@ -128,11 +131,11 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <motion.div
         key={location.pathname}
-        initial={{ opacity: 0, y: 14 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -14 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full flex-grow flex flex-col"
+        initial={{ opacity: 0, y: 16, scale: 0.99, filter: 'blur(4px)' }}
+        animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+        exit={{ opacity: 0, y: -16, scale: 0.99, filter: 'blur(4px)' }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full flex-grow flex flex-col relative z-10"
       >
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
@@ -154,17 +157,21 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <div className="flex flex-col min-h-screen font-sans text-text">
-        <Navbar />
-        <main className="flex-grow flex flex-col">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-      </div>
+      <LenisProvider>
+        <ScrollToTop />
+        <CustomCursor />
+        <div className="flex flex-col min-h-screen font-sans text-text relative bg-[#F4EFE6] overflow-x-hidden">
+          {/* Full Page Ambient Motion Background Layer */}
+          <GlobalBackgroundMotion />
+          <Navbar />
+          <main className="flex-grow flex flex-col relative z-10">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+        </div>
+      </LenisProvider>
     </Router>
   );
 }
 
 export default App;
-

@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logoImg from '../assets/tam.png';
+import Magnetic from './Magnetic';
+import SplitText from './SplitText';
+import AuroraCanvas from './AuroraCanvas';
 
 const luxuryEase = [0.16, 1, 0.3, 1];
 
@@ -17,7 +20,8 @@ export default function Footer() {
           transition={{ duration: 0.85, ease: luxuryEase }}
           className="max-w-5xl mx-auto rounded-[28px] bg-gradient-to-br from-[#3F4A32] via-[#293225] to-[#1F261C] text-white p-10 sm:p-14 lg:p-16 text-center shadow-2xl border-2 border-[#5F6B45]/50 relative overflow-hidden"
         >
-          {/* Background Ambient Glow */}
+          {/* Background Ambient Particles & Glow */}
+          <AuroraCanvas count={24} particleColor="rgba(184, 154, 90, 0.4)" />
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#B89A5A]/15 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#5F6B45]/20 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -32,15 +36,11 @@ export default function Footer() {
               READY TO TAKE THE NEXT STEP?
             </motion.span>
             
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.75, delay: 0.2, ease: luxuryEase }}
-              className="font-serif text-3xl sm:text-5xl font-bold mb-6 text-white leading-tight"
-            >
-              Get Back to the Life You Love.
-            </motion.h2>
+            <SplitText 
+              text="Get Back to the Life You Love."
+              as="h2"
+              className="font-serif text-3xl sm:text-5xl font-bold mb-6 text-white leading-tight block"
+            />
             
             <motion.p 
               initial={{ opacity: 0, y: 15 }}
@@ -59,33 +59,23 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4, ease: luxuryEase }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <motion.div
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2, ease: luxuryEase }}
-                className="w-full sm:w-auto"
-              >
+              <Magnetic strength={0.3} className="w-full sm:w-auto">
                 <Link 
                   to="/book-appointment" 
                   className="w-full sm:w-auto bg-[#5F6B45] hover:bg-[#3F4A32] text-[#FAF7F1] font-extrabold px-9 py-4 rounded-[16px] text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_25px_rgba(95,107,69,0.4)] border border-[#B89A5A]/50 block text-center"
                 >
                   BOOK AN APPOINTMENT
                 </Link>
-              </motion.div>
+              </Magnetic>
 
-              <motion.div
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2, ease: luxuryEase }}
-                className="w-full sm:w-auto"
-              >
+              <Magnetic strength={0.3} className="w-full sm:w-auto">
                 <a 
                   href="tel:+917007667808" 
                   className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-[#FAF7F1] border border-white/30 font-semibold px-9 py-4 rounded-[16px] text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 text-center block"
                 >
                   CALL +91 70076 67808
                 </a>
-              </motion.div>
+              </Magnetic>
             </motion.div>
           </div>
         </motion.div>
@@ -93,6 +83,7 @@ export default function Footer() {
 
       {/* Dark Deep Olive (#293225) Footer */}
       <footer className="relative bg-[#293225] text-[#FAF7F1] pt-20 pb-12 overflow-hidden font-sans border-t border-[#5F6B45]/40">
+        <AuroraCanvas count={20} particleColor="rgba(184, 154, 90, 0.25)" />
         
         {/* Top Accent Champagne Line */}
         <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#B89A5A] to-transparent"></div>

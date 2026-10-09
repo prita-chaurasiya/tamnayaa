@@ -5,6 +5,13 @@ import InsideTamanya from '../components/InsideTamanya';
 import { Link } from 'react-router-dom';
 import { TiltCard } from '../components/MotionWrappers';
 import ThreeDFolder from '../components/ui/3d-folder';
+import Magnetic from '../components/Magnetic';
+import SplitText from '../components/SplitText';
+import CountUpNumber from '../components/CountUpNumber';
+import AuroraCanvas from '../components/AuroraCanvas';
+import Marquee from '../components/Marquee';
+import MetricsSection from '../components/MetricsSection';
+import CareFinderWidget from '../components/CareFinderWidget';
 import cliImg from '../assets/cli.jpeg';
 import phyImg from '../assets/phy.jpg';
 import woImg from '../assets/wo.jpg';
@@ -15,6 +22,8 @@ import prizeImg from '../assets/prize.png';
 import campImg from '../assets/camp.webp';
 
 const luxuryEase = [0.16, 1, 0.3, 1];
+
+
 
 
 export default function Home() {
@@ -103,33 +112,35 @@ export default function Home() {
                 highlight: "Private Suite"
               }
             ].map((card, i) => (
-              <div 
-                key={i} 
-                className="bg-[#F4EFE6] p-7 rounded-[22px] border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-[0_10px_30px_rgba(41,50,37,0.06)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.3)] transition-all duration-500 group flex flex-col justify-between card-3d-element cursor-pointer"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-serif font-bold text-[#5F6B45] group-hover:scale-110 group-hover:text-[#B89A5A] transition-all">{card.num}</span>
-                    <span className="bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/40 shadow-sm">
-                      {card.highlight}
-                    </span>
+              <TiltCard key={i} maxTilt={8} scale={1.03} className="h-full">
+                <div className="bg-[#F4EFE6] p-7 rounded-[22px] border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-[0_10px_30px_rgba(41,50,37,0.06)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.3)] transition-all duration-500 group flex flex-col justify-between h-full cursor-pointer">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-serif font-bold text-[#5F6B45] group-hover:scale-110 group-hover:text-[#B89A5A] transition-all">{card.num}</span>
+                      <span className="bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/40 shadow-sm">
+                        {card.highlight}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-base font-bold text-[#293225] mb-2 leading-snug group-hover:text-[#5F6B45] transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-[#252822]/80 text-xs leading-relaxed font-light">
+                      {card.desc}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-base font-bold text-[#293225] mb-2 leading-snug group-hover:text-[#5F6B45] transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="text-[#252822]/80 text-xs leading-relaxed font-light">
-                    {card.desc}
-                  </p>
+                  <div className="mt-5 pt-3 border-t border-[#D8D0C3] flex items-center justify-between text-[10px] uppercase tracking-widest font-bold text-[#5F6B45]">
+                    <span>TAMANYA PILLAR</span>
+                    <span className="group-hover:translate-x-2 transition-transform duration-300 text-[#B89A5A] font-extrabold text-xs">→</span>
+                  </div>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#D8D0C3] flex items-center justify-between text-[10px] uppercase tracking-widest font-bold text-[#5F6B45]">
-                  <span>TAMANYA PILLAR</span>
-                  <span className="group-hover:translate-x-2 transition-transform duration-300 text-[#B89A5A] font-extrabold text-xs">→</span>
-                </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
       </section>
+
+      {/* NEW: Interactive Clinical Benchmark Metrics Strip */}
+      <MetricsSection />
 
       {/* 03. Introduction & Symptom Cards — Olive & Linen Theme */}
       <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#F4EFE6]">
@@ -145,9 +156,11 @@ export default function Home() {
                 </span>
               </div>
               
-              <h2 className="font-serif text-4xl sm:text-6xl text-[#293225] font-bold tracking-tight leading-tight">
-                Get Back to the Life You Love.
-              </h2>
+              <SplitText 
+                text="Get Back to the Life You Love."
+                as="h2"
+                className="font-serif text-4xl sm:text-6xl text-[#293225] font-bold tracking-tight leading-tight block"
+              />
               
               <p className="text-[#5F6B45] italic text-base sm:text-lg font-medium leading-relaxed">
                 Personalised physiotherapy and specialised rehabilitation to help you move better, recover with confidence, and understand your health.
@@ -158,12 +171,16 @@ export default function Home() {
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4">
-                <Link to="/book-appointment" className="btn-olive">
-                  BOOK CONSULTATION
-                </Link>
-                <Link to="/physiotherapy" className="btn-linen">
-                  EXPLORE CARE
-                </Link>
+                <Magnetic strength={0.25}>
+                  <Link to="/book-appointment" className="btn-olive block">
+                    BOOK CONSULTATION
+                  </Link>
+                </Magnetic>
+                <Magnetic strength={0.25}>
+                  <Link to="/physiotherapy" className="btn-linen block">
+                    EXPLORE CARE
+                  </Link>
+                </Magnetic>
               </div>
             </div>
 
@@ -189,9 +206,11 @@ export default function Home() {
           <div className="pt-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">UNDERSTANDING YOUR BODY</span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">
-                Your Body Has a Way of Telling You Something.
-              </h2>
+              <SplitText
+                text="Your Body Has a Way of Telling You Something."
+                as="h2"
+                className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4 block"
+              />
               <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed">
                 Pain, stiffness, reduced mobility, or recurring physical discomfort can affect how you move, work, and live. Understanding the concern is the first step toward appropriate care.
               </p>
@@ -278,6 +297,9 @@ export default function Home() {
 
         </div>
       </section>
+
+      {/* NEW: Interactive Patient Care Finder Widget */}
+      <CareFinderWidget />
 
       {/* 04 & 05. Clinical Offerings & Physiotherapy Section — Warm Linen & Olive */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">
@@ -668,7 +690,10 @@ export default function Home() {
 
       {/* 15. Community Health Camp Feature */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gradient-to-br from-[#3F4A32] via-[#293225] to-[#1F261C] text-white border-t border-[#D8D0C3] relative overflow-hidden">
-        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        {/* Ambient Aurora Particle Canvas */}
+        <AuroraCanvas count={30} particleColor="rgba(184, 154, 90, 0.45)" />
+
+        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
           
           {/* Left Column: Image camp.webp */}
           <div className="lg:col-span-6 relative">
@@ -688,9 +713,11 @@ export default function Home() {
                 COMMUNITY INITIATIVE
               </span>
               <p className="text-[#B89A5A] uppercase tracking-[0.2em] text-xs font-bold mb-2">JOIN OUR UPCOMING HEALTH CAMP</p>
-              <h2 className="font-serif text-3xl sm:text-5xl text-white font-bold leading-tight">
-                Your Health Deserves Attention.
-              </h2>
+              <SplitText 
+                text="Your Health Deserves Attention."
+                as="h2"
+                className="font-serif text-3xl sm:text-5xl text-white font-bold leading-tight block"
+              />
             </div>
 
             <p className="text-white/85 font-light text-base sm:text-lg leading-relaxed">
@@ -731,18 +758,22 @@ export default function Home() {
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link 
-                to="/book-appointment" 
-                className="bg-[#5F6B45] hover:bg-[#3F4A32] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:scale-105 border border-[#B89A5A]/50"
-              >
-                Book an Appointment
-              </Link>
-              <a 
-                href="tel:+917007667808" 
-                className="border-2 border-white/40 text-white hover:bg-white/10 px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all"
-              >
-                Call for Details
-              </a>
+              <Magnetic strength={0.3}>
+                <Link 
+                  to="/book-appointment" 
+                  className="bg-[#5F6B45] hover:bg-[#3F4A32] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg hover:scale-105 border border-[#B89A5A]/50 block"
+                >
+                  Book an Appointment
+                </Link>
+              </Magnetic>
+              <Magnetic strength={0.3}>
+                <a 
+                  href="tel:+917007667808" 
+                  className="border-2 border-white/40 text-white hover:bg-white/10 px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all block"
+                >
+                  Call for Details
+                </a>
+              </Magnetic>
             </div>
 
           </div>

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import Magnetic from './Magnetic';
+import SplitText from './SplitText';
+import AuroraCanvas from './AuroraCanvas';
+import Hero3DCanvas from './Hero3DCanvas';
 
 export default function HeroSlider() {
   const slides = [
@@ -92,10 +96,16 @@ export default function HeroSlider() {
         </motion.div>
       </AnimatePresence>
 
+      {/* Floating Particles Canvas Overlay */}
+      <AuroraCanvas count={28} particleColor="rgba(184, 154, 90, 0.4)" className="z-12" />
+
+      {/* R3F 3D Floating Geometry Overlay */}
+      <Hero3DCanvas className="z-15" />
+
       {/* Hero Content Container */}
       <div className="relative z-20 max-w-[1600px] mx-auto px-6 lg:px-12 w-full">
         
-        {/* Editorial Content (Full Width / Max 4XL) */}
+        {/* Editorial Content */}
         <AnimatePresence mode="wait">
           <motion.div 
             key={currentSlide}
@@ -119,59 +129,65 @@ export default function HeroSlider() {
               </span>
             </motion.div>
 
-            {/* Large Editorial Serif Heading */}
+            {/* Large Editorial Serif Heading with SplitText animation */}
             <motion.h1 
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.15 }}
               className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#FAF7F1] mb-5 leading-[1.06] drop-shadow-md"
             >
-              {slides[currentSlide].titleLine1} <br />
-              <span className="text-[#B89A5A] italic font-normal">{slides[currentSlide].titleLine2}</span>
+              <SplitText 
+                key={`h1-line1-${currentSlide}`}
+                text={slides[currentSlide].titleLine1}
+                type="words"
+                stagger={0.05}
+                className="block"
+              />
+              <span className="text-[#B89A5A] italic font-normal block mt-1">
+                <SplitText 
+                  key={`h1-line2-${currentSlide}`}
+                  text={slides[currentSlide].titleLine2}
+                  type="words"
+                  stagger={0.05}
+                  delay={0.2}
+                />
+              </span>
             </motion.h1>
 
             {/* Supporting Description */}
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#FAF7F1]/90 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-8 drop-shadow"
             >
               {slides[currentSlide].subtitle}
             </motion.p>
 
-            {/* Buttons: Primary Champagne + Dark Olive Border Secondary */}
+            {/* Magnetic Buttons */}
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-6"
             >
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              >
+              <Magnetic strength={0.25}>
                 <Link 
                   to="/book-appointment" 
-                  className="btn-champagne font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-widest"
+                  className="btn-champagne font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-widest block"
                 >
                   ✨ BOOK APPOINTMENT
                 </Link>
-              </motion.div>
+              </Magnetic>
 
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              >
+              <Magnetic strength={0.25}>
                 <Link 
                   to={slides[currentSlide].link} 
-                  className="btn-secondary px-8 py-4 rounded-full text-xs uppercase tracking-widest"
+                  className="btn-secondary px-8 py-4 rounded-full text-xs uppercase tracking-widest block"
                 >
                   EXPLORE OUR CARE
                 </Link>
-              </motion.div>
+              </Magnetic>
             </motion.div>
 
           </motion.div>
@@ -179,30 +195,34 @@ export default function HeroSlider() {
 
       </div>
 
-      {/* Side Arrow Navigation Buttons */}
-      <motion.button 
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={prevSlide}
-        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
-        aria-label="Previous Slide"
-      >
-        <svg className="w-5 h-5 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-      </motion.button>
+      {/* Side Arrow Navigation Buttons with Magnetic hover */}
+      <div className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30">
+        <Magnetic strength={0.3}>
+          <button 
+            onClick={prevSlide}
+            className="w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
+            aria-label="Previous Slide"
+          >
+            <svg className="w-5 h-5 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        </Magnetic>
+      </div>
 
-      <motion.button 
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={nextSlide}
-        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
-        aria-label="Next Slide"
-      >
-        <svg className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </motion.button>
+      <div className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30">
+        <Magnetic strength={0.3}>
+          <button 
+            onClick={nextSlide}
+            className="w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
+            aria-label="Next Slide"
+          >
+            <svg className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </Magnetic>
+      </div>
 
       {/* Numerical Progress Indicator */}
       <div className="absolute bottom-5 left-6 lg:left-12 z-30 flex items-center gap-6 bg-[#293225]/85 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10">
@@ -227,7 +247,18 @@ export default function HeroSlider() {
         ))}
       </div>
 
+      {/* Animated Scroll Down Indicator Badge */}
+      <motion.div 
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-5 right-6 lg:right-12 z-30 hidden sm:flex items-center gap-2 bg-[#293225]/75 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 text-white/70 text-[10px] uppercase font-bold tracking-widest pointer-events-none"
+      >
+        <span>SCROLL TO EXPLORE</span>
+        <svg className="w-3 h-3 text-[#B89A5A]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7-7-7" />
+        </svg>
+      </motion.div>
+
     </div>
   );
 }
-

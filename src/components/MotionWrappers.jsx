@@ -188,11 +188,12 @@ export function FloatElement({ children, className = "", duration = 5, distance 
 }
 
 /**
- * Restrained 3D Tilt Card (Mouse-driven subtle 3D depth for testimonial cards & content boxes)
+ * Restrained 3D Tilt Card (Mouse-driven subtle 3D depth with specular radial glow)
  */
 export function TiltCard({ children, className = "", maxTilt = 8, scale = 1.02 }) {
   const [rotateX, setRotateX] = React.useState(0);
   const [rotateY, setRotateY] = React.useState(0);
+  const [glowPos, setGlowPos] = React.useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = React.useState(false);
 
   const handleMouseMove = (e) => {
@@ -209,6 +210,7 @@ export function TiltCard({ children, className = "", maxTilt = 8, scale = 1.02 }
     
     setRotateX(rX);
     setRotateY(rY);
+    setGlowPos({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 });
   };
 
   const handleMouseEnter = () => {
@@ -222,7 +224,7 @@ export function TiltCard({ children, className = "", maxTilt = 8, scale = 1.02 }
   };
 
   return (
-    <div className="perspective-1000">
+    <div className="perspective-1000 relative">
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
@@ -239,14 +241,30 @@ export function TiltCard({ children, className = "", maxTilt = 8, scale = 1.02 }
           damping: 20,
           mass: 0.6
         }}
-        className={`transform-gpu ${className}`}
+        className={`transform-gpu relative overflow-hidden rounded-inherit ${className}`}
         style={{
           transformStyle: "preserve-3d",
         }}
       >
+        {/* Specular Light Spotlight overlay on hover */}
+        <div
+          className="absolute inset-0 pointer-events-none transition-opacity duration-300 z-30 rounded-inherit"
+          style={{
+            opacity: isHovered ? 1 : 0,
+            background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, rgba(184, 154, 90, 0.18), transparent 60%)`,
+          }}
+        />
         {children}
       </motion.div>
     </div>
   );
 }
+
+export { default as Magnetic } from './Magnetic';
+export { default as SplitText } from './SplitText';
+export { default as CountUpNumber } from './CountUpNumber';
+export { default as AuroraCanvas } from './AuroraCanvas';
+export { default as Hero3DCanvas } from './Hero3DCanvas';
+export { default as Marquee } from './Marquee';
+
 

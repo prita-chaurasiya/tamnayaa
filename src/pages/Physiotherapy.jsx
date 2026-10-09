@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import { TiltCard } from '../components/MotionWrappers';
+import SplitText from '../components/SplitText';
+import Magnetic from '../components/Magnetic';
+import Marquee from '../components/Marquee';
+import MetricsSection from '../components/MetricsSection';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
 
 const luxuryEase = [0.16, 1, 0.3, 1];
+
+
 
 export default function Physiotherapy() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -105,6 +111,10 @@ export default function Physiotherapy() {
         floatBadgeText="PHYSIO EXPERTISE"
         floatBadgeValue="M.P.T Orthopaedics"
       />
+
+      {/* Clinical Metrics Benchmark */}
+      <MetricsSection />
+
 
       {/* 2. INTRODUCTION SECTION */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">

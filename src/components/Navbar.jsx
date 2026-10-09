@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import logoImg from '../assets/tam.png';
+import Magnetic from './Magnetic';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -10,6 +11,14 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
+
+  // Scroll Progress Line
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 200,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +53,12 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 w-full z-50 font-sans shadow-[0_15px_45px_rgba(41,50,37,0.4)]">
         
+        {/* Scroll Progress Bar at very top of screen */}
+        <motion.div 
+          style={{ scaleX }}
+          className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#B89A5A] via-[#D4B878] to-[#5F6B45] origin-left z-50 pointer-events-none"
+        />
+
         {/* Top Utility / Announcement Bar — Deep Olive (#3F4A32) */}
         <div className={`bg-[#3F4A32] text-[#FAF7F1] border-b border-[#5F6B45]/40 transition-all duration-300 ease-in-out overflow-hidden ${
           scrolled ? 'max-h-0 py-0 opacity-0 border-none pointer-events-none' : 'max-h-32 py-1.5 sm:py-2 opacity-100'
@@ -90,7 +105,9 @@ export default function Navbar() {
         </div>
 
         {/* Main Navbar — Dark Olive (#293225) Ultra-Premium Glassmorphism */}
-        <div className="w-full bg-[#293225]/90 backdrop-blur-2xl border-b-2 border-[#B89A5A]/40 border-t border-white/10 py-2.5 sm:py-3.5 lg:py-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all">
+        <div className={`w-[#100%] bg-[#293225]/90 backdrop-blur-2xl border-b-2 border-[#B89A5A]/40 border-t border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 ${
+          scrolled ? 'py-2 sm:py-2.5 lg:py-3' : 'py-2.5 sm:py-3.5 lg:py-4'
+        }`}>
           <div className="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-12 flex justify-between items-center">
             
             {/* LEFT: Clean Brand Logo with 3D Hover & Gold Glow */}
@@ -243,13 +260,9 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            {/* RIGHT: CTA Button & Mobile Hamburger Toggle */}
+            {/* RIGHT: Magnetic CTA Button & Mobile Hamburger Toggle */}
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-              <motion.div
-                whileHover={{ scale: 1.04, y: -1 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              >
+              <Magnetic strength={0.3}>
                 <Link 
                   to="/book-appointment" 
                   className="bg-gradient-to-r from-[#B89A5A] via-[#D4B878] to-[#B89A5A] text-[#293225] font-extrabold px-3.5 py-1.5 sm:px-6 sm:py-2.5 rounded-full text-[10px] sm:text-xs uppercase tracking-wider transition-all duration-500 shadow-[0_4px_20px_rgba(184,154,90,0.45)] hover:shadow-[0_8px_35px_rgba(184,154,90,0.8)] text-center shrink-0 border border-white/50 whitespace-nowrap block"
@@ -257,7 +270,7 @@ export default function Navbar() {
                   <span className="hidden sm:inline">✨ BOOK APPOINTMENT</span>
                   <span className="sm:hidden">✨ BOOK</span>
                 </Link>
-              </motion.div>
+              </Magnetic>
 
               {/* Mobile Menu Toggle Button */}
               <button 

@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import InsideTamanya from '../components/InsideTamanya';
+import MetricsSection from '../components/MetricsSection';
+import SplitText from '../components/SplitText';
+import Magnetic from '../components/Magnetic';
+import { TiltCard } from '../components/MotionWrappers';
 import nehaImg from '../assets/neha.jpeg';
 import cliImg from '../assets/cli.jpeg';
 import prizeImg from '../assets/prize.png';
@@ -27,6 +31,10 @@ export default function About() {
         floatBadgeText="CLINICAL DIRECTOR"
         floatBadgeValue="Dr. Neha Gupta"
       />
+
+      {/* Clinical Metrics Benchmarks */}
+      <MetricsSection />
+
 
       {/* 1. SECTION 1: UNDERSTANDING YOUR BODY */}
       <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">

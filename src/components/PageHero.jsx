@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Magnetic from './Magnetic';
+import SplitText from './SplitText';
+import AuroraCanvas from './AuroraCanvas';
 
 export default function PageHero({ title, category, subtitle, image, pageName, ctaText = "BOOK AN APPOINTMENT", ctaLink = "/book-appointment", secondaryCtaText, secondaryCtaLink, floatBadgeText = "PREMIUM CLINICAL CARE", floatBadgeValue = "7+ Yrs Expertise" }) {
   return (
@@ -20,6 +23,9 @@ export default function PageHero({ title, category, subtitle, image, pageName, c
         <div className="absolute inset-0 bg-gradient-to-r from-[#293225]/90 via-[#293225]/60 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/80 via-transparent to-black/40" />
       </div>
+
+      {/* Ambient Aurora Particles */}
+      <AuroraCanvas count={25} particleColor="rgba(184, 154, 90, 0.35)" className="z-5" />
 
       {/* Hero Content Container */}
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 w-full relative z-10 text-[#FAF7F1]">
@@ -52,14 +58,14 @@ export default function PageHero({ title, category, subtitle, image, pageName, c
             </motion.div>
           )}
 
-          {/* Main Title */}
+          {/* Main Title with SplitText character/word reveal */}
           <motion.h1 
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.75, delay: 0.25 }}
             className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FAF7F1] mb-6 leading-[1.1] drop-shadow-md"
           >
-            {title}
+            <SplitText text={title} type="words" stagger={0.04} className="block" />
           </motion.h1>
 
           {/* Subtitle / Description */}
@@ -74,39 +80,31 @@ export default function PageHero({ title, category, subtitle, image, pageName, c
             </motion.p>
           )}
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with Magnetic Spring */}
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center gap-4"
           >
-            <motion.div
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            >
+            <Magnetic strength={0.3}>
               <Link 
                 to={ctaLink} 
                 className="bg-[#B89A5A] hover:bg-[#a3864c] text-[#293225] font-extrabold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_20px_rgba(184,154,90,0.45)] hover:shadow-[0_6px_30px_rgba(184,154,90,0.7)] border border-white/40 block"
               >
                 {ctaText}
               </Link>
-            </motion.div>
+            </Magnetic>
             
             {secondaryCtaText && secondaryCtaLink && (
-              <motion.div
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              >
+              <Magnetic strength={0.3}>
                 <Link 
                   to={secondaryCtaLink} 
                   className="bg-[#293225]/80 hover:bg-[#293225] text-[#FAF7F1] border border-[#D8D0C3]/40 font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 shadow-sm block"
                 >
                   {secondaryCtaText}
                 </Link>
-              </motion.div>
+              </Magnetic>
             )}
           </motion.div>
 
@@ -116,4 +114,3 @@ export default function PageHero({ title, category, subtitle, image, pageName, c
     </section>
   );
 }
-
