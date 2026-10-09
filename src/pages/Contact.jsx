@@ -4,8 +4,13 @@ import { motion } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem, ImageReveal } from '../components/MotionWrappers';
 import cliImg from '../assets/cli.jpeg';
+import { CLINIC_DATA, buildWhatsAppLink } from '../data/clinicData';
 
 export default function Contact() {
+  const defaultWaUrl = buildWhatsAppLink({
+    query: "Hello Dr. Neha Gupta, I would like to inquire about a clinical consultation at Tamanya Health."
+  });
+
   return (
     <PageTransition className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
       
@@ -13,7 +18,7 @@ export default function Contact() {
       <PageHero 
         title="Contact Us"
         category="DIRECT CLINICAL INQUIRIES & VISIT"
-        subtitle="Our clinical team in Pandeypur, Varanasi is ready to assist you with consultation inquiries and appointment bookings."
+        subtitle={`Our clinical team in ${CLINIC_DATA.address.area}, ${CLINIC_DATA.address.city} is ready to assist you with consultation inquiries and appointment bookings.`}
         image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2070&q=80"
         pageName="CONTACT US"
       />
@@ -47,8 +52,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-serif text-base font-bold text-[#293225]">Phone Call</h4>
-                    <a href="tel:+917007667808" className="text-[#5F6B45] font-bold hover:underline text-sm block">
-                      +91 70076 67808
+                    <a href={`tel:${CLINIC_DATA.phoneRaw}`} className="text-[#5F6B45] font-bold hover:underline text-sm block">
+                      {CLINIC_DATA.phone}
                     </a>
                   </div>
                 </motion.div>
@@ -64,10 +69,11 @@ export default function Contact() {
                     💬
                   </div>
                   <div>
-                    <h4 className="font-serif text-base font-bold text-[#293225]">WhatsApp</h4>
-                    <a href="https://wa.me/917007667808" target="_blank" rel="noopener noreferrer" className="text-[#5F6B45] font-bold hover:underline text-sm block">
-                      +91 70076 67808
+                    <h4 className="font-serif text-base font-bold text-[#293225]">WhatsApp Direct Enquiry</h4>
+                    <a href={defaultWaUrl} target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline text-sm block">
+                      {CLINIC_DATA.displayWhatsapp} (Send Message)
                     </a>
+                    <span className="text-[11px] text-[#252822]/60 block mt-0.5">Prefilled enquiry message ready for Dr. Neha</span>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -82,15 +88,18 @@ export default function Contact() {
                     🗺️
                   </div>
                   <div>
-                    <h4 className="font-serif text-base font-bold text-[#293225]">Address</h4>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Verified Address</h4>
                     <a 
-                      href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" 
+                      href={CLINIC_DATA.address.mapsUrl} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-[#252822]/80 hover:text-[#5F6B45] font-light text-xs sm:text-sm leading-relaxed block"
                     >
-                      SA 1/177 T. N Nai Basti Road, beside Khadim, near Murari Jewellers, Pandeypur, Paharia, Varanasi, Uttar Pradesh 221002
+                      {CLINIC_DATA.address.fullAddress}
                     </a>
+                    <span className="text-[11px] text-[#5F6B45] font-semibold block mt-1">
+                      Landmark: {CLINIC_DATA.address.landmark}
+                    </span>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -106,8 +115,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-serif text-base font-bold text-[#293225]">Opening Hours</h4>
-                    <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Mon – Sat: 09:00 AM – 08:00 PM</p>
-                    <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Sun: Prior Appointment</p>
+                    <p className="text-[#252822]/80 font-light text-xs sm:text-sm">{CLINIC_DATA.hours.regularDays}: {CLINIC_DATA.hours.regularTime}</p>
+                    <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Sunday: {CLINIC_DATA.hours.sunday}</p>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -123,8 +132,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-serif text-base font-bold text-[#293225]">Email Enquiries</h4>
-                    <a href="mailto:dr.neha25btr@gmail.com" className="text-[#252822]/80 hover:text-[#5F6B45] font-medium text-xs sm:text-sm block break-all">
-                      dr.neha25btr@gmail.com
+                    <a href={`mailto:${CLINIC_DATA.email}`} className="text-[#252822]/80 hover:text-[#5F6B45] font-medium text-xs sm:text-sm block break-all">
+                      {CLINIC_DATA.email}
                     </a>
                   </div>
                 </motion.div>
@@ -138,7 +147,7 @@ export default function Contact() {
             <div className="bg-[#F4EFE6] p-8 sm:p-10 rounded-[28px] border-2 border-[#D8D0C3] shadow-xl space-y-6">
               <h3 className="font-serif text-2xl font-bold text-[#293225]">Visit Our Varanasi Clinic</h3>
               <p className="text-xs text-[#252822]/80 leading-relaxed font-light">
-                Our modern healthcare campus is conveniently located at Pandeypur Chauraha. We recommend booking your consultation in advance for personalized care.
+                Our modern healthcare campus is conveniently located at {CLINIC_DATA.address.area}. We recommend booking your consultation in advance for personalized care.
               </p>
               
               <ImageReveal className="aspect-[16/10] rounded-2xl overflow-hidden border border-[#D8D0C3] relative">
@@ -151,7 +160,7 @@ export default function Contact() {
                   <span className="group-hover:translate-x-1.5 transition-transform">→</span>
                 </Link>
                 <a 
-                  href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" 
+                  href={CLINIC_DATA.address.mapsUrl} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-linen w-full justify-center"
@@ -168,4 +177,3 @@ export default function Contact() {
     </PageTransition>
   );
 }
-
