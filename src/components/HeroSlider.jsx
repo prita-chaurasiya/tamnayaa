@@ -148,26 +148,26 @@ export default function HeroSlider() {
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-6"
             >
               <motion.div
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link 
                   to="/book-appointment" 
-                  className="inline-flex justify-center items-center gap-2 bg-[#B89A5A] hover:bg-[#a3864c] text-[#293225] font-extrabold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_25px_rgba(184,154,90,0.5)] hover:shadow-[0_6px_35px_rgba(184,154,90,0.7)] border border-white/40"
+                  className="btn-champagne font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-widest"
                 >
-                  BOOK APPOINTMENT
+                  ✨ BOOK APPOINTMENT
                 </Link>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link 
                   to={slides[currentSlide].link} 
-                  className="inline-flex justify-center items-center gap-2 bg-[#293225]/80 hover:bg-[#293225] text-[#FAF7F1] border border-[#D8D0C3]/40 font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 shadow-sm"
+                  className="btn-secondary px-8 py-4 rounded-full text-xs uppercase tracking-widest"
                 >
                   EXPLORE OUR CARE
                 </Link>

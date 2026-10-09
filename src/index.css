@@ -23,33 +23,33 @@
 }
 
 @layer components {
-  /* Editorial Olive Green, Linen & Champagne Button System */
+  /* Ultra-Luxury Gradient & 3D Shimmer Button System */
   .btn-olive {
-    @apply inline-flex items-center justify-center gap-2.5 bg-[#5F6B45] hover:bg-[#3F4A32] text-white font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#5F6B45]/25 hover:-translate-y-0.5 active:translate-y-0 text-center border border-[#7D8765]/40;
+    @apply inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#5F6B45] via-[#4F5B35] to-[#3F4A32] hover:from-[#3F4A32] hover:to-[#5F6B45] text-white font-extrabold px-8 py-3.5 rounded-[18px] text-[11px] uppercase tracking-[0.18em] transition-all duration-500 shadow-[0_6px_25px_rgba(95,107,69,0.35)] hover:shadow-[0_12px_40px_rgba(95,107,69,0.65)] hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0 text-center border border-[#B89A5A]/50 relative overflow-hidden;
   }
 
   .btn-deep-olive {
-    @apply inline-flex items-center justify-center gap-2.5 bg-[#3F4A32] hover:bg-[#293225] text-[#FAF7F1] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center border border-[#5F6B45]/40;
+    @apply inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#3F4A32] via-[#293225] to-[#1F261C] hover:from-[#293225] hover:to-[#3F4A32] text-[#FAF7F1] font-extrabold px-8 py-3.5 rounded-[18px] text-[11px] uppercase tracking-[0.18em] transition-all duration-500 shadow-[0_6px_25px_rgba(41,50,37,0.4)] hover:shadow-[0_12px_40px_rgba(184,154,90,0.5)] hover:-translate-y-1 hover:scale-[1.03] text-center border border-[#B89A5A]/40;
   }
 
   .btn-linen {
-    @apply inline-flex items-center justify-center gap-2.5 bg-[#FAF7F1] hover:bg-[#F4EFE6] text-[#293225] border border-[#D8D0C3] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#FAF7F1] via-[#F4EFE6] to-[#FAF7F1] hover:from-[#5F6B45] hover:to-[#3F4A32] text-[#293225] hover:text-white border-2 border-[#D8D0C3] hover:border-[#B89A5A] font-extrabold px-8 py-3.5 rounded-[18px] text-[11px] uppercase tracking-[0.18em] transition-all duration-500 shadow-sm hover:shadow-[0_10px_30px_rgba(95,107,69,0.35)] hover:-translate-y-1 hover:scale-[1.03] text-center;
   }
 
   .btn-champagne {
-    @apply inline-flex items-center justify-center gap-2.5 bg-[#B89A5A] hover:bg-[#967839] text-[#293225] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 text-center border border-[#B89A5A]/50;
+    @apply inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#B89A5A] via-[#D4B878] to-[#967839] hover:from-[#967839] hover:to-[#B89A5A] text-[#293225] font-extrabold px-8 py-3.5 rounded-[18px] text-[11px] uppercase tracking-[0.18em] transition-all duration-500 shadow-[0_6px_25px_rgba(184,154,90,0.5)] hover:shadow-[0_14px_45px_rgba(184,154,90,0.85)] hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0 text-center border-2 border-white/50 relative overflow-hidden;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2.5 bg-transparent text-[#293225] border border-[#5F6B45]/40 hover:border-[#5F6B45] hover:bg-[#5F6B45]/10 px-8 py-3.5 rounded-[16px] font-bold tracking-[0.18em] uppercase text-[11px] transition-all duration-300 hover:-translate-y-0.5 text-center;
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#293225]/50 hover:bg-[#293225] text-[#FAF7F1] border-2 border-[#B89A5A]/50 hover:border-[#B89A5A] px-8 py-3.5 rounded-[18px] font-extrabold tracking-[0.18em] uppercase text-[11px] backdrop-blur-md transition-all duration-500 shadow-sm hover:shadow-[0_10px_30px_rgba(184,154,90,0.45)] hover:-translate-y-1 hover:scale-[1.03] text-center;
   }
 
   .btn-primary {
-    @apply btn-olive;
+    @apply btn-champagne;
   }
 
   .btn-vibrant {
-    @apply btn-olive;
+    @apply btn-champagne;
   }
 
   .btn-berry {
@@ -57,7 +57,7 @@
   }
 
   .btn-dark {
-    @apply inline-flex items-center justify-center gap-2.5 bg-[#293225] hover:bg-[#3F4A32] text-[#FAF7F1] font-bold px-8 py-3.5 rounded-[16px] text-[11px] uppercase tracking-[0.18em] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center border border-[#5F6B45]/30;
+    @apply btn-deep-olive;
   }
   
   .eyebrow {

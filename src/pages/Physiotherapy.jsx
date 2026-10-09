@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/PageHero';
+import { TiltCard } from '../components/MotionWrappers';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
 
@@ -181,35 +182,36 @@ export default function Physiotherapy() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {orthopaedicCards.map((card, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: i * 0.1, ease: luxuryEase }}
-                className="bg-[#FAF7F1] rounded-[24px] overflow-hidden border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between"
-              >
-                <div className="aspect-[16/10] overflow-hidden relative">
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/30">
-                    ORTHOPAEDIC
-                  </span>
-                </div>
-                
-                <div className="p-7 flex flex-col flex-grow justify-between">
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-[#293225] mb-2 group-hover:text-[#5F6B45] transition-colors">{card.title}</h3>
-                    <p className="text-[#5F6B45] text-[11px] font-bold uppercase tracking-wider mb-3">{card.includes}</p>
-                    <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
+              <TiltCard key={i} maxTilt={8} scale={1.02} className="h-full">
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: i * 0.1, ease: luxuryEase }}
+                  className="bg-[#FAF7F1] rounded-[26px] overflow-hidden border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between h-full cursor-pointer"
+                >
+                  <div className="aspect-[16/10] overflow-hidden relative">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
+                    <span className="absolute top-4 left-4 bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/30">
+                      ORTHOPAEDIC
+                    </span>
                   </div>
                   
-                  <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#5F6B45]">
-                    <span>CLINICAL PATHWAY</span>
-                    <span className="group-hover:translate-x-1.5 transition-transform text-[#B89A5A]">→</span>
+                  <div className="p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="font-serif text-xl font-bold text-[#293225] mb-2 group-hover:text-[#5F6B45] transition-colors">{card.title}</h3>
+                      <p className="text-[#5F6B45] text-[11px] font-bold uppercase tracking-wider mb-3">{card.includes}</p>
+                      <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
+                    </div>
+                    
+                    <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#5F6B45]">
+                      <span>CLINICAL PATHWAY</span>
+                      <span className="group-hover:translate-x-1.5 transition-transform text-[#B89A5A]">→</span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </TiltCard>
             ))}
           </div>
 
