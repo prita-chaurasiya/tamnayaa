@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HeroSlider() {
   const slides = [
@@ -70,74 +71,118 @@ export default function HeroSlider() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Image Slider with Cinematic Ken Burns & Soft Luminous Linen Overlay */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-          }`}
+      {/* Background Image Slider with Cinematic Ken Burns & Polished Crossfade */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.02 }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 z-10"
         >
           <img 
-            src={slide.image} 
+            src={slides[currentSlide].image} 
             alt="Tamanya Health Hero Background" 
-            className={`w-full h-full object-cover object-center ${
-              index === currentSlide ? 'animate-ken-burns' : 'scale-100'
-            }`}
+            className="w-full h-full object-cover object-center animate-ken-burns"
           />
-          {/* Soft Dark Olive & Luminous Overlay — Images are clearly visible! */}
+          {/* Soft Dark Olive & Luminous Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#293225]/90 via-[#293225]/60 to-black/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/80 via-transparent to-black/40 pointer-events-none" />
-        </div>
-      ))}
+        </motion.div>
+      </AnimatePresence>
 
       {/* Hero Content Container */}
       <div className="relative z-20 max-w-[1600px] mx-auto px-6 lg:px-12 w-full">
         
         {/* Editorial Content (Full Width / Max 4XL) */}
-        <div className="max-w-3xl flex flex-col items-start text-left text-[#FAF7F1]">
-          
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-4 animate-fade-in-up">
-            <span className="w-8 h-[2px] bg-[#B89A5A] block"></span>
-            <span className="text-[#B89A5A] uppercase tracking-[0.25em] text-[11px] font-extrabold">
-              {slides[currentSlide].eyebrow}
-            </span>
-          </div>
-
-          {/* Large Editorial Serif Heading */}
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#FAF7F1] mb-5 leading-[1.06] drop-shadow-md animate-fade-in-up">
-            {slides[currentSlide].titleLine1} <br />
-            <span className="text-[#B89A5A] italic font-normal">{slides[currentSlide].titleLine2}</span>
-          </h1>
-
-          {/* Supporting Description */}
-          <p className="text-[#FAF7F1]/90 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-8 drop-shadow animate-fade-in-up">
-            {slides[currentSlide].subtitle}
-          </p>
-
-          {/* Buttons: Primary Champagne + Dark Olive Border Secondary */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-fade-in-up mb-6">
-            <Link 
-              to="/book-appointment" 
-              className="inline-flex justify-center items-center gap-2 bg-[#B89A5A] hover:bg-[#a3864c] text-[#293225] font-extrabold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_25px_rgba(184,154,90,0.5)] hover:shadow-[0_6px_35px_rgba(184,154,90,0.7)] hover:scale-[1.03] border border-white/40"
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={currentSlide}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl flex flex-col items-start text-left text-[#FAF7F1]"
+          >
+            
+            {/* Eyebrow */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3 mb-4"
             >
-              BOOK APPOINTMENT
-            </Link>
-            <Link 
-              to={slides[currentSlide].link} 
-              className="inline-flex justify-center items-center gap-2 bg-[#293225]/80 hover:bg-[#293225] text-[#FAF7F1] border border-[#D8D0C3]/40 font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 hover:scale-[1.03] shadow-sm"
-            >
-              EXPLORE OUR CARE
-            </Link>
-          </div>
+              <span className="w-8 h-[2px] bg-[#B89A5A] block"></span>
+              <span className="text-[#B89A5A] uppercase tracking-[0.25em] text-[11px] font-extrabold">
+                {slides[currentSlide].eyebrow}
+              </span>
+            </motion.div>
 
-        </div>
+            {/* Large Editorial Serif Heading */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#FAF7F1] mb-5 leading-[1.06] drop-shadow-md"
+            >
+              {slides[currentSlide].titleLine1} <br />
+              <span className="text-[#B89A5A] italic font-normal">{slides[currentSlide].titleLine2}</span>
+            </motion.h1>
+
+            {/* Supporting Description */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[#FAF7F1]/90 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-8 drop-shadow"
+            >
+              {slides[currentSlide].subtitle}
+            </motion.p>
+
+            {/* Buttons: Primary Champagne + Dark Olive Border Secondary */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-6"
+            >
+              <motion.div
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link 
+                  to="/book-appointment" 
+                  className="inline-flex justify-center items-center gap-2 bg-[#B89A5A] hover:bg-[#a3864c] text-[#293225] font-extrabold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_25px_rgba(184,154,90,0.5)] hover:shadow-[0_6px_35px_rgba(184,154,90,0.7)] border border-white/40"
+                >
+                  BOOK APPOINTMENT
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link 
+                  to={slides[currentSlide].link} 
+                  className="inline-flex justify-center items-center gap-2 bg-[#293225]/80 hover:bg-[#293225] text-[#FAF7F1] border border-[#D8D0C3]/40 font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md transition-all duration-300 shadow-sm"
+                >
+                  EXPLORE OUR CARE
+                </Link>
+              </motion.div>
+            </motion.div>
+
+          </motion.div>
+        </AnimatePresence>
 
       </div>
 
       {/* Side Arrow Navigation Buttons */}
-      <button 
+      <motion.button 
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.95 }}
         onClick={prevSlide}
         className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
         aria-label="Previous Slide"
@@ -145,9 +190,11 @@ export default function HeroSlider() {
         <svg className="w-5 h-5 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
-      </button>
+      </motion.button>
 
-      <button 
+      <motion.button 
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.95 }}
         onClick={nextSlide}
         className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#293225]/60 hover:bg-[#5F6B45] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg focus:outline-none group border border-white/20"
         aria-label="Next Slide"
@@ -155,7 +202,7 @@ export default function HeroSlider() {
         <svg className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </motion.button>
 
       {/* Numerical Progress Indicator */}
       <div className="absolute bottom-5 left-6 lg:left-12 z-30 flex items-center gap-6 bg-[#293225]/85 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10">
@@ -183,3 +230,4 @@ export default function HeroSlider() {
     </div>
   );
 }
+

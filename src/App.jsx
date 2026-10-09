@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -27,12 +28,10 @@ function ScrollToTop() {
     const viewportHeight = window.innerHeight;
 
     // 1. Intelligent Directional Reveal Assignment across all pages:
-    // Left side text/content -> reveal-left, Right side images/containers -> reveal-right
     const gridSections = document.querySelectorAll('.grid');
     gridSections.forEach((grid) => {
       const children = Array.from(grid.children);
       if (children.length === 2) {
-        // 2-column editorial layout: Left child gets reveal-left, Right child gets reveal-right
         const leftChild = children[0];
         const rightChild = children[1];
 
@@ -44,7 +43,6 @@ function ScrollToTop() {
           rightChild.classList.add('reveal-right');
         }
       } else if (children.length > 2) {
-        // Multi-column cards grid -> staggered reveal-up or card-3d-scroll
         children.forEach((child) => {
           if (!child.classList.contains('reveal-left') && 
               !child.classList.contains('reveal-right') && 
@@ -60,7 +58,6 @@ function ScrollToTop() {
     const targets = document.querySelectorAll('h1, h2, h3, section p, img, .eyebrow, .card-3d-element, .card-3d-scroll, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-on-scroll, .img-mask-reveal');
 
     targets.forEach((el) => {
-      // Default to reveal-left for standalone headings/paragraphs if no direction set
       if (!el.classList.contains('reveal-up') && 
           !el.classList.contains('reveal-left') && 
           !el.classList.contains('reveal-right') && 
@@ -74,21 +71,19 @@ function ScrollToTop() {
         }
       }
 
-      // Instant visibility for initial top-of-page elements
       const rect = el.getBoundingClientRect();
       if (rect.top < viewportHeight - 20) {
         el.classList.add('is-visible');
       }
     });
 
-    // 2. High-performance IntersectionObserver for continuous left/right scroll entrance (up & down)
+    // High-performance IntersectionObserver for continuous scroll entrance
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         } else {
           const rect = entry.target.getBoundingClientRect();
-          // Reset animation state when scrolled far out of view (up or down) so scrolling back re-animates
           if (rect.top > viewportHeight + 120 || rect.bottom < -120) {
             entry.target.classList.remove('is-visible');
           }
@@ -105,7 +100,7 @@ function ScrollToTop() {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     targets.forEach((el) => observer.observe(el));
 
-    // Youngiverse Scroll-Based Micro-Parallax Nudge
+    // Scroll-Based Micro-Parallax Nudge
     const handleScrollParallax = () => {
       const scrolledY = window.scrollY;
       const parallaxEls = document.querySelectorAll('.parallax-float');
@@ -126,25 +121,44 @@ function ScrollToTop() {
   return null;
 }
 
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -14 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full flex-grow flex flex-col"
+      >
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/physiotherapy" element={<Physiotherapy />} />
+          <Route path="/womens-health" element={<WomensHealth />} />
+          <Route path="/skin-care" element={<SkinCare />} />
+          <Route path="/slimming-wellness" element={<SlimmingWellness />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/health-camp" element={<HealthCamp />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/book-appointment" element={<div className="pt-24 min-h-screen bg-cream"><BookAppointment /></div>} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen font-sans text-text">
         <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/physiotherapy" element={<Physiotherapy />} />
-            <Route path="/womens-health" element={<WomensHealth />} />
-            <Route path="/skin-care" element={<SkinCare />} />
-            <Route path="/slimming-wellness" element={<SlimmingWellness />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/health-camp" element={<HealthCamp />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/book-appointment" element={<div className="pt-24 min-h-screen bg-cream"><BookAppointment /></div>} />
-          </Routes>
+        <main className="flex-grow flex flex-col">
+          <AnimatedRoutes />
         </main>
         <Footer />
       </div>
@@ -153,3 +167,4 @@ function App() {
 }
 
 export default App;
+

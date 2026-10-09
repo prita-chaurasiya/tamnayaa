@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
+
+const luxuryEase = [0.16, 1, 0.3, 1];
 
 export default function Physiotherapy() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -106,7 +109,13 @@ export default function Physiotherapy() {
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          <div className="lg:col-span-6 relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: luxuryEase }}
+            className="lg:col-span-6 relative"
+          >
             <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative group">
               <img 
                 src={phyImg} 
@@ -126,9 +135,15 @@ export default function Physiotherapy() {
                 Clinical practice led by Dr. Neha Gupta (M.P.T Ortho) serving Varanasi since 2019.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: 35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: luxuryEase }}
+            className="lg:col-span-6 space-y-6"
+          >
             <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block">ABOUT PHYSIOTHERAPY</span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold tracking-tight">
               Root-Cause Diagnosis. Sustainable Recovery.
@@ -141,7 +156,7 @@ export default function Physiotherapy() {
                 BOOK EVALUATION
               </Link>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -150,17 +165,30 @@ export default function Physiotherapy() {
       <section id="orthopaedic-section" className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: luxuryEase }}
+            className="text-center max-w-3xl mx-auto mb-20"
+          >
             <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">ORTHOPAEDIC CONDITIONS</span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Targeted Spine & Joint Recovery</h2>
             <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               Tailored clinical pathways for acute injury, degenerative joint pain, disc issues, and post-surgical rehabilitation.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {orthopaedicCards.map((card, i) => (
-              <div key={i} className="bg-[#FAF7F1] rounded-[24px] overflow-hidden border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between">
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: i * 0.1, ease: luxuryEase }}
+                className="bg-[#FAF7F1] rounded-[24px] overflow-hidden border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between"
+              >
                 <div className="aspect-[16/10] overflow-hidden relative">
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
@@ -181,7 +209,7 @@ export default function Physiotherapy() {
                     <span className="group-hover:translate-x-1.5 transition-transform text-[#B89A5A]">→</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -192,26 +220,41 @@ export default function Physiotherapy() {
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: luxuryEase }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
             <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">NEUROLOGICAL CARE</span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Neurological Rehabilitation</h2>
             <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               Dedicated neuromuscular re-education restoring motor control, gait stability, and functional independence.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {neuroCards.map((card, i) => (
-              <div key={i} className="bg-[#F4EFE6] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm">
-                <span className="bg-[#5F6B45] text-white text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold inline-block mb-4">
-                  NEURO REHAB
-                </span>
-                <h3 className="font-serif text-xl font-bold text-[#293225] mb-3">{card.title}</h3>
-                <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
-                <Link to="/book-appointment" className="text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#293225] flex items-center gap-1">
-                  <span>BOOK REHAB EVALUATION</span> <span>→</span>
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.65, delay: i * 0.1, ease: luxuryEase }}
+                className="bg-[#F4EFE6] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <span className="bg-[#5F6B45] text-white text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold inline-block mb-4">
+                    NEURO REHAB
+                  </span>
+                  <h3 className="font-serif text-xl font-bold text-[#293225] mb-3">{card.title}</h3>
+                  <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
+                </div>
+                <Link to="/book-appointment" className="text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#293225] flex items-center gap-1 group">
+                  <span>BOOK REHAB EVALUATION</span> <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -222,23 +265,36 @@ export default function Physiotherapy() {
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: luxuryEase }}
+            className="text-center max-w-3xl mx-auto mb-20"
+          >
             <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">CLINICAL MODALITIES</span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Advanced Physiotherapy Modalities</h2>
             <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
               Integrated electrotherapy, dry needling, cupping, and manual mobilization equipment.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {advancedTherapies.map((item, i) => (
-              <div key={i} className="bg-[#FAF7F1] p-6 rounded-[20px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm group">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05, ease: luxuryEase }}
+                className="bg-[#FAF7F1] p-6 rounded-[20px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm group"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#5F6B45] text-[#FAF7F1] font-bold flex items-center justify-center mb-4 shadow-sm text-xs">
                   {i + 1 < 10 ? `0${i + 1}` : i + 1}
                 </div>
                 <h3 className="font-serif text-base font-bold text-[#293225] mb-2 group-hover:text-[#5F6B45] transition-colors">{item.title}</h3>
                 <p className="text-[#252822]/75 text-xs leading-relaxed font-light">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -294,3 +350,4 @@ export default function Physiotherapy() {
     </div>
   );
 }
+

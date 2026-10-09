@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import PageHero from '../components/PageHero';
+import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem, ImageReveal } from '../components/MotionWrappers';
 import cliImg from '../assets/cli.jpeg';
 
 export default function Contact() {
   return (
-    <div className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
+    <PageTransition className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
       
       {/* Full Image Page Hero */}
       <PageHero 
@@ -21,106 +23,132 @@ export default function Contact() {
         <div className="max-w-[1500px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* LEFT: Contact Information List */}
-          <div className="lg:col-span-6 space-y-8">
+          <FadeIn className="lg:col-span-6 space-y-8" direction="left">
             <div>
               <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">CONNECT WITH US</span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold leading-tight mb-4">
+              <TextReveal className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold leading-tight mb-4">
                 Let's Talk About Your Health.
-              </h2>
+              </TextReveal>
               <p className="text-[#252822]/80 font-light text-base sm:text-lg leading-relaxed">
                 Reach out today. Our team is here to answer your questions and help you choose the right care pathway.
               </p>
             </div>
             
-            <div className="space-y-6 pt-2">
+            <StaggerContainer className="space-y-6 pt-2" staggerDelay={0.1}>
               
               {/* Phone Call */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                  📞
-                </div>
-                <div>
-                  <h4 className="font-serif text-base font-bold text-[#293225]">Phone Call</h4>
-                  <a href="tel:+917007667808" className="text-[#5F6B45] font-bold hover:underline text-sm block">
-                    +91 70076 67808
-                  </a>
-                </div>
-              </div>
+              <StaggerItem>
+                <motion.div 
+                  whileHover={{ x: 6, transition: { duration: 0.3 } }}
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
+                    📞
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Phone Call</h4>
+                    <a href="tel:+917007667808" className="text-[#5F6B45] font-bold hover:underline text-sm block">
+                      +91 70076 67808
+                    </a>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
               {/* WhatsApp */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#25D366]">
-                  💬
-                </div>
-                <div>
-                  <h4 className="font-serif text-base font-bold text-[#293225]">WhatsApp</h4>
-                  <a href="https://wa.me/917007667808" target="_blank" rel="noopener noreferrer" className="text-[#5F6B45] font-bold hover:underline text-sm block">
-                    +91 70076 67808
-                  </a>
-                </div>
-              </div>
+              <StaggerItem>
+                <motion.div 
+                  whileHover={{ x: 6, transition: { duration: 0.3 } }}
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#25D366]">
+                    💬
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">WhatsApp</h4>
+                    <a href="https://wa.me/917007667808" target="_blank" rel="noopener noreferrer" className="text-[#5F6B45] font-bold hover:underline text-sm block">
+                      +91 70076 67808
+                    </a>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
               {/* Address */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                  🗺️
-                </div>
-                <div>
-                  <h4 className="font-serif text-base font-bold text-[#293225]">Address</h4>
-                  <a 
-                    href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-[#252822]/80 hover:text-[#5F6B45] font-light text-xs sm:text-sm leading-relaxed block"
-                  >
-                    SA 1/177 T. N Nai Basti Road, beside Khadim, near Murari Jewellers, Pandeypur, Paharia, Varanasi, Uttar Pradesh 221002
-                  </a>
-                </div>
-              </div>
+              <StaggerItem>
+                <motion.div 
+                  whileHover={{ x: 6, transition: { duration: 0.3 } }}
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
+                    🗺️
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Address</h4>
+                    <a 
+                      href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#252822]/80 hover:text-[#5F6B45] font-light text-xs sm:text-sm leading-relaxed block"
+                    >
+                      SA 1/177 T. N Nai Basti Road, beside Khadim, near Murari Jewellers, Pandeypur, Paharia, Varanasi, Uttar Pradesh 221002
+                    </a>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
               {/* Opening Hours */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                  ⏰
-                </div>
-                <div>
-                  <h4 className="font-serif text-base font-bold text-[#293225]">Opening Hours</h4>
-                  <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Mon – Sat: 09:00 AM – 08:00 PM</p>
-                  <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Sun: Prior Appointment</p>
-                </div>
-              </div>
+              <StaggerItem>
+                <motion.div 
+                  whileHover={{ x: 6, transition: { duration: 0.3 } }}
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
+                    ⏰
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Opening Hours</h4>
+                    <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Mon – Sat: 09:00 AM – 08:00 PM</p>
+                    <p className="text-[#252822]/80 font-light text-xs sm:text-sm">Sun: Prior Appointment</p>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
               {/* Email Enquiries */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                  ✉️
-                </div>
-                <div>
-                  <h4 className="font-serif text-base font-bold text-[#293225]">Email Enquiries</h4>
-                  <a href="mailto:dr.neha25btr@gmail.com" className="text-[#252822]/80 hover:text-[#5F6B45] font-medium text-xs sm:text-sm block break-all">
-                    dr.neha25btr@gmail.com
-                  </a>
-                </div>
-              </div>
+              <StaggerItem>
+                <motion.div 
+                  whileHover={{ x: 6, transition: { duration: 0.3 } }}
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
+                    ✉️
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Email Enquiries</h4>
+                    <a href="mailto:dr.neha25btr@gmail.com" className="text-[#252822]/80 hover:text-[#5F6B45] font-medium text-xs sm:text-sm block break-all">
+                      dr.neha25btr@gmail.com
+                    </a>
+                  </div>
+                </motion.div>
+              </StaggerItem>
 
-            </div>
-          </div>
+            </StaggerContainer>
+          </FadeIn>
 
           {/* RIGHT: Interactive Appointment & Location Card */}
-          <div className="lg:col-span-6 space-y-8">
+          <FadeIn className="lg:col-span-6 space-y-8" direction="right" delay={0.2}>
             <div className="bg-[#F4EFE6] p-8 sm:p-10 rounded-[28px] border-2 border-[#D8D0C3] shadow-xl space-y-6">
               <h3 className="font-serif text-2xl font-bold text-[#293225]">Visit Our Varanasi Clinic</h3>
               <p className="text-xs text-[#252822]/80 leading-relaxed font-light">
                 Our modern healthcare campus is conveniently located at Pandeypur Chauraha. We recommend booking your consultation in advance for personalized care.
               </p>
               
-              <div className="aspect-[16/10] rounded-2xl overflow-hidden border border-[#D8D0C3] relative">
+              <ImageReveal className="aspect-[16/10] rounded-2xl overflow-hidden border border-[#D8D0C3] relative">
                 <img src={cliImg} alt="Tamanya Clinic Campus" className="w-full h-full object-cover animate-ken-burns" />
-              </div>
+              </ImageReveal>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                <Link to="/book-appointment" className="btn-olive w-full justify-center">
-                  BOOK CONSULTATION
+                <Link to="/book-appointment" className="btn-olive w-full justify-center inline-flex items-center gap-2 group">
+                  <span>BOOK CONSULTATION</span>
+                  <span className="group-hover:translate-x-1.5 transition-transform">→</span>
                 </Link>
                 <a 
                   href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" 
@@ -132,11 +160,12 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
         </div>
       </section>
 
-    </div>
+    </PageTransition>
   );
 }
+

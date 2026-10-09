@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import HeroSlider from '../components/HeroSlider';
 import InsideTamanya from '../components/InsideTamanya';
 import { Link } from 'react-router-dom';
+import { TiltCard } from '../components/MotionWrappers';
+import ThreeDFolder from '../components/ui/3d-folder';
 import cliImg from '../assets/cli.jpeg';
 import phyImg from '../assets/phy.jpg';
 import woImg from '../assets/wo.jpg';
@@ -10,6 +13,9 @@ import wellnessImg from '../assets/wellness-1-1024x683.jpg';
 import nehaImg from '../assets/neha.jpeg';
 import prizeImg from '../assets/prize.png';
 import campImg from '../assets/camp.webp';
+
+const luxuryEase = [0.16, 1, 0.3, 1];
+
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -232,6 +238,42 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+
+            {/* Interactive 3D Animated Clinical Folder Reference */}
+            <div className="pt-16 max-w-5xl mx-auto">
+              <ThreeDFolder 
+                title="Specialised Clinical Divisions"
+                subtitle="Explore Dr. Neha Gupta's specialized clinical protocols and private care suites."
+                category="TAMANYA HEALTH FOLDER ARCHIVE"
+                items={[
+                  {
+                    id: '1',
+                    title: 'Musculoskeletal Physiotherapy',
+                    subtitle: 'Spine, Joint & Post-Surgical Rehab',
+                    badge: 'Core Specialty',
+                    description: 'Targeted joint mobilization, dry needling, cupping therapy, and biomechanical posture correction.',
+                    accentColor: '#5F6B45'
+                  },
+                  {
+                    id: '2',
+                    title: 'Female Pelvic Health Suite',
+                    subtitle: 'Private & Discreet Care',
+                    badge: 'Dedicated Suite',
+                    description: 'Confidential pelvic floor rehabilitation, prenatal/postnatal physical care, and incontinence management.',
+                    accentColor: '#B89A5A'
+                  },
+                  {
+                    id: '3',
+                    title: 'Aesthetic Skin & Slimming',
+                    subtitle: 'Integrative Toning Protocols',
+                    badge: 'Aesthetics',
+                    description: 'Dermatological peels, facial rejuvenation, ultrasonic inch-loss, and deep heat body contouring.',
+                    accentColor: '#3F4A32'
+                  }
+                ]}
+              />
+            </div>
+
           </div>
 
         </div>
@@ -346,16 +388,21 @@ export default function Home() {
                 tag: "NEUROLOGY"
               }
             ].map((item, i) => (
-              <div key={i} className="bg-[#FAF7F1] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm hover:shadow-xl">
-                <span className="bg-[#E8ECDF] text-[#5F6B45] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold inline-block mb-4 border border-[#5F6B45]/20">
-                  {item.tag}
-                </span>
-                <h3 className="font-serif text-xl font-bold text-[#293225] mb-3">{item.title}</h3>
-                <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{item.desc}</p>
-                <Link to="/physiotherapy" className="text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#293225] flex items-center gap-1">
-                  <span>LEARN MORE</span> <span>→</span>
-                </Link>
-              </div>
+              <TiltCard key={i} maxTilt={10} scale={1.03} className="h-full">
+                <div className="bg-[#FAF7F1] p-8 sm:p-9 rounded-[28px] border-2 border-[#D8D0C3] hover:border-[#B89A5A] transition-all duration-500 shadow-[0_10px_30px_rgba(41,50,37,0.05)] hover:shadow-[0_25px_60px_rgba(95,107,69,0.25)] flex flex-col justify-between h-full group cursor-pointer">
+                  <div>
+                    <span className="bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3.5 py-1.5 rounded-full font-bold inline-block mb-5 border border-[#B89A5A]/40 shadow-sm group-hover:bg-[#B89A5A] group-hover:text-[#293225] transition-colors">
+                      {item.tag}
+                    </span>
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#293225] mb-3 group-hover:text-[#5F6B45] transition-colors leading-snug">{item.title}</h3>
+                    <p className="text-[#252822]/80 text-xs sm:text-sm leading-relaxed font-light mb-8">{item.desc}</p>
+                  </div>
+                  <Link to="/physiotherapy" className="pt-4 border-t border-[#D8D0C3] text-xs font-bold uppercase tracking-widest text-[#5F6B45] group-hover:text-[#293225] flex items-center justify-between transition-colors">
+                    <span>LEARN MORE</span> 
+                    <span className="group-hover:translate-x-2 transition-transform duration-300 text-[#B89A5A] font-extrabold text-sm">→</span>
+                  </Link>
+                </div>
+              </TiltCard>
             ))}
           </div>
 
@@ -377,38 +424,66 @@ export default function Home() {
 
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
           
-          {/* Left Text & Bio Content */}
+          {/* Left Text & Bio Content — Premium Editorial Sequence */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3 reveal-up">
+            {/* 1. Badge */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1, ease: luxuryEase }}
+              className="flex items-center gap-3"
+            >
               <span className="w-8 h-[2px] bg-[#B89A5A] block"></span>
               <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-extrabold block">CLINICAL DIRECTOR</span>
-            </div>
+            </motion.div>
 
-            {/* Masked Line Reveal Headings */}
+            {/* 2. Heading & Name */}
             <div>
-              <div className="overflow-hidden">
-                <h2 className="font-serif text-4xl sm:text-6xl text-[#293225] font-bold tracking-tight reveal-up leading-tight">
-                  Meet Your Practitioner
-                </h2>
-              </div>
-              <p className="font-serif italic text-3xl sm:text-4xl text-[#5F6B45] font-semibold mt-2 reveal-up text-gradient-gold">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2, ease: luxuryEase }}
+                className="font-serif text-4xl sm:text-6xl text-[#293225] font-bold tracking-tight leading-tight"
+              >
+                Meet Your Practitioner
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3, ease: luxuryEase }}
+                className="font-serif italic text-3xl sm:text-4xl text-[#5F6B45] font-semibold mt-2 text-gradient-gold"
+              >
                 Dr. Neha Gupta
-              </p>
+              </motion.p>
             </div>
 
-            {/* Qualifications & Credentials List with Expanding Border */}
-            <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3] reveal-up">
+            {/* 3. Qualifications & Credentials List */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65, delay: 0.4, ease: luxuryEase }}
+              className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3]"
+            >
               <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Physiotherapist</span>
               <span className="text-[#B89A5A] font-bold">•</span>
               <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Women's Health Specialist</span>
               <span className="text-[#B89A5A] font-bold">•</span>
               <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Founder, Tamanya</span>
-            </div>
+            </motion.div>
 
-            {/* Biography Paragraphs with Progressive Stagger */}
-            <div className="space-y-4 text-[#252822]/85 font-light leading-relaxed text-sm sm:text-base reveal-up">
+            {/* 4. Biography Paragraphs */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.5, ease: luxuryEase }}
+              className="space-y-4 text-[#252822]/85 font-light leading-relaxed text-sm sm:text-base"
+            >
               <p>
                 Dr. Neha Gupta's journey has grown from a foundation in physiotherapy into a broader commitment to rehabilitation, women's health, and preventive healthcare. With <strong>7+ years of clinical experience</strong>, a <strong>Master's in Physiotherapy with an Orthopaedics specialisation</strong>, and advanced training in <strong>pelvic floor, prenatal and postnatal rehabilitation</strong>, she has built her practice around personalised, patient-focused care.
               </p>
@@ -418,10 +493,16 @@ export default function Home() {
               <p>
                 Today, through Tamanya, Dr. Neha focuses on creating a more informed approach to rehabilitation—one that looks beyond immediate discomfort toward <strong>mobility, functional recovery, women's health, and long-term wellbeing</strong>.
               </p>
-            </div>
+            </motion.div>
 
-            {/* CTAs */}
-            <div className="pt-4 flex flex-wrap items-center gap-4 reveal-up">
+            {/* 5. CTAs */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6, ease: luxuryEase }}
+              className="pt-4 flex flex-wrap items-center gap-4"
+            >
               <Link 
                 to="/about" 
                 className="btn-deep-olive"
@@ -434,15 +515,21 @@ export default function Home() {
               >
                 BOOK CONSULTATION WITH DR. NEHA
               </Link>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Portrait & Floating Detail Card */}
-          <div className="lg:col-span-5 relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.85, delay: 0.3, ease: luxuryEase }}
+            className="lg:col-span-5 relative"
+          >
             <Link to="/about" className="block group">
               
-              {/* Photo with Mask Reveal & Ken Burns Zoom */}
-              <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative z-10 img-mask-reveal bg-[#FAF7F1]">
+              {/* Photo with Framer Motion Unveil & Ken Burns Zoom */}
+              <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative z-10 bg-[#FAF7F1]">
                 <img 
                   src={nehaImg} 
                   alt="Dr. Neha Gupta - Clinical Director & Founder Tamanya Health" 
@@ -462,7 +549,7 @@ export default function Home() {
               </div>
 
             </Link>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -696,25 +783,27 @@ export default function Home() {
                 tag: "Verified Patient"
               }
             ].map((review, i) => (
-              <div key={i} className="bg-[#FAF7F1] p-8 sm:p-10 rounded-[24px] border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-[0_10px_30px_rgba(41,50,37,0.04)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.20)] transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="flex items-center gap-1 text-[#B89A5A] text-lg mb-4">
-                    ★★★★★
-                  </div>
-                  <p className="text-[#252822]/90 font-serif italic text-xs sm:text-sm leading-relaxed mb-8">
-                    "{review.quote}"
-                  </p>
-                </div>
-                <div className="pt-6 border-t border-[#D8D0C3] flex items-center justify-between">
+              <TiltCard key={i} maxTilt={6} className="h-full">
+                <div className="bg-[#FAF7F1] p-8 sm:p-10 rounded-[24px] border-2 border-[#D8D0C3] hover:border-[#5F6B45] shadow-[0_10px_30px_rgba(41,50,37,0.04)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.20)] transition-all duration-300 flex flex-col justify-between group h-full">
                   <div>
-                    <h4 className="font-serif font-bold text-[#293225] text-base sm:text-lg group-hover:text-[#5F6B45] transition-colors">{review.name}</h4>
-                    <span className="text-xs text-[#252822]/60 font-medium">{review.service}</span>
+                    <div className="flex items-center gap-1 text-[#B89A5A] text-lg mb-4">
+                      ★★★★★
+                    </div>
+                    <p className="text-[#252822]/90 font-serif italic text-xs sm:text-sm leading-relaxed mb-8">
+                      "{review.quote}"
+                    </p>
                   </div>
-                  <span className="bg-[#E8ECDF] text-[#5F6B45] text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#5F6B45]/30">
-                    {review.tag}
-                  </span>
+                  <div className="pt-6 border-t border-[#D8D0C3] flex items-center justify-between">
+                    <div>
+                      <h4 className="font-serif font-bold text-[#293225] text-base sm:text-lg group-hover:text-[#5F6B45] transition-colors">{review.name}</h4>
+                      <span className="text-xs text-[#252822]/60 font-medium">{review.service}</span>
+                    </div>
+                    <span className="bg-[#E8ECDF] text-[#5F6B45] text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#5F6B45]/30">
+                      {review.tag}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
 
