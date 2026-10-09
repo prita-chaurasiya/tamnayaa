@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function SplitText({
   text = '',
@@ -8,20 +8,18 @@ export default function SplitText({
   type = 'words', // 'words' | 'chars'
   delay = 0,
   stagger = 0.035,
-  duration = 0.8,
+  duration = 0.7,
   once = true,
 }) {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once, amount: 0.15 });
   const Tag = motion[as] || motion.div;
 
   if (!text) return null;
 
-  // Pure React splitting for 100% reliability and zero DOM mutation errors
+  // Pure React splitting for 100% reliability
   const items = type === 'chars' ? text.split('') : text.split(' ');
 
   const containerVariants = {
-    hidden: { opacity: 1 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
@@ -34,15 +32,11 @@ export default function SplitText({
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: '100%',
-      filter: 'blur(8px)',
-      rotateX: -30,
+      y: '25%',
     },
     visible: {
       opacity: 1,
       y: '0%',
-      filter: 'blur(0px)',
-      rotateX: 0,
       transition: {
         duration,
         ease: [0.16, 1, 0.3, 1],
@@ -52,22 +46,22 @@ export default function SplitText({
 
   return (
     <Tag
-      ref={containerRef}
-      className={`inline-block overflow-hidden ${className}`}
+      className={`inline-block ${className}`}
       variants={containerVariants}
       initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      whileInView="visible"
+      viewport={{ once: once, amount: 0 }}
     >
       {items.map((item, idx) => (
         <span
           key={idx}
-          className={`inline-block overflow-hidden ${
+          className={`inline-block ${
             type === 'words' ? 'mr-[0.25em] last:mr-0' : ''
-          } vertical-align-bottom`}
+          }`}
         >
           <motion.span
             variants={itemVariants}
-            className="inline-block transform-gpu origin-bottom-left"
+            className="inline-block transform-gpu"
           >
             {item === ' ' ? '\u00A0' : item}
           </motion.span>

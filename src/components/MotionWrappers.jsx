@@ -13,7 +13,7 @@ export function PageTransition({ children, className = "" }) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
-      transition={{ duration: 0.45, ease: luxuryEase }}
+      transition={{ duration: 0.35, ease: luxuryEase }}
       className={className}
     >
       {children}
@@ -32,9 +32,9 @@ export function TextReveal({ children, delay = 0, className = "", as = "div" }) 
       <Component
         initial={{ y: "100%", opacity: 0 }}
         whileInView={{ y: "0%", opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0 }}
         transition={{
-          duration: 0.75,
+          duration: 0.65,
           delay: delay,
           ease: luxuryEase
         }}
@@ -52,8 +52,8 @@ export function FadeIn({
   children, 
   direction = "up", 
   delay = 0, 
-  duration = 0.7, 
-  distance = 35, 
+  duration = 0.6, 
+  distance = 25, 
   className = "",
   once = true 
 }) {
@@ -61,9 +61,9 @@ export function FadeIn({
     switch (direction) {
       case "up": return { opacity: 0, y: distance };
       case "down": return { opacity: 0, y: -distance };
-      case "left": return { opacity: 0, x: -distance, y: 10 };
-      case "right": return { opacity: 0, x: distance, y: 10 };
-      case "zoom": return { opacity: 0, scale: 0.94, y: 15 };
+      case "left": return { opacity: 0, x: -distance, y: 0 };
+      case "right": return { opacity: 0, x: distance, y: 0 };
+      case "zoom": return { opacity: 0, scale: 0.96, y: 10 };
       default: return { opacity: 0, y: distance };
     }
   };
@@ -72,7 +72,7 @@ export function FadeIn({
     <motion.div
       initial={getInitial()}
       whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
-      viewport={{ once: once, amount: 0.15 }}
+      viewport={{ once: once, amount: 0 }}
       transition={{
         duration: duration,
         delay: delay,
@@ -88,7 +88,7 @@ export function FadeIn({
 /**
  * Stagger Container & Items for Grids & Lists
  */
-export function StaggerContainer({ children, staggerDelay = 0.1, delay = 0, className = "" }) {
+export function StaggerContainer({ children, staggerDelay = 0.08, delay = 0, className = "" }) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -105,7 +105,7 @@ export function StaggerContainer({ children, staggerDelay = 0.1, delay = 0, clas
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
       className={className}
     >
       {children}
@@ -117,17 +117,15 @@ export function StaggerItem({ children, className = "", direction = "up" }) {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: direction === "up" ? 30 : 0,
-      x: direction === "left" ? -30 : direction === "right" ? 30 : 0,
-      scale: 0.97
+      y: direction === "up" ? 20 : 0,
+      x: direction === "left" ? -20 : direction === "right" ? 20 : 0,
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
-      scale: 1,
       transition: {
-        duration: 0.65,
+        duration: 0.55,
         ease: luxuryEase
       }
     }
@@ -141,44 +139,38 @@ export function StaggerItem({ children, className = "", direction = "up" }) {
 }
 
 /**
- * Image Reveal Component (Clip-path mask unveil with subtle scale down)
+ * 3D Tilt Card Wrapper for High-End Interaction
  */
-export function ImageReveal({ src, alt, className = "", imgClassName = "", delay = 0, aspectClass = "" }) {
+export function TiltCard({ children, className = "", maxTilt = 8, scale = 1.02 }) {
   return (
-    <div className={`relative overflow-hidden rounded-inherit ${aspectClass} ${className}`}>
-      <motion.div
-        initial={{ clipPath: 'inset(12% 0% 12% 0%)', opacity: 0, scale: 1.12 }}
-        whileInView={{ clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1.1, delay: delay, ease: luxuryEase }}
-        className="w-full h-full"
-      >
-        <img
-          src={src}
-          alt={alt}
-          className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${imgClassName}`}
-          loading="lazy"
-        />
-      </motion.div>
-    </div>
+    <motion.div
+      whileHover={{ 
+        scale: scale,
+        rotateX: -2,
+        rotateY: 2,
+        transition: { duration: 0.3, ease: luxuryEase }
+      }}
+      className={`transform-gpu ${className}`}
+    >
+      {children}
+    </motion.div>
   );
 }
 
 /**
- * Floating Accent / Card Element (Gentle continuous levitation)
+ * Floating Physics Element for Decorative Accents
  */
-export function FloatElement({ children, className = "", duration = 5, distance = 7, delay = 0 }) {
+export function FloatElement({ children, className = "", yOffset = 12, duration = 6 }) {
   return (
     <motion.div
       animate={{
-        y: [-distance / 2, distance / 2, -distance / 2]
+        y: [0, -yOffset, 0],
+        rotate: [0, 1.5, -1.5, 0]
       }}
       transition={{
         duration: duration,
         repeat: Infinity,
-        repeatType: "mirror",
-        ease: "easeInOut",
-        delay: delay
+        ease: "easeInOut"
       }}
       className={className}
     >
@@ -188,83 +180,18 @@ export function FloatElement({ children, className = "", duration = 5, distance 
 }
 
 /**
- * Restrained 3D Tilt Card (Mouse-driven subtle 3D depth with specular radial glow)
+ * Image Reveal with Shimmer Mask
  */
-export function TiltCard({ children, className = "", maxTilt = 8, scale = 1.02 }) {
-  const [rotateX, setRotateX] = React.useState(0);
-  const [rotateY, setRotateY] = React.useState(0);
-  const [glowPos, setGlowPos] = React.useState({ x: 50, y: 50 });
-  const [isHovered, setIsHovered] = React.useState(false);
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rX = ((y - centerY) / centerY) * -maxTilt;
-    const rY = ((x - centerX) / centerX) * maxTilt;
-    
-    setRotateX(rX);
-    setRotateY(rY);
-    setGlowPos({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setRotateX(0);
-    setRotateY(0);
-  };
-
+export function ImageReveal({ children, className = "", delay = 0 }) {
   return (
-    <div className="perspective-1000 relative">
-      <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        animate={{
-          rotateX: isHovered ? rotateX : 0,
-          rotateY: isHovered ? rotateY : 0,
-          scale: isHovered ? scale : 1,
-          y: isHovered ? -6 : 0,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-          mass: 0.6
-        }}
-        className={`transform-gpu relative overflow-hidden rounded-inherit ${className}`}
-        style={{
-          transformStyle: "preserve-3d",
-        }}
-      >
-        {/* Specular Light Spotlight overlay on hover */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300 z-30 rounded-inherit"
-          style={{
-            opacity: isHovered ? 1 : 0,
-            background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, rgba(184, 154, 90, 0.18), transparent 60%)`,
-          }}
-        />
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0 }}
+      transition={{ duration: 0.7, delay: delay, ease: luxuryEase }}
+      className={`relative overflow-hidden ${className}`}
+    >
+      {children}
+    </motion.div>
   );
 }
-
-export { default as Magnetic } from './Magnetic';
-export { default as SplitText } from './SplitText';
-export { default as CountUpNumber } from './CountUpNumber';
-export { default as AuroraCanvas } from './AuroraCanvas';
-export { default as Hero3DCanvas } from './Hero3DCanvas';
-export { default as Marquee } from './Marquee';
-
-

@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TiltedGridHero } from './ui/tilted-grid-hero';
 import cliImg from '../assets/cli.jpeg';
-import phyImg from '../assets/phy.jpg';
-import woImg from '../assets/wo.jpg';
-import skinImg from '../assets/skin-864x1536.jpg';
-import wellnessImg from '../assets/wellness-1-1024x683.jpg';
 import nehaImg from '../assets/neha.jpeg';
 import prizeImg from '../assets/prize.png';
 import campImg from '../assets/camp.webp';
+
+import gImg from '../assets/gallery/g.png';
+import wa1Img from '../assets/gallery/wa1.jpeg';
+import wa2Img from '../assets/gallery/wa2.jpeg';
+import wa3Img from '../assets/gallery/wa3.jpeg';
+import wa4Img from '../assets/gallery/wa4.jpeg';
+import wa5Img from '../assets/gallery/wa5.jpeg';
+import wa6Img from '../assets/gallery/wa6.jpeg';
+import wa7Img from '../assets/gallery/wa7.jpeg';
 
 export default function InsideTamanya() {
   const [activeTab, setActiveTab] = useState('All');
@@ -16,36 +21,76 @@ export default function InsideTamanya() {
 
   const galleryItems = [
     {
-      id: "1",
-      title: "Clinic Reception & Campus",
-      subtitle: "A modern, hygienic clinical environment designed for focused, patient-centered care",
+      id: "g1",
+      title: "Tamanya Physio & Health Clinic Campus",
+      subtitle: "Official clinic campus located at Pandeypur Chauraha, Varanasi",
       category: "Clinic",
-      img: cliImg,
+      img: gImg,
       badge: "Pandeypur Campus"
     },
     {
-      id: "2",
-      title: "Hands-on Rehabilitation",
-      subtitle: "Targeted joint mobilization, myofascial release & cupping therapy sessions",
+      id: "w1",
+      title: "Clinical Consultation & Assessment",
+      subtitle: "Personalized patient evaluation led by Dr. Neha Gupta (M.P.T Ortho)",
+      category: "Clinic",
+      img: wa1Img,
+      badge: "Clinical Care"
+    },
+    {
+      id: "w2",
+      title: "Hands-on Musculoskeletal Rehabilitation",
+      subtitle: "Targeted joint mobilization, spine care & physical therapy sessions",
       category: "Rehabilitation",
-      img: phyImg,
-      badge: "Advanced Cupping Therapy"
+      img: wa2Img,
+      badge: "Physiotherapy Suite"
     },
     {
-      id: "3",
-      title: "Female Pelvic Health Suite",
-      subtitle: "Private, compassionate physical therapy for pelvic floor, antenatal & postnatal care",
-      category: "Women's Health",
-      img: woImg,
-      badge: "Women's Health Suite"
+      id: "w3",
+      title: "Specialised Clinical Treatment Setup",
+      subtitle: "Advanced electrotherapy, traction & physical recovery equipment",
+      category: "Clinic",
+      img: wa3Img,
+      badge: "Treatment Suite"
     },
     {
-      id: "4",
-      title: "Advanced Aesthetic Modalities",
-      subtitle: "Non-invasive clinical facial rejuvenation, glow therapies & acne management",
-      category: "Aesthetics",
-      img: skinImg,
-      badge: "Clinical Skin Care"
+      id: "w4",
+      title: "Patient Recovery & Exercise Prescription",
+      subtitle: "Customized movement prescription for joint, back & neck pain relief",
+      category: "Rehabilitation",
+      img: wa4Img,
+      badge: "Rehab Care"
+    },
+    {
+      id: "w5",
+      title: "Clinical Treatment Room & Facilities",
+      subtitle: "Private, hygienic consultation & physical therapy rooms",
+      category: "Clinic",
+      img: wa5Img,
+      badge: "Hygienic Setup"
+    },
+    {
+      id: "w6",
+      title: "Advanced Electrotherapy Unit",
+      subtitle: "IFT, TENS, and ultrasonic systems for deep tissue pain release",
+      category: "Rehabilitation",
+      img: wa6Img,
+      badge: "Spine & Joint Care"
+    },
+    {
+      id: "w7",
+      title: "Specialist Care & Patient Evaluation",
+      subtitle: "Evidence-informed physiotherapy practice in Pandeypur, Varanasi",
+      category: "Clinic",
+      img: wa7Img,
+      badge: "Specialist Care"
+    },
+    {
+      id: "1",
+      title: "Clinic Reception & Campus",
+      subtitle: "A modern, hygienic clinical environment designed for focused care",
+      category: "Clinic",
+      img: cliImg,
+      badge: "Pandeypur Campus"
     },
     {
       id: "5",
@@ -54,14 +99,6 @@ export default function InsideTamanya() {
       category: "Outreach",
       img: campImg,
       badge: "Community Screening"
-    },
-    {
-      id: "6",
-      title: "Slimming & Body Shaping Suite",
-      subtitle: "Vacuum cavitation, G-5 massage & deep heat therapy for inch loss and toning",
-      category: "Aesthetics",
-      img: wellnessImg,
-      badge: "Body Contouring"
     },
     {
       id: "7",
@@ -81,7 +118,7 @@ export default function InsideTamanya() {
     }
   ];
 
-  const categories = ['All', 'Clinic', 'Rehabilitation', 'Women\'s Health', 'Aesthetics', 'Outreach'];
+  const categories = ['All', 'Clinic', 'Rehabilitation', 'Outreach'];
 
   const filteredItems = activeTab === 'All' 
     ? galleryItems 
@@ -100,10 +137,10 @@ export default function InsideTamanya() {
             <button
               key={i}
               onClick={() => setActiveTab(cat)}
-              className={`relative px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                 activeTab === cat
-                  ? 'bg-[#5F6B45] text-[#FAF7F1] shadow-md border border-[#B89A5A]/30 scale-105'
-                  : 'bg-[#F4EFE6] text-[#293225] hover:bg-[#E8ECDF] border border-[#D8D0C3]'
+                  ? 'bg-[#5F6B45] text-white shadow-md'
+                  : 'bg-[#F4EFE6] text-[#293225] hover:bg-[#D8D0C3]'
               }`}
             >
               {cat}
@@ -112,38 +149,36 @@ export default function InsideTamanya() {
         </div>
       </div>
 
-      {/* Curved 3D Tilted Grid Hero Gallery Component */}
+      {/* 3D Tilted Grid Interactive Hero */}
       <TiltedGridHero 
-        title="Inside Tamanya Health"
-        category="CURVED 3D CLINICAL GALLERY"
-        subtitle="Explore real moments from our clinic campus in Pandeypur, Varanasi—including our treatment suites, advanced rehabilitation modalities, female pelvic health suite, community health camps, and awards."
-        items={filteredItems.length > 0 ? filteredItems : galleryItems}
+        title="Inside Tamanya Health Campus"
+        category="3D PERSPECTIVE GALLERY"
+        subtitle="Experience our treatment suites, private female pelvic care rooms, electrotherapy units, and community health camps in Varanasi."
+        items={filteredItems}
         onImageClick={(img) => setLightboxImg(img)}
       />
 
-      {/* Lightbox Modal with AnimatePresence */}
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {lightboxImg && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-md"
             onClick={() => setLightboxImg(null)}
+            className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-pointer"
           >
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.85, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl border-2 border-[#B89A5A]/60 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl border-2 border-[#B89A5A]"
             >
-              <img src={lightboxImg} alt="Enlarged gallery view" className="w-full h-full object-contain" />
-              <button 
+              <img src={lightboxImg} alt="Enlarged View" className="w-full h-full object-contain max-h-[85vh]" />
+              <button
                 onClick={() => setLightboxImg(null)}
-                className="absolute top-4 right-4 bg-[#293225] text-[#FAF7F1] hover:text-[#B89A5A] w-11 h-11 rounded-full flex items-center justify-center text-lg font-bold border border-[#B89A5A]/40 shadow-lg transition-all"
+                className="absolute top-4 right-4 bg-[#293225] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border border-[#B89A5A] hover:bg-[#5F6B45] transition-colors"
               >
                 ✕
               </button>
@@ -151,8 +186,6 @@ export default function InsideTamanya() {
           </motion.div>
         )}
       </AnimatePresence>
-
     </section>
   );
 }
-

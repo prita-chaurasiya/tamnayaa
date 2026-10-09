@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/PageHero';
-import { TiltCard } from '../components/MotionWrappers';
+import { TiltCard, PageTransition, FadeIn, TextReveal } from '../components/MotionWrappers';
 import SplitText from '../components/SplitText';
 import Magnetic from '../components/Magnetic';
 import Marquee from '../components/Marquee';
 import MetricsSection from '../components/MetricsSection';
+
+import backPainImg from '../assets/conditions/back_pain.jpg';
+import neckPainImg from '../assets/conditions/neck_pain.jpg';
+import kneeArthritisImg from '../assets/conditions/knee_arthritis.jpg';
+import tkrSurgeryImg from '../assets/conditions/tkr_surgery.jpg';
+import strokeParalysisImg from '../assets/conditions/stroke_paralysis.jpg';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
 
 const luxuryEase = [0.16, 1, 0.3, 1];
-
-
 
 export default function Physiotherapy() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -22,46 +26,46 @@ export default function Physiotherapy() {
       title: "BACK PAIN & LOWER BACK PAIN",
       includes: "Disc Bulge, Sciatica, Lumbar Stiffness & Postural Strain",
       desc: "Targeted mechanical therapy and core stabilization for lumbar spine pain, sciatica nerve radiation, disc herniation management, and posture-induced stiffness.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
+      image: backPainImg
     },
     {
       title: "NECK PAIN & CERVICAL SPONDYLOSIS",
       includes: "Stiffness, Nerve Impingement & Desk Posture Pain",
       desc: "Comprehensive cervical spine mobilization, trapezius spasm release, and ergonomic posture correction designed to relieve acute neck pain and arm numbness.",
-      image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+      image: neckPainImg
     },
     {
       title: "JOINT PAIN & ARTHRITIS",
       includes: "Knee Osteoarthritis, Shoulder, Hip & Wrist Pain",
       desc: "Evidence-informed joint mobility exercises, manual therapy, and inflammation reduction modalities to preserve joint cartilage and restore smooth movement.",
-      image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80"
+      image: kneeArthritisImg
     },
     {
       title: "ACL / MCL & MENISCUS INJURIES",
       includes: "Ligament Tears, Sprains, Tendinitis & Ankle Instability",
       desc: "Structured knee dynamic loading, hamstring and quadriceps strengthening, dynamic joint proprioception, and non-surgical ligament rehabilitation.",
-      image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80"
+      image: kneeArthritisImg
     },
     {
       title: "PRE & POST SURGERY REHABILITATION",
       includes: "Total Knee Replacement (TKR) & Total Hip Replacement (THR)",
       desc: "Phased post-surgical rehabilitation protocols for Total Knee (TKR) and Hip (THR) replacements, focusing on range of motion, gait re-education, and strength.",
-      image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80"
+      image: tkrSurgeryImg
     },
     {
-      title: "SPORTS INJURIES & SPRAINS",
-      includes: "Rotator Cuff, Muscle Strain & Achilles Tendinitis",
-      desc: "Active recovery protocols, soft tissue release, dynamic loading, and athletic Return-to-Sport performance conditioning.",
-      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
+      title: "PARALYSIS & STROKE NEURO-REHAB",
+      includes: "Stroke, Hemiplegia & Facial Bell's Palsy",
+      desc: "Targeted neuromuscular re-education, gait balance retraining, and upper limb functional paralysis rehabilitation.",
+      image: strokeParalysisImg
     }
   ];
 
   const neuroCards = [
-    { title: "STROKE REHABILITATION", desc: "Neuromuscular re-education, hemiplegia gait training, and upper limb functional task rehabilitation." },
-    { title: "PARKINSON'S DISEASE CARE", desc: "Big movement amplitude exercises, balance stabilization, and gait freezing prevention strategies." },
-    { title: "SCIATICA & NERVE IMPINGEMENT", desc: "Spinal decompression exercises, nerve flossing techniques, and radiculopathy relief." },
-    { title: "BELL'S PALSY FACIAL REHAB", desc: "Targeted facial muscle re-education, neuromuscular stimulation, and symmetry recovery." },
-    { title: "SPINAL CORD INJURY REHAB", desc: "Functional mobility maintenance, wheelchair transfer safety, and posture stabilization." }
+    { title: "STROKE REHABILITATION", desc: "Neuromuscular re-education, hemiplegia gait training, and upper limb functional task rehabilitation.", image: strokeParalysisImg },
+    { title: "PARKINSON'S DISEASE CARE", desc: "Big movement amplitude exercises, balance stabilization, and gait freezing prevention strategies.", image: strokeParalysisImg },
+    { title: "SCIATICA & NERVE IMPINGEMENT", desc: "Spinal decompression exercises, nerve flossing techniques, and radiculopathy relief.", image: backPainImg },
+    { title: "BELL'S PALSY FACIAL REHAB", desc: "Targeted facial muscle re-education, neuromuscular stimulation, and symmetry recovery.", image: strokeParalysisImg },
+    { title: "SPINAL CORD INJURY REHAB", desc: "Functional mobility maintenance, wheelchair transfer safety, and posture stabilization.", image: backPainImg }
   ];
 
   const advancedTherapies = [
@@ -95,14 +99,14 @@ export default function Physiotherapy() {
   ];
 
   return (
-    <div className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
+    <PageTransition className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
       
       {/* 1. HERO SECTION */}
       <PageHero 
         title="Move Better. Recover Stronger."
         category="PERSONALISED PHYSIOTHERAPY"
         subtitle="Personalised physiotherapy and rehabilitation designed around your condition, movement goals and everyday needs in Pandeypur, Varanasi."
-        image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2070&q=80"
+        image={backPainImg}
         pageName="PHYSIOTHERAPY"
         ctaText="BOOK AN APPOINTMENT"
         ctaLink="/book-appointment"
@@ -114,7 +118,6 @@ export default function Physiotherapy() {
 
       {/* Clinical Metrics Benchmark */}
       <MetricsSection />
-
 
       {/* 2. INTRODUCTION SECTION */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
@@ -129,7 +132,7 @@ export default function Physiotherapy() {
           >
             <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative group">
               <img 
-                src={phyImg} 
+                src={backPainImg} 
                 alt="Tamanya Personalised Physiotherapy Care" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" 
               />
@@ -183,10 +186,10 @@ export default function Physiotherapy() {
             transition={{ duration: 0.7, ease: luxuryEase }}
             className="text-center max-w-3xl mx-auto mb-20"
           >
-            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">ORTHOPAEDIC CONDITIONS</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Targeted Spine & Joint Recovery</h2>
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">ORTHOPAEDIC & NEURO CONDITIONS</span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Targeted Spine, Joint & Neuro Recovery</h2>
             <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
-              Tailored clinical pathways for acute injury, degenerative joint pain, disc issues, and post-surgical rehabilitation.
+              Tailored clinical pathways for acute injury, degenerative joint pain, disc issues, post-surgical rehabilitation, and stroke paralysis care.
             </p>
           </motion.div>
 
@@ -200,11 +203,11 @@ export default function Physiotherapy() {
                   transition={{ duration: 0.7, delay: i * 0.1, ease: luxuryEase }}
                   className="bg-[#FAF7F1] rounded-[26px] overflow-hidden border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between h-full cursor-pointer"
                 >
-                  <div className="aspect-[16/10] overflow-hidden relative">
+                  <div className="aspect-[16/10] overflow-hidden relative border-b border-[#D8D0C3]">
                     <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
                     <span className="absolute top-4 left-4 bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold border border-[#B89A5A]/30">
-                      ORTHOPAEDIC
+                      CLINICAL CARE
                     </span>
                   </div>
                   
@@ -214,11 +217,11 @@ export default function Physiotherapy() {
                       <p className="text-[#5F6B45] text-[11px] font-bold uppercase tracking-wider mb-3">{card.includes}</p>
                       <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
                     </div>
-                    
-                    <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#5F6B45]">
-                      <span>CLINICAL PATHWAY</span>
-                      <span className="group-hover:translate-x-1.5 transition-transform text-[#B89A5A]">→</span>
-                    </div>
+
+                    <Link to="/book-appointment" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#3F4A32] transition-colors pt-4 border-t border-[#D8D0C3]">
+                      <span>BOOK CONSULTATION</span>
+                      <span className="group-hover:translate-x-1.5 transition-transform">→</span>
+                    </Link>
                   </div>
                 </motion.div>
               </TiltCard>
@@ -228,138 +231,50 @@ export default function Physiotherapy() {
         </div>
       </section>
 
-      {/* 4. NEUROLOGICAL REHABILITATION SECTION */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
-        <div className="max-w-[1600px] mx-auto">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: luxuryEase }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">NEUROLOGICAL CARE</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Neurological Rehabilitation</h2>
-            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
-              Dedicated neuromuscular re-education restoring motor control, gait stability, and functional independence.
-            </p>
-          </motion.div>
+      {/* 4. FAQ ACCORDION */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-[11px] font-bold block mb-4">PHYSIOTHERAPY FAQ</span>
+            <TextReveal className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold">Frequently Asked Questions</TextReveal>
+          </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {neuroCards.map((card, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.65, delay: i * 0.1, ease: luxuryEase }}
-                className="bg-[#F4EFE6] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm flex flex-col justify-between"
-              >
-                <div>
-                  <span className="bg-[#5F6B45] text-white text-[9px] uppercase tracking-widest px-3 py-1 rounded-full font-bold inline-block mb-4">
-                    NEURO REHAB
-                  </span>
-                  <h3 className="font-serif text-xl font-bold text-[#293225] mb-3">{card.title}</h3>
-                  <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
-                </div>
-                <Link to="/book-appointment" className="text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#293225] flex items-center gap-1 group">
-                  <span>BOOK REHAB EVALUATION</span> <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 5. ADVANCED THERAPIES VISUAL GRID */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-b border-[#D8D0C3]">
-        <div className="max-w-[1600px] mx-auto">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: luxuryEase }}
-            className="text-center max-w-3xl mx-auto mb-20"
-          >
-            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">CLINICAL MODALITIES</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">Advanced Physiotherapy Modalities</h2>
-            <p className="text-[#252822]/80 text-base sm:text-lg font-light leading-relaxed">
-              Integrated electrotherapy, dry needling, cupping, and manual mobilization equipment.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {advancedTherapies.map((item, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05, ease: luxuryEase }}
-                className="bg-[#FAF7F1] p-6 rounded-[20px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all shadow-sm group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#5F6B45] text-[#FAF7F1] font-bold flex items-center justify-center mb-4 shadow-sm text-xs">
-                  {i + 1 < 10 ? `0${i + 1}` : i + 1}
-                </div>
-                <h3 className="font-serif text-base font-bold text-[#293225] mb-2 group-hover:text-[#5F6B45] transition-colors">{item.title}</h3>
-                <p className="text-[#252822]/75 text-xs leading-relaxed font-light">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 6. RELATED SERVICES NAVIGATION */}
-      <section className="py-20 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
-        <div className="max-w-[1600px] mx-auto text-center">
-          <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">EXPLORE MORE CLINICAL DIVISIONS</span>
-          <h2 className="font-serif text-3xl font-bold text-[#293225] mb-12">You May Also Be Interested In</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Link to="/womens-health" className="bg-[#F4EFE6] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] text-left group">
-              <span className="text-xs font-bold text-[#5F6B45] uppercase tracking-widest block mb-2">DIVISION 02</span>
-              <h3 className="font-serif text-2xl font-bold text-[#293225] group-hover:text-[#5F6B45] mb-2">Female Pelvic Floor Suite</h3>
-              <p className="text-xs text-[#252822]/75 font-light">Specialised pelvic rehabilitation, PCOD, antenatal & postnatal care.</p>
-            </Link>
-
-            <Link to="/skin-care" className="bg-[#F4EFE6] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] text-left group">
-              <span className="text-xs font-bold text-[#5F6B45] uppercase tracking-widest block mb-2">DIVISION 03</span>
-              <h3 className="font-serif text-2xl font-bold text-[#293225] group-hover:text-[#5F6B45] mb-2">Aesthetic Skin Care</h3>
-              <p className="text-xs text-[#252822]/75 font-light">Integrative skin rejuvenation, acne treatment & peels.</p>
-            </Link>
-
-            <Link to="/slimming-wellness" className="bg-[#F4EFE6] p-8 rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] text-left group">
-              <span className="text-xs font-bold text-[#5F6B45] uppercase tracking-widest block mb-2">DIVISION 04</span>
-              <h3 className="font-serif text-2xl font-bold text-[#293225] group-hover:text-[#5F6B45] mb-2">Slimming & Body Shaping</h3>
-              <p className="text-xs text-[#252822]/75 font-light">Vacuum cavitation, Body Shaper & deep heat therapies.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. FAQ & CTA */}
-      <section className="py-24 px-6 lg:px-12 bg-[#F4EFE6]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-3xl font-bold text-[#293225] mb-8">Physiotherapy Consultation FAQs</h2>
-          <div className="space-y-4 text-left mb-12">
+          <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-[#FAF7F1] p-6 rounded-[16px] border border-[#D8D0C3]">
-                <h4 className="font-serif text-base font-bold text-[#293225] mb-2">{faq.q}</h4>
-                <p className="text-xs text-[#252822]/80 font-light leading-relaxed">{faq.a}</p>
+              <div key={i} className="bg-[#F4EFE6] rounded-[16px] border border-[#D8D0C3] overflow-hidden shadow-sm">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full p-6 text-left flex justify-between items-center focus:outline-none group"
+                >
+                  <span className="font-serif text-lg text-[#293225] font-bold flex items-center gap-4 group-hover:text-[#5F6B45] transition-colors">
+                    <span className="text-[#B89A5A] text-sm font-mono">0{i + 1}</span>
+                    {faq.q}
+                  </span>
+                  <span className={`text-[#B89A5A] text-xl font-bold transform transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}>
+                    +
+                  </span>
+                </button>
+
+                <AnimatePresence>
+                  {openFaq === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <div className="px-6 pb-6 pt-2 text-[#252822]/80 text-sm font-light leading-relaxed border-t border-[#D8D0C3]/60">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>
-          <Link to="/book-appointment" className="btn-olive">
-            BOOK AN APPOINTMENT WITH DR. NEHA GUPTA
-          </Link>
         </div>
       </section>
 
-    </div>
+    </PageTransition>
   );
 }
-

@@ -7,13 +7,22 @@ import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem, Floa
 import { TiltedGridHero } from '../components/ui/tilted-grid-hero';
 
 import cliImg from '../assets/cli.jpeg';
-import phyImg from '../assets/phy.jpg';
-import woImg from '../assets/wo.jpg';
-import skinImg from '../assets/skin-864x1536.jpg';
-import wellnessImg from '../assets/wellness-1-1024x683.jpg';
+import phyImg from '../assets/conditions/back_pain.jpg';
+import woImg from '../assets/conditions/pcod_pcos.jpg';
+import skinImg from '../assets/conditions/psoriasis.jpg';
+import wellnessImg from '../assets/conditions/cavitation.jpg';
 import nehaImg from '../assets/neha.jpeg';
 import prizeImg from '../assets/prize.png';
 import campImg from '../assets/camp.webp';
+
+import gImg from '../assets/gallery/g.png';
+import wa1Img from '../assets/gallery/wa1.jpeg';
+import wa2Img from '../assets/gallery/wa2.jpeg';
+import wa3Img from '../assets/gallery/wa3.jpeg';
+import wa4Img from '../assets/gallery/wa4.jpeg';
+import wa5Img from '../assets/gallery/wa5.jpeg';
+import wa6Img from '../assets/gallery/wa6.jpeg';
+import wa7Img from '../assets/gallery/wa7.jpeg';
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState('ALL');
@@ -21,27 +30,90 @@ export default function Gallery() {
 
   const galleryItems = [
     {
-      id: "1",
+      id: "g1",
       num: "01",
-      title: "Clinic Infrastructure & Reception",
-      subtitle: "A modern, hygienic clinical environment designed for focused, patient-centered care.",
+      title: "Tamanya Physio & Health Clinic Campus",
+      subtitle: "Official clinic infrastructure located at Pandeypur Chauraha, Varanasi.",
       category: "CLINIC",
-      img: cliImg,
+      img: gImg,
       badge: "Pandeypur Campus"
     },
     {
-      id: "2",
+      id: "w1",
       num: "02",
-      title: "Hands-on Musculoskeletal Rehabilitation",
-      subtitle: "Targeted joint mobilization, myofascial release, and cupping therapy sessions.",
+      title: "Patient Consultation & Clinical Assessment",
+      subtitle: "Comprehensive physical assessment led personally by Dr. Neha Gupta.",
+      category: "CLINIC",
+      img: wa1Img,
+      badge: "Clinical Care"
+    },
+    {
+      id: "w2",
+      num: "03",
+      title: "Advanced Physical Rehabilitation Session",
+      subtitle: "Hands-on joint mobilization and physical rehabilitation exercises.",
       category: "REHABILITATION",
-      img: phyImg,
-      badge: "Cupping & Dry Needling"
+      img: wa2Img,
+      badge: "Physiotherapy Suite"
+    },
+    {
+      id: "w3",
+      num: "04",
+      title: "Specialised Clinical Treatment Setup",
+      subtitle: "Modern equipment setup for electrotherapy, traction, and physical recovery.",
+      category: "CLINIC",
+      img: wa3Img,
+      badge: "Treatment Suite"
+    },
+    {
+      id: "w4",
+      num: "05",
+      title: "Patient Recovery & Exercise Therapy",
+      subtitle: "Customized exercise prescription for spine, posture, and joint health.",
+      category: "REHABILITATION",
+      img: wa4Img,
+      badge: "Rehab Care"
+    },
+    {
+      id: "w5",
+      num: "06",
+      title: "Clinical Treatment Room & Facilities",
+      subtitle: "Private, hygienic consultation and therapy spaces for patients.",
+      category: "CLINIC",
+      img: wa5Img,
+      badge: "Hygienic Setup"
+    },
+    {
+      id: "w6",
+      num: "07",
+      title: "Advanced Spine & Electrotherapy Unit",
+      subtitle: "IFT, TENS, and ultrasonic therapy systems for acute pain relief.",
+      category: "REHABILITATION",
+      img: wa6Img,
+      badge: "Spine & Joint Care"
+    },
+    {
+      id: "w7",
+      num: "08",
+      title: "Specialist Care & Patient Evaluation",
+      subtitle: "Evidence-based rehabilitation practice in Pandeypur, Varanasi.",
+      category: "CLINIC",
+      img: wa7Img,
+      badge: "Specialist Care"
+    },
+    {
+      id: "1",
+      num: "09",
+      title: "Clinic Campus Overview",
+      subtitle: "Conveniently located opposite Indian Oil Petrol Pump, Pandeypur Chauraha.",
+      category: "CLINIC",
+      img: cliImg,
+      badge: "Varanasi Clinic"
     },
     {
       id: "3",
-      num: "03",
-      title: "Female Pelvic Health Suite",
+      num: "10",
+      title: "Female Pelvic Floor Health Suite",
       subtitle: "Private, compassionate physical therapy for antenatal, postnatal, and pelvic floor care.",
       category: "REHABILITATION",
       img: woImg,
@@ -49,16 +121,16 @@ export default function Gallery() {
     },
     {
       id: "4",
-      num: "04",
-      title: "Advanced Aesthetic Skin Modalities",
-      subtitle: "Non-invasive clinical facial rejuvenation, glow therapies, and acne management.",
+      num: "11",
+      title: "Specialised Skin Psoriasis & Scar Suite",
+      subtitle: "Dermatological clinical protocols for skin care, psoriasis flare relief, and scar reduction.",
       category: "AESTHETICS",
       img: skinImg,
-      badge: "Aesthetic Care"
+      badge: "Skin Care Suite"
     },
     {
       id: "5",
-      num: "05",
+      num: "12",
       title: "Community Health & Mobility Camp",
       subtitle: "Free spine and joint screening camps organized for residents across Varanasi.",
       category: "OUTREACH",
@@ -67,16 +139,16 @@ export default function Gallery() {
     },
     {
       id: "6",
-      num: "06",
+      num: "13",
       title: "Slimming & Body Contouring Suite",
-      subtitle: "Vacuum cavitation, G-5 massage, and deep heat therapy for inch loss and toning.",
+      subtitle: "Vacuum cavitation, G-5 massage, and deep heat therapy for inch loss and body shaping.",
       category: "AESTHETICS",
       img: wellnessImg,
       badge: "Body Contouring"
     },
     {
       id: "7",
-      num: "07",
+      num: "14",
       title: "Clinical Director — Dr. Neha Gupta",
       subtitle: "B.P.T, M.P.T (Ortho), MIAP leading evidence-based physiotherapy practice.",
       category: "CLINIC",
@@ -85,7 +157,7 @@ export default function Gallery() {
     },
     {
       id: "8",
-      num: "08",
+      num: "15",
       title: "GAPTCON 2025 National Recognition",
       subtitle: "Awarded Best Clinician at the 2nd National Physiotherapy Conference in Gurgaon.",
       category: "CLINIC",
@@ -172,7 +244,7 @@ export default function Gallery() {
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item, i) => (
                 <motion.div 
-                  key={item.num}
+                  key={item.id}
                   layout
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -198,24 +270,29 @@ export default function Gallery() {
 
                     {/* Lightbox Icon Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
-                      <span className="bg-[#B89A5A] text-[#293225] px-4 py-2 rounded-full font-extrabold text-xs shadow-xl transform group-hover:scale-110 transition-transform tracking-wider">
-                        🔍 VIEW FULL IMAGE
+                      <span className="w-12 h-12 rounded-full bg-[#B89A5A] text-[#293225] font-bold text-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                        🔍
                       </span>
                     </div>
                   </div>
 
-                  {/* Card Details */}
-                  <div className="p-6 bg-[#293225] text-white flex flex-col justify-between flex-grow">
+                  {/* Card Info Box */}
+                  <div className="p-6 flex-grow flex flex-col justify-between bg-[#293225]">
                     <div>
-                      <span className="text-[#B89A5A] text-[10px] font-mono font-bold block mb-1">
-                        ITEM {item.num} • {item.category}
+                      <span className="text-xs font-mono font-bold text-[#B89A5A] block mb-1">
+                        {item.num}. {item.category}
                       </span>
-                      <h3 className="font-serif text-lg font-bold text-white mb-2 group-hover:text-[#B89A5A] transition-colors leading-snug">
+                      <h3 className="font-serif text-lg font-bold text-white group-hover:text-[#B89A5A] transition-colors leading-snug mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-white/75 font-light leading-relaxed">
+                      <p className="text-[11px] text-[#A8B09A] font-light leading-relaxed mb-4">
                         {item.subtitle}
                       </p>
+                    </div>
+
+                    <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[10px] uppercase font-extrabold tracking-widest text-[#B89A5A]">
+                      <span>VIEW FULL IMAGE</span>
+                      <span className="group-hover:translate-x-1.5 transition-transform">→</span>
                     </div>
                   </div>
                 </motion.div>
@@ -226,28 +303,27 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Lightbox Modal with AnimatePresence */}
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {lightboxImg && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-md"
             onClick={() => setLightboxImg(null)}
+            className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-pointer"
           >
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl border-2 border-[#B89A5A]/60 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="relative max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl border-2 border-[#B89A5A]"
             >
-              <img src={lightboxImg} alt="Enlarged clinical view" className="w-full h-full object-contain" />
-              <button 
+              <img src={lightboxImg} alt="Enlarged View" className="w-full h-full object-contain max-h-[85vh]" />
+              <button
                 onClick={() => setLightboxImg(null)}
-                className="absolute top-4 right-4 bg-[#293225] text-[#FAF7F1] hover:text-[#B89A5A] w-11 h-11 rounded-full flex items-center justify-center text-lg font-bold border border-[#B89A5A]/40 shadow-lg transition-all"
+                className="absolute top-4 right-4 bg-[#293225] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border border-[#B89A5A] hover:bg-[#5F6B45] transition-colors"
               >
                 ✕
               </button>
@@ -256,72 +332,7 @@ export default function Gallery() {
         )}
       </AnimatePresence>
 
-      {/* Related Clinical Services Section */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4EFE6] border-b border-[#D8D0C3]">
-        <div className="max-w-[1600px] mx-auto">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-extrabold block mb-2">EXPLORE OUR SPECIALTIES</span>
-            <TextReveal className="font-serif text-3xl sm:text-4xl text-[#293225] font-bold">You May Also Be Interested In</TextReveal>
-          </FadeIn>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            {[
-              {
-                title: "Personalised Physiotherapy",
-                desc: "Targeted orthopaedic recovery, manual joint therapy, and non-surgical rehabilitation.",
-                link: "/physiotherapy",
-                badge: "Physiotherapy"
-              },
-              {
-                title: "Female Pelvic Rehabilitation",
-                desc: "Private pelvic floor re-education, antenatal, and postnatal physical care.",
-                link: "/womens-health",
-                badge: "Women's Health"
-              },
-              {
-                title: "Slimming & Body Contouring",
-                desc: "Vacuum cavitation, G-5 massage, and non-invasive body shaping therapies.",
-                link: "/slimming-wellness",
-                badge: "Slimming & Wellness"
-              }
-            ].map((service, idx) => (
-              <StaggerItem key={idx}>
-                <Link 
-                  to={service.link}
-                  className="block h-full"
-                >
-                  <motion.div 
-                    whileHover={{ y: -8, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
-                    className="bg-[#FAF7F1] p-8 rounded-[24px] border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-[0_10px_30px_rgba(41,50,37,0.06)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.25)] transition-all duration-500 group block h-full flex flex-col justify-between"
-                  >
-                    <div>
-                      <span className="bg-[#5F6B45] text-[#FAF7F1] text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-full inline-block mb-4">
-                        {service.badge}
-                      </span>
-                      <h3 className="font-serif text-xl font-bold text-[#293225] mb-2 group-hover:text-[#5F6B45] transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-xs text-[#252822]/80 font-light leading-relaxed mb-6">
-                        {service.desc}
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-between text-xs font-bold text-[#5F6B45] pt-4 border-t border-[#D8D0C3]">
-                      <span>EXPLORE SERVICE</span>
-                      <span className="group-hover:translate-x-2 transition-transform text-[#B89A5A] text-sm">→</span>
-                    </div>
-                  </motion.div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Pre-Footer Call To Action */}
       <CTASection />
-
     </PageTransition>
   );
 }
-
-
