@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 export default function SplitText({
   text = '',
   className = '',
-  as = 'h2',
+  as = 'span',
   type = 'words', // 'words' | 'chars'
   delay = 0,
   stagger = 0.035,

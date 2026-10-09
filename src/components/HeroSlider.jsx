@@ -134,22 +134,25 @@ export default function HeroSlider() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#FAF7F1] mb-5 leading-[1.06] drop-shadow-md"
+              className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white text-[#FAF7F1] mb-5 leading-[1.06] drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]"
             >
               <SplitText 
                 key={`h1-line1-${currentSlide}`}
                 text={slides[currentSlide].titleLine1}
                 type="words"
                 stagger={0.05}
-                className="block"
+                as="span"
+                className="block text-white text-[#FAF7F1]"
               />
-              <span className="text-[#B89A5A] italic font-normal block mt-1">
+              <span className="text-white text-[#FAF7F1] italic font-normal block mt-1">
                 <SplitText 
                   key={`h1-line2-${currentSlide}`}
                   text={slides[currentSlide].titleLine2}
                   type="words"
                   stagger={0.05}
                   delay={0.2}
+                  as="span"
+                  className="block text-white text-[#FAF7F1]"
                 />
               </span>
             </motion.h1>

@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import LenisProvider from './components/LenisProvider';
 import GlobalBackgroundMotion from './components/GlobalBackgroundMotion';
 import CustomCursor from './components/CustomCursor';
+import WelcomePreloader from './components/WelcomePreloader';
+import AIChatbotWidget from './components/AIChatbotWidget';
 
 // Pages
 import Home from './pages/Home';
@@ -158,8 +160,12 @@ function App() {
   return (
     <Router>
       <LenisProvider>
+        {/* Welcome Preloader Launch Animation */}
+        <WelcomePreloader />
+
         <ScrollToTop />
         <CustomCursor />
+
         <div className="flex flex-col min-h-screen font-sans text-text relative bg-[#F4EFE6] overflow-x-hidden">
           {/* Full Page Ambient Motion Background Layer */}
           <GlobalBackgroundMotion />
@@ -169,6 +175,9 @@ function App() {
           </main>
           <Footer />
         </div>
+
+        {/* AI Health Assistant & WhatsApp Floating Widget */}
+        <AIChatbotWidget />
       </LenisProvider>
     </Router>
   );

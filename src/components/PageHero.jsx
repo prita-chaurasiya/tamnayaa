@@ -63,9 +63,9 @@ export default function PageHero({ title, category, subtitle, image, pageName, c
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.75, delay: 0.25 }}
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FAF7F1] mb-6 leading-[1.1] drop-shadow-md"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white text-[#FAF7F1] mb-6 leading-[1.1] drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]"
           >
-            <SplitText text={title} type="words" stagger={0.04} className="block" />
+            <SplitText text={title} type="words" stagger={0.04} as="span" className="block text-white text-[#FAF7F1]" />
           </motion.h1>
 
           {/* Subtitle / Description */}
