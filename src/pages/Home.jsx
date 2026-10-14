@@ -13,10 +13,10 @@ import Marquee from '../components/Marquee';
 import MetricsSection from '../components/MetricsSection';
 import CareFinderWidget from '../components/CareFinderWidget';
 import cliImg from '../assets/cli.jpeg';
-import phyImg from '../assets/conditions/back_pain.jpg';
-import woImg from '../assets/conditions/pcod_pcos.jpg';
-import skinImg from '../assets/conditions/psoriasis.jpg';
-import wellnessImg from '../assets/conditions/cavitation.jpg';
+import phyImg from '../assets/phy.jpg';
+import woImg from '../assets/wo.jpg';
+import skinImg from '../assets/skin-864x1536.jpg';
+import wellnessImg from '../assets/wellness-1-1024x683.jpg';
 import nehaImg from '../assets/neha.jpeg';
 import prizeImg from '../assets/prize.png';
 import campImg from '../assets/camp.webp';
@@ -489,11 +489,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.65, delay: 0.4, ease: luxuryEase }}
-              className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3]"
+              className="flex flex-wrap items-center gap-3 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3]"
             >
-              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Physiotherapist</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Physiotherapist (M.P.T Ortho)</span>
               <span className="text-[#B89A5A] font-bold">•</span>
               <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Women's Health Specialist</span>
+              <span className="text-[#B89A5A] font-bold">•</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> D.Pharm (2024)</span>
               <span className="text-[#B89A5A] font-bold">•</span>
               <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Founder, Tamanya</span>
             </motion.div>
@@ -507,13 +509,13 @@ export default function Home() {
               className="space-y-4 text-[#252822]/85 font-light leading-relaxed text-sm sm:text-base"
             >
               <p>
-                Dr. Neha Gupta's journey has grown from a foundation in physiotherapy into a broader commitment to rehabilitation, women's health, and preventive healthcare. With <strong>7+ years of clinical experience</strong>, a <strong>Master's in Physiotherapy with an Orthopaedics specialisation</strong>, and advanced training in <strong>pelvic floor, prenatal and postnatal rehabilitation</strong>, she has built her practice around personalised, patient-focused care.
+                Dr. Neha Gupta brings together physiotherapy, specialised women’s health expertise, rehabilitation, and patient education under one umbrella. With <strong>7+ years of clinical experience</strong>, a <strong>Master’s in Physiotherapy (Orthopaedics)</strong>, a <strong>Diploma in Pharmacy (2024)</strong>, and advanced training through <strong>WOW IIPRE</strong> and <strong>Physioneeds Academy, London</strong>, she delivers deeply personalized, evidence-guided care.
               </p>
               <p>
-                In <strong>2019, she founded Tamanya Physio & Health Clinic in Varanasi</strong>, bringing together her clinical experience and vision of helping people recover better, understand their health, and regain confidence in everyday movement. Her professional development has continued through specialised training in women's health, pelvic rehabilitation and advanced physiotherapy techniques.
+                In <strong>2019, she founded Tamanya Physio & Health Clinic in Varanasi</strong>, providing care across orthopaedic, neurological, sports injury, and pelvic health needs. Her contributions have earned national acclaim, including the <strong>Brand Award for Service Excellence presented by actress Mouni Roy in 2026</strong>.
               </p>
               <p>
-                Today, through Tamanya, Dr. Neha focuses on creating a more informed approach to rehabilitation—one that looks beyond immediate discomfort toward <strong>mobility, functional recovery, women's health, and long-term wellbeing</strong>.
+                “My vision is to help individuals recover better, understand their health, and give them easy access to personalised rehabilitation support,” shares Dr. Gupta.
               </p>
             </motion.div>
 
@@ -567,7 +569,7 @@ export default function Home() {
               <div className="absolute bottom-6 left-6 z-20 bg-[#293225]/95 text-white p-4 sm:p-5 rounded-[20px] border border-[#B89A5A]/50 shadow-2xl backdrop-blur-md animate-float-up-down">
                 <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">CLINICAL EXPERTISE</span>
                 <p className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">7+ Years Practice</p>
-                <p className="text-[10px] text-white/80 font-light mt-1">M.P.T Orthopaedics • MIAP</p>
+                <p className="text-[10px] text-white/80 font-light mt-1">M.P.T Orthopaedics • D.Pharm • MIAP</p>
               </div>
 
             </Link>
@@ -585,9 +587,16 @@ export default function Home() {
             <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] bg-[#FAF7F1] relative z-10 group">
               <img 
                 src={prizeImg} 
-                alt="Best Clinician Award - Dr. Neha Gupta" 
+                alt="Brand Award & Best Clinician Award - Dr. Neha Gupta" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-6 left-6 right-6 text-white z-20">
+                <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">NATIONAL RECOGNITION</span>
+                <p className="font-serif text-lg font-bold text-white mt-0.5">Brand Award for Service Excellence</p>
+                <p className="text-[11px] text-[#D4B878] font-medium">Presented by Actress Mouni Roy (2026)</p>
+                <p className="text-[10px] text-white/70 font-light mt-1">Honoured at Artemis Hospital Gurgaon (GAPTCON)</p>
+              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#5F6B45] rounded-[28px] z-0 hidden sm:block"></div>
           </div>

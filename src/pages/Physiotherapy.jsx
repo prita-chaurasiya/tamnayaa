@@ -7,6 +7,19 @@ import SplitText from '../components/SplitText';
 import Magnetic from '../components/Magnetic';
 import Marquee from '../components/Marquee';
 import MetricsSection from '../components/MetricsSection';
+import { CLINIC_DATA, buildWhatsAppLink } from '../data/clinicData';
+import { 
+  CheckCircle2, 
+  Sparkles, 
+  Activity, 
+  ShieldCheck, 
+  Phone, 
+  MessageCircle, 
+  ArrowRight,
+  Stethoscope,
+  Clock,
+  MapPin
+} from 'lucide-react';
 
 import backPainImg from '../assets/conditions/back_pain.jpg';
 import neckPainImg from '../assets/conditions/neck_pain.jpg';
@@ -60,14 +73,6 @@ export default function Physiotherapy() {
     }
   ];
 
-  const neuroCards = [
-    { title: "STROKE REHABILITATION", desc: "Neuromuscular re-education, hemiplegia gait training, and upper limb functional task rehabilitation.", image: strokeParalysisImg },
-    { title: "PARKINSON'S DISEASE CARE", desc: "Big movement amplitude exercises, balance stabilization, and gait freezing prevention strategies.", image: strokeParalysisImg },
-    { title: "SCIATICA & NERVE IMPINGEMENT", desc: "Spinal decompression exercises, nerve flossing techniques, and radiculopathy relief.", image: backPainImg },
-    { title: "BELL'S PALSY FACIAL REHAB", desc: "Targeted facial muscle re-education, neuromuscular stimulation, and symmetry recovery.", image: strokeParalysisImg },
-    { title: "SPINAL CORD INJURY REHAB", desc: "Functional mobility maintenance, wheelchair transfer safety, and posture stabilization.", image: backPainImg }
-  ];
-
   const advancedTherapies = [
     { title: "ULTRASONIC THERAPY", desc: "Deep acoustic soundwave application to reduce localized soft tissue inflammation and speed tissue repair." },
     { title: "LASER THERAPY", desc: "Photobiomodulation technology stimulating cellular ATP production for accelerated pain relief." },
@@ -98,6 +103,11 @@ export default function Physiotherapy() {
     }
   ];
 
+  const whatsappLink = buildWhatsAppLink({
+    service: "Advanced Physiotherapy",
+    query: "Hello Dr. Neha Gupta, I would like to inquire about Advanced Physiotherapy and rehabilitation at Tamanya Clinic."
+  });
+
   return (
     <PageTransition className="bg-[#F4EFE6] text-[#252822] min-h-screen font-sans">
       
@@ -119,10 +129,11 @@ export default function Physiotherapy() {
       {/* Clinical Metrics Benchmark */}
       <MetricsSection />
 
-      {/* 2. INTRODUCTION SECTION */}
+      {/* 2. FEATURE INTRODUCTION: CARE THAT GOES BEYOND PAIN RELIEF */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
+          {/* Left Column: phy.jpg Image with Luxury Frame */}
           <motion.div 
             initial={{ opacity: 0, x: -35 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -130,27 +141,32 @@ export default function Physiotherapy() {
             transition={{ duration: 0.8, ease: luxuryEase }}
             className="lg:col-span-6 relative"
           >
-            <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative group">
+            <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-white relative group bg-white">
               <img 
-                src={backPainImg} 
-                alt="Tamanya Personalised Physiotherapy Care" 
+                src={phyImg} 
+                alt="Care That Goes Beyond Pain Relief - Tamanya Physiotherapy" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 animate-ken-burns" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/60 via-transparent to-transparent opacity-60 pointer-events-none" />
             </div>
 
+            {/* Experience & Lead Doctor Card */}
             <div className="absolute -bottom-6 -right-4 sm:right-6 bg-gradient-to-br from-[#3F4A32] to-[#293225] text-white p-6 rounded-[22px] shadow-2xl border-2 border-[#B89A5A]/50 max-w-xs transform hover:scale-105 transition-all">
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-3 h-3 rounded-full bg-[#B89A5A] animate-ping"></span>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#B89A5A]">CLINICAL RECORD</span>
+                <span className="text-[10px] uppercase font-bold tracking-widest text-[#B89A5A]">CLINICAL EXCELLENCE</span>
               </div>
               <p className="font-serif text-3xl font-bold text-white">7+ Years</p>
               <p className="text-xs text-[#FAF7F1]/85 font-light mt-1">
-                Clinical practice led by Dr. Neha Gupta (M.P.T Ortho) serving Varanasi since 2019.
+                Clinical practice led by Dr. Neha Gupta (M.P.T Ortho, D.Pharm) in Pandeypur, Varanasi.
               </p>
             </div>
+
+            {/* Subtle Champagne Accent Border */}
+            <div className="absolute -bottom-6 -left-6 w-full h-full border-2 border-[#B89A5A]/40 rounded-[28px] -z-10 hidden sm:block"></div>
           </motion.div>
 
+          {/* Right Column: Content with User's Exact Title & Subtitle */}
           <motion.div 
             initial={{ opacity: 0, x: 35 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,24 +174,73 @@ export default function Physiotherapy() {
             transition={{ duration: 0.8, ease: luxuryEase }}
             className="lg:col-span-6 space-y-6"
           >
-            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block">ABOUT PHYSIOTHERAPY</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold tracking-tight">
-              Root-Cause Diagnosis. Sustainable Recovery.
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5F6B45]/10 border border-[#5F6B45]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#5F6B45]" />
+              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-[10px] sm:text-xs font-bold">
+                ADVANCED CLINICAL REHABILITATION
+              </span>
+            </div>
+
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold tracking-tight leading-[1.15]">
+              Care That Goes Beyond Pain Relief
             </h2>
-            <p className="text-[#252822]/85 text-base sm:text-lg font-light leading-relaxed">
-              At Tamanya, we believe that true recovery comes from understanding your biomechanics rather than treating temporary symptoms. Every physical treatment is individualized following a thorough functional assessment.
+
+            <p className="font-serif italic text-lg sm:text-xl text-[#4F5B35] font-medium leading-snug">
+              Tailored rehabilitation and aesthetic wellness treatments delivered with precision clinical expertise in Pandeypur, Varanasi.
             </p>
-            <div className="pt-2 flex flex-wrap gap-4">
+
+            <p className="text-[#252822]/85 text-sm sm:text-base font-light leading-relaxed">
+              At Tamanya, we believe that true recovery requires addressing the underlying biomechanical dysfunction rather than offering short-term symptom masking. Every patient journey begins with a meticulous functional assessment, followed by customized physical therapy, targeted electro-modalities, and active movement re-education designed to restore lasting mobility and independence.
+            </p>
+
+            {/* 4 Feature Checkmarks */}
+            <div className="grid sm:grid-cols-2 gap-3 pt-2">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-[#293225]">
+                <CheckCircle2 className="w-4 h-4 text-[#B89A5A] shrink-0" />
+                <span>Root-Cause Biomechanical Assessment</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-[#293225]">
+                <CheckCircle2 className="w-4 h-4 text-[#B89A5A] shrink-0" />
+                <span>One-on-One Personalized Protocols</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-[#293225]">
+                <CheckCircle2 className="w-4 h-4 text-[#B89A5A] shrink-0" />
+                <span>Evidence-Based Electrotherapy & Modalities</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-[#293225]">
+                <CheckCircle2 className="w-4 h-4 text-[#B89A5A] shrink-0" />
+                <span>Long-Term Mobility & Ergonomic Guidance</span>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link to="/book-appointment" className="btn-olive">
                 BOOK EVALUATION
               </Link>
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-linen flex items-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                WHATSAPP CONSULTATION
+              </a>
+              <a 
+                href="tel:+917007667808" 
+                className="text-xs font-bold text-[#5F6B45] hover:text-[#293225] flex items-center gap-1.5 transition-colors py-2 px-1"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                CALL: +91 70076 67808
+              </a>
             </div>
           </motion.div>
 
         </div>
       </section>
 
-      {/* 3. ORTHOPAEDIC CONDITIONS SECTION */}
+      {/* 3. ORTHOPAEDIC & NEURO CONDITIONS SECTION */}
       <section id="orthopaedic-section" className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-b border-[#D8D0C3]">
         <div className="max-w-[1600px] mx-auto">
           
@@ -231,8 +296,63 @@ export default function Physiotherapy() {
         </div>
       </section>
 
-      {/* 4. FAQ ACCORDION */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">
+      {/* 4. ADVANCED THERAPEUTIC MODALITIES & TECHNOLOGY */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
+        <div className="max-w-[1600px] mx-auto">
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: luxuryEase }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">
+              CLINICAL TECHNOLOGY ARSENAL
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#293225] font-bold mb-4">
+              Advanced Modalities & Therapeutic Technology
+            </h2>
+            <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed">
+              Equipped with medical-grade electrotherapy and precision manual techniques to accelerate recovery across every tissue layer.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {advancedTherapies.map((therapy, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05, ease: luxuryEase }}
+                className="bg-[#F4EFE6] p-6 rounded-[22px] border border-[#D8D0C3] hover:border-[#5F6B45] transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] font-mono font-bold text-[#B89A5A]">0{i + 1}</span>
+                    <Activity className="w-4 h-4 text-[#5F6B45] group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-[#293225] group-hover:text-[#5F6B45] transition-colors mb-2">
+                    {therapy.title}
+                  </h3>
+                  <p className="text-xs text-[#252822]/75 font-light leading-relaxed">
+                    {therapy.desc}
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-[#D8D0C3]/60 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-[#5F6B45]">
+                  <span>EVIDENCE-BASED</span>
+                  <span className="text-[#B89A5A]">✓</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. FAQ ACCORDION */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#F4EFE6] border-b border-[#D8D0C3]">
         <div className="max-w-4xl mx-auto">
           <FadeIn className="text-center mb-16">
             <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-[11px] font-bold block mb-4">PHYSIOTHERAPY FAQ</span>
@@ -241,7 +361,7 @@ export default function Physiotherapy() {
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-[#F4EFE6] rounded-[16px] border border-[#D8D0C3] overflow-hidden shadow-sm">
+              <div key={i} className="bg-[#FAF7F1] rounded-[16px] border border-[#D8D0C3] overflow-hidden shadow-sm">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full p-6 text-left flex justify-between items-center focus:outline-none group"
@@ -271,6 +391,35 @@ export default function Physiotherapy() {
                 </AnimatePresence>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. BOTTOM CONSULTATION BANNER */}
+      <section className="py-20 px-6 lg:px-12 bg-gradient-to-br from-[#293225] via-[#21291D] to-[#181E15] text-white text-center">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <span className="text-[#B89A5A] uppercase tracking-[0.25em] text-xs font-bold block">
+            PERSONALISED CARE IN VARANASI
+          </span>
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white">
+            Ready to Begin Your Recovery Journey?
+          </h2>
+          <p className="text-white/80 text-sm sm:text-base font-light">
+            Book an in-person clinical assessment with Dr. Neha Gupta (M.P.T Ortho) at our Pandeypur clinic.
+          </p>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <Link to="/book-appointment" className="btn-champagne">
+              BOOK AN APPOINTMENT
+            </Link>
+            <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary flex items-center gap-2"
+            >
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              WHATSAPP ENQUIRY
+            </a>
           </div>
         </div>
       </section>
