@@ -131,3 +131,70 @@ export function buildWhatsAppLink({ patientName = '', phone = '', service = '', 
   const encoded = encodeURIComponent(text);
   return `https://wa.me/${CLINIC_DATA.whatsappNumber}?text=${encoded}`;
 }
+
+/**
+ * All 25 individual treatments categorized for the Navbar mega-dropdown and direct anchors
+ */
+export const SERVICES_NAVBAR_DATA = [
+  {
+    category: "Physiotherapy",
+    path: "/physiotherapy",
+    icon: "Activity",
+    countBadge: "9 Therapies",
+    tagline: "Spine, Joint & Neuro Rehab",
+    items: [
+      { name: "Lower Back Pain & Sciatica", path: "/physiotherapy#back-pain", modality: "Lumbar Traction & IFT" },
+      { name: "Neck Pain & Cervical Care", path: "/physiotherapy#neck-pain", modality: "Cervical Decompression" },
+      { name: "Knee & Joint Arthritis", path: "/physiotherapy#joint-pain-arthritis", modality: "Ultrasound & Laser" },
+      { name: "ACL / MCL Sports Rehab", path: "/physiotherapy#acl-mcl-meniscus", modality: "Dynamic Stability Drills" },
+      { name: "Pre & Post Surgery (TKR/THR)", path: "/physiotherapy#pre-post-surgery-rehab", modality: "CPM & Joint Recovery" },
+      { name: "Stroke & Neuro Rehab", path: "/physiotherapy#stroke-paralysis-neuro-rehab", modality: "NDT & Motor Control" },
+      { name: "Pelvic Floor Rehabilitation", path: "/physiotherapy#pelvic-floor-rehab", modality: "Biofeedback & Exercises" },
+      { name: "Cupping Therapy (Hijama)", path: "/physiotherapy#cupping-therapy", modality: "Negative Pressure Cups" },
+      { name: "Dry Needling Therapy", path: "/physiotherapy#dry-needling-therapy", modality: "Sterile Filiform Needles" }
+    ]
+  },
+  {
+    category: "Women's Health",
+    path: "/womens-health",
+    icon: "Heart",
+    countBadge: "9 Treatments",
+    tagline: "Female Hormonal & Pelvic Care",
+    items: [
+      { name: "PCOD / PCOS Management", path: "/womens-health#pcod-pcos", modality: "Metabolic Activation" },
+      { name: "Menstrual Pain (Dysmenorrhea)", path: "/womens-health#menstrual-pain", modality: "Sacral Release & Heat" },
+      { name: "Antenatal / Pregnancy Physio", path: "/womens-health#antenatal-rehab", modality: "Pelvic Girdle Stability" },
+      { name: "Postnatal Core Recovery", path: "/womens-health#postnatal-recovery", modality: "Postpartum Restoration" },
+      { name: "Urinary Incontinence Care", path: "/womens-health#urine-leakage", modality: "Bladder Retraining" },
+      { name: "Diastasis Recti Abdominal Rehab", path: "/womens-health#diastasis-recti", modality: "Abdominal Approximation" },
+      { name: "Pelvic Organ Prolapse Care", path: "/womens-health#pelvic-organ-prolapse", modality: "Conservative Support" },
+      { name: "Vaginismus Relaxation", path: "/womens-health#vaginismus-hypertonic", modality: "Pelvic Down-Training" },
+      { name: "Back Pain After C-Section", path: "/womens-health#csection-back-pain", modality: "Post-Cesarean Spine Care" }
+    ]
+  },
+  {
+    category: "Skin Care",
+    path: "/skin-care",
+    icon: "Sparkles",
+    countBadge: "3 Protocols",
+    tagline: "Medical Dermatology Care",
+    items: [
+      { name: "Clinical Skin Rejuvenation", path: "/skin-care#skin-rejuvenation", modality: "Microcurrent & Hydration" },
+      { name: "Psoriasis & Scalp Care", path: "/skin-care#psoriasis-management", modality: "Sterile Soothing Therapy" },
+      { name: "Scar Reduction & Keloids", path: "/skin-care#scar-reduction", modality: "Collagen Remodeling" }
+    ]
+  },
+  {
+    category: "Slimming & Wellness",
+    path: "/slimming-wellness",
+    icon: "Flame",
+    countBadge: "4 Modalities",
+    tagline: "Non-Invasive Contouring",
+    items: [
+      { name: "Body Shaper Contouring", path: "/slimming-wellness#body-shaper", modality: "Neuromuscular Contouring" },
+      { name: "Vacuum Cavitation Fat Loss", path: "/slimming-wellness#vacuum-cavitation", modality: "Ultrasonic Cavitation" },
+      { name: "Deep Heat Detox Therapy", path: "/slimming-wellness#deep-heat-therapy", modality: "Far-Infrared Thermogenic" },
+      { name: "G-5 Mechanical Massage", path: "/slimming-wellness#g5-mechanical-massage", modality: "Percussive Lymphatic" }
+    ]
+  }
+];

@@ -11,60 +11,71 @@ import backPainImg from '../assets/conditions/back_pain.jpg';
 import menstrualReliefImg from '../assets/conditions/menstrual_relief.jpg';
 import csectionRecoveryImg from '../assets/conditions/csection_recovery.jpg';
 import woImg from '../assets/wo.jpg';
+import DetailedTreatmentGuide from '../components/DetailedTreatmentGuide';
+import { WOMENS_HEALTH_SERVICES } from '../data/womensHealthServicesData';
 
 export default function WomensHealth() {
   const [openFaq, setOpenFaq] = useState(null);
 
   const conditions = [
     {
+      id: "pcod-pcos",
       title: "PCOD / PCOS PHYSICAL REHAB",
       sub: "Metabolic & Pelvic Circulation Therapy",
       desc: "Targeted pelvic floor muscle exercises, core strengthening, and exercise prescription designed to improve metabolic sensitivity and pelvic circulation.",
       image: pcodPcosImg
     },
     {
+      id: "menstrual-pain",
       title: "MENSTRUAL PAIN (DYSMENORRHEA)",
       sub: "Severe Menstrual Cramp Relief",
       desc: "Therapeutic manual release, heat applications, and gentle pelvic mobilization to relieve deep menstrual spasm and chronic pelvic congestion.",
       image: menstrualReliefImg
     },
     {
+      id: "antenatal-rehab",
       title: "ANTENATAL (PREGNANCY) REHAB",
       sub: "Trimester-Wise Physical Support",
       desc: "Safe physical therapy relieving pregnancy lower back pain, pelvic girdle pain, sciatica, and preparing pelvic floor muscles safely for labor.",
       image: antenatalImg
     },
     {
+      id: "postnatal-recovery",
       title: "POSTNATAL RECOVERY & REHAB",
       sub: "Mother's Post-Delivery Recovery",
       desc: "Evaluation of pelvic floor muscle strength, abdominal core separation (Diastasis Recti), scar healing, and safe return to physical activity after delivery.",
       image: postnatalImg
     },
     {
+      id: "urine-leakage",
       title: "URINE LEAKAGE (INCONTINENCE)",
       sub: "Stress & Urge Incontinence Care",
       desc: "Confidential pelvic floor re-education, biofeedback exercises, and bladder retraining for leakage during coughing, sneezing, or exercising.",
       image: pcodPcosImg
     },
     {
+      id: "diastasis-recti",
       title: "DIASTASIS RECTI MANAGEMENT",
       sub: "Abdominal Separation Recovery",
       desc: "Clinical deep core transverse abdominis activation and postural re-education to close abdominal wall separation safely post-delivery.",
       image: postnatalImg
     },
     {
+      id: "pelvic-organ-prolapse",
       title: "PELVIC ORGAN PROLAPSE",
       sub: "Non-Surgical Support & Pressure Control",
       desc: "Discreet pelvic floor strengthening, bowel positioning ergonomics, and pressure regulation techniques managing mild-to-moderate organ prolapse.",
       image: pcodPcosImg
     },
     {
+      id: "vaginismus-hypertonic",
       title: "VAGINISMUS & HYPERTONIC PELVIC FLOOR",
       sub: "Confidential Pelvic Muscle Relaxation",
       desc: "Compassionate, slow-paced physical therapy focused on hypertonic pelvic floor muscle relaxation, diaphragmatic breathing, and gradual desensitization.",
       image: woImg
     },
     {
+      id: "csection-back-pain",
       title: "AFTER C-SECTION BACK PAIN",
       sub: "Post-Caesarean Scar & Spine Care",
       desc: "Post-surgical scar tissue mobilization, lumbo-pelvic stabilization exercises, and spine alignment to alleviate lower back ache after C-section delivery.",
@@ -158,7 +169,7 @@ export default function WomensHealth() {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
             {conditions.map((item, idx) => (
               <StaggerItem key={idx}>
-                <Link to="/book-appointment" className="block h-full group">
+                <div className="block h-full group">
                   <motion.div 
                     whileHover={{ y: -8, transition: { duration: 0.3 } }}
                     className="bg-[#FAF7F1] rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full group"
@@ -180,19 +191,41 @@ export default function WomensHealth() {
                         </p>
                       </div>
 
-                      <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-[#5F6B45] group-hover:text-[#3F4A32]">
-                        <span>BOOK PRIVATE CONSULTATION</span>
-                        <span className="group-hover:translate-x-1.5 transition-transform">→</span>
+                      <div className="pt-4 border-t border-[#D8D0C3] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                        <a 
+                          href={`#${item.id}`} 
+                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#5F6B45] hover:text-[#293225] transition-colors py-1"
+                        >
+                          <span>FULL CLINICAL GUIDE</span>
+                          <span className="text-[#B89A5A]">↓</span>
+                        </a>
+                        <Link 
+                          to="/book-appointment" 
+                          state={{ prefillService: item.title }}
+                          className="inline-flex items-center justify-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-[#293225] bg-[#D8D0C3]/40 hover:bg-[#5F6B45] hover:text-white px-3 py-1.5 rounded-full transition-all"
+                        >
+                          <span>BOOK</span>
+                          <span>→</span>
+                        </Link>
                       </div>
                     </div>
                   </motion.div>
-                </Link>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
         </div>
       </section>
+
+      {/* 4. IN-DEPTH CLINICAL TREATMENT GUIDES (600-800 WORDS PER SERVICE) */}
+      <DetailedTreatmentGuide 
+        services={WOMENS_HEALTH_SERVICES}
+        sectionId="womens-health-treatment-guides"
+        sectionBadge="IN-DEPTH WOMEN'S HEALTH GUIDES"
+        sectionTitle="Detailed Clinical Explanations for Every Women's Health Service"
+        sectionDescription="Comprehensive, confidential medical guides for all 9 female pelvic floor, maternal, and obstetric health pathways at Tamanya Physio and Health Clinic—explaining conditions treated, procedural steps, equipment used, patient precautions, and FAQs."
+      />
 
       {/* 4. FAQ ACCORDION */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-t border-[#D8D0C3]">

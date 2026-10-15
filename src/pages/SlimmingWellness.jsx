@@ -6,28 +6,34 @@ import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem } fro
 
 import cavitationImg from '../assets/conditions/cavitation.jpg';
 import postnatalImg from '../assets/conditions/postnatal.jpg';
+import DetailedTreatmentGuide from '../components/DetailedTreatmentGuide';
+import { SLIMMING_WELLNESS_SERVICES } from '../data/slimmingWellnessServicesData';
 
 export default function SlimmingWellness() {
   const treatments = [
     {
+      id: "body-shaper",
       title: "BODY SHAPER",
       category: "CONTOURING MODALITY",
       desc: "Advanced non-invasive technology designed to target and sculpt specific areas, supporting your overall body contouring and muscle tone goals.",
       img: cavitationImg
     },
     {
+      id: "vacuum-cavitation",
       title: "VACUUM CAVITATION",
       category: "ULTRASONIC FAT LOSS",
       desc: "Clinical ultrasound cavitation therapy targeting localized adipose tissue to assist in non-surgical inch loss and body shaping.",
       img: cavitationImg
     },
     {
+      id: "deep-heat-therapy",
       title: "DEEP HEAT THERAPY",
       category: "THERMAL CIRCULATION",
       desc: "Therapeutic deep thermal application to stimulate tissue microcirculation, metabolic activity, and cellular renewal.",
       img: cavitationImg
     },
     {
+      id: "g5-mechanical-massage",
       title: "G-5 MECHANICAL MASSAGE",
       category: "LYMPHATIC DRAINAGE",
       desc: "Deep mechanical percussive massage modality aimed at promoting lymphatic drainage, reducing fluid retention, and enhancing skin firmness.",
@@ -76,7 +82,7 @@ export default function SlimmingWellness() {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.12}>
             {treatments.map((item, i) => (
               <StaggerItem key={i}>
-                <Link to="/book-appointment" className="block h-full group">
+                <div className="block h-full group">
                   <motion.div 
                     whileHover={{ y: -8, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
                     className="bg-[#FAF7F1] rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between h-full"
@@ -102,19 +108,41 @@ export default function SlimmingWellness() {
                         </p>
                       </div>
 
-                      <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#5F6B45] group-hover:text-[#3F4A32]">
-                        <span>BOOK CONSULTATION</span>
-                        <span className="group-hover:translate-x-1.5 transition-transform">→</span>
+                      <div className="pt-4 border-t border-[#D8D0C3] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                        <a 
+                          href={`#${item.id}`} 
+                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#5F6B45] hover:text-[#293225] transition-colors py-1"
+                        >
+                          <span>FULL CLINICAL GUIDE</span>
+                          <span className="text-[#B89A5A]">↓</span>
+                        </a>
+                        <Link 
+                          to="/book-appointment" 
+                          state={{ prefillService: item.title }}
+                          className="inline-flex items-center justify-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-[#293225] bg-[#D8D0C3]/40 hover:bg-[#5F6B45] hover:text-white px-3 py-1.5 rounded-full transition-all"
+                        >
+                          <span>BOOK</span>
+                          <span>→</span>
+                        </Link>
                       </div>
                     </div>
                   </motion.div>
-                </Link>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
         </div>
       </section>
+
+      {/* IN-DEPTH CLINICAL TREATMENT GUIDES (600-800 WORDS PER SERVICE) */}
+      <DetailedTreatmentGuide 
+        services={SLIMMING_WELLNESS_SERVICES}
+        sectionId="slimming-wellness-treatment-guides"
+        sectionBadge="IN-DEPTH BODY CONTOURING GUIDES"
+        sectionTitle="Detailed Clinical Explanations for Every Slimming & Wellness Therapy"
+        sectionDescription="Comprehensive clinical guides for all 4 non-invasive body shaping, ultrasonic cavitation, deep heat, and lymphatic drainage therapies at Tamanya Physio and Health Clinic—explaining how each modality works step-by-step, candidate suitability, precautions, and patient FAQs."
+      />
 
     </PageTransition>
   );

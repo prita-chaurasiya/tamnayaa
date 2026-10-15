@@ -6,24 +6,29 @@ import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem, Imag
 
 import psoriasisImg from '../assets/conditions/psoriasis.jpg';
 import scarsImg from '../assets/conditions/scars.jpg';
+import DetailedTreatmentGuide from '../components/DetailedTreatmentGuide';
+import { SKIN_CARE_SERVICES } from '../data/skinCareServicesData';
 
 export default function SkinCare() {
   const [openFaq, setOpenFaq] = useState(null);
 
   const treatments = [
     { 
+      id: "skin-rejuvenation",
       title: "SKIN CARE & REJUVENATION", 
       cat: "SKIN REJUVENATION",
       desc: "Clinical dermatological care designed to nourish skin barrier health, clear clogged pores, and restore healthy skin radiance.", 
       image: psoriasisImg 
     },
     { 
+      id: "psoriasis-management",
       title: "SKIN PSORIASIS MANAGEMENT", 
       cat: "PSORIASIS CARE",
       desc: "Specialised dermatological protocols for skin psoriasis flare relief, plaque soothing, and barrier repair.", 
       image: psoriasisImg 
     },
     { 
+      id: "scar-reduction",
       title: "ACNE & FACIAL SCAR REDUCTION", 
       cat: "SCAR THERAPY",
       desc: "Targeted clinical procedures and resurfacing protocols to treat post-acne scarring, deep facial scars, and hyperpigmentation.", 
@@ -89,10 +94,7 @@ export default function SkinCare() {
           <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.12}>
             {treatments.map((item, i) => (
               <StaggerItem key={i}>
-                <Link 
-                  to="/book-appointment"
-                  className="block h-full group"
-                >
+                <div className="block h-full group">
                   <motion.div 
                     whileHover={{ y: -8, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
                     className="bg-[#FAF7F1] rounded-[24px] border border-[#D8D0C3] hover:border-[#5F6B45] shadow-[0_15px_35px_rgba(41,50,37,0.05)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.18)] transition-all duration-500 overflow-hidden flex flex-col justify-between h-full relative border-t-2 border-t-[#5F6B45]"
@@ -120,19 +122,41 @@ export default function SkinCare() {
                         </p>
                       </div>
 
-                      <div className="pt-4 border-t border-[#D8D0C3] flex items-center justify-between text-[11px] uppercase tracking-widest font-bold text-[#293225] group-hover:text-[#5F6B45] transition-colors">
-                        <span>BOOK CONSULTATION</span>
-                        <span className="text-[#B89A5A] group-hover:translate-x-1.5 transition-transform">→</span>
+                      <div className="pt-4 border-t border-[#D8D0C3] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                        <a 
+                          href={`#${item.id}`} 
+                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#5F6B45] hover:text-[#293225] transition-colors py-1"
+                        >
+                          <span>FULL CLINICAL GUIDE</span>
+                          <span className="text-[#B89A5A]">↓</span>
+                        </a>
+                        <Link 
+                          to="/book-appointment" 
+                          state={{ prefillService: item.title }}
+                          className="inline-flex items-center justify-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-[#293225] bg-[#D8D0C3]/40 hover:bg-[#5F6B45] hover:text-white px-3 py-1.5 rounded-full transition-all"
+                        >
+                          <span>BOOK</span>
+                          <span>→</span>
+                        </Link>
                       </div>
                     </div>
                   </motion.div>
-                </Link>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
         </div>
       </section>
+
+      {/* IN-DEPTH CLINICAL TREATMENT GUIDES (600-800 WORDS PER SERVICE) */}
+      <DetailedTreatmentGuide 
+        services={SKIN_CARE_SERVICES}
+        sectionId="skin-care-treatment-guides"
+        sectionBadge="IN-DEPTH DERMATOLOGY GUIDES"
+        sectionTitle="Detailed Clinical Explanations for Every Skin Care Therapy"
+        sectionDescription="Comprehensive clinical guides for all 3 dermatological, psoriasis, and scar remodeling therapies at Tamanya Physio and Health Clinic—explaining why each procedure is used, how it works step-by-step, preparations, precautions, and patient FAQs."
+      />
 
       {/* Why Choose Tamanya Skin Care */}
       <section className="bg-[#FAF7F1] py-24 lg:py-32 px-6 lg:px-12 border-t border-[#D8D0C3]">

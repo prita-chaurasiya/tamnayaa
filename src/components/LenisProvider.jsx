@@ -48,14 +48,29 @@ export default function LenisProvider({ children }) {
     };
   }, []);
 
-  // Scroll to top on route change smoothly
+  // Scroll to top or anchor on route/hash change smoothly
   useEffect(() => {
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true });
+    if (location.hash) {
+      const targetId = location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          if (lenisRef.current) {
+            lenisRef.current.scrollTo(el, { offset: -90, duration: 1.2 });
+          } else {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }, 200);
+      return () => clearTimeout(timer);
     } else {
-      window.scrollTo(0, 0);
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return <>{children}</>;
 }

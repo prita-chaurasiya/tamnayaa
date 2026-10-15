@@ -28,6 +28,8 @@ import strokeParalysisImg from '../assets/conditions/stroke_paralysis.jpg';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
 import woImg from '../assets/wo.jpg';
+import DetailedTreatmentGuide from '../components/DetailedTreatmentGuide';
+import { PHYSIOTHERAPY_SERVICES } from '../data/physiotherapyServicesData';
 
 const luxuryEase = [0.16, 1, 0.3, 1];
 
@@ -36,54 +38,63 @@ export default function Physiotherapy() {
 
   const orthopaedicCards = [
     {
+      id: "back-pain",
       title: "BACK PAIN & LOWER BACK PAIN",
       includes: "Disc Bulge, Sciatica, Lumbar Stiffness & Postural Strain",
       desc: "Targeted mechanical therapy and core stabilization for lumbar spine pain, sciatica nerve radiation, disc herniation management, and posture-induced stiffness.",
       image: backPainImg
     },
     {
+      id: "neck-pain",
       title: "NECK PAIN & CERVICAL SPONDYLOSIS",
       includes: "Stiffness, Nerve Impingement & Desk Posture Pain",
       desc: "Comprehensive cervical spine mobilization, trapezius spasm release, and ergonomic posture correction designed to relieve acute neck pain and arm numbness.",
       image: neckPainImg
     },
     {
+      id: "joint-pain-arthritis",
       title: "JOINT PAIN & ARTHRITIS",
       includes: "Knee Osteoarthritis, Shoulder, Hip & Wrist Pain",
       desc: "Evidence-informed joint mobility exercises, manual therapy, and inflammation reduction modalities to preserve joint cartilage and restore smooth movement.",
       image: kneeArthritisImg
     },
     {
+      id: "acl-mcl-meniscus",
       title: "ACL / MCL & MENISCUS INJURIES",
       includes: "Ligament Tears, Sprains, Tendinitis & Ankle Instability",
       desc: "Structured knee dynamic loading, hamstring and quadriceps strengthening, dynamic joint proprioception, and non-surgical ligament rehabilitation.",
       image: kneeArthritisImg
     },
     {
+      id: "pre-post-surgery-rehab",
       title: "PRE & POST SURGERY REHABILITATION",
       includes: "Total Knee Replacement (TKR) & Total Hip Replacement (THR)",
       desc: "Phased post-surgical rehabilitation protocols for Total Knee (TKR) and Hip (THR) replacements, focusing on range of motion, gait re-education, and strength.",
       image: tkrSurgeryImg
     },
     {
+      id: "stroke-paralysis-neuro-rehab",
       title: "PARALYSIS & STROKE NEURO-REHAB",
       includes: "Stroke, Hemiplegia & Facial Bell's Palsy",
       desc: "Targeted neuromuscular re-education, gait balance retraining, and upper limb functional paralysis rehabilitation.",
       image: strokeParalysisImg
     },
     {
+      id: "pelvic-floor-rehab",
       title: "PELVIC FLOOR REHABILITATION",
       includes: "Pelvic Muscle Strengthening, Postnatal Rehab & Biofeedback",
       desc: "Specialized clinical physiotherapy focused on pelvic floor biofeedback, postpartum core rehabilitation, and pelvic dysfunction relief in a private setting.",
       image: woImg
     },
     {
+      id: "cupping-therapy",
       title: "CUPPING THERAPY",
       includes: "Myofascial Decompression, Kinetic Cupping & Circulation",
       desc: "Medical vacuum decompression therapy applied to tight muscles to relieve chronic spasms, enhance tissue microcirculation, and accelerate muscular recovery.",
       image: phyImg
     },
     {
+      id: "dry-needling-therapy",
       title: "DRY NEEDLING THERAPY",
       includes: "Intramuscular Trigger Point Release & Deep Muscle Knots",
       desc: "Precision targeted filiform needle insertion directly into active myofascial trigger points to deactivate neuromuscular knots and relieve stubborn pain.",
@@ -305,10 +316,23 @@ export default function Physiotherapy() {
                       <p className="text-[#252822]/80 text-xs leading-relaxed font-light mb-6">{card.desc}</p>
                     </div>
 
-                    <Link to="/book-appointment" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#5F6B45] hover:text-[#3F4A32] transition-colors pt-4 border-t border-[#D8D0C3]">
-                      <span>BOOK CONSULTATION</span>
-                      <span className="group-hover:translate-x-1.5 transition-transform">→</span>
-                    </Link>
+                    <div className="pt-4 border-t border-[#D8D0C3] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                      <a 
+                        href={`#${card.id}`} 
+                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#5F6B45] hover:text-[#293225] transition-colors py-1"
+                      >
+                        <span>FULL CLINICAL GUIDE</span>
+                        <span className="text-[#B89A5A]">↓</span>
+                      </a>
+                      <Link 
+                        to="/book-appointment" 
+                        state={{ prefillService: card.title }}
+                        className="inline-flex items-center justify-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-[#293225] bg-[#D8D0C3]/40 hover:bg-[#5F6B45] hover:text-white px-3 py-1.5 rounded-full transition-all"
+                      >
+                        <span>BOOK</span>
+                        <span>→</span>
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               </TiltCard>
@@ -317,6 +341,15 @@ export default function Physiotherapy() {
 
         </div>
       </section>
+
+      {/* 4. IN-DEPTH CLINICAL TREATMENT GUIDES (600-800 WORDS PER SERVICE) */}
+      <DetailedTreatmentGuide 
+        services={PHYSIOTHERAPY_SERVICES}
+        sectionId="physiotherapy-treatment-guides"
+        sectionBadge="IN-DEPTH PHYSIOTHERAPY GUIDES"
+        sectionTitle="Detailed Clinical Explanations for Every Physiotherapy Service"
+        sectionDescription="Comprehensive medical guides for all 9 orthopaedic, spine, and neuro-rehabilitation services at Tamanya Physio and Health Clinic—explaining why each therapy is used, how it works step-by-step, equipment or manual techniques used, candidate suitability, precautions, and patient FAQs."
+      />
 
       {/* 4. ADVANCED THERAPEUTIC MODALITIES & TECHNOLOGY */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">

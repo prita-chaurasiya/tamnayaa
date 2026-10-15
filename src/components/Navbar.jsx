@@ -3,12 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import logoImg from '../assets/tam.png';
 import Magnetic from './Magnetic';
+import { SERVICES_NAVBAR_DATA, CLINIC_DATA } from '../data/clinicData';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(true); // Open by default on mobile so links are visible
+  const [mobileExpandedCategory, setMobileExpandedCategory] = useState('Physiotherapy');
   const dropdownRef = useRef(null);
   const location = useLocation();
 
@@ -51,6 +53,23 @@ export default function Navbar() {
 
   const isActive = (path) => location.pathname === path;
   const isServicesActive = () => ['/physiotherapy', '/womens-health', '/skin-care', '/slimming-wellness'].includes(location.pathname);
+
+  const handleServiceClick = (targetPath) => {
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+
+    if (targetPath.includes('#')) {
+      const [targetPage, hash] = targetPath.split('#');
+      if (location.pathname === targetPage) {
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 120);
+      }
+    }
+  };
 
   return (
     <>
@@ -170,64 +189,111 @@ export default function Navbar() {
                   isServicesActive() ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
 
-                {/* Dropdown Panel */}
+                {/* Mega-Dropdown Panel */}
                 <AnimatePresence>
                   {servicesDropdownOpen && (
                     <motion.div 
-                      initial={{ opacity: 0, y: 10, scale: 0.96 }}
+                      initial={{ opacity: 0, y: 12, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
                       transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                      className="absolute top-full left-0 mt-2 w-72 max-w-[90vw] bg-[#293225] border-2 border-[#B89A5A]/70 rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.9)] py-3 px-2.5 z-50 overflow-hidden"
+                      className="absolute top-full -left-[260px] md:-left-[320px] lg:-left-[380px] xl:-left-[430px] mt-2 w-[1140px] max-w-[94vw] bg-[#293225] border-2 border-[#B89A5A]/80 rounded-[28px] shadow-[0_35px_90px_rgba(0,0,0,0.95)] z-50 overflow-hidden flex flex-col text-left"
                     >
-                      <Link 
-                        to="/physiotherapy" 
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
-                          isActive('/physiotherapy') 
-                            ? 'bg-[#5F6B45] text-white shadow-md' 
-                            : 'text-[#FAF7F1] hover:bg-[#5F6B45] hover:text-white'
-                        }`}
-                      >
-                        <span>PHYSIOTHERAPY</span>
-                        <span className="text-[#B89A5A] group-hover/item:text-white text-xs group-hover/item:translate-x-1.5 transition-transform font-bold">→</span>
-                      </Link>
-                      <Link 
-                        to="/womens-health" 
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
-                          isActive('/womens-health') 
-                            ? 'bg-[#5F6B45] text-white shadow-md' 
-                            : 'text-[#FAF7F1] hover:bg-[#5F6B45] hover:text-white'
-                        }`}
-                      >
-                        <span>WOMEN'S HEALTH</span>
-                        <span className="text-[#B89A5A] group-hover/item:text-white text-xs group-hover/item:translate-x-1.5 transition-transform font-bold">→</span>
-                      </Link>
-                      <Link 
-                        to="/skin-care" 
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
-                          isActive('/skin-care') 
-                            ? 'bg-[#5F6B45] text-white shadow-md' 
-                            : 'text-[#FAF7F1] hover:bg-[#5F6B45] hover:text-white'
-                        }`}
-                      >
-                        <span>SKIN CARE</span>
-                        <span className="text-[#B89A5A] group-hover/item:text-white text-xs group-hover/item:translate-x-1.5 transition-transform font-bold">→</span>
-                      </Link>
-                      <Link 
-                        to="/slimming-wellness" 
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold tracking-wider transition-all group/item ${
-                          isActive('/slimming-wellness') 
-                            ? 'bg-[#5F6B45] text-white shadow-md' 
-                            : 'text-[#FAF7F1] hover:bg-[#5F6B45] hover:text-white'
-                        }`}
-                      >
-                        <span>SLIMMING & WELLNESS</span>
-                        <span className="text-[#B89A5A] group-hover/item:text-white text-xs group-hover/item:translate-x-1.5 transition-transform font-bold">→</span>
-                      </Link>
+                      {/* Mega-Menu Top Banner */}
+                      <div className="bg-[#1F261C] px-6 py-3.5 border-b border-[#B89A5A]/30 flex flex-wrap items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#B89A5A] animate-pulse" />
+                          <div>
+                            <span className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-[#B89A5A] block">
+                              CLINICAL TREATMENT DIRECTORY & SPECIALTIES
+                            </span>
+                            <span className="text-xs text-[#FAF7F1]/80 font-light">
+                              Tamanya Physio and Health Clinic • Led by Dr. Neha Gupta (PT) • Pandeypur, Varanasi
+                            </span>
+                          </div>
+                        </div>
+
+                        <Link
+                          to="/book-appointment"
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#B89A5A] hover:bg-[#8C6D32] text-[#293225] font-extrabold text-[11px] uppercase tracking-wider transition-all shadow-sm"
+                        >
+                          <span>Book Doctor Consultation</span>
+                          <span>→</span>
+                        </Link>
+                      </div>
+
+                      {/* Mega-Menu 4 Columns */}
+                      <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-h-[72vh] overflow-y-auto">
+                        {SERVICES_NAVBAR_DATA.map((col) => (
+                          <div key={col.category} className="flex flex-col space-y-3">
+                            {/* Column Header */}
+                            <div className="pb-2.5 border-b border-white/10">
+                              <div className="flex items-center justify-between mb-1">
+                                <Link
+                                  to={col.path}
+                                  onClick={() => handleServiceClick(col.path)}
+                                  className="font-serif text-sm font-bold text-white hover:text-[#B89A5A] transition-colors flex items-center gap-1.5"
+                                >
+                                  <span>{col.category}</span>
+                                </Link>
+                                <span className="text-[9px] font-bold uppercase tracking-wider bg-[#5F6B45]/40 text-[#D4B878] px-2 py-0.5 rounded-full border border-[#B89A5A]/30">
+                                  {col.countBadge}
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-white/50 font-light truncate">
+                                {col.tagline}
+                              </p>
+                              <Link
+                                to={col.path}
+                                onClick={() => handleServiceClick(col.path)}
+                                className="inline-flex items-center gap-1 text-[10px] font-bold text-[#B89A5A] hover:text-white transition-colors mt-1"
+                              >
+                                <span>Explore All In Category</span>
+                                <span>→</span>
+                              </Link>
+                            </div>
+
+                            {/* Therapy List with Anchor Links */}
+                            <div className="space-y-1.5 flex-1">
+                              {col.items.map((item) => (
+                                <Link
+                                  key={item.path}
+                                  to={item.path}
+                                  onClick={() => handleServiceClick(item.path)}
+                                  className="group/item flex flex-col p-2 rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-[#B89A5A]/30"
+                                >
+                                  <div className="flex items-center justify-between text-xs font-semibold text-[#FAF7F1]/90 group-hover/item:text-[#B89A5A] transition-colors">
+                                    <span className="line-clamp-1 leading-snug">{item.name}</span>
+                                    <span className="text-[#B89A5A] opacity-0 group-hover/item:opacity-100 transition-opacity text-[10px] ml-1 shrink-0">→</span>
+                                  </div>
+                                  <span className="text-[10px] text-white/45 group-hover/item:text-white/70 transition-colors font-mono mt-0.5 line-clamp-1">
+                                    {item.modality}
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Mega-Menu Bottom Bar */}
+                      <div className="bg-[#1F261C] px-6 py-3 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] text-white/80 gap-2">
+                        <div className="flex items-center gap-4">
+                          <span>📍 Kali Ji Mandir, Pandeypur, Varanasi</span>
+                          <span className="hidden sm:inline text-white/30">•</span>
+                          <span className="hidden sm:inline">100% Female Specialist Privacy</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <a href="tel:+917007667808" className="text-[#B89A5A] hover:text-white font-bold transition-colors">
+                            📞 +91 70076 67808
+                          </a>
+                          <span className="text-white/30">|</span>
+                          <a href="tel:+918090299847" className="text-[#B89A5A] hover:text-white font-bold transition-colors">
+                            +91 80902 99847
+                          </a>
+                        </div>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -343,57 +409,62 @@ export default function Navbar() {
                     transition={{ duration: 0.3 }}
                     className="mt-3 space-y-2 py-2 text-sm font-sans"
                   >
-                    <Link 
-                      to="/physiotherapy" 
-                      onClick={() => setMobileMenuOpen(false)} 
-                      className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
-                        isActive('/physiotherapy') 
-                          ? 'bg-[#5F6B45] text-white border-[#B89A5A]' 
-                          : 'bg-[#1F261C] text-white hover:bg-[#5F6B45] border-white/10'
-                      }`}
-                    >
-                      <span className="font-bold">🦴 PHYSIOTHERAPY</span>
-                      <span className="text-[#B89A5A]">→</span>
-                    </Link>
+                    {SERVICES_NAVBAR_DATA.map((col) => {
+                      const isExpanded = mobileExpandedCategory === col.category;
+                      return (
+                        <div key={col.category} className="rounded-xl border border-white/10 overflow-hidden bg-[#1F261C]">
+                          <div className="flex items-center justify-between p-3 bg-[#293225]">
+                            <Link 
+                              to={col.path} 
+                              onClick={() => handleServiceClick(col.path)} 
+                              className="font-bold text-xs text-white hover:text-[#B89A5A] flex items-center gap-2"
+                            >
+                              <span>{col.category}</span>
+                              <span className="text-[10px] bg-[#5F6B45] text-white px-2 py-0.5 rounded-full font-normal">
+                                {col.countBadge}
+                              </span>
+                            </Link>
 
-                    <Link 
-                      to="/womens-health" 
-                      onClick={() => setMobileMenuOpen(false)} 
-                      className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
-                        isActive('/womens-health') 
-                          ? 'bg-[#5F6B45] text-white border-[#B89A5A]' 
-                          : 'bg-[#1F261C] text-white hover:bg-[#5F6B45] border-white/10'
-                      }`}
-                    >
-                      <span className="font-bold">🌸 WOMEN'S HEALTH</span>
-                      <span className="text-[#B89A5A]">→</span>
-                    </Link>
+                            <button
+                              type="button"
+                              onClick={() => setMobileExpandedCategory(isExpanded ? null : col.category)}
+                              className="p-1.5 text-[#B89A5A] hover:text-white transition-colors"
+                              aria-label={`Toggle ${col.category} services`}
+                            >
+                              <svg className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                          </div>
 
-                    <Link 
-                      to="/skin-care" 
-                      onClick={() => setMobileMenuOpen(false)} 
-                      className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
-                        isActive('/skin-care') 
-                          ? 'bg-[#5F6B45] text-white border-[#B89A5A]' 
-                          : 'bg-[#1F261C] text-white hover:bg-[#5F6B45] border-white/10'
-                      }`}
-                    >
-                      <span className="font-bold">✨ SKIN CARE (PSORIASIS & SCARS)</span>
-                      <span className="text-[#B89A5A]">→</span>
-                    </Link>
-
-                    <Link 
-                      to="/slimming-wellness" 
-                      onClick={() => setMobileMenuOpen(false)} 
-                      className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
-                        isActive('/slimming-wellness') 
-                          ? 'bg-[#5F6B45] text-white border-[#B89A5A]' 
-                          : 'bg-[#1F261C] text-white hover:bg-[#5F6B45] border-white/10'
-                      }`}
-                    >
-                      <span className="font-bold">🦵 SLIMMING & WELLNESS</span>
-                      <span className="text-[#B89A5A]">→</span>
-                    </Link>
+                          {isExpanded && (
+                            <div className="p-2 space-y-1 bg-[#1A2017] border-t border-white/5">
+                              <Link
+                                to={col.path}
+                                onClick={() => handleServiceClick(col.path)}
+                                className="block px-3 py-1.5 rounded-lg text-[11px] font-bold text-[#B89A5A] hover:bg-white/5 transition-colors border-b border-white/5 mb-1"
+                              >
+                                View Complete {col.category} Page →
+                              </Link>
+                              {col.items.map((item) => (
+                                <Link
+                                  key={item.path}
+                                  to={item.path}
+                                  onClick={() => handleServiceClick(item.path)}
+                                  className="flex items-center justify-between px-3 py-2 rounded-lg text-xs text-white/90 hover:bg-[#5F6B45] hover:text-white transition-colors"
+                                >
+                                  <div>
+                                    <div className="font-medium text-xs leading-snug">{item.name}</div>
+                                    <div className="text-[10px] text-white/50 font-mono">{item.modality}</div>
+                                  </div>
+                                  <span className="text-xs text-[#B89A5A] font-bold">→</span>
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </motion.div>
                 )}
               </div>
