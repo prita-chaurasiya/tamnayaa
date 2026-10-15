@@ -317,7 +317,7 @@ export default function BookAppointment() {
 
                 {/* Emergency Banner */}
                 <p className="text-xs text-[#17242D]/60 italic mt-6">
-                  If you are experiencing severe trauma or urgent clinical symptoms, please dial <a href="tel:+917007667808" className="text-red-600 font-bold underline">+91 70076 67808</a> directly.
+                  If you are experiencing severe trauma or urgent clinical symptoms, please dial <a href="tel:+917007667808" className="text-red-600 font-bold underline">+91 70076 67808</a> or <a href="tel:+918090299847" className="text-red-600 font-bold underline">+91 80902 99847</a> directly.
                 </p>
               </div>
 

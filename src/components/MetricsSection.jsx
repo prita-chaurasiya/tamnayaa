@@ -19,8 +19,8 @@ export default function MetricsSection() {
       value: 7,
       suffix: '+ Yrs',
       label: 'CLINICAL EXPERTISE',
-      desc: 'Led personally by Dr. Neha Gupta (B.P.T, M.P.T Orthopaedics, MIAP) with specialist clinical practice.',
-      tag: 'Dr. Neha Gupta',
+      desc: 'Led personally by Dr. Neha Gupta (PT), Founder / Director (MPT Ortho, BPT) with specialist clinical practice.',
+      tag: 'Dr. Neha Gupta (PT)',
       Icon: Award,
     },
     {

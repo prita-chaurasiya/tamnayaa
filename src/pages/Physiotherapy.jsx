@@ -27,6 +27,7 @@ import tkrSurgeryImg from '../assets/conditions/tkr_surgery.jpg';
 import strokeParalysisImg from '../assets/conditions/stroke_paralysis.jpg';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
+import woImg from '../assets/wo.jpg';
 
 const luxuryEase = [0.16, 1, 0.3, 1];
 
@@ -69,6 +70,24 @@ export default function Physiotherapy() {
       includes: "Stroke, Hemiplegia & Facial Bell's Palsy",
       desc: "Targeted neuromuscular re-education, gait balance retraining, and upper limb functional paralysis rehabilitation.",
       image: strokeParalysisImg
+    },
+    {
+      title: "PELVIC FLOOR REHABILITATION",
+      includes: "Pelvic Muscle Strengthening, Postnatal Rehab & Biofeedback",
+      desc: "Specialized clinical physiotherapy focused on pelvic floor biofeedback, postpartum core rehabilitation, and pelvic dysfunction relief in a private setting.",
+      image: woImg
+    },
+    {
+      title: "CUPPING THERAPY",
+      includes: "Myofascial Decompression, Kinetic Cupping & Circulation",
+      desc: "Medical vacuum decompression therapy applied to tight muscles to relieve chronic spasms, enhance tissue microcirculation, and accelerate muscular recovery.",
+      image: phyImg
+    },
+    {
+      title: "DRY NEEDLING THERAPY",
+      includes: "Intramuscular Trigger Point Release & Deep Muscle Knots",
+      desc: "Precision targeted filiform needle insertion directly into active myofascial trigger points to deactivate neuromuscular knots and relieve stubborn pain.",
+      image: neckPainImg
     }
   ];
 
@@ -94,7 +113,7 @@ export default function Physiotherapy() {
     },
     {
       q: "How many physiotherapy sessions will I need?",
-      a: "The number of sessions depends on your specific condition, severity, and functional goals. Following your initial evaluation with Dr. Neha Gupta, a structured clinical roadmap is provided."
+      a: "The number of sessions depends on your specific condition, severity, and functional goals. Following your initial evaluation with Dr. Neha Gupta (PT), a structured clinical roadmap is provided."
     },
     {
       q: "Do I need an X-ray or doctor's referral before booking?",
@@ -104,7 +123,7 @@ export default function Physiotherapy() {
 
   const whatsappLink = buildWhatsAppLink({
     service: "Advanced Physiotherapy",
-    query: "Hello Dr. Neha Gupta, I would like to inquire about Advanced Physiotherapy and rehabilitation at Tamanya Clinic."
+    query: "Hello Dr. Neha Gupta (PT), I would like to inquire about Advanced Physiotherapy and rehabilitation at Tamanya Clinic."
   });
 
   return (
@@ -122,7 +141,7 @@ export default function Physiotherapy() {
         secondaryCtaText="EXPLORE CARE"
         secondaryCtaLink="#orthopaedic-section"
         floatBadgeText="PHYSIO EXPERTISE"
-        floatBadgeValue="M.P.T Orthopaedics"
+        floatBadgeValue="MPT (Ortho), BPT"
       />
 
       {/* 2. FEATURE INTRODUCTION: CARE THAT GOES BEYOND PAIN RELIEF */}
@@ -154,7 +173,7 @@ export default function Physiotherapy() {
               </div>
               <p className="font-serif text-3xl font-bold text-white">7+ Years</p>
               <p className="text-xs text-[#FAF7F1]/85 font-light mt-1">
-                Clinical practice led by Dr. Neha Gupta (M.P.T Ortho, D.Pharm) in Pandeypur, Varanasi.
+                Clinical practice led by Dr. Neha Gupta (PT), MPT (Ortho), BPT in Pandeypur, Varanasi.
               </p>
             </div>
 
@@ -229,6 +248,13 @@ export default function Physiotherapy() {
               >
                 <Phone className="w-3.5 h-3.5" />
                 CALL: +91 70076 67808
+              </a>
+              <a 
+                href="tel:+918090299847" 
+                className="text-xs font-bold text-[#5F6B45] hover:text-[#293225] flex items-center gap-1.5 transition-colors py-2 px-1"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                CALL: +91 80902 99847
               </a>
             </div>
           </motion.div>
@@ -401,7 +427,7 @@ export default function Physiotherapy() {
             Ready to Begin Your Recovery Journey?
           </h2>
           <p className="text-white/80 text-sm sm:text-base font-light">
-            Book an in-person clinical assessment with Dr. Neha Gupta (M.P.T Ortho) at our Pandeypur clinic.
+            Book an in-person clinical assessment with Dr. Neha Gupta (PT), MPT (Ortho), BPT at our Pandeypur clinic.
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <Link to="/book-appointment" className="btn-champagne">

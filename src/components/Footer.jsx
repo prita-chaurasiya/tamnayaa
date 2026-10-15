@@ -144,10 +144,20 @@ export default function Footer() {
                 Luxury private practice providing specialist physiotherapy, female pelvic rehabilitation, aesthetic skin care, and holistic body shaping in Varanasi.
               </p>
 
-              <div className="text-xs font-semibold text-[#B89A5A] space-y-1.5">
-                <a href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" target="_blank" rel="noopener noreferrer" className="hover:underline block">📍 Pandeypur, Varanasi, UP 221002</a>
-                <a href="tel:+917007667808" className="hover:underline block">📞 +91 70076 67808</a>
+              <div className="text-xs font-semibold text-[#B89A5A] space-y-2">
+                <a href="https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi" target="_blank" rel="noopener noreferrer" className="hover:underline block leading-relaxed">
+                  📍 SA 1/177 T.N., Near Kali Ji Mandir, Pandeypur, Varanasi, UP 221002
+                </a>
+                <div className="flex flex-wrap items-center gap-x-2 text-xs">
+                  <a href="tel:+917007667808" className="hover:underline">📞 +91 70076 67808</a>
+                  <span>/</span>
+                  <a href="tel:+918090299847" className="hover:underline">📞 +91 80902 99847</a>
+                </div>
                 <a href="mailto:dr.neha25btr@gmail.com" className="hover:underline block">✉️ dr.neha25btr@gmail.com</a>
+                <a href="https://instagram.com/physioneha06" target="_blank" rel="noopener noreferrer" className="hover:underline inline-flex items-center gap-1.5 text-[#E8ECDF] hover:text-[#B89A5A] transition-colors">
+                  <span>📸</span>
+                  <span>Instagram: @physioneha06</span>
+                </a>
               </div>
             </motion.div>
 
@@ -289,7 +299,7 @@ export default function Footer() {
                   <span className="font-bold text-[#A8B09A]">Prior Appointment</span>
                 </div>
                 <p className="text-[11px] text-[#A8B09A] pt-2 font-light leading-relaxed">
-                  Located opposite Indian Oil Petrol Pump, Pandeypur Chauraha, Varanasi, UP 221002.
+                  Located at SA 1/177 T.N., Near Kali Ji Mandir, Pandeypur, Varanasi, UP 221002.
                 </p>
                 <div className="pt-4">
                   <motion.div
@@ -313,7 +323,7 @@ export default function Footer() {
           {/* Bottom Copyright */}
           <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-[11px] text-[#A8B09A]">
             <p>© {new Date().getFullYear()} Tamanya Physio and Health Clinic. All rights reserved.</p>
-            <p className="mt-2 sm:mt-0">Led by Dr. Neha Gupta (M.P.T Ortho) • Pandeypur, Varanasi</p>
+            <p className="mt-2 sm:mt-0">Led by Dr. Neha Gupta (PT) • Founder / Director • Pandeypur, Varanasi</p>
           </div>
 
         </div>

@@ -20,7 +20,7 @@ export default function HeroSlider() {
       titleLine2: "Recover With Confidence.",
       subtitle: "Personalised physiotherapy and specialised rehabilitation in Varanasi to help you recover with strength, clarity, and sustainable long-term mobility.",
       floatingText: "PERSONALISED CARE",
-      floatingSub: "Led by Dr. Neha Gupta (M.P.T Ortho)",
+      floatingSub: "Led by Dr. Neha Gupta (PT), MPT (Ortho), BPT",
       link: "/physiotherapy"
     },
     {

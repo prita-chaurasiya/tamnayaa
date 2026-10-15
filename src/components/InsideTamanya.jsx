@@ -103,7 +103,7 @@ export default function InsideTamanya() {
     {
       id: "7",
       title: "Clinical Leadership",
-      subtitle: "Led by Dr. Neha Gupta (PT) M.P.T (Ortho), MIAP with 7+ years practice",
+      subtitle: "Led by Dr. Neha Gupta (PT), Founder / Director (MPT Ortho, BPT)",
       category: "Clinic",
       img: nehaImg,
       badge: "7+ Yrs Clinical Practice"

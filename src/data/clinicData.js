@@ -4,24 +4,36 @@
 export const CLINIC_DATA = {
   name: "Tamanya Physio and Health Clinic",
   shortName: "Tamanya Physio and Health Clinic",
-  leadDoctor: "Dr. Neha Gupta (M.P.T Orthopaedics)",
+  leadDoctor: "Dr. Neha Gupta (PT)",
+  role: "Founder / Director",
+  qualifications: "MPT (ORTHO), BPT, DPT, CMT, CDNP, CCT, CTT, NDT",
+  qualificationsSummary: "MPT (ORTHO), BPT",
+  specializations: [
+    "Pelvic Floor Rehab Specialist",
+    "Cupping Therapy Specialist",
+    "Dry Needling Therapist"
+  ],
   phone: "+91 70076 67808",
   phoneRaw: "+917007667808",
+  altPhone: "+91 80902 99847",
+  altPhoneRaw: "+918090299847",
   whatsappNumber: "917007667808",
   displayWhatsapp: "+91 70076 67808",
   email: "dr.neha25btr@gmail.com",
+  instagram: "@physioneha06",
+  instagramUrl: "https://instagram.com/physioneha06",
   
   address: {
-    street: "SA 1/177 T. N Nai Basti Road, beside Khadim, near Murari Jewellers",
-    area: "Pandeypur, Paharia",
+    street: "SA 1/177 T.N., Near Kali Ji Mandir",
+    area: "Pandeypur",
     city: "Varanasi",
     state: "Uttar Pradesh",
     pincode: "221002",
-    landmark: "Opposite Indian Oil Petrol Pump, Pandeypur Chauraha",
-    fullAddress: "SA 1/177 T. N Nai Basti Road, beside Khadim, near Murari Jewellers, Pandeypur, Paharia, Varanasi, Uttar Pradesh 221002",
+    landmark: "Near Kali Ji Mandir, Pandeypur Chauraha",
+    fullAddress: "SA 1/177 T.N., Near Kali Ji Mandir, Pandeypur, Varanasi, Uttar Pradesh 221002",
     mapsUrl: "https://maps.google.com/?q=Tamanya+Physio+Pandeypur+Varanasi",
     embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.6749969185!2d82.999!3d25.349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2e21b8f0474f%3A0x86b0394025b3992b!2sTamanya%20Physio%20%26%20Health%20Clinic!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-    directions: "Located near Pandeypur Chauraha on Paharia Road, opposite Indian Oil Petrol Pump, right beside Khadim shoes store. Easily accessible from Cantonment, Nadesar, Orderly Bazar, and Ring Road."
+    directions: "Located at SA 1/177 T.N., Near Kali Ji Mandir, Pandeypur, Varanasi. Easily accessible from Cantonment, Nadesar, Orderly Bazar, and Ring Road."
   },
 
   hours: {

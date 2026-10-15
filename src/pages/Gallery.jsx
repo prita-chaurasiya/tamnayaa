@@ -105,7 +105,7 @@ export default function Gallery() {
       id: "1",
       num: "09",
       title: "Clinic Campus Overview",
-      subtitle: "Conveniently located opposite Indian Oil Petrol Pump, Pandeypur Chauraha.",
+      subtitle: "Conveniently located at SA 1/177 T.N., Near Kali Ji Mandir, Pandeypur, Varanasi.",
       category: "CLINIC",
       img: cliImg,
       badge: "Varanasi Clinic"
@@ -149,8 +149,8 @@ export default function Gallery() {
     {
       id: "7",
       num: "14",
-      title: "Clinical Director — Dr. Neha Gupta",
-      subtitle: "B.P.T, M.P.T (Ortho), MIAP leading evidence-based physiotherapy practice.",
+      title: "Founder / Director — Dr. Neha Gupta (PT)",
+      subtitle: "MPT (ORTHO), BPT leading evidence-based physiotherapy practice.",
       category: "CLINIC",
       img: nehaImg,
       badge: "7+ Yrs Clinical Practice"

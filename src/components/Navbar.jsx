@@ -426,8 +426,11 @@ export default function Navbar() {
             {/* Mobile Contact & Appointment CTA */}
             <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
               <p className="text-[#B89A5A] text-xs uppercase tracking-widest font-bold font-sans">TAMANYA PHYSIO AND HEALTH CLINIC</p>
-              <p className="text-xs text-white/90 font-sans leading-relaxed">Pandeypur, Varanasi, Uttar Pradesh</p>
-              <a href="tel:+917007667808" className="block text-sm text-[#B89A5A] font-bold font-sans hover:underline">+91 70076 67808</a>
+              <p className="text-xs text-white/90 font-sans leading-relaxed">SA 1/177 T.N., Near Kali Ji Mandir, Pandeypur, Varanasi</p>
+              <div className="flex flex-col gap-1 text-sm font-bold font-sans">
+                <a href="tel:+917007667808" className="text-[#B89A5A] hover:underline">+91 70076 67808</a>
+                <a href="tel:+918090299847" className="text-[#B89A5A] hover:underline">+91 80902 99847</a>
+              </div>
               <a href="mailto:dr.neha25btr@gmail.com" className="block text-xs text-white/80 font-sans break-all hover:underline">dr.neha25btr@gmail.com</a>
               
               <Link 

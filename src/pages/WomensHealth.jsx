@@ -75,7 +75,7 @@ export default function WomensHealth() {
   const faqs = [
     {
       q: "What is female pelvic floor physical therapy?",
-      a: "Female pelvic floor physiotherapy is a specialised branch of physical medicine focused on the muscles, ligaments, and connective tissues supporting the bladder, uterus, and bowel. Led by Dr. Neha Gupta in a private room, treatment helps relieve pelvic pain, incontinence, diastasis recti, and pregnancy-related strain."
+      a: "Female pelvic floor physiotherapy is a specialised branch of physical medicine focused on the muscles, ligaments, and connective tissues supporting the bladder, uterus, and bowel. Led by Dr. Neha Gupta (PT) in a private room, treatment helps relieve pelvic pain, incontinence, diastasis recti, and pregnancy-related strain."
     },
     {
       q: "Does Tamanya Physio and Health Clinic provide antenatal (pregnancy) rehabilitation?",
@@ -134,7 +134,7 @@ export default function WomensHealth() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/60 via-transparent to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6 text-white p-4 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20">
               <p className="font-serif text-sm font-bold">100% Private Female Clinic Suite</p>
-              <p className="text-[11px] font-light text-white/80">Pandeypur Campus, Varanasi • Led by Dr. Neha Gupta</p>
+              <p className="text-[11px] font-light text-white/80">Pandeypur Campus, Varanasi • Led by Dr. Neha Gupta (PT)</p>
             </div>
           </ImageReveal>
 

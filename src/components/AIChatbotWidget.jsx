@@ -116,7 +116,7 @@ export default function AIChatbotWidget() {
     if (q.includes('physio') || q.includes('back') || q.includes('sciatica') || q.includes('knee') || q.includes('tkr') || q.includes('joint') || q.includes('paralysis') || q.includes('spine')) {
       const physioItems = CLINIC_DATA.services[0].items.map(i => `• ${i}`).join('\n');
       return {
-        text: `🦴 *Physiotherapy & Rehabilitation Services (Led by Dr. Neha Gupta, M.P.T Ortho):*\n\n${physioItems}\n\nWe provide personalized biomechanical assessments and non-surgical recovery plans.`,
+        text: `🦴 *Physiotherapy & Rehabilitation Services (Led by Dr. Neha Gupta (PT), Founder / Director):*\n\n${physioItems}\n\nWe provide personalized biomechanical assessments and non-surgical recovery plans.`,
         type: 'service',
         actions: [
           { label: '📅 Book Physio Consultation', url: '/book-appointment', external: false },
@@ -152,11 +152,11 @@ export default function AIChatbotWidget() {
 
     // Fallback response for unverified / custom queries
     return {
-      text: `Thank you for your question. To ensure absolute accuracy, I only provide verified clinic information for ${CLINIC_DATA.name}.\n\nFor specific medical advice or custom queries, please connect directly with Dr. Neha Gupta on WhatsApp or call our desk at ${CLINIC_DATA.phone}.`,
+      text: `Thank you for your question. To ensure absolute accuracy, I only provide verified clinic information for ${CLINIC_DATA.name}.\n\nFor specific medical advice or custom queries, please connect directly with Dr. Neha Gupta (PT) on WhatsApp or call our desk at ${CLINIC_DATA.phone} or ${CLINIC_DATA.altPhone}.`,
       type: 'fallback',
       actions: [
         { label: '💬 Connect on WhatsApp', action: 'whatsapp' },
-        { label: '📞 Call Desk (+91 70076 67808)', url: `tel:${CLINIC_DATA.phoneRaw}`, external: true }
+        { label: `📞 Call Desk (${CLINIC_DATA.phone})`, url: `tel:${CLINIC_DATA.phoneRaw}`, external: true }
       ]
     };
   };

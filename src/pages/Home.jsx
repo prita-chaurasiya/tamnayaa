@@ -72,7 +72,7 @@ export default function Home() {
     },
     {
       q: "10. How do I book an appointment?",
-      a: "You can book directly by calling +91 70076 67808, using our online booking form, or visiting our clinic campus in Pandeypur, Varanasi."
+      a: "You can book directly by calling +91 70076 67808 / +91 80902 99847, using our online booking form, or visiting our clinic campus at Near Kali Ji Mandir, Pandeypur, Varanasi."
     }
   ];
 
@@ -96,7 +96,7 @@ export default function Home() {
               {
                 num: "02",
                 title: "7+ YEARS SPECIALISED CARE",
-                desc: "Led personally by Dr. Neha Gupta (M.P.T Ortho) with specialized clinical expertise.",
+                desc: "Led personally by Dr. Neha Gupta (PT), MPT (Ortho), BPT with specialized clinical expertise.",
                 highlight: "Expert Lead"
               },
               {
@@ -167,7 +167,7 @@ export default function Home() {
               </p>
               
               <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed">
-                Led by Dr. Neha Gupta (M.P.T Orthopaedics), Tamanya Physio & Health Clinic provides evidence-based rehabilitation, specialized pelvic health care, and non-surgical pain management tailored to your personal goals in Pandeypur, Varanasi.
+                Led by Dr. Neha Gupta (PT), MPT (Ortho), BPT, Tamanya Physio & Health Clinic provides evidence-based rehabilitation, specialized pelvic health care, and non-surgical pain management tailored to your personal goals in Pandeypur, Varanasi.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4">
@@ -458,7 +458,7 @@ export default function Home() {
               className="flex items-center gap-3"
             >
               <span className="w-8 h-[2px] bg-[#B89A5A] block"></span>
-              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-extrabold block">CLINICAL DIRECTOR</span>
+              <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-extrabold block">FOUNDER / DIRECTOR</span>
             </motion.div>
 
             {/* 2. Heading & Name */}
@@ -479,8 +479,11 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.3, ease: luxuryEase }}
                 className="font-serif italic text-3xl sm:text-4xl text-[#5F6B45] font-semibold mt-2 text-gradient-gold"
               >
-                Dr. Neha Gupta
+                Dr. Neha Gupta (PT)
               </motion.p>
+              <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#293225]/85 mt-1 uppercase">
+                MPT (ORTHO), BPT, DPT, CMT, CDNP, CCT, CTT, NDT
+              </p>
             </div>
 
             {/* 3. Qualifications & Credentials List */}
@@ -491,13 +494,13 @@ export default function Home() {
               transition={{ duration: 0.65, delay: 0.4, ease: luxuryEase }}
               className="flex flex-wrap items-center gap-3 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3]"
             >
-              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Physiotherapist (M.P.T Ortho)</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Pelvic Floor Rehab Specialist</span>
               <span className="text-[#B89A5A] font-bold">•</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Women's Health Specialist</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Cupping Therapy Specialist</span>
               <span className="text-[#B89A5A] font-bold">•</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> D.Pharm (2024)</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Dry Needling Therapist</span>
               <span className="text-[#B89A5A] font-bold">•</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Founder, Tamanya</span>
+              <span className="flex items-center gap-1.5"><span className="text-[#B89A5A] font-extrabold text-sm">✓</span> Founder / Director</span>
             </motion.div>
 
             {/* 4. Biography Paragraphs */}
@@ -556,7 +559,7 @@ export default function Home() {
               <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative z-10 bg-[#FAF7F1]">
                 <img 
                   src={nehaImg} 
-                  alt="Dr. Neha Gupta - Clinical Director & Founder Tamanya Physio and Health Clinic" 
+                  alt="Dr. Neha Gupta (PT) - Founder / Director Tamanya Physio and Health Clinic" 
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/40 via-transparent to-transparent opacity-30 group-hover:opacity-10 transition-opacity pointer-events-none" />
@@ -567,9 +570,9 @@ export default function Home() {
 
               {/* Floating Experience Badge */}
               <div className="absolute bottom-6 left-6 z-20 bg-[#293225]/95 text-white p-4 sm:p-5 rounded-[20px] border border-[#B89A5A]/50 shadow-2xl backdrop-blur-md animate-float-up-down">
-                <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">CLINICAL EXPERTISE</span>
-                <p className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">7+ Years Practice</p>
-                <p className="text-[10px] text-white/80 font-light mt-1">M.P.T Orthopaedics • D.Pharm • MIAP</p>
+                <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">FOUNDER / DIRECTOR</span>
+                <p className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">Dr. Neha Gupta (PT)</p>
+                <p className="text-[10px] text-white/90 font-medium mt-1">MPT (ORTHO) • CMT • CDNP • CCT • NDT</p>
               </div>
 
             </Link>

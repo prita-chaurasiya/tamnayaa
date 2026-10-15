@@ -144,22 +144,34 @@ export default function About() {
 
   const womenHealthCertifications = [
     {
-      title: "WOW IIPRE Women's Health Practitioner Programme",
-      issuer: "IIPRE Certified",
-      desc: "Comprehensive clinical training covering female hormonal cycles, pelvic organ biomechanics, and specialized rehabilitation frameworks for all life stages.",
-      badge: "International Standard"
+      title: "Pelvic Floor Rehabilitation Specialist",
+      issuer: "WOW IIPRE & Physioneeds Academy, London",
+      desc: "Specialized clinical mastery in female pelvic floor re-education, biofeedback protocols, antenatal & postnatal recovery, and diastasis recti resolution.",
+      badge: "Pelvic Floor Specialist"
     },
     {
-      title: "Certificate in Antenatal & Postnatal Rehabilitation",
-      issuer: "Physioneeds Academy, London",
-      desc: "Accredited British curriculum focusing on pregnancy biomechanics, safe gestational exercise, postpartum core rebuilding, and diastasis recti resolution.",
-      badge: "London Associated"
+      title: "CDNP — Certified Dry Needling Practitioner",
+      issuer: "Clinical Dry Needling Therapy",
+      desc: "Targeted intramuscular filiform trigger point deactivation for acute/chronic myofascial pain syndromes, cervical tension, and deep neuromuscular spasm.",
+      badge: "Dry Needling Therapist"
     },
     {
-      title: "Hands-on Certification in Pelvic Floor Rehabilitation",
-      issuer: "Advanced Clinical Fellowship",
-      desc: "Specialized training in pelvic floor assessment, biofeedback techniques, urinary incontinence protocols, and female pelvic pain alleviation.",
-      badge: "Hands-on Mastery"
+      title: "CCT — Certified Cupping Therapist",
+      issuer: "Clinical Cupping Therapy Association",
+      desc: "Advanced medical myofascial decompression, kinetic vacuum cupping, localized hyperemia, and accelerated soft tissue metabolic recovery.",
+      badge: "Cupping Specialist"
+    },
+    {
+      title: "CMT & CTT — Certified Manual & Taping Therapist",
+      issuer: "Manual Physical Medicine & Dynamic Taping",
+      desc: "Evidence-based spinal and joint manipulative therapy paired with functional kinesiology elastic taping for neuromuscular and lymphatic support.",
+      badge: "Manual & Taping"
+    },
+    {
+      title: "NDT — Neuro-Developmental Treatment",
+      issuer: "Neurological Rehabilitation Protocol",
+      desc: "Comprehensive therapeutic facilitation for post-stroke hemiplegia, neurological movement disorders, and motor neuromuscular retraining.",
+      badge: "Neuro Rehab"
     }
   ];
 
@@ -226,7 +238,7 @@ export default function About() {
     {
       year: "2019",
       title: "Foundation of Tamanya Physio & Health Clinic",
-      role: "Founder & Clinical Director, Varanasi",
+      role: "Founder / Director, Varanasi",
       desc: "Laid the cornerstone of Tamanya Physio & Health Clinic in Pandeypur, Varanasi, uniting healthcare and entrepreneurial expertise into a premier multidisciplinary rehabilitation center.",
       icon: HeartPulse,
       highlight: true
@@ -266,7 +278,7 @@ export default function About() {
       {/* 1. Full Image Page Hero */}
       <PageHero 
         title="Redefining Rehabilitation Through Personalised Care"
-        category="CLINICAL DIRECTOR & FOUNDER PROFILE"
+        category="FOUNDER / DIRECTOR PROFILE"
         subtitle="Physiotherapy, Specialised Women’s Health, Pelvic Rehabilitation & Preventive Healthcare in Pandeypur, Varanasi."
         image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2070&q=80"
         pageName="ABOUT DR. NEHA GUPTA"
@@ -274,8 +286,8 @@ export default function About() {
         ctaLink="/book-appointment"
         secondaryCtaText="OUR SERVICES"
         secondaryCtaLink="/physiotherapy"
-        floatBadgeText="FOUNDER & CLINICAL DIRECTOR"
-        floatBadgeValue="Dr. Neha Gupta"
+        floatBadgeText="FOUNDER / DIRECTOR"
+        floatBadgeValue="Dr. Neha Gupta (PT)"
       />
 
       {/* 2. EDITORIAL LEAD: REDEFINING WOMEN'S HEALTHCARE & REHABILITATION */}
@@ -387,12 +399,12 @@ export default function About() {
                       <img src={nehaImg} alt="Dr. Neha Gupta" className="w-full h-full object-cover object-top" />
                     </div>
                     <div>
-                      <h4 className="font-serif text-lg font-bold text-white">Dr. Neha Gupta</h4>
+                      <h4 className="font-serif text-lg font-bold text-white">Dr. Neha Gupta (PT)</h4>
                       <p className="text-xs text-[#B89A5A] font-semibold tracking-wide">
-                        M.P.T (Ortho) • D.Pharm • MIAP
+                        MPT (ORTHO), BPT, DPT, CMT, CDNP, CCT, CTT, NDT
                       </p>
-                      <p className="text-[11px] text-white/60 font-light mt-0.5">
-                        Clinical Director & Founder, Tamanya Physio and Health Clinic
+                      <p className="text-[11px] text-white/70 font-light mt-0.5">
+                        Founder / Director, Tamanya Physio and Health Clinic
                       </p>
                     </div>
                   </div>
@@ -419,7 +431,7 @@ export default function About() {
               transition={{ duration: 0.6, ease: luxuryEase }}
               className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block"
             >
-              CLINICAL DIRECTOR & FOUNDER
+              FOUNDER / DIRECTOR
             </motion.span>
             
             <div>
@@ -439,8 +451,11 @@ export default function About() {
                 transition={{ duration: 0.7, delay: 0.2, ease: luxuryEase }}
                 className="font-serif italic text-3xl sm:text-4xl text-[#5F6B45] font-semibold mt-2 text-gradient-gold"
               >
-                Dr. Neha Gupta
+                Dr. Neha Gupta (PT)
               </motion.p>
+              <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#293225]/85 mt-1 uppercase">
+                MPT (ORTHO), BPT, DPT, CMT, CDNP, CCT, CTT, NDT
+              </p>
             </div>
 
             {/* Verification Pills */}
@@ -451,13 +466,13 @@ export default function About() {
               transition={{ duration: 0.65, delay: 0.3, ease: luxuryEase }}
               className="flex flex-wrap items-center gap-3 text-xs font-bold text-[#252822] py-3 border-y-2 border-[#D8D0C3]"
             >
-              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Physiotherapist</span>
+              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Pelvic Floor Rehab Specialist</span>
               <span className="text-[#B89A5A]">•</span>
-              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Women's Health Specialist</span>
+              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Cupping Therapy Specialist</span>
               <span className="text-[#B89A5A]">•</span>
-              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Healthcare Entrepreneur</span>
+              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Dry Needling Therapist</span>
               <span className="text-[#B89A5A]">•</span>
-              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Clinical Educator</span>
+              <span className="flex items-center gap-1.5"><BadgeCheck className="w-4 h-4 text-[#B89A5A]" /> Founder / Director</span>
             </motion.div>
 
             {/* In-Depth Detailed Bio Text from Client */}
@@ -515,6 +530,13 @@ export default function About() {
                 <Phone className="w-3.5 h-3.5" />
                 CALL: +91 70076 67808
               </a>
+              <a 
+                href="tel:+918090299847" 
+                className="text-xs font-bold text-[#5F6B45] hover:text-[#293225] flex items-center gap-1.5 transition-colors py-2 px-1"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                CALL: +91 80902 99847
+              </a>
             </motion.div>
           </div>
 
@@ -541,9 +563,9 @@ export default function About() {
 
             {/* Floating Experience Badge */}
             <div className="absolute -bottom-4 -left-4 sm:bottom-6 sm:left-6 z-20 bg-[#293225]/95 text-white p-4 sm:p-5 rounded-[20px] border border-[#B89A5A]/50 shadow-2xl backdrop-blur-md">
-              <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">CLINICAL EXCELLENCE</span>
-              <p className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">7+ Years Practice</p>
-              <p className="text-[10px] text-white/80 font-light mt-1">M.P.T Orthopaedics • D.Pharm • MIAP</p>
+              <span className="text-[#B89A5A] text-[9px] uppercase tracking-widest font-extrabold block">FOUNDER / DIRECTOR</span>
+              <p className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">Dr. Neha Gupta (PT)</p>
+              <p className="text-[10px] text-white/90 font-medium mt-1">MPT (ORTHO) • CMT • CDNP • CCT • NDT</p>
             </div>
 
             {/* Small Inset Thumbnail of Clinic Consultation */}
@@ -1064,7 +1086,7 @@ export default function About() {
               “Rehabilitation should extend beyond treatment after an injury or health condition. Through Tamanya and our wider community initiatives, we aim to create greater awareness around women’s health, pelvic health, prenatal and postnatal recovery, urinary incontinence, posture, and preventive healthcare.”
             </p>
             <span className="text-xs font-bold text-[#D4B878] uppercase tracking-widest block">
-              — Dr. Neha Gupta, Founder & Clinical Director
+              — Dr. Neha Gupta (PT), Founder / Director
             </span>
           </motion.div>
 
@@ -1293,10 +1315,17 @@ export default function About() {
             </a>
             <a 
               href="tel:+917007667808" 
-              className="text-xs font-bold text-[#B89A5A] hover:text-white flex items-center gap-1.5 transition-colors py-3 px-4"
+              className="text-xs font-bold text-[#B89A5A] hover:text-white flex items-center gap-1.5 transition-colors py-3 px-3"
             >
               <Phone className="w-3.5 h-3.5" />
               +91 70076 67808
+            </a>
+            <a 
+              href="tel:+918090299847" 
+              className="text-xs font-bold text-[#B89A5A] hover:text-white flex items-center gap-1.5 transition-colors py-3 px-3"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              +91 80902 99847
             </a>
           </div>
         </div>

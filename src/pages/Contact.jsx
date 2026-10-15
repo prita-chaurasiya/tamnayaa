@@ -3,8 +3,17 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem, ImageReveal } from '../components/MotionWrappers';
+import { Phone, MessageCircle, MapPin, Clock, Mail } from 'lucide-react';
 import cliImg from '../assets/cli.jpeg';
 import { CLINIC_DATA, buildWhatsAppLink } from '../data/clinicData';
+
+const InstagramIcon = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 export default function Contact() {
   const defaultWaUrl = buildWhatsAppLink({
@@ -47,14 +56,21 @@ export default function Contact() {
                   whileHover={{ x: 6, transition: { duration: 0.3 } }}
                   className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                    📞
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center shrink-0 text-[#5F6B45]">
+                    <Phone className="w-5 h-5 text-[#5F6B45]" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-base font-bold text-[#293225]">Phone Call</h4>
-                    <a href={`tel:${CLINIC_DATA.phoneRaw}`} className="text-[#5F6B45] font-bold hover:underline text-sm block">
-                      {CLINIC_DATA.phone}
-                    </a>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Direct Phone Numbers</h4>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mt-1">
+                      <a href={`tel:${CLINIC_DATA.phoneRaw}`} className="text-[#5F6B45] font-bold hover:underline text-sm block">
+                        {CLINIC_DATA.phone}
+                      </a>
+                      <span className="hidden sm:inline text-[#B89A5A]">•</span>
+                      <a href={`tel:${CLINIC_DATA.altPhoneRaw}`} className="text-[#5F6B45] font-bold hover:underline text-sm block">
+                        {CLINIC_DATA.altPhone}
+                      </a>
+                    </div>
+                    <span className="text-[11px] text-[#252822]/60 block mt-0.5">Call our desk for consultations and immediate queries</span>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -65,8 +81,8 @@ export default function Contact() {
                   whileHover={{ x: 6, transition: { duration: 0.3 } }}
                   className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#25D366]">
-                    💬
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center shrink-0 text-[#25D366]">
+                    <MessageCircle className="w-5 h-5 text-[#25D366]" />
                   </div>
                   <div>
                     <h4 className="font-serif text-base font-bold text-[#293225]">WhatsApp Direct Enquiry</h4>
@@ -84,11 +100,11 @@ export default function Contact() {
                   whileHover={{ x: 6, transition: { duration: 0.3 } }}
                   className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                    🗺️
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center shrink-0 text-[#5F6B45]">
+                    <MapPin className="w-5 h-5 text-[#5F6B45]" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-base font-bold text-[#293225]">Verified Address</h4>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Clinic Address</h4>
                     <a 
                       href={CLINIC_DATA.address.mapsUrl} 
                       target="_blank" 
@@ -110,8 +126,8 @@ export default function Contact() {
                   whileHover={{ x: 6, transition: { duration: 0.3 } }}
                   className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                    ⏰
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center shrink-0 text-[#5F6B45]">
+                    <Clock className="w-5 h-5 text-[#5F6B45]" />
                   </div>
                   <div>
                     <h4 className="font-serif text-base font-bold text-[#293225]">Opening Hours</h4>
@@ -127,14 +143,33 @@ export default function Contact() {
                   whileHover={{ x: 6, transition: { duration: 0.3 } }}
                   className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center text-xl shrink-0 text-[#5F6B45]">
-                    ✉️
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center shrink-0 text-[#5F6B45]">
+                    <Mail className="w-5 h-5 text-[#5F6B45]" />
                   </div>
                   <div>
                     <h4 className="font-serif text-base font-bold text-[#293225]">Email Enquiries</h4>
                     <a href={`mailto:${CLINIC_DATA.email}`} className="text-[#252822]/80 hover:text-[#5F6B45] font-medium text-xs sm:text-sm block break-all">
                       {CLINIC_DATA.email}
                     </a>
+                  </div>
+                </motion.div>
+              </StaggerItem>
+
+              {/* Instagram Handle */}
+              <StaggerItem>
+                <motion.div 
+                  whileHover={{ x: 6, transition: { duration: 0.3 } }}
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F4EFE6] border border-[#D8D0C3] hover:border-[#5F6B45] transition-colors shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF7F1] border border-[#5F6B45]/30 flex items-center justify-center shrink-0 text-[#E1306C]">
+                    <InstagramIcon className="w-5 h-5 text-[#E1306C]" />
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-base font-bold text-[#293225]">Instagram</h4>
+                    <a href={CLINIC_DATA.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#E1306C] font-bold hover:underline text-xs sm:text-sm block">
+                      {CLINIC_DATA.instagram}
+                    </a>
+                    <span className="text-[11px] text-[#252822]/60 block mt-0.5">Follow Dr. Neha Gupta for daily clinical insights & patient tips</span>
                   </div>
                 </motion.div>
               </StaggerItem>
