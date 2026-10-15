@@ -151,7 +151,7 @@ export default function InsideTamanya() {
 
       {/* 3D Tilted Grid Interactive Hero */}
       <TiltedGridHero 
-        title="Inside Tamanya Health Campus"
+        title="Inside Tamanya Physio and Health Clinic Campus"
         category="3D PERSPECTIVE GALLERY"
         subtitle="Experience our treatment suites, private female pelvic care rooms, electrotherapy units, and community health camps in Varanasi."
         items={filteredItems}

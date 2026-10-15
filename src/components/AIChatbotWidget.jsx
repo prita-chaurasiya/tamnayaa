@@ -555,7 +555,7 @@ export default function AIChatbotWidget() {
                       📱 Prefilled WhatsApp Message Preview:
                     </span>
                     <p className="text-[11px] text-[#293225]/80 font-mono bg-[#F4EFE6] p-2 rounded-lg leading-relaxed whitespace-pre-line">
-                      {`Hello Dr. Neha Gupta,\nI would like to inquire about Tamanya Physio & Health Clinic in Varanasi.\n${waForm.patientName ? `\n👤 Patient: ${waForm.patientName}` : ''}${waForm.phone ? `\n📞 Contact: ${waForm.phone}` : ''}${waForm.service ? `\n🩺 Service: ${waForm.service}` : ''}${waForm.preferredTime ? `\n📅 Time: ${waForm.preferredTime}` : ''}${waForm.query ? `\n💬 Enquiry: ${waForm.query}` : ''}\n\n*Sent via Tamanya Health Website*`}
+                      {`Hello Dr. Neha Gupta,\nI would like to inquire about Tamanya Physio and Health Clinic in Varanasi.\n${waForm.patientName ? `\n👤 Patient: ${waForm.patientName}` : ''}${waForm.phone ? `\n📞 Contact: ${waForm.phone}` : ''}${waForm.service ? `\n🩺 Service: ${waForm.service}` : ''}${waForm.preferredTime ? `\n📅 Time: ${waForm.preferredTime}` : ''}${waForm.query ? `\n💬 Enquiry: ${waForm.query}` : ''}\n\n*Sent via Tamanya Physio and Health Clinic Website*`}
                     </p>
                   </div>
 

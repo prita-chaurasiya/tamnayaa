@@ -8,7 +8,7 @@ import { CLINIC_DATA, buildWhatsAppLink } from '../data/clinicData';
 
 export default function Contact() {
   const defaultWaUrl = buildWhatsAppLink({
-    query: "Hello Dr. Neha Gupta, I would like to inquire about a clinical consultation at Tamanya Health."
+    query: "Hello Dr. Neha Gupta, I would like to inquire about a clinical consultation at Tamanya Physio and Health Clinic."
   });
 
   return (

@@ -6,46 +6,51 @@ import SplitText from './SplitText';
 import AuroraCanvas from './AuroraCanvas';
 import Hero3DCanvas from './Hero3DCanvas';
 
+import heroPhysio from '../assets/hero/hero_physio.jpg';
+import heroWomens from '../assets/hero/hero_womens.jpg';
+import heroRehab from '../assets/hero/hero_rehab.jpg';
+import heroWellness from '../assets/hero/hero_wellness.jpg';
+
 export default function HeroSlider() {
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2400&q=90",
+      image: heroPhysio,
       eyebrow: "PHYSIO & HEALTH CARE • SINCE 2019",
       titleLine1: "Move Better.",
       titleLine2: "Recover With Confidence.",
       subtitle: "Personalised physiotherapy and specialised rehabilitation in Varanasi to help you recover with strength, clarity, and sustainable long-term mobility.",
       floatingText: "PERSONALISED CARE",
-      floatingSub: "Professional guidance for every patient",
+      floatingSub: "Led by Dr. Neha Gupta (M.P.T Ortho)",
       link: "/physiotherapy"
     },
     {
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=2400&q=90",
+      image: heroWomens,
       eyebrow: "SPECIALISED WOMEN'S HEALTH",
       titleLine1: "Pelvic & Maternal Care",
       titleLine2: "Restoring Female Vitality.",
-      subtitle: "Dedicated pelvic floor rehabilitation, PCOD/PCOS support, prenatal and postnatal physical care delivered in a private, compassionate clinical setting.",
-      floatingText: "MATERNAL & PELVIC CARE",
-      floatingSub: "Compassionate therapy for women",
+      subtitle: "Dedicated female pelvic floor rehabilitation, pregnancy care, C-section back recovery, and postpartum physical health in a 100% private clinical setting.",
+      floatingText: "WOMEN'S CLINIC SUITE",
+      floatingSub: "Private & confidential female care",
       link: "/womens-health"
     },
     {
-      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=2400&q=90",
+      image: heroRehab,
       eyebrow: "EVIDENCE-BASED REHABILITATION",
       titleLine1: "Root-Cause Diagnosis",
       titleLine2: "Beyond Symptom Masking.",
-      subtitle: "Targeting structural biomechanics rather than quick fixes, ensuring sustainable recovery from back pain, joint stiffness, and sports injuries.",
-      floatingText: "CLINICAL EXCELLENCE",
-      floatingSub: "Modern non-surgical modalities",
+      subtitle: "Targeting structural biomechanics rather than quick fixes, ensuring sustainable recovery from lower back pain, disc bulge, sciatica, and joint stiffness.",
+      floatingText: "ADVANCED SPINE REHAB",
+      floatingSub: "Non-surgical pain relief protocols",
       link: "/about"
     },
     {
-      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=2400&q=90",
+      image: heroWellness,
       eyebrow: "HOLISTIC WELLNESS & BODY CARE",
       titleLine1: "Slimming & Aesthetics",
       titleLine2: "Empowering Body & Mind.",
-      subtitle: "Comprehensive non-invasive body contouring, vacuum cavitation, deep heat therapy, and aesthetic skin rejuvenation tailored to your goals.",
-      floatingText: "FULL-SPECTRUM WELLNESS",
-      floatingSub: "Empowering body and mind",
+      subtitle: "Comprehensive non-invasive body contouring, vacuum cavitation, deep heat therapy, and aesthetic skin rejuvenation tailored to your wellness goals.",
+      floatingText: "CLINICAL WELLNESS",
+      floatingSub: "Empowering health & vitality",
       link: "/slimming-wellness"
     }
   ];
@@ -87,12 +92,12 @@ export default function HeroSlider() {
         >
           <img 
             src={slides[currentSlide].image} 
-            alt="Tamanya Health Hero Background" 
+            alt="Tamanya Physio and Health Clinic Hero Background" 
             className="w-full h-full object-cover object-center animate-ken-burns"
           />
-          {/* Soft Dark Olive & Luminous Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#293225]/90 via-[#293225]/60 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/80 via-transparent to-black/40 pointer-events-none" />
+          {/* Luminous Dark Olive & Champagne Vignette for maximum text contrast & warmth */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#293225]/85 via-[#293225]/45 to-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/75 via-transparent to-black/25 pointer-events-none" />
         </motion.div>
       </AnimatePresence>
 

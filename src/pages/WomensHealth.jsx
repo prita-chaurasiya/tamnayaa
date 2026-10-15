@@ -8,6 +8,8 @@ import pcodPcosImg from '../assets/conditions/pcod_pcos.jpg';
 import antenatalImg from '../assets/conditions/antenatal.jpg';
 import postnatalImg from '../assets/conditions/postnatal.jpg';
 import backPainImg from '../assets/conditions/back_pain.jpg';
+import menstrualReliefImg from '../assets/conditions/menstrual_relief.jpg';
+import csectionRecoveryImg from '../assets/conditions/csection_recovery.jpg';
 import woImg from '../assets/wo.jpg';
 
 export default function WomensHealth() {
@@ -24,7 +26,7 @@ export default function WomensHealth() {
       title: "MENSTRUAL PAIN (DYSMENORRHEA)",
       sub: "Severe Menstrual Cramp Relief",
       desc: "Therapeutic manual release, heat applications, and gentle pelvic mobilization to relieve deep menstrual spasm and chronic pelvic congestion.",
-      image: backPainImg
+      image: menstrualReliefImg
     },
     {
       title: "ANTENATAL (PREGNANCY) REHAB",
@@ -66,7 +68,7 @@ export default function WomensHealth() {
       title: "AFTER C-SECTION BACK PAIN",
       sub: "Post-Caesarean Scar & Spine Care",
       desc: "Post-surgical scar tissue mobilization, lumbo-pelvic stabilization exercises, and spine alignment to alleviate lower back ache after C-section delivery.",
-      image: backPainImg
+      image: csectionRecoveryImg
     }
   ];
 
@@ -76,11 +78,11 @@ export default function WomensHealth() {
       a: "Female pelvic floor physiotherapy is a specialised branch of physical medicine focused on the muscles, ligaments, and connective tissues supporting the bladder, uterus, and bowel. Led by Dr. Neha Gupta in a private room, treatment helps relieve pelvic pain, incontinence, diastasis recti, and pregnancy-related strain."
     },
     {
-      q: "Does Tamanya Health provide antenatal (pregnancy) rehabilitation?",
+      q: "Does Tamanya Physio and Health Clinic provide antenatal (pregnancy) rehabilitation?",
       a: "Yes. Our antenatal programs provide trimester-wise physical support to alleviate lower back ache, pelvic girdle pain, and pubic symphysis discomfort, preparing your body safely for labor and delivery."
     },
     {
-      q: "Does Tamanya Health provide postnatal recovery therapy?",
+      q: "Does Tamanya Physio and Health Clinic provide postnatal recovery therapy?",
       a: "Yes. Postnatal recovery starts with a gentle evaluation of pelvic floor strength, abdominal separation (diastasis recti), and scar healing (whether normal delivery or C-section) to restore functional core stability safely."
     }
   ];
@@ -113,7 +115,7 @@ export default function WomensHealth() {
               A Safe, Dedicated Space for Female Pelvic Health.
             </TextReveal>
             <p className="text-[#252822]/85 font-light text-base sm:text-lg leading-relaxed">
-              Pelvic health issues such as incontinence, chronic pelvic pain, and postpartum weakness are incredibly common—yet often untreated. At Tamanya Health, we provide compassionate, one-on-one female pelvic floor rehabilitation in Varanasi.
+              Pelvic health issues such as incontinence, chronic pelvic pain, and postpartum weakness are incredibly common—yet often untreated. At Tamanya Physio and Health Clinic, we provide compassionate, one-on-one female pelvic floor rehabilitation in Varanasi.
             </p>
             <p className="text-[#252822]/75 font-light text-sm leading-relaxed">
               Our clinical protocol begins with a thorough, respectful assessment, ensuring your complete physical comfort and privacy at every step.

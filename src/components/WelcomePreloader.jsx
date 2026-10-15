@@ -52,7 +52,7 @@ export default function WelcomePreloader() {
         >
           {/* Top Brand Tag */}
           <div className="flex justify-between items-center text-xs uppercase tracking-[0.25em] font-bold text-[#B89A5A]">
-            <span>TAMANYA HEALTH CLINIC</span>
+            <span>TAMANYA PHYSIO AND HEALTH CLINIC</span>
             <span>VARANASI, UP</span>
           </div>
 
@@ -66,7 +66,7 @@ export default function WelcomePreloader() {
             >
               <img
                 src={logoImg}
-                alt="Tamanya Health"
+                alt="Tamanya Physio and Health Clinic"
                 className="h-16 sm:h-20 w-auto object-contain drop-shadow-[0_0_25px_rgba(184,154,90,0.6)] brightness-125"
               />
               <div className="absolute -inset-4 bg-[#B89A5A]/20 rounded-full blur-2xl -z-10 animate-pulse" />

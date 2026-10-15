@@ -7,7 +7,7 @@ import { PageTransition, FadeIn, TextReveal, StaggerContainer, StaggerItem, Floa
 import { TiltedGridHero } from '../components/ui/tilted-grid-hero';
 
 import cliImg from '../assets/cli.jpeg';
-import phyImg from '../assets/conditions/back_pain.jpg';
+import phyImg from '../assets/phy.jpg';
 import woImg from '../assets/conditions/pcod_pcos.jpg';
 import skinImg from '../assets/conditions/psoriasis.jpg';
 import wellnessImg from '../assets/conditions/cavitation.jpg';
@@ -178,7 +178,7 @@ export default function Gallery() {
       {/* Page Hero Banner */}
       <PageHero 
         title="Clinical Gallery & Facilities"
-        category="INSIDE TAMANYA HEALTH"
+        category="INSIDE TAMANYA PHYSIO AND HEALTH CLINIC"
         subtitle="Explore real photography from our clinic campus in Pandeypur, Varanasi—featuring our treatment suites, rehabilitation modalities, female pelvic health suite, community health camps, and awards."
         image={cliImg}
         pageName="GALLERY"

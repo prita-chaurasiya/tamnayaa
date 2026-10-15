@@ -34,7 +34,7 @@ export default function SkinCare() {
   const faqs = [
     {
       q: "What clinical treatments are offered for skin psoriasis?",
-      a: "At Tamanya Health, skin psoriasis management focuses on soothing active inflammation, reducing scaling and plaque thickness, and restoring skin barrier hydration through clinical skin protocols."
+      a: "At Tamanya Physio and Health Clinic, skin psoriasis management focuses on soothing active inflammation, reducing scaling and plaque thickness, and restoring skin barrier hydration through clinical skin protocols."
     },
     {
       q: "How effective is scar reduction therapy for facial and acne scars?",

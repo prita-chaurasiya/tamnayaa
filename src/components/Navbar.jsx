@@ -119,7 +119,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.06 }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 src={logoImg} 
-                alt="Tamanya Health Logo" 
+                alt="Tamanya Physio and Health Clinic Logo" 
                 className="h-9 sm:h-11 md:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(184,154,90,0.4)] brightness-110 contrast-125 group-hover:brightness-125 transition-all"
               />
             </Link>
@@ -425,7 +425,7 @@ export default function Navbar() {
 
             {/* Mobile Contact & Appointment CTA */}
             <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
-              <p className="text-[#B89A5A] text-xs uppercase tracking-widest font-bold font-sans">TAMANYA HEALTH CLINIC</p>
+              <p className="text-[#B89A5A] text-xs uppercase tracking-widest font-bold font-sans">TAMANYA PHYSIO AND HEALTH CLINIC</p>
               <p className="text-xs text-white/90 font-sans leading-relaxed">Pandeypur, Varanasi, Uttar Pradesh</p>
               <a href="tel:+917007667808" className="block text-sm text-[#B89A5A] font-bold font-sans hover:underline">+91 70076 67808</a>
               <a href="mailto:dr.neha25btr@gmail.com" className="block text-xs text-white/80 font-sans break-all hover:underline">dr.neha25btr@gmail.com</a>

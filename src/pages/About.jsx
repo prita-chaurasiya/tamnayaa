@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import InsideTamanya from '../components/InsideTamanya';
-import MetricsSection from '../components/MetricsSection';
 import { CLINIC_DATA, buildWhatsAppLink } from '../data/clinicData';
 import { 
   Award, 
@@ -279,10 +278,7 @@ export default function About() {
         floatBadgeValue="Dr. Neha Gupta"
       />
 
-      {/* 2. Clinical Metrics Benchmarks */}
-      <MetricsSection />
-
-      {/* 3. EDITORIAL LEAD: REDEFINING WOMEN'S HEALTHCARE & REHABILITATION */}
+      {/* 2. EDITORIAL LEAD: REDEFINING WOMEN'S HEALTHCARE & REHABILITATION */}
       <section className="py-20 lg:py-28 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3] relative overflow-hidden">
         {/* Subtle Ambient Background Accents */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#B89A5A]/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -396,7 +392,7 @@ export default function About() {
                         M.P.T (Ortho) • D.Pharm • MIAP
                       </p>
                       <p className="text-[11px] text-white/60 font-light mt-0.5">
-                        Clinical Director & Founder, Tamanya Health
+                        Clinical Director & Founder, Tamanya Physio and Health Clinic
                       </p>
                     </div>
                   </div>

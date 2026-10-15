@@ -2,8 +2,8 @@
 // Edits here automatically update the Chat Assistant, WhatsApp links, and Contact pages.
 
 export const CLINIC_DATA = {
-  name: "Tamanya Physio & Health Clinic",
-  shortName: "Tamanya Health",
+  name: "Tamanya Physio and Health Clinic",
+  shortName: "Tamanya Physio and Health Clinic",
   leadDoctor: "Dr. Neha Gupta (M.P.T Orthopaedics)",
   phone: "+91 70076 67808",
   phoneRaw: "+917007667808",
@@ -114,7 +114,7 @@ export function buildWhatsAppLink({ patientName = '', phone = '', service = '', 
     text += `\n💬 *Enquiry:* ${query.trim()}`;
   }
 
-  text += `\n\n*Sent via Tamanya Health Website*`;
+  text += `\n\n*Sent via Tamanya Physio and Health Clinic Website*`;
 
   const encoded = encodeURIComponent(text);
   return `https://wa.me/${CLINIC_DATA.whatsappNumber}?text=${encoded}`;

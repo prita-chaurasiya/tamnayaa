@@ -94,7 +94,7 @@ export default function BookAppointment() {
       <PageHero 
         title="Book Your Consultation"
         category="ONLINE SCHEDULING PORTAL"
-        subtitle="Select your preferred service, time slot, and consultation details for your visit to Tamanya Health in Pandeypur, Varanasi."
+        subtitle="Select your preferred service, time slot, and consultation details for your visit to Tamanya Physio and Health Clinic in Pandeypur, Varanasi."
         image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2070&q=80"
         pageName="BOOK APPOINTMENT"
       />

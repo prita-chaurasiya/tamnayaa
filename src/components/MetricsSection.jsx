@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import CountUpNumber from './CountUpNumber';
 import SplitText from './SplitText';
 import { TiltCard } from './MotionWrappers';
+import { Users, Award, ShieldCheck, HeartPulse } from 'lucide-react';
 
 export default function MetricsSection() {
   const stats = [
@@ -10,30 +11,34 @@ export default function MetricsSection() {
       value: 5000,
       suffix: '+',
       label: 'PATIENTS RECOVERED',
-      desc: 'Successful clinical outcomes across orthopaedic, neurological, and pelvic rehabilitation.',
-      icon: '✨',
+      desc: 'Dedicated clinical recoveries across female pelvic care, spine, joint, and neuro rehabilitation in Varanasi.',
+      tag: 'Clinical Recovery',
+      Icon: Users,
     },
     {
       value: 7,
       suffix: '+ Yrs',
       label: 'CLINICAL EXPERTISE',
-      desc: 'Led by Dr. Neha Gupta (M.P.T Orthopaedics) with specialized clinical practice.',
-      icon: '🩺',
+      desc: 'Led personally by Dr. Neha Gupta (B.P.T, M.P.T Orthopaedics, MIAP) with specialist clinical practice.',
+      tag: 'Dr. Neha Gupta',
+      Icon: Award,
     },
     {
       value: 99.4,
       suffix: '%',
       decimals: 1,
-      label: 'SATISFACTION RATE',
-      desc: 'Based on verified patient reviews and long-term functional recovery outcomes.',
-      icon: '🌟',
+      label: 'PATIENT SATISFACTION',
+      desc: 'Consistently high satisfaction based on verified patient feedback and long-term functional mobility.',
+      tag: 'Verified Outcomes',
+      Icon: HeartPulse,
     },
     {
       value: 100,
       suffix: '%',
       label: 'EVIDENCE-BASED CARE',
-      desc: 'Tailored non-surgical modalities, dry needling, cupping, and biomechanical rehab.',
-      icon: '🏛️',
+      desc: 'Personalized non-surgical physical therapy protocols, gentle manual release, and active clinical rehabilitation.',
+      tag: 'Standard of Care',
+      Icon: ShieldCheck,
     },
   ];
 
@@ -42,7 +47,7 @@ export default function MetricsSection() {
       <div className="max-w-[1600px] mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-bold block mb-3">
-            CLINICAL BENCHMARKS & METRICS
+            CLINICAL BENCHMARKS & OUTCOMES
           </span>
           <SplitText
             text="Numbers That Reflect Our Care."
@@ -60,11 +65,11 @@ export default function MetricsSection() {
               <div className="bg-[#F4EFE6] p-6 sm:p-7 xl:p-8 rounded-[26px] border-2 border-[#D8D0C3] hover:border-[#B89A5A] shadow-[0_10px_30px_rgba(41,50,37,0.06)] hover:shadow-[0_25px_50px_rgba(95,107,69,0.25)] transition-all duration-500 flex flex-col justify-between h-full group cursor-pointer">
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <span className="text-2xl p-2.5 rounded-xl bg-[#FAF7F1] border border-[#D8D0C3] shadow-xs group-hover:scale-110 transition-transform">
-                      {stat.icon}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-widest font-extrabold text-[#5F6B45] bg-[#E8ECDF] px-3 py-1 rounded-full border border-[#5F6B45]/30">
-                      METRIC 0{i + 1}
+                    <div className="w-12 h-12 rounded-2xl bg-[#293225] text-[#B89A5A] flex items-center justify-center shadow-md group-hover:bg-[#B89A5A] group-hover:text-[#293225] transition-colors duration-300">
+                      <stat.Icon className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <span className="text-[10px] uppercase tracking-wider font-extrabold text-[#5F6B45] bg-[#E8ECDF] px-3 py-1 rounded-full border border-[#5F6B45]/30">
+                      {stat.tag}
                     </span>
                   </div>
 
@@ -85,11 +90,9 @@ export default function MetricsSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-[#D8D0C3] flex items-center justify-between text-[10px] uppercase tracking-widest font-bold text-[#5F6B45]">
-                  <span>TAMANYA BENCHMARK</span>
-                  <span className="group-hover:translate-x-2 transition-transform duration-300 text-[#B89A5A] font-extrabold text-xs">
-                    →
-                  </span>
+                <div className="mt-6 pt-3 border-t border-[#D8D0C3] flex items-center justify-between text-[10px] uppercase tracking-wider font-semibold text-[#5F6B45]">
+                  <span>Pandeypur, Varanasi</span>
+                  <span className="text-[#B89A5A] font-bold">Verified Practice</span>
                 </div>
               </div>
             </TiltCard>

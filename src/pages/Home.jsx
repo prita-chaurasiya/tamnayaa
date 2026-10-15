@@ -189,7 +189,7 @@ export default function Home() {
               <div className="aspect-[4/3] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative group">
                 <img 
                   src={cliImg} 
-                  alt="Tamanya Health Clinic Varanasi" 
+                  alt="Tamanya Physio and Health Clinic Varanasi" 
                   className="w-full h-full object-cover animate-ken-burns" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/70 via-transparent to-transparent" />
@@ -263,7 +263,7 @@ export default function Home() {
               <ThreeDFolder 
                 title="Specialised Clinical Divisions"
                 subtitle="Explore Dr. Neha Gupta's specialized clinical protocols and private care suites."
-                category="TAMANYA HEALTH FOLDER ARCHIVE"
+                category="TAMANYA PHYSIO AND HEALTH CLINIC ARCHIVE"
                 items={[
                   {
                     id: '1',
@@ -556,7 +556,7 @@ export default function Home() {
               <div className="aspect-[3/4] rounded-[28px] overflow-hidden shadow-2xl border-4 border-[#FAF7F1] relative z-10 bg-[#FAF7F1]">
                 <img 
                   src={nehaImg} 
-                  alt="Dr. Neha Gupta - Clinical Director & Founder Tamanya Health" 
+                  alt="Dr. Neha Gupta - Clinical Director & Founder Tamanya Physio and Health Clinic" 
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#293225]/40 via-transparent to-transparent opacity-30 group-hover:opacity-10 transition-opacity pointer-events-none" />

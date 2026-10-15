@@ -6,7 +6,7 @@ export default function ImageTextSection({
   subtitle, 
   content, 
   image, 
-  imageAlt = "Tamanya Health", 
+  imageAlt = "Tamanya Physio and Health Clinic", 
   reverse = false, 
   btnText, 
   btnLink,

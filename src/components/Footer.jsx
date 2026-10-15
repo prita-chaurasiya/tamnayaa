@@ -132,11 +132,11 @@ export default function Footer() {
               <Link to="/" className="flex items-center gap-3 mb-6 group">
                 <img 
                   src={logoImg} 
-                  alt="Tamanya Health" 
-                  className="h-10 w-auto object-contain transition-transform group-hover:scale-105 brightness-110 contrast-125"
+                  alt="Tamanya Physio and Health Clinic" 
+                  className="h-11 w-auto object-contain transition-transform group-hover:scale-105 brightness-110 contrast-125"
                 />
-                <span className="font-serif font-bold text-2xl tracking-tight text-white group-hover:text-[#B89A5A] transition-colors">
-                  Tamanya <span className="text-[#B89A5A]">Health</span>
+                <span className="font-serif font-bold text-xl sm:text-2xl tracking-tight text-white group-hover:text-[#B89A5A] transition-colors">
+                  Tamanya Physio and <span className="text-[#B89A5A]">Health Clinic</span>
                 </span>
               </Link>
               
@@ -312,7 +312,7 @@ export default function Footer() {
 
           {/* Bottom Copyright */}
           <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-[11px] text-[#A8B09A]">
-            <p>© {new Date().getFullYear()} Tamanya Physio & Health Clinic. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Tamanya Physio and Health Clinic. All rights reserved.</p>
             <p className="mt-2 sm:mt-0">Led by Dr. Neha Gupta (M.P.T Ortho) • Pandeypur, Varanasi</p>
           </div>
 

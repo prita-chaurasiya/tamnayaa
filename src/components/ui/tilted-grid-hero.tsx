@@ -130,7 +130,7 @@ const defaultItems: GalleryItem[] = [
 
 export function TiltedGridHero({
   title = "Care You Can See. Excellence You Can Trust.",
-  subtitle = "Experience Tamanya Health through our curved 3D clinical gallery showcasing our treatment suites, rehabilitation modalities, female pelvic health suite, community health camps, and awards.",
+  subtitle = "Experience Tamanya Physio and Health Clinic through our curved 3D clinical gallery showcasing our treatment suites, rehabilitation modalities, female pelvic health suite, community health camps, and awards.",
   category = "CURVED 3D CLINICAL GALLERY",
   items = defaultItems,
   className,

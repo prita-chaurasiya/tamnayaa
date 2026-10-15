@@ -6,7 +6,6 @@ import { TiltCard, PageTransition, FadeIn, TextReveal } from '../components/Moti
 import SplitText from '../components/SplitText';
 import Magnetic from '../components/Magnetic';
 import Marquee from '../components/Marquee';
-import MetricsSection from '../components/MetricsSection';
 import { CLINIC_DATA, buildWhatsAppLink } from '../data/clinicData';
 import { 
   CheckCircle2, 
@@ -125,9 +124,6 @@ export default function Physiotherapy() {
         floatBadgeText="PHYSIO EXPERTISE"
         floatBadgeValue="M.P.T Orthopaedics"
       />
-
-      {/* Clinical Metrics Benchmark */}
-      <MetricsSection />
 
       {/* 2. FEATURE INTRODUCTION: CARE THAT GOES BEYOND PAIN RELIEF */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-[#FAF7F1] border-b border-[#D8D0C3]">
