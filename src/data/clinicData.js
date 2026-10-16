@@ -62,18 +62,30 @@ export const CLINIC_DATA = {
         "Sciatica Nerve Pain Radiation Relief",
         "Post-TKR (Knee) & Post-THR (Hip) Surgery Rehab",
         "Paralysis & Stroke Neurological Rehabilitation",
+        "Parkinson’s Disease & Bell’s Palsy Facial Rehab",
+        "Spinal Cord Injury (SCI) & Standing Table Care",
         "Joint Pain, Frozen Shoulder & Arthritis Care",
-        "Sports Injury & Muscle Ligament Recovery"
+        "Sports Injury, Sprains, Strains & Ligament Tears",
+        "Ultrasonic, Laser & IFT / TENS / SWD Electrotherapy",
+        "Computerized Spinal Traction & Decompression",
+        "IASTM, PEMF, Cupping & Dry Needling Therapy",
+        "Clinical Moist Steam Therapy & Joint Mobilization"
       ]
     },
     {
       category: "Women's Health & Pelvic Floor",
       items: [
-        "Pelvic Floor Muscle Biofeedback & Training",
-        "Antenatal (Pregnancy) & Postnatal Rehabilitation",
+        "Pelvic Floor Muscle Biofeedback & Down-Training",
+        "Antenatal (Pregnancy) Trimester-Wise Care",
+        "Postnatal Recovery & Mother's Core Rehabilitation",
         "Diastasis Recti (Abdominal Separation) Care",
-        "PCOD / PCOS Exercise & Lifestyle Therapy",
-        "Pelvic Girdle & Chronic Pelvic Pain Relief"
+        "PCOD / PCOS Exercise & Metabolic Therapy",
+        "Urinary Incontinence & Bladder Retraining",
+        "Pelvic Organ Prolapse Conservative Support",
+        "Vaginismus & Hypertonic Pelvic Floor Relaxation",
+        "Pelvic Floor Dyssynergic Constipation Care",
+        "Chronic Pelvic Pain Syndrome (CPPS) Relief",
+        "After C-Section Back Pain & Scar Mobilization"
       ]
     },
     {
@@ -88,9 +100,10 @@ export const CLINIC_DATA = {
     {
       category: "Slimming & Body Shaping",
       items: [
+        "Body Shaper Neuromuscular Contouring",
         "Vacuum Cavitation Non-Invasive Fat Reduction",
-        "G-5 Targeted Inch Loss & Cellulite Therapy",
-        "Deep Heat Detox & Lymphatic Drainage",
+        "Deep Heat Detox & Far-Infrared Thermogenesis",
+        "G-5 Targeted Inch Loss & Percussive Cellulite Therapy",
         "Postpartum Belly Toning & Sculpting"
       ]
     }
@@ -133,14 +146,14 @@ export function buildWhatsAppLink({ patientName = '', phone = '', service = '', 
 }
 
 /**
- * All 25 individual treatments categorized for the Navbar mega-dropdown and direct anchors
+ * All individual treatments categorized for the Navbar mega-dropdown and direct anchors
  */
 export const SERVICES_NAVBAR_DATA = [
   {
     category: "Physiotherapy",
     path: "/physiotherapy",
     icon: "Activity",
-    countBadge: "9 Therapies",
+    countBadge: "18 Therapies",
     tagline: "Spine, Joint & Neuro Rehab",
     items: [
       { name: "Lower Back Pain & Sciatica", path: "/physiotherapy#back-pain", modality: "Lumbar Traction & IFT" },
@@ -148,7 +161,16 @@ export const SERVICES_NAVBAR_DATA = [
       { name: "Knee & Joint Arthritis", path: "/physiotherapy#joint-pain-arthritis", modality: "Ultrasound & Laser" },
       { name: "ACL / MCL Sports Rehab", path: "/physiotherapy#acl-mcl-meniscus", modality: "Dynamic Stability Drills" },
       { name: "Pre & Post Surgery (TKR/THR)", path: "/physiotherapy#pre-post-surgery-rehab", modality: "CPM & Joint Recovery" },
+      { name: "Sports Injuries (Sprain/Strain)", path: "/physiotherapy#sports-injuries", modality: "PEACE & LOVE Loading" },
       { name: "Stroke & Neuro Rehab", path: "/physiotherapy#stroke-paralysis-neuro-rehab", modality: "NDT & Motor Control" },
+      { name: "Parkinson’s Neuro Rehab", path: "/physiotherapy#parkinsons-disease", modality: "High-Amplitude Drills" },
+      { name: "Bell’s Palsy Facial Care", path: "/physiotherapy#bells-palsy", modality: "Facial Stimulation" },
+      { name: "Spinal Cord Injury (SCI)", path: "/physiotherapy#spinal-cord-injury", modality: "Tilt Table & FES" },
+      { name: "Ultrasonic & Laser Therapy", path: "/physiotherapy#ultrasonic-laser-therapy", modality: "Photobiomodulation" },
+      { name: "IFT, TENS & SWD Diathermy", path: "/physiotherapy#ift-tens-swd-therapy", modality: "Vector Currents & 27MHz" },
+      { name: "Spinal Traction Decompression", path: "/physiotherapy#spinal-traction-decompression", modality: "Motorized Split Table" },
+      { name: "IASTM, PEMF & Taping Care", path: "/physiotherapy#iastm-pemf-taping-manual", modality: "Fascial Blades & PEMF" },
+      { name: "Clinical Steam Therapy", path: "/physiotherapy#steam-therapy", modality: "Moist Thermal Hyperthermia" },
       { name: "Pelvic Floor Rehabilitation", path: "/physiotherapy#pelvic-floor-rehab", modality: "Biofeedback & Exercises" },
       { name: "Cupping Therapy (Hijama)", path: "/physiotherapy#cupping-therapy", modality: "Negative Pressure Cups" },
       { name: "Dry Needling Therapy", path: "/physiotherapy#dry-needling-therapy", modality: "Sterile Filiform Needles" }
@@ -158,7 +180,7 @@ export const SERVICES_NAVBAR_DATA = [
     category: "Women's Health",
     path: "/womens-health",
     icon: "Heart",
-    countBadge: "9 Treatments",
+    countBadge: "11 Treatments",
     tagline: "Female Hormonal & Pelvic Care",
     items: [
       { name: "PCOD / PCOS Management", path: "/womens-health#pcod-pcos", modality: "Metabolic Activation" },
@@ -169,7 +191,9 @@ export const SERVICES_NAVBAR_DATA = [
       { name: "Diastasis Recti Abdominal Rehab", path: "/womens-health#diastasis-recti", modality: "Abdominal Approximation" },
       { name: "Pelvic Organ Prolapse Care", path: "/womens-health#pelvic-organ-prolapse", modality: "Conservative Support" },
       { name: "Vaginismus Relaxation", path: "/womens-health#vaginismus-hypertonic", modality: "Pelvic Down-Training" },
-      { name: "Back Pain After C-Section", path: "/womens-health#csection-back-pain", modality: "Post-Cesarean Spine Care" }
+      { name: "Back Pain After C-Section", path: "/womens-health#csection-back-pain", modality: "Post-Cesarean Spine Care" },
+      { name: "Pelvic Floor Constipation", path: "/womens-health#pelvic-constipation", modality: "Defecation Biofeedback" },
+      { name: "Chronic Pelvic Pain Syndrome", path: "/womens-health#chronic-pelvic-pain", modality: "Levator Ani Spasm Release" }
     ]
   },
   {

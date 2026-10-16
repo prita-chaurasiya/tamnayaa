@@ -7,6 +7,15 @@ import neckPainImg from '../assets/conditions/neck_pain.jpg';
 import kneeArthritisImg from '../assets/conditions/knee_arthritis.jpg';
 import tkrSurgeryImg from '../assets/conditions/tkr_surgery.jpg';
 import strokeParalysisImg from '../assets/conditions/stroke_paralysis.jpg';
+import sportsInjuriesImg from '../assets/conditions/sports_injuries.jpg';
+import parkinsonsImg from '../assets/conditions/parkinsons_rehab.jpg';
+import bellsPalsyImg from '../assets/conditions/bells_palsy.jpg';
+import spinalCordImg from '../assets/conditions/spinal_cord_injury.jpg';
+import ultrasoundLaserImg from '../assets/conditions/ultrasound_laser.jpg';
+import iftTensSwdImg from '../assets/conditions/ift_tens_swd.jpg';
+import spinalTractionImg from '../assets/conditions/spinal_traction.jpg';
+import iastmMfrImg from '../assets/conditions/iastm_mfr_taping.jpg';
+import steamTherapyImg from '../assets/conditions/steam_therapy.jpg';
 import phyImg from '../assets/phy.jpg';
 import woImg from '../assets/wo.jpg';
 
@@ -836,5 +845,832 @@ export const PHYSIOTHERAPY_SERVICES = [
         }
       ]
     }
+  },
+
+  {
+    id: "sports-injuries",
+    name: "Sports Injuries Rehabilitation (Sprain, Strain & Ligament Care)",
+    category: "SPORTS MEDICINE & MUSCULOSKELETAL",
+    tagline: "Acute Sprain, Strain, Ligament Tears & Return-to-Play Athletic Conditioning",
+    image: sportsInjuriesImg,
+    imageAlt: "Sports injury physical therapy and athletic rehabilitation at Tamanya",
+    prescribedTherapy: "Progressive Kinetic Loading, Cryo-Compression, IFT & Proprioceptive Drills",
+    machineUsed: "Multi-Frequency Ultrasound, Cold-Compression Wrap & Calibrated Balance Boards",
+    therapyOutcome: "Accelerates soft-tissue remodeling, restores ligamentous stability, eliminates chronic joint laxity, and facilitates safe, re-injury-resistant return to sports.",
+    
+    introduction: `Sports and high-velocity physical activities expose muscles, tendons, and ligaments to extreme tensile loads, frequently resulting in acute ankle sprains, hamstring strains, quadriceps contusions, rotator cuff impingements, and patellofemoral tracking dysfunctions. Inadequate rehabilitation often converts acute athletic injuries into chronic joint instability and recurrent tears. At Tamanya Physio and Health Clinic in Pandeypur, Varanasi, sports rehabilitation led by Dr. Neha Gupta (PT) bridges the gap between acute tissue healing and peak athletic performance. Our structured phases progress from initial acute edema and pain management through eccentric tissue re-education, neuromuscular control, and multi-directional return-to-sport agility conditioning.`,
+    
+    whyUsed: {
+      conditions: [
+        "Grade I & II ankle sprains (anterior talofibular and calcaneofibular ligament sprains)",
+        "Hamstring, groin, quadriceps, and calf muscle strains and micro-tears",
+        "Rotator cuff tendinopathy, shoulder impingement, and thrower's shoulder pain",
+        "Patellar tendinitis (jumper's knee), shin splints, and Achilles tendinopathy",
+        "Tennis elbow (lateral epicondylitis) and golfer's elbow (medial epicondylitis)",
+        "Post-traumatic joint stiffness, proprioceptive deficits, and recurrent ankle giving-way"
+      ],
+      purpose: "To accelerate physiological soft-tissue collagen realignment along lines of stress, resolve localized traumatic hematoma and edema, restore full sport-specific range of motion, and rebuild high-velocity eccentric strength and reactive balance.",
+      realisticBenefits: "Rapid reduction in acute swelling and throbbing, safe early weight-bearing, elimination of compensation patterns in neighboring joints, and scientifically verified return-to-activity timelines.",
+      whenFurtherAssessmentNeeded: "High-grade injuries with visible joint deformity, complete tendon rupture (such as full Achilles snap), inability to bear any weight immediately post-injury with bony tenderness (Ottawa ankle rule), or mechanical knee locking require urgent orthopaedic evaluation and MRI imaging."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Acute Protection, Cryo-Compression & Pain Control",
+          detail: "Application of PEACE & LOVE clinical principles, combining targeted cryotherapy, gentle lymphatic elevation, and high-frequency TENS/IFT to minimize secondary hypoxic tissue injury without suppressing natural healing."
+        },
+        {
+          phase: "Step 2: Early Pain-Free Range & Passive Mobilization",
+          detail: "Initiating gentle active-assisted range of motion and joint accessory glides to prevent intra-articular adhesion formation and muscle atrophy."
+        },
+        {
+          phase: "Step 3: Progressive Eccentric Loading & Tissue Remodeling",
+          detail: "Graduated tensile loading across the injured musculo-tendinous unit to stimulate type-I collagen synthesis, rebuilding mechanical tensile tolerance."
+        },
+        {
+          phase: "Step 4: Dynamic Proprioception & Agility Retraining",
+          detail: "Utilizing wobble boards, BOSU spheres, and multi-planar perturbation drills to re-educate mechanoreceptors and subconscious joint protective reflexes."
+        },
+        {
+          phase: "Step 5: Sport-Specific Conditioning & Return-to-Play Testing",
+          detail: "Functional hopping tests, deceleration drills, cutting maneuvers, and personalized athletic warm-up blueprint ensuring zero re-injury risk."
+        }
+      ],
+      expectations: {
+        before: "Wear athletic sports attire and running shoes. Bring relevant MRI scans or previous X-rays if available.",
+        during: "Therapy combines soothing electro-modalities with progressive active exercises tailored to your current healing phase.",
+        after: "Mild muscular fatigue is normal as neglected stabilizing muscles are activated. Ice therapy protocols will be advised for post-session home care."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Dynamic Proprioceptive Platforms, Cryo-Wraps & Therapeutic Laser",
+      description: "Our clinic utilizes digital electro-stimulation, targeted therapeutic ultrasound, elastic resistance arrays, and variable-density balance platforms designed specifically for athletic conditioning.",
+      manualAspect: "Transverse friction massage (Cyriax technique), Mulligan joint mobilizations with movement (MWM), and sport-specific myofascial trigger deactivation."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Competitive athletes, cricket players, runners, and badminton enthusiasts with acute sprains or strains",
+        "Gym-goers and fitness enthusiasts experiencing shoulder or knee impingement during workouts",
+        "Individuals with recurring ankle twists or persistent post-exercise muscle soreness"
+      ],
+      precautionsAndContraindications: "High-velocity explosive loading is strictly contraindicated during the acute inflammatory phase (first 48–72 hours). Open fractures, complete tendon avulsions, and unreduced joint dislocations require urgent surgical referral."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Do not take high-dose NSAID painkillers immediately prior to testing as they may mask important clinical pain-provocation thresholds.",
+      aftercare: "Follow prescribed home elevation and active movement intervals. Avoid early aggressive stretching of freshly torn muscle fibers.",
+      faqs: [
+        {
+          q: "Should I rest completely or keep moving after a muscle strain?",
+          a: "Absolute immobilization beyond 48 hours is detrimental to tissue healing. Early, protected, pain-free active movement promotes organized collagen alignment and prevents debilitating scar adhesions."
+        },
+        {
+          q: "How soon can I return to running or playing cricket?",
+          a: "Return timelines depend on injury grade: mild sprains take 1–3 weeks, whereas moderate tears require 4–8 weeks. We clear athletes only after passing objective functional stability tests."
+        },
+        {
+          q: "Why does my ankle feel weak even months after a sprain?",
+          a: "Ligament sprains damage sensory mechanoreceptors, destroying balance reflexes. Dedicated physiotherapy restores proprioceptive balance, preventing chronic instability."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "parkinsons-disease",
+    name: "Parkinson’s Disease Neurological Rehabilitation",
+    category: "NEUROLOGICAL REHABILITATION",
+    tagline: "Gait Initiation, Tremor Management, Balance & Functional Independence",
+    image: parkinsonsImg,
+    imageAlt: "Parkinson's neurological physiotherapy and balance gait training",
+    prescribedTherapy: "Large-Amplitude Movement Therapy (LSVT-inspired), Auditory Cueing & Neuro-Balance",
+    machineUsed: "Biofeedback Balance Platforms, Laser-Guided Gait Walkers & Dynamic Agility Ladders",
+    therapyOutcome: "Improves stride length, reduces freezing of gait episodes, enhances postural equilibrium, prevents recurrent falls, and maintains daily functional autonomy.",
+    
+    introduction: `Parkinson’s Disease is a progressive neurodegenerative disorder caused by dopamine depletion in the substantia nigra, leading to classic motor symptoms including resting tremor, muscle rigidity (lead-pipe or cogwheel), bradykinesia (slowness of movement), and severe postural instability. Without targeted neuro-rehabilitation, individuals develop a characteristic festinating gait, frequent episodes of 'freezing', and a high risk of debilitating fall-related fractures. At Tamanya Physio and Health Clinic, Dr. Neha Gupta (PT) implements specialized neuroplasticity-driven rehabilitation protocols designed to overcome basal ganglia deficit. By utilizing external sensory cueing (visual lasers and metronomic rhythmic sounds) and high-amplitude movement retraining, we stimulate alternative cortical pathways to restore smooth, confident walking and daily self-reliance.`,
+    
+    whyUsed: {
+      conditions: [
+        "Idiopathic Parkinson’s Disease across Hoehn & Yahr Stages I through IV",
+        "Bradykinesia presenting as slowness in rising from chairs, turning in bed, or buttoning shirts",
+        "Freezing of Gait (FOG) where feet feel glued to the floor when passing through doorways or turning",
+        "Postural stoop (camptocormia) and thoracic kyphosis affecting breathing and balance",
+        "Cogwheel muscle rigidity causing persistent shoulder, neck, and limb stiffness",
+        "Balance deficits and fear of falling limiting community ambulation"
+      ],
+      purpose: "To exploit brain neuroplasticity through high-intensity, large-amplitude motor retraining, teach compensatory cognitive sensory strategies for overcoming movement freezing, and preserve joint range of motion against progressive rigidity.",
+      realisticBenefits: "Noticeable increase in stride length, faster and safer sit-to-stand transitions, reduced frequency of freezing episodes, lowered fall incidence, and enhanced self-confidence in social settings.",
+      whenFurtherAssessmentNeeded: "Rapidly progressive atypical Parkinsonism (such as MSA or PSP) exhibiting early severe autonomic failure, supranuclear gaze palsy, or severe unprovoked falls in the first year requires close neurologist coordination."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Neuro-Functional Mobility & Fall Risk Screening",
+          detail: "Comprehensive baseline evaluation including Timed Up and Go (TUG), Berg Balance Scale, Unified Parkinson's Disease Rating Scale motor check, and gait velocity assessment."
+        },
+        {
+          phase: "Step 2: High-Amplitude Movement Retraining",
+          detail: "Exaggerated, large-scale physical movements designed to recalibrate the brain's internal perception of movement amplitude, combating bradykinesia."
+        },
+        {
+          phase: "Step 3: External Sensory Cueing (Visual & Auditory)",
+          detail: "Training with floor visual grid lines, laser floor pointers, and rhythmic metronomic beats that bypass impaired basal ganglia loops, triggering smooth automated strides."
+        },
+        {
+          phase: "Step 4: Axial Trunk Rotation & Rigidity Dissociation",
+          detail: "Mobilization of the thoracic spine and pelvis to restore counter-rotation of shoulders and hips during normal walking, relieving rigid block turning."
+        },
+        {
+          phase: "Step 5: Dynamic Dual-Task & Fall Prevention Drills",
+          detail: "Simultaneous cognitive and physical tasks (e.g., walking while counting backward or carrying an object) to build real-world resilience."
+        }
+      ],
+      expectations: {
+        before: "Schedule sessions during your 'ON' medication phase (typically 45–60 minutes after taking levodopa) when your physical responsiveness is optimal.",
+        during: "Exercises are dynamic, vocal, and energetically guided. You will be encouraged to step big, reach big, and speak loudly.",
+        after: "Patients frequently experience a feeling of lightness and ease of walking immediately following therapy."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Biofeedback Balance Systems, Laser Gait Devices & Neuro-Agility Rigs",
+      description: "Our clinic provides calibrated sensory-motor equipment, step ladders, weighted resistance spheres, and stable parallel bar setups ensuring maximum safety during balance challenge.",
+      manualAspect: "Gentle neuro-developmental facilitation (NDT), rhythmic trunk rotation techniques, and passive pectoralis and hamstring stretch therapy."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Individuals diagnosed with Parkinson's Disease seeking to maintain independence and prevent mobility decline",
+        "Seniors experiencing slow walking, shuffling steps, or balance wobbles",
+        "Patients recovering from a fall seeking to regain walking confidence"
+      ],
+      precautionsAndContraindications: "Orthostatic hypotension (sudden blood pressure drop upon standing) must be monitored closely. Fall safety harnesses are used during challenging balance exercises."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Take your prescribed dopaminergic medication exactly as directed by your neurologist so you are in your peak 'ON' window during therapy.",
+      aftercare: "Consistency is vital. A daily 20-minute home amplitude routine reinforces newly forged neuro-pathways.",
+      faqs: [
+        {
+          q: "Can physiotherapy stop Parkinson's disease progression?",
+          a: "While physiotherapy does not halt the underlying cellular dopamine loss, high-intensity exercise is scientifically proven to produce neuroprotective neurotrophins (BDNF), significantly slowing functional decline."
+        },
+        {
+          q: "What should I do when my feet 'freeze' and won't move?",
+          a: "Never force yourself to push forward. Stop, take a deep breath, rock your weight from side to side, and imagine stepping over an imaginary laser beam or ruler on the floor."
+        },
+        {
+          q: "How often should Parkinson's patients undergo clinical therapy?",
+          a: "We recommend an intensive initial block of 3 to 4 sessions weekly for 4 weeks, followed by periodic maintenance check-ins and structured home regimens."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "bells-palsy",
+    name: "Bell’s Palsy & Facial Nerve Rehabilitation",
+    category: "NEUROLOGICAL REHABILITATION",
+    tagline: "Facial Symmetry, Neuromuscular Facilitation & Synkinesis Prevention",
+    image: bellsPalsyImg,
+    imageAlt: "Bell's palsy facial neuromuscular re-education and rehabilitation",
+    prescribedTherapy: "Microcurrent Neuromuscular Facilitation, Precision Facial Retraining & Kinesio Taping",
+    machineUsed: "Precision Low-Intensity Facial Muscle Stimulator & Therapeutic Soft-Touch Probe",
+    therapyOutcome: "Facilitates cranial nerve VII axonal regeneration, restores blink reflex, prevents pathological synkinesis, and brings back symmetric facial expression.",
+    
+    introduction: `Bell’s Palsy is an acute, unilateral peripheral facial nerve (Cranial Nerve VII) paralysis resulting from viral-induced inflammation, edema, and compression of the nerve within the narrow Fallopian canal. Patients suddenly experience complete inability to close the eye, drooping of the mouth corner, drooling, loss of taste on the anterior two-thirds of the tongue, and difficulty speaking or chewing. Without expert physiotherapy, recovery can be complicated by aberrant nerve re-wiring (synkinesis), where involuntary eye blinking causes the mouth to twitch or vice versa. At Tamanya Physio and Health Clinic, Dr. Neha Gupta (PT) applies meticulous, evidence-based facial neuromuscular retraining, gentle low-intensity electrical facilitation, and selective manual muscle massage to promote correct axonal reinnervation and restore natural facial expression.`,
+    
+    whyUsed: {
+      conditions: [
+        "Acute unilateral Bell’s Palsy following medical corticosteroid initiation",
+        "Incomplete eyelid closure (lagophthalmos) posing corneal drying and ulceration risk",
+        "Facial muscle flaccidity, drooping oral commissure, and speech articulation difficulty",
+        "Ramsay Hunt Syndrome facial weakness (post-herpetic facial nerve recovery)",
+        "Chronic post-paralysis facial tightness, hemifacial spasm, and synkinesis"
+      ],
+      purpose: "To maintain muscle trophism during the denervation phase, provide sensory feedback that prevents abnormal brain motor mapping, safely stimulate paretic muscles without triggering spasms, and retrain coordinated facial expressions.",
+      realisticBenefits: "Progressive restoration of voluntary eye closure, restored symmetry in smiling and whistling, improved speech clarity, and prevention of unsightly facial contractures.",
+      whenFurtherAssessmentNeeded: "Immediate medical check is essential if facial weakness is accompanied by limb weakness, slurred speech, double vision, or severe headache to rule out an acute ischemic cerebrovascular accident (stroke)."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Sunnybrook & House-Brackmann Facial Grading",
+          detail: "Precise photographic and functional documentation of resting facial symmetry, voluntary movement of each muscle group (frontalis, orbicularis oculi, zygomaticus, orbicularis oris), and assessment of early synkinesis."
+        },
+        {
+          phase: "Step 2: Eye Protection & Taping Protocol",
+          detail: "Guidance on daytime lubricating eye drops, nocturnal moisture chambers, and gentle eyelid kinesio taping to protect the delicate cornea from exposure keratitis."
+        },
+        {
+          phase: "Step 3: Gentle Micro-Current / Galvanic Stimulation",
+          detail: "Delicate, low-threshold current applied precisely to motor points of individual facial muscles, preserving contractile proteins until nerve conduction resumes."
+        },
+        {
+          phase: "Step 4: Mirror Biofeedback & Neuromuscular Retraining",
+          detail: "Guided slow-paced, small-amplitude facial expressions performed in front of a mirror with manual assistance to re-train correct cortical motor representations."
+        },
+        {
+          phase: "Step 5: Synkinesis Inhibition & Gentle Soft-Tissue Release",
+          detail: "Intra-oral and extra-oral myofascial release of tight buccinator and masseter muscles, accompanied by suppression drills preventing involuntary co-contractions."
+        }
+      ],
+      expectations: {
+        before: "Ensure your face is clean and free of makeup or face creams. Bring doctor's prescription and medical notes.",
+        during: "Stimulation feels like a gentle, rhythmic pulsing or light flutter. Facial massage is calming and therapeutic.",
+        after: "Avoid aggressive chewing of hard foods on the affected side. Practice your assigned home mirror exercises twice daily."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Low-Intensity Diagnostic Facial Stimulator & Biofeedback Mirrors",
+      description: "Our clinic utilizes specialized neurological stimulators featuring precise interrupted galvanic and surged faradic currents calibrated specifically for the delicate facial musculature.",
+      manualAspect: "Intra-oral pterygoid release, gentle effleurage, digital eyelid approximation, and neuromuscular facilitation tapping."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Patients diagnosed with acute or subacute Bell’s Palsy seeking maximum cosmetic and functional recovery",
+        "Individuals with longstanding facial asymmetry or uncomfortable eye-mouth co-movements (synkinesis)",
+        "Post-surgical facial nerve decompression patients requiring structured rehabilitation"
+      ],
+      precautionsAndContraindications: "Excessively strong electrical stimulation is strictly avoided as it can provoke mass action, severe contracture, and irreversible synkinesis. Eye protection remains the utmost clinical priority."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Protect your eye from direct dust, wind, and air conditioner vents using sunglasses during the daytime.",
+      aftercare: "Avoid forcefully scrunching your face or chewing gum excessively, as forceful over-activation promotes abnormal nerve sprouting.",
+      faqs: [
+        {
+          q: "How long does Bell's palsy take to heal?",
+          a: "Most patients experience the first signs of nerve recovery within 2 to 3 weeks, with substantial recovery occurring over 2 to 6 months. Early physical therapy significantly improves overall cosmetic outcomes."
+        },
+        {
+          q: "Will electric stimulation hurt my face?",
+          a: "No. Facial currents are extremely gentle, calibrated to produce subtle muscle twitches without sharp sensation or discomfort."
+        },
+        {
+          q: "What causes abnormal eye twitching when I smile (synkinesis)?",
+          a: "When the recovering facial nerve regenerates, nerve fibers may mistakenly cross-wire to neighboring muscles. Our specialized retraining exercises suppress this aberrant cross-talk."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "spinal-cord-injury",
+    name: "Spinal Cord Injury (SCI) & Paralysis Rehabilitation",
+    category: "NEUROLOGICAL REHABILITATION",
+    tagline: "Sensory-Motor Retraining, Spasticity Control, Wheelchair Mobility & Standing",
+    image: spinalCordImg,
+    imageAlt: "Spinal cord injury neuro-rehabilitation and standing table therapy",
+    prescribedTherapy: "Neuro-Developmental Facilitation, Tilt-Table Weight Bearing & Spasticity Management",
+    machineUsed: "Motorized Hydraulic Tilt Table, Functional Electrical Stimulation & Parallel Bars",
+    therapyOutcome: "Preserves bone mineral density through assisted standing, optimizes preserved motor function, manages muscle spasticity, and trains functional transfers.",
+    
+    introduction: `Spinal Cord Injury (SCI)—whether paraplegia resulting from thoracic/lumbar trauma or tetraplegia/quadriplegia resulting from cervical trauma—represents one of the most profound physical challenges an individual can face. Secondary complications such as severe muscle spasticity, joint contractures, deep vein thrombosis, pressure ulcers, heterotopic ossification, and rapid bone demineralization pose continuous threats to health. At Tamanya Physio and Health Clinic in Varanasi, Dr. Neha Gupta (PT) delivers comprehensive, empathetic neuro-rehabilitation for incomplete and complete spinal cord injuries. Our evidence-backed clinical protocols utilize computerized tilt-table verticalization, neuro-developmental facilitation, wheelchair transfer coaching, and functional electrical stimulation (FES) to maximize independence and elevate quality of life.`,
+    
+    whyUsed: {
+      conditions: [
+        "Incomplete (ASIA B, C, D) and Complete (ASIA A) Spinal Cord Injuries following trauma or spine surgery",
+        "Paraplegia with lower limb paralysis and trunk postural instability",
+        "Tetraplegia / Quadriplegia with upper and lower limb motor-sensory deficits",
+        "Severe muscular spasticity, clonus, and hyperreflexia impeding functional positioning",
+        "Orthostatic intolerance following prolonged recumbency or spinal shock",
+        "Neurogenic bowel and bladder management support through core and pelvic biomechanics"
+      ],
+      purpose: "To safely verticalize the body to stimulate osteogenesis and cardiovascular reflex adaptations, activate surviving neural pathways through repetitive task-oriented therapy, prevent irreversible joint contractures, and empower patients with master-level transfer techniques.",
+      realisticBenefits: "Improved head and trunk control, safer transfers between bed and wheelchair, reduction in painful flexor/extensor spasms, preserved joint flexibility, and enhanced cardiovascular stamina.",
+      whenFurtherAssessmentNeeded: "Sudden autonomic dysreflexia in lesions at or above T6—characterized by severe pounding headache, profuse sweating above the injury level, hypertension, and bradycardia—is a medical emergency requiring immediate sitting upright, checking catheter patency, and physician intervention."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: ASIA Neurological Classification & Sensory-Motor Mapping",
+          detail: "Standardized evaluation of motor key muscles (C5 through S1), sensory dermatomes (pin-prick and light touch), spinal cord functional level, and passive range of all major joints."
+        },
+        {
+          phase: "Step 2: Progressive Tilt-Table Verticalization",
+          detail: "Gradual motorized elevation (from 20° to 70°) with continuous blood pressure and pulse oximetry monitoring to retrain the cardiovascular system against postural hypotension."
+        },
+        {
+          phase: "Step 3: Passive Range of Motion & Spasticity Modulation",
+          detail: "Slow, sustained mechanical stretching of hamstrings, adductors, and heel cords combined with sustained pressure to inhibit hyperactive stretch reflexes."
+        },
+        {
+          phase: "Step 4: Functional Electrical Stimulation (FES) & Motor Re-Education",
+          detail: "Application of coordinated multi-channel electrical currents to quadriceps, dorsiflexors, and triceps to maintain muscle bulk and facilitate voluntary motor efforts."
+        },
+        {
+          phase: "Step 5: Mat Activities, Core Balance & Transfer Mastery",
+          detail: "Rolling, prone-on-elbows, long-sitting balance, sliding board transfers, and wheelchair propulsion skills taught in an accessible environment."
+        }
+      ],
+      expectations: {
+        before: "Ensure empty bladder or check catheter bag before starting verticalization. Wear supportive, comfortable clothing with non-slip socks.",
+        during: "Blood pressure is monitored at every degree increase on the tilt table. Transfers are executed with calm, professional assistance.",
+        after: "Skin over bony prominences (sacrum, ischial tuberosities, heels) is routinely inspected after each session."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Motorized Tilt Table, Parallel Bars, Transfer Boards & FES Units",
+      description: "Our clinic is equipped with heavy-duty motorized tilt tables with chest and knee safety strapping, calibrated bodyweight-support harnesses, and clinical electrotherapy arrays.",
+      manualAspect: "Bobath/NDT neuro-facilitation, prolonged rhythmic rotational stretching, and tactile kinesthetic cueing."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Individuals recovering from traumatic spinal injury, motor vehicle collisions, or falls",
+        "Patients post spinal decompressive laminectomy or stabilization surgery with residual weakness",
+        "Long-term wheelchair users seeking to prevent joint contractures and maintain physical vitality"
+      ],
+      precautionsAndContraindications: "Unstable spinal column fractures without orthopaedic clearance, acute deep vein thrombosis (DVT), severe unmanaged osteoporosis, and active sacral pressure ulcers grade III/IV require medical clearance before verticalization."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Wear compression stockings or abdominal binders if prescribed by your neurosurgeon to support blood pressure during standing.",
+      aftercare: "Maintain strict 2-hour pressure relief schedules at home. Perform prescribed daily passive range of motion with family members.",
+      faqs: [
+        {
+          q: "Why is tilt-table standing so important for paralyzed patients?",
+          a: "Human bones need gravitational weight-bearing to retain calcium. Tilt-table standing prevents osteoporosis, improves kidney filtration, stimulates bowel motility, and prevents joint stiffness."
+        },
+        {
+          q: "Can an incomplete spinal cord injury recover walking ability?",
+          a: "Incomplete injuries (where some sensory or motor pathways remain intact) possess significant neuroplastic potential. Intensive task-oriented rehabilitation can help many patients achieve functional household or community ambulation."
+        },
+        {
+          q: "How does therapy help control painful muscle spasms?",
+          a: "We combine slow sustained stretching, thermal packs, functional positioning, and reciprocal inhibition techniques to calm hyperactive spinal reflex loops."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "ultrasonic-laser-therapy",
+    name: "Ultrasonic Therapy & High-Intensity Laser Therapy",
+    category: "ADVANCED ELECTROTHERAPY",
+    tagline: "Deep Acoustic Micromassage, Photobiomodulation & Rapid Cellular Healing",
+    image: ultrasoundLaserImg,
+    imageAlt: "Ultrasound and laser electrotherapy for deep musculoskeletal pain",
+    prescribedTherapy: "Multi-Depth Dual-Frequency Ultrasound & Therapeutic Class IV Laser",
+    machineUsed: "1 MHz / 3 MHz Dual Ultrasound Transducer & High-Intensity Photobiomodulation Unit",
+    therapyOutcome: "Delivers deep acoustic micromassage to resolve fibrotic adhesions, stimulates mitochondrial ATP synthesis, accelerates collagen remodeling, and alleviates deep inflammatory pain.",
+    
+    introduction: `Modern electrotherapy has evolved far beyond superficial heat pads. At Tamanya Physio and Health Clinic, Ultrasonic Therapy and Laser Therapy (Photobiomodulation) represent two of our premier non-invasive modalities for deep-seated soft-tissue pathology. Ultrasonic therapy delivers high-frequency longitudinal acoustic soundwaves (1 MHz for deep structures up to 5cm, and 3 MHz for superficial tissues up to 2cm) that generate micro-cavitation and acoustic streaming, drastically accelerating cellular nutrient exchange and dissolving dense scar tissue. Therapeutic laser therapy floods injured tissues with coherent photon energy, absorbed directly by cytochrome c oxidase within cell mitochondria. This photobiological reaction drives massive ATP energy synthesis, triggers nitric oxide release, and switches off inflammatory prostaglandins, offering rapid relief for chronic tendinitis, arthritis, and ligament sprains.`,
+    
+    whyUsed: {
+      conditions: [
+        "Chronic knee osteoarthritis, retrocalcaneal bursitis, and trochanteric bursitis",
+        "Calcific shoulder tendinitis, supraspinatus tears, and frozen shoulder capsulitis",
+        "Plantar fasciitis, heel spurs, and persistent Achilles tendinopathy",
+        "Chronic muscle knots, deep fascial scar adhesions, and post-surgical keloid stiffness",
+        "Carpal tunnel syndrome, wrist tenosynovitis (De Quervain's), and lateral epicondylitis"
+      ],
+      purpose: "To accelerate biological tissue repair at the cellular and mitochondrial level, enhance local microvascular perfusion, break down cross-linked fibrotic scar tissue, and provide drug-free pain relief for deep joint and tendon structures.",
+      realisticBenefits: "Rapid reduction in localized swelling and sharp morning stiffness, restored pain-free tendon gliding, decreased inflammatory biomarker activity, and accelerated functional recovery times.",
+      whenFurtherAssessmentNeeded: "Malignant tumors, open hemorrhagic wounds, active deep vein thrombosis, and directly over cardiac pacemakers or pregnant uteruses are absolute contraindications for these modalities."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Clinical Tissue Depth & Pathology Mapping",
+          detail: "Palpation and anatomical measurement of the target lesion to determine the exact frequency (1 MHz for deep hip/knee versus 3 MHz for superficial elbow/wrist) and laser joule dosage."
+        },
+        {
+          phase: "Step 2: Acoustic Coupling Gel Application",
+          detail: "Application of hypoallergenic, degassed acoustic gel ensuring 100% soundwave transmission into tissues without acoustic reflection or refraction."
+        },
+        {
+          phase: "Step 3: Continuous Transducer Motion Ultrasound Treatment",
+          detail: "Rhythmic circular movement of the calibrated stainless-steel transducer head, preventing internal standing wave hot spots while delivering therapeutic acoustic energy."
+        },
+        {
+          phase: "Step 4: Targeted Photobiomodulation Laser Application",
+          detail: "Application of therapeutic laser photons with protective safety goggles, delivering calibrated energy directly into the damaged tendon sheath or joint capsule."
+        },
+        {
+          phase: "Step 5: Immediate Post-Modality Mobilization",
+          detail: "Capitalizing on the thermal softening of collagen to perform passive joint mobilization and active corrective tissue stretching."
+        }
+      ],
+      expectations: {
+        before: "Ensure skin over the treatment area is clean and free of oily balms or medicated patches.",
+        during: "Ultrasound feels like a soothing, gentle warming sensation beneath the skin. Laser therapy is completely painless with pleasant, mild tissue warmth.",
+        after: "You will notice an immediate feeling of looseness and decreased joint friction in the treated area."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Dual-Frequency 1MHz/3MHz Ultrasound & Medical Class IV Laser",
+      description: "Our clinic is equipped with advanced multi-wave electro-apparatus with certified beam non-uniformity ratios (BNR < 5:1) ensuring safe, homogeneous energy dispersion.",
+      manualAspect: "Precise anatomical lesion localization, dynamic transducer angling, and post-thermal joint glide manual mobilization."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Individuals with stubborn tendonitis that has failed to improve with rest and oral medications",
+        "Patients with knee arthritis seeking joint lubrication and morning stiffness relief",
+        "Athletes with acute soft tissue sprains seeking rapid, clean scar remodeling"
+      ],
+      precautionsAndContraindications: "Never applied directly over the eyes, gravid uterus, growing epiphyseal growth plates in children, or areas of active infection."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Wear clothing allowing complete exposure of the target joint. Wear provided laser safety goggles during laser administration.",
+      aftercare: "Avoid heavy, jarring impact on the treated joint for 2 hours post-session to allow biological healing pathways to consolidate.",
+      faqs: [
+        {
+          q: "What is the difference between diagnostic ultrasound and therapy ultrasound?",
+          a: "Diagnostic ultrasound takes pictures of babies or organs using very low power soundwaves. Therapy ultrasound uses higher-power calibrated frequencies to stimulate cellular healing and soften tight tissue."
+        },
+        {
+          q: "Does medical laser treatment cause burns or radiation?",
+          a: "No. Therapeutic lasers emit non-ionizing, cold or warm photobiomodulation light. There is zero radiation, and treatment is completely safe when administered by a qualified professional."
+        },
+        {
+          q: "How many sessions are typically required?",
+          a: "Most acute conditions show marked improvement in 4 to 6 sessions, while longstanding chronic tendinopathies benefit from 8 to 12 sessions."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "ift-tens-swd-therapy",
+    name: "IFT, TENS & Shortwave Diathermy (SWD) Therapy",
+    category: "ADVANCED ELECTROTHERAPY",
+    tagline: "Interferential Neuro-Currents, Pain Gating & Deep Continuous Thermal Diathermy",
+    image: iftTensSwdImg,
+    imageAlt: "IFT, TENS and Shortwave Diathermy physiotherapy for chronic pain",
+    prescribedTherapy: "Quad-Polar Vector Field IFT, Sensory Pain-Gating TENS & High-Frequency SWD",
+    machineUsed: "Microprocessor-Controlled Vector IFT Unit & Solid-State Deep Shortwave Diathermy",
+    therapyOutcome: "Gates deep nociceptive nerve transmission, stimulates endogenous beta-endorphin release, dilates deep muscle microvasculature, and relieves persistent paraspinal spasms.",
+    
+    introduction: `Interferential Therapy (IFT), Transcutaneous Electrical Nerve Stimulation (TENS), and Shortwave Diathermy (SWD) represent the gold-standard foundation of physical medicine electrotherapy. While standard surface electrical stimulation often causes superficial skin stinging, IFT utilizes two medium-frequency currents (around 4000 Hz) that intersect deep within target tissues, creating a therapeutic low-frequency beat frequency (1–150 Hz) that overcomes skin impedance without discomfort. TENS directly activates the Melzack-Wall Gate Control theory of pain, flooding A-beta sensory fibers to shut the spinal pain gate against chronic ache. Complementing these, Shortwave Diathermy (SWD) uses high-frequency 27.12 MHz electromagnetic oscillations to produce uniform, deep diathermal heating in deep paraspinal muscle layers and large joint capsules where standard hot packs cannot penetrate.`,
+    
+    whyUsed: {
+      conditions: [
+        "Acute and chronic lumbar paraspinal muscle spasms, lumbago, and sciatica",
+        "Cervical spondylosis with radiating radicular pain and trapezius tightness",
+        "Knee osteoarthritis with synovial inflammation and joint effusion",
+        "Frozen shoulder (adhesive capsulitis) with severe painful sleep disruption",
+        "Ankylosing spondylitis and chronic postural back fatigue",
+        "Deep muscular hematomas, post-fracture joint stiffness, and pelvic floor pain"
+      ],
+      purpose: "To block pain signals along peripheral nerve fibers, stimulate the pituitary-hypothalamic release of natural endorphins, dilate deep capillaries to wash away inflammatory metabolites, and relax protective muscle splinting.",
+      realisticBenefits: "Immediate, substantial reduction in sharp aching pain, noticeable relaxation of tight paraspinal bands, improved sleep quality, and restored ease in bending and walking.",
+      whenFurtherAssessmentNeeded: "SWD is strictly contraindicated in the presence of metallic implants (pins, plates, metallic clips), cardiac pacemakers, active hemorrhage, or over insensate skin areas."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Neuro-Anatomical Electrode Vector Placement",
+          detail: "Precise placement of four suction or rubber carbon electrodes in a criss-cross vector configuration across the lumbar, cervical, or knee joint axis."
+        },
+        {
+          phase: "Step 2: Frequency Sweep Tuning",
+          detail: "Calibrating the beat frequency sweep (e.g., 0–100 Hz for acute pain, or 80–150 Hz for muscle spasm release) to prevent nerve accommodation."
+        },
+        {
+          phase: "Step 3: Intensity Titration to Strong, Comfortable Tingling",
+          detail: "Gradual elevation of current intensity until a robust, deep, comfortable buzzing sensation is felt throughout the painful area without muscle cramping."
+        },
+        {
+          phase: "Step 4: Shortwave Diathermy (SWD) Deep Heat Application",
+          detail: "Positioning capacitive or inductive drum electrodes around the joint with dry towel insulation to generate deep, penetrating diathermy."
+        },
+        {
+          phase: "Step 5: Transition to Active Therapeutic Exercises",
+          detail: "Utilizing the 30–45 minute post-treatment pain-free window to perform targeted spinal stabilization or joint mobility exercises."
+        }
+      ],
+      expectations: {
+        before: "Remove all metallic jewelry, watches, belts with metal buckles, and hairpins prior to SWD treatment.",
+        during: "IFT and TENS feel like a rhythmic, soothing prickling vibration. SWD produces a deeply relaxing, uniform warm sensation.",
+        after: "Skin may exhibit a mild, temporary pink flushing due to healthy capillary vasodilation."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Microprocessor Vector IFT, TENS & 27.12 MHz Solid-State SWD Unit",
+      description: "Our clinic houses clinical-grade multi-channel electrotherapy stations with digital sweep programs and shielded shortwave diathermy generators.",
+      manualAspect: "Pre-modality dermatome testing, electrode configuration optimization, and post-diathermy manual joint mobilization."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Patients with intense lower back pain unable to bend, sit, or stand comfortably",
+        "Individuals with severe neck stiffness and shoulder blade burning sensations",
+        "Elderly patients with knee arthritis seeking non-drug pain relief"
+      ],
+      precautionsAndContraindications: "SWD is completely prohibited over metallic implants (such as knee/hip metal prosthesis or spinal screws), pacemakers, pregnant abdomen, or malignant lesions."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Inform the therapist if you have any metallic implants, screws, plates, or heart devices anywhere in your body.",
+      aftercare: "Maintain gentle walking and drink water to flush out released metabolic waste products.",
+      faqs: [
+        {
+          q: "What is the difference between IFT and TENS?",
+          a: "TENS works mainly at the surface skin level to block pain signals. IFT uses higher intersecting frequencies that penetrate much deeper into thick muscles and joints without causing skin discomfort."
+        },
+        {
+          q: "Why can't SWD be used if I have metal in my body?",
+          a: "Shortwave diathermy uses radio-frequency waves that concentrate around metal objects, which can cause internal overheating or burns. In patients with metal implants, we safely use ultrasound or IFT instead."
+        },
+        {
+          q: "Is electric therapy safe for elderly patients?",
+          a: "Yes, absolutely. The currents are safe, low-voltage, and finely tuned to each individual's comfort level under continuous clinical supervision."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "spinal-traction-decompression",
+    name: "Cervical & Lumbar Spinal Traction Decompression",
+    category: "ADVANCED SPINE CARE",
+    tagline: "Digital Motorized Vertebral Distraction, Disc Decompression & Sciatic Nerve Relief",
+    image: spinalTractionImg,
+    imageAlt: "Computerized lumbar and cervical spinal traction decompression therapy",
+    prescribedTherapy: "Intermittent Calibrated Mechanical Distraction & Sub-Atmospheric Intradiscal Relief",
+    machineUsed: "Digital Microprocessor Cervical & Lumbar Traction Unit with Frictionless Split Table",
+    therapyOutcome: "Creates negative intradiscal pressure promoting centripetal retraction of herniated nuclear material, widens neural foramina, and decompresses pinched nerve roots.",
+    
+    introduction: `Intervertebral discs act as hydraulic shock absorbers between the spinal vertebrae. When subjected to chronic wear, poor posture, or sudden loading, the gel-like nucleus pulposus herniates outward through tears in the annulus fibrosus, pinching sensitive spinal nerve roots (such as the sciatic nerve in the lumbar spine or brachial plexus roots in the cervical spine). Clinical Spinal Traction and Non-Surgical Decompression represent one of the most effective mechanical treatments available for spine disc disease. At Tamanya Physio and Health Clinic in Pandeypur, Varanasi, our computerized traction unit applies precise, graduated distraction forces while the patient rests comfortably on a frictionless split table. By separating adjacent vertebral bodies, traction creates a sub-atmospheric negative intradiscal pressure (a vacuum effect) that draws protruding disc fragments back toward the center, widens narrowed exit foramina, and relieves nerve impingement.`,
+    
+    whyUsed: {
+      conditions: [
+        "Lumbar disc herniation, protrusion, and disc extrusion causing sciatica down the leg",
+        "Cervical disc bulge and cervical spondylosis causing neck pain radiating into the arm or fingers",
+        "Degenerative disc disease with diminished intervertebral disc height",
+        "Lumbar spinal canal and neural foraminal stenosis with claudication symptoms",
+        "Facet joint arthropathy and chronic paraspinal muscle contracture",
+        "Postural compression and numbness in hands while working at desks"
+      ],
+      purpose: "To generate longitudinal distraction force that separates vertebrae, reduces intradiscal pressure to negative levels, promotes diffusion of water and nutrients into desiccated discs, and decompresses pinched nerve roots.",
+      realisticBenefits: "Noticeable centralization of radiating pain (pain moves out of the foot/hand back toward the spine, which is a key sign of nerve recovery), reduced tingling, and restored upright spinal posture.",
+      whenFurtherAssessmentNeeded: "Severe osteoporosis, spinal fractures, spinal cord compression with myelopathy, spinal instability, cauda equina syndrome, or abdominal aortic aneurysm are contraindications for mechanical traction."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Clinical Biomechanical Evaluation & Weight Calculation",
+          detail: "Determining precise distraction poundage based on patient body weight (typically 25–50% of body weight for lumbar traction, and 10–15% for cervical traction) and disc tolerance."
+        },
+        {
+          phase: "Step 2: Ergonomic Split-Table Harnessing",
+          detail: "Securing thoracic and pelvic non-slip harnesses while the patient lies supine. The split table separates frictionlessly, ensuring all traction force acts directly on the spine rather than fighting body friction."
+        },
+        {
+          phase: "Step 3: Programming Traction Cycles (Intermittent vs. Static)",
+          detail: "Configuring computer parameters: hold time (e.g., 60 seconds of therapeutic pull) alternating with rest time (e.g., 20 seconds of half-poundage relief) to pump fluids into the disc."
+        },
+        {
+          phase: "Step 4: Continuous Patient Safety Monitoring",
+          detail: "The patient holds an electronic handheld emergency safety switch, allowing instantaneous gentle release at any moment if desired."
+        },
+        {
+          phase: "Step 5: Post-Traction Spine Rest & Stabilization",
+          detail: "Resting supine for 5 minutes post-session, followed by application of supportive lumbar/cervical posture guidance before rising."
+        }
+      ],
+      expectations: {
+        before: "Empty your bladder before the session so the pelvic harness fits comfortably. Wear comfortable cotton clothing.",
+        during: "You will feel a steady, gentle, relieving stretching sensation in your lower back or neck. Many patients find it so relaxing that they fall asleep.",
+        after: "Stand up slowly using your arms. Avoid heavy lifting or slouching immediately following the session."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Computerized Digital Traction System with Frictionless Split Table",
+      description: "Our clinic is equipped with advanced motorized traction technology featuring computerized force calibration, multi-angle cervical cradles, and frictionless floating split surfaces.",
+      manualAspect: "Manual cervical distraction test, McKenzie mechanical spine assessment, and core stabilization exercise prescription."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Patients diagnosed with MRI-confirmed disc bulge, disc prolapse, or sciatica",
+        "Desk workers suffering from chronic neck tightness and arm numbness",
+        "Individuals seeking non-surgical, non-invasive solutions to avoid spinal surgery"
+      ],
+      precautionsAndContraindications: "Contraindicated in severe osteoporosis, acute spinal fracture, spinal infection/tumor, high blood pressure during cervical traction, or pregnancy (for lumbar traction)."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Do not eat a very heavy meal right before lumbar traction to ensure comfortable harness fit across the lower abdomen.",
+      aftercare: "Avoid immediate strenuous spinal flexion (bending forward). Maintain spinal neutral posture throughout the day.",
+      faqs: [
+        {
+          q: "Does spinal traction pull hard or hurt?",
+          a: "No. Traction starts at very low, gentle poundage and is gradually titrated over sessions. It should feel like a deep, relieving stretch rather than painful pulling."
+        },
+        {
+          q: "Can traction help avoid spinal disc surgery?",
+          a: "Yes. For the vast majority of disc bulges and sciatica without progressive neurological deficits, mechanical traction combined with core physiotherapy successfully resolves symptoms without surgery."
+        },
+        {
+          q: "How many traction sessions will I need?",
+          a: "A typical course consists of 10 to 15 sessions over 3 to 4 weeks, combined with spine stabilizing exercises."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "iastm-pemf-taping-manual",
+    name: "IASTM, PEMF, Kinesio Taping & Manual Joint Mobilization",
+    category: "ADVANCED MANUAL & TISSUE THERAPY",
+    tagline: "Instrumented Fascial Remodeling, Pulsed Magnetic Fields, Elastic Taping & Joint Glides",
+    image: iastmMfrImg,
+    imageAlt: "IASTM tool mobilization, PEMF therapy, and kinesiology taping",
+    prescribedTherapy: "Instrumented Fascial Cross-Friction, High-Flux Pulsed Electromagnetic Therapy & Maitland Glides",
+    machineUsed: "Surgical-Grade Stainless Steel Ergonomic IASTM Blades & High-Peak PEMF Induction Loop",
+    therapyOutcome: "Breaks microvascular cross-linked fascial adhesions, promotes cellular bio-electromagnetic repolarization, improves lymphatic drainage, and restores physiological accessory joint motion.",
+    
+    introduction: `When soft tissues suffer chronic strain, trauma, or surgery, the body frequently lays down unorganized, chaotic collagen scar tissue (fibrosis) that tethers muscles, limits joint mobility, and entraps sensory nerves. At Tamanya Physio and Health Clinic, Dr. Neha Gupta (PT) integrates four elite, synergistic modalities: Instrumental Assisted Soft Tissue Mobilization (IASTM), Pulsed Electromagnetic Field (PEMF) Therapy, Kinesiology Taping, and Maitland/Mulligan Manual Joint Mobilization. Using medical-grade contoured stainless steel instruments, IASTM introduces controlled micro-trauma that re-initiates the natural inflammatory cascade, reabsorbing non-functional scar adhesions. Simultaneously, PEMF penetrates deeply without sensation, recharging trans-membrane potentials in damaged cells to accelerate bone and cartilage repair. Combined with kinesiology elastic taping for continuous lymphatic lift and precision joint glides, this protocol breaks chronic restrictions other therapies cannot reach.`,
+    
+    whyUsed: {
+      conditions: [
+        "Stubborn myofascial pain syndrome with dense trigger points and fascial adhesions",
+        "Chronic plantar fasciitis, heel pain, and thickened Achilles tendon scar tissue",
+        "Post-surgical scar adhesions (following knee surgery, cesarean section, or trauma)",
+        "Frozen shoulder, knee joint stiffness, and restricted ankle dorsiflexion",
+        "Tennis elbow, golfer's elbow, and chronic forearm wrist tendinitis",
+        "Sports muscle tears seeking rapid neuromuscular facilitation and dynamic joint support"
+      ],
+      purpose: "To mechanically shear cross-linked fascial adhesions, repolarize damaged cellular membranes through pulsed magnetic resonance, stimulate local fibroblastic proliferation, and restore physiological joint arthrokinematics.",
+      realisticBenefits: "Rapid increase in joint range of motion, immediate sensation of lightness in tight muscle groups, faster scar tissue softening, and prolonged athletic stability.",
+      whenFurtherAssessmentNeeded: "Open wounds, active skin infections, unhealed fractures, thrombophlebitis, or over active pacemakers (for PEMF) require modification or contraindication."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Fascial Palpation & Instrument Scanning",
+          detail: "Applying an organic emollient and scanning the skin with the stainless-steel instrument's beveled edge to identify textural irregularities, 'gravel-like' scar tissue, and fascial restrictions."
+        },
+        {
+          phase: "Step 2: Targeted Multi-Directional IASTM Strokes",
+          detail: "Delivering precise sweep, fan, and cross-friction strokes at a 30°–60° angle to break down microvascular cross-links and stimulate healthy fibroblast activity."
+        },
+        {
+          phase: "Step 3: High-Flux PEMF Cellular Stimulation",
+          detail: "Positioning the pulsed electromagnetic loop over the target joint or spine, delivering therapeutic magnetic pulses that stimulate chondrocyte and osteoblast repair."
+        },
+        {
+          phase: "Step 4: Maitland & Mulligan Joint Accessory Mobilization",
+          detail: "Performing gentle oscillatory joint glides (Grades I through IV) to restore synovial fluid circulation and loosen restricted joint capsules."
+        },
+        {
+          phase: "Step 5: Neuromuscular Kinesiology Taping Application",
+          detail: "Applying elastic therapeutic tape with calibrated tension along muscle contours to decompress subcutaneous pain receptors and enhance lymphatic clearance for days."
+        }
+      ],
+      expectations: {
+        before: "Ensure skin is clean and unlotioned so instruments glide smoothly and kinesio tape adheres securely.",
+        during: "IASTM produces a distinct sensation of gravelly tissue smoothing out. PEMF is completely sensation-free. Manual joint glides feel relieving.",
+        after: "Mild petechiae (light pink skin redness) may appear after IASTM, which resolves within 24–48 hours as new capillary networks form."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Surgical Stainless-Steel IASTM Blades, High-Peak PEMF Loop & Kinesio Tapes",
+      description: "Our clinic uses certified medical-grade surgical instruments engineered with precision convex and concave bevels, paired with clinical PEMF generators.",
+      manualAspect: "Maitland passive joint glides, Mulligan mobilization with movement (MWM), and soft-tissue fascial release."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Patients with chronic, stubborn muscle tightness that refuses to release with conventional massage",
+        "Athletes seeking faster recovery, scar remodeling, and joint support during training",
+        "Post-operative patients with restrictive surgical scar adhesions"
+      ],
+      precautionsAndContraindications: "IASTM is avoided over active skin rashes, open wounds, burns, or in patients taking high doses of anticoagulant blood-thinners. PEMF is strictly prohibited near cardiac pacemakers."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Drink plenty of water before and after treatment to assist cellular detoxification and tissue hydration.",
+      aftercare: "Leave kinesiology tape in place for 3 to 5 days; it is waterproof and allows showering. Gently pat dry with a towel.",
+      faqs: [
+        {
+          q: "Does IASTM cause bruising?",
+          a: "A light pink redness (erythema) or small micro-petechiae can occur, which is a desirable clinical sign that new blood flow has been drawn to the restricted scar tissue. It typically clears within 2 days."
+        },
+        {
+          q: "What does PEMF do inside the body?",
+          a: "PEMF (Pulsed Electromagnetic Field) delivers gentle magnetic waves that repolarize cell membranes, helping cells absorb oxygen and nutrients while eliminating waste products, dramatically speeding tissue repair."
+        },
+        {
+          q: "Can I shower with kinesiology tape on?",
+          a: "Yes. Kinesiology tape is made of breathable, moisture-resistant cotton. You can shower normally and pat it dry with a towel."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "steam-therapy",
+    name: "Clinical Steam Therapy & Hydrothermal Treatment",
+    category: "ADVANCED HYDROTHERMAL CARE",
+    tagline: "Moist Thermal Hyperthermia, Vasodilation & Deep Myofascial Spasm Relaxation",
+    image: steamTherapyImg,
+    imageAlt: "Clinical steam therapy and hydrothermal moist heat treatment",
+    prescribedTherapy: "Targeted Warm Moist Vapor Hyperthermia & Sub-Thermal Fascial Pre-Conditioning",
+    machineUsed: "Clinical Steam Vapor Station with Calibrated Flow Diffusers & Thermal Isolation Wraps",
+    therapyOutcome: "Elevates local tissue temperature by 2–3°C, dramatically increases regional perfusion, softens stubborn collagen contractures, and primes stiff joints for pain-free manual therapy.",
+    
+    introduction: `Hydrothermal and steam therapy have been utilized in medical rehabilitation for centuries to harness the profound physiological benefits of moist heat. Unlike dry electric heating pads that can dehydrate skin and provoke superficial burning without penetrating deeply, clinical steam therapy combines thermal energy with moisture vapor. When applied to stiff joints, chronic back spasms, or post-surgical contractures, moist steam transfers heat up to 27 times faster than dry air. The resulting elevation in tissue temperature triggers widespread arteriolar vasodilation, increases capillary blood velocity, accelerates metabolic waste removal, and profoundly increases the viscoelastic extensibility of dense collagen tissues. At Tamanya Physio and Health Clinic, Dr. Neha Gupta (PT) utilizes clinical steam therapy as an essential pre-conditioning modality before aggressive joint mobilization and manual release.`,
+    
+    whyUsed: {
+      conditions: [
+        "Chronic lumbar and cervical paraspinal muscle contractures and stiffness",
+        "Severe joint hypomobility, frozen shoulder, and stiff knee joints post-immobilization",
+        "Fibromyalgia and generalized myofascial aching worsened by cold weather",
+        "Ankylosing spondylitis spinal rigidity and morning stiffness",
+        "Post-fracture joint stiffness following cast removal",
+        "Chronic muscular fatigue and lymphatic congestion in lower limbs"
+      ],
+      purpose: "To rapidly increase deep tissue temperature, induce reflex autonomic relaxation of tight skeletal muscles, enhance joint capsule flexibility, and prepare dense connective tissues for painless manual stretching.",
+      realisticBenefits: "Profound, soothing relaxation of tight muscles, instant relief from morning stiffness, enhanced range of motion during subsequent exercises, and generalized therapeutic well-being.",
+      whenFurtherAssessmentNeeded: "Acute inflammation (first 48 hours post-injury), active bleeding disorders, severe peripheral vascular disease, insensate skin areas, or decompensated congestive heart failure require avoidance of thermal steam."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Skin Thermal Sensitivity Assessment",
+          detail: "Testing hot and cold sensory perception over the treatment region to verify intact thermal protective reflexes."
+        },
+        {
+          phase: "Step 2: Comfortable Patient Positioning & Thermal Insulation",
+          detail: "Positioning the patient comfortably on a padded treatment couch with clean, clinical cotton towels insulating non-target areas."
+        },
+        {
+          phase: "Step 3: Calibrated Steam Vapor Delivery",
+          detail: "Directing the controlled moist thermal vapor stream over the target muscle groups or joint at a safe, therapeutic distance for 15–20 minutes."
+        },
+        {
+          phase: "Step 4: Continuous Temperature & Comfort Verification",
+          detail: "Checking skin color and patient feedback every 5 minutes to maintain optimal therapeutic warmth without overheating."
+        },
+        {
+          phase: "Step 5: Immediate Mobilization & Therapeutic Stretch",
+          detail: "Transitioning immediately while tissues are warm and pliable to perform gentle joint glides, trigger point releases, and active stretching."
+        }
+      ],
+      expectations: {
+        before: "Wear lightweight clothing allowing easy access to the treatment area. Stay well hydrated before your session.",
+        during: "You will feel an deeply soothing, penetrating warm vapor enveloping the tight muscle or joint. It is profoundly relaxing.",
+        after: "Skin will be pleasantly warm and pink. Drink a glass of water after treatment to maintain hydration."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Medical Steam Generation Station & Moist Hydrocollator Arrays",
+      description: "Our clinic is equipped with dedicated medical steam generators featuring sterile water filtration, directional flow nozzles, and temperature sensors.",
+      manualAspect: "Immediate post-steam passive stretching, manual myofascial glide, and functional movement re-education."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Individuals with longstanding back or neck tightness aggravated by winter or air-conditioned environments",
+        "Patients recovering from fractures or prolonged splinting seeking to regain joint range of motion",
+        "Seniors with generalized joint arthritis looking for deeply soothing relief"
+      ],
+      precautionsAndContraindications: "Never applied over acutely swollen, freshly injured joints (use ice instead), skin rashes, insensate scar tissue, or in patients with uncontrolled fever."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Inform your therapist if you have diabetes or reduced temperature sensation in your feet or hands.",
+      aftercare: "Avoid exposing the warm treated area to direct cold air conditioning or cold drafts immediately after your session.",
+      faqs: [
+        {
+          q: "Why is moist steam better than a dry heating pad?",
+          a: "Moist heat penetrates much deeper into muscles and joint capsules because water vapor conducts heat far more efficiently than dry air, without drying out or irritating the skin."
+        },
+        {
+          q: "Can steam therapy be done on fresh sports injuries?",
+          a: "No. Fresh injuries within 48 to 72 hours have active internal bleeding and swelling, which requires cold therapy (ice). Steam is used for subacute and chronic stiffness."
+        },
+        {
+          q: "Is steam therapy safe for elderly patients with arthritis?",
+          a: "Yes, it is one of the safest, most comforting therapies for degenerative arthritis, as long as temperature is carefully monitored."
+        }
+      ]
+    }
   }
 ];
+

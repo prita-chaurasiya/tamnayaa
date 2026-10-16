@@ -146,18 +146,14 @@ export function TiltedGridHero({
     }
   };
 
-  // Split items into 3 distinct rows for multi-directional motion
-  const row1 = items.slice(0, 4);
-  const row2 = items.slice(4, 8);
-  const row3 = items.length > 8 ? items.slice(8) : items.slice(0, 4);
-
-  // Repeat each row items 4 times to ensure seamless infinite looping
-  const tripleRow1 = [...row1, ...row1, ...row1, ...row1];
-  const tripleRow2 = [...row2, ...row2, ...row2, ...row2];
-  const tripleRow3 = [...row3, ...row3, ...row3, ...row3];
+  // Dynamic repeat calculation to guarantee seamless infinite marquee without gaps
+  const safeItems = items && items.length > 0 ? items : defaultItems;
+  const multiplier = Math.max(4, Math.ceil(24 / safeItems.length));
+  const marqueeItemsRow1 = Array.from({ length: multiplier * 2 }, () => safeItems).flat();
+  const marqueeItemsRow2 = Array.from({ length: multiplier * 2 }, () => [...safeItems].reverse()).flat();
 
   return (
-    <div className={cn("relative overflow-hidden w-full bg-[#FAF7F1] py-16 lg:py-24 border-y border-[#D8D0C3]", className)}>
+    <div className={cn("relative overflow-hidden w-full bg-[#FAF7F1] py-12 sm:py-16 lg:py-24 border-y border-[#D8D0C3]", className)}>
       
       {/* Background Soft Glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -165,45 +161,46 @@ export function TiltedGridHero({
         <div className="absolute -bottom-32 right-10 w-[500px] h-[350px] bg-[#B89A5A]/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10 mb-10 text-center">
-        <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-xs font-extrabold block mb-3">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 mb-8 sm:mb-10 text-center">
+        <span className="text-[#5F6B45] uppercase tracking-[0.25em] text-[10px] sm:text-xs font-extrabold block mb-2 sm:mb-3">
           {category}
         </span>
-        <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#293225] font-bold tracking-tight leading-tight max-w-4xl mx-auto">
+        <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#293225] font-bold tracking-tight leading-tight max-w-4xl mx-auto px-2">
           {title}
         </h2>
         {subtitle && (
-          <p className="text-[#252822]/80 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mt-4">
+          <p className="text-[#252822]/80 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto mt-3 sm:mt-4 px-2">
             {subtitle}
           </p>
         )}
       </div>
 
-      {/* 3D Curved Arch Marquee Stage (Exact reference look) */}
-      <div className="relative w-full overflow-hidden py-12">
+      {/* 3D Curved Arch Marquee Stage */}
+      <div className="relative w-full overflow-hidden py-6 sm:py-10">
         {/* Left & Right Edge Fades */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
 
         {/* Curved Perspective Container */}
         <div 
-          className="w-full flex justify-center items-center py-6"
+          className="w-full flex justify-center items-center py-4 sm:py-6 overflow-hidden"
           style={{
-            perspective: '1400px',
+            perspective: '1200px',
             perspectiveOrigin: '50% 30%',
           }}
         >
           {/* Main Arched Row 1 */}
           <div 
-            className="w-[110%] flex flex-col items-center justify-center transform-gpu"
+            className="w-full sm:w-[108%] flex flex-col items-center justify-center transform-gpu"
             style={{
-              transform: 'rotateX(12deg) rotateY(0deg) scale(1.03)',
+              transform: 'rotateX(8deg) rotateY(0deg) scale(1.01)',
               transformStyle: 'preserve-3d',
             }}
           >
-            <div className="flex overflow-hidden select-none w-full py-4">
+            <div className="flex overflow-hidden select-none w-full py-3 sm:py-4">
               <motion.div 
-                className="flex gap-6 sm:gap-8 shrink-0 items-center"
+                key={`arch-marquee-row1-${items.length}-${items[0]?.id || 'all'}`}
+                className="flex gap-4 sm:gap-6 md:gap-8 shrink-0 items-center"
                 animate={{ x: ['0%', '-50%'] }}
                 transition={{
                   repeat: Infinity,
@@ -212,18 +209,18 @@ export function TiltedGridHero({
                   ease: 'linear',
                 }}
               >
-                {[...items, ...items, ...items, ...items].map((item, idx) => {
+                {marqueeItemsRow1.map((item, idx) => {
                   return (
                     <motion.div
                       key={`arch-card-${idx}`}
                       whileHover={{ 
-                        scale: 1.06, 
-                        y: -12, 
+                        scale: 1.05, 
+                        y: -10, 
                         zIndex: 40,
-                        transition: { duration: 0.3, ease: 'easeOut' } 
+                        transition: { duration: 0.25, ease: 'easeOut' } 
                       }}
                       onClick={() => handleCardClick(item.img)}
-                      className="w-[240px] sm:w-[320px] md:w-[360px] aspect-[3/4] shrink-0 bg-[#293225] rounded-[32px] sm:rounded-[36px] overflow-hidden border-2 border-[#D8D0C3]/80 hover:border-[#B89A5A] shadow-[0_20px_45px_rgba(41,50,37,0.25)] hover:shadow-[0_30px_70px_rgba(184,154,90,0.45)] transition-all duration-500 cursor-pointer group relative flex flex-col justify-between"
+                      className="w-[220px] sm:w-[280px] md:w-[350px] aspect-[3/4] shrink-0 bg-[#293225] rounded-[24px] sm:rounded-[32px] md:rounded-[36px] overflow-hidden border-2 border-[#D8D0C3]/80 hover:border-[#B89A5A] shadow-[0_15px_35px_rgba(41,50,37,0.2)] hover:shadow-[0_25px_60px_rgba(184,154,90,0.45)] transition-all duration-300 cursor-pointer group relative flex flex-col justify-between"
                       style={{
                         transformStyle: 'preserve-3d',
                       }}
@@ -232,33 +229,33 @@ export function TiltedGridHero({
                         <img 
                           src={item.img} 
                           alt={item.title} 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                          className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#1D241A] via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity" />
                         
                         {item.badge && (
-                          <span className="absolute top-4 left-4 bg-[#5F6B45]/90 backdrop-blur-md text-[#FAF7F1] text-[10px] uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full border border-[#B89A5A]/50 shadow-md">
+                          <span className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-[#5F6B45]/90 backdrop-blur-md text-[#FAF7F1] text-[9px] sm:text-[10px] uppercase font-bold tracking-widest px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#B89A5A]/50 shadow-md">
                             {item.badge}
                           </span>
                         )}
 
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
-                          <span className="bg-[#B89A5A] text-[#293225] px-5 py-2.5 rounded-full font-bold text-xs shadow-2xl tracking-wider uppercase">
+                          <span className="bg-[#B89A5A] text-[#293225] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-[10px] sm:text-xs shadow-2xl tracking-wider uppercase">
                             🔍 View Focus Frame
                           </span>
                         </div>
 
                         {/* Card Content Overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white bg-gradient-to-t from-[#1D241A] via-[#1D241A]/90 to-transparent">
-                          <span className="text-[#B89A5A] text-[10px] font-mono font-extrabold block mb-1 uppercase tracking-widest">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white bg-gradient-to-t from-[#1D241A] via-[#1D241A]/90 to-transparent">
+                          <span className="text-[#B89A5A] text-[9px] sm:text-[10px] font-mono font-extrabold block mb-1 uppercase tracking-widest">
                             {item.category || 'Tamanya Clinical Gallery'}
                           </span>
-                          <h4 className="font-serif text-lg font-bold text-white mb-1 group-hover:text-[#B89A5A] transition-colors leading-tight">
+                          <h4 className="font-serif text-base sm:text-lg font-bold text-white mb-1 group-hover:text-[#B89A5A] transition-colors leading-tight line-clamp-1 sm:line-clamp-2">
                             {item.title}
                           </h4>
                           {item.subtitle && (
-                            <p className="text-xs text-white/80 font-light leading-relaxed line-clamp-2 mt-1">
+                            <p className="text-[11px] sm:text-xs text-white/80 font-light leading-relaxed line-clamp-2 mt-1">
                               {item.subtitle}
                             </p>
                           )}
@@ -274,22 +271,23 @@ export function TiltedGridHero({
 
         {/* Secondary Reverse Motion Row for Rich Visual Depth */}
         <div 
-          className="w-full flex justify-center items-center -mt-8 opacity-90"
+          className="w-full flex justify-center items-center -mt-4 sm:-mt-8 opacity-90 overflow-hidden"
           style={{
-            perspective: '1400px',
+            perspective: '1200px',
             perspectiveOrigin: '50% 70%',
           }}
         >
           <div 
-            className="w-[110%] flex flex-col items-center justify-center transform-gpu"
+            className="w-full sm:w-[108%] flex flex-col items-center justify-center transform-gpu"
             style={{
-              transform: 'rotateX(-8deg) rotateY(0deg) scale(0.95)',
+              transform: 'rotateX(-6deg) rotateY(0deg) scale(0.96)',
               transformStyle: 'preserve-3d',
             }}
           >
-            <div className="flex overflow-hidden select-none w-full py-4">
+            <div className="flex overflow-hidden select-none w-full py-3 sm:py-4">
               <motion.div 
-                className="flex gap-6 sm:gap-8 shrink-0 items-center"
+                key={`arch-marquee-row2-${items.length}-${items[0]?.id || 'all'}`}
+                className="flex gap-4 sm:gap-6 md:gap-8 shrink-0 items-center"
                 animate={{ x: ['-50%', '0%'] }}
                 transition={{
                   repeat: Infinity,
@@ -298,24 +296,24 @@ export function TiltedGridHero({
                   ease: 'linear',
                 }}
               >
-                {[...items.slice().reverse(), ...items.slice().reverse(), ...items.slice().reverse()].map((item, idx) => (
+                {marqueeItemsRow2.map((item, idx) => (
                   <motion.div
                     key={`arch-row2-${idx}`}
-                    whileHover={{ scale: 1.06, y: -10, zIndex: 40 }}
+                    whileHover={{ scale: 1.05, y: -8, zIndex: 40 }}
                     onClick={() => handleCardClick(item.img)}
-                    className="w-[200px] sm:w-[260px] aspect-[4/5] shrink-0 bg-[#293225] rounded-[28px] overflow-hidden border border-[#D8D0C3]/60 hover:border-[#B89A5A] shadow-lg transition-all duration-500 cursor-pointer group relative"
+                    className="w-[170px] sm:w-[220px] md:w-[260px] aspect-[4/5] shrink-0 bg-[#293225] rounded-[20px] sm:rounded-[28px] overflow-hidden border border-[#D8D0C3]/60 hover:border-[#B89A5A] shadow-lg transition-all duration-300 cursor-pointer group relative"
                   >
                     <img 
                       src={item.img} 
                       alt={item.title} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                      <span className="text-[#B89A5A] text-[9px] font-mono font-bold block uppercase tracking-wider">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent p-3 sm:p-4 flex flex-col justify-end">
+                      <span className="text-[#B89A5A] text-[8px] sm:text-[9px] font-mono font-bold block uppercase tracking-wider">
                         {item.category}
                       </span>
-                      <p className="text-white text-xs font-bold font-serif line-clamp-1">
+                      <p className="text-white text-[11px] sm:text-xs font-bold font-serif line-clamp-1">
                         {item.title}
                       </p>
                     </div>

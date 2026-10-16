@@ -14,6 +14,10 @@ import wellnessImg from '../assets/conditions/cavitation.jpg';
 import nehaImg from '../assets/neha.jpeg';
 import prizeImg from '../assets/prize.png';
 import campImg from '../assets/camp.webp';
+import camp1Img from '../assets/WhatsApp Image 2026-10-08 at 9.18.29 PM.jpeg';
+import camp2Img from '../assets/WhatsApp Image 2026-10-08 at 9.15.12 PM.jpeg';
+import camp3Img from '../assets/WhatsApp Image 2026-10-08 at 9.14.21 PM.jpeg';
+import camp4Img from '../assets/WhatsApp Image 2026-10-08 at 9.18.33 PM.jpeg';
 
 import gImg from '../assets/gallery/g.png';
 import wa1Img from '../assets/gallery/wa1.jpeg';
@@ -138,8 +142,44 @@ export default function Gallery() {
       badge: "Community Screening"
     },
     {
-      id: "6",
+      id: "o1",
       num: "13",
+      title: "Free Spine Screening Drive Varanasi",
+      subtitle: "Comprehensive physical posture evaluations organized for local community members.",
+      category: "OUTREACH",
+      img: camp1Img,
+      badge: "Free Screening"
+    },
+    {
+      id: "o2",
+      num: "14",
+      title: "Community Outreach Camp Setup",
+      subtitle: "Mobile clinical assessment and consultation camp banner in Pandeypur Varanasi.",
+      category: "OUTREACH",
+      img: camp2Img,
+      badge: "Community Care"
+    },
+    {
+      id: "o3",
+      num: "15",
+      title: "Senior Citizen Joint Health Camp",
+      subtitle: "Clinical consultations and mobility exercises for elder care and arthritis relief.",
+      category: "OUTREACH",
+      img: camp3Img,
+      badge: "Senior Mobility"
+    },
+    {
+      id: "o4",
+      num: "16",
+      title: "Ergonomic & Posture Workshop",
+      subtitle: "Spinal alignment awareness and preventative musculoskeletal education.",
+      category: "OUTREACH",
+      img: camp4Img,
+      badge: "Posture Drive"
+    },
+    {
+      id: "6",
+      num: "17",
       title: "Slimming & Body Contouring Suite",
       subtitle: "Vacuum cavitation, G-5 massage, and deep heat therapy for inch loss and body shaping.",
       category: "AESTHETICS",
@@ -148,7 +188,7 @@ export default function Gallery() {
     },
     {
       id: "7",
-      num: "14",
+      num: "18",
       title: "Founder / Director — Dr. Neha Gupta (PT)",
       subtitle: "MPT (ORTHO), BPT leading evidence-based physiotherapy practice.",
       category: "CLINIC",
@@ -157,7 +197,7 @@ export default function Gallery() {
     },
     {
       id: "8",
-      num: "15",
+      num: "19",
       title: "GAPTCON 2025 National Recognition",
       subtitle: "Awarded Best Clinician at the 2nd National Physiotherapy Conference in Gurgaon.",
       category: "CLINIC",
@@ -166,7 +206,15 @@ export default function Gallery() {
     }
   ];
 
-  const categories = ['ALL', 'CLINIC', 'REHABILITATION', 'AESTHETICS', 'OUTREACH'];
+  const categories = [
+    { label: 'ALL', path: '/gallery', pageName: 'Full Gallery' },
+    { label: 'CLINIC', path: '/about', pageName: 'Clinic & Campus Page' },
+    { label: 'REHABILITATION', path: '/physiotherapy', pageName: 'Physiotherapy Page' },
+    { label: 'AESTHETICS', path: '/skin-care', pageName: 'Skin Care & Aesthetics' },
+    { label: 'OUTREACH', path: '/health-camp', pageName: 'Community Health Camps' }
+  ];
+
+  const currentCategory = categories.find(c => c.label === activeTab) || categories[0];
 
   const filteredItems = activeTab === 'ALL'
     ? galleryItems
@@ -221,22 +269,36 @@ export default function Gallery() {
             </div>
           </FadeIn>
 
-          {/* Filter Category Tabs */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 border-b border-[#D8D0C3] pb-6">
-            {categories.map((cat, i) => (
-              <motion.button
-                key={i}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => setActiveTab(cat)}
-                className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
-                  activeTab === cat
-                    ? 'bg-[#5F6B45] text-[#FAF7F1] shadow-md border border-[#B89A5A]/40 scale-105'
-                    : 'bg-[#F4EFE6] text-[#293225] hover:bg-[#E8ECDF] border border-[#D8D0C3]'
-                }`}
+          {/* Filter Category Tabs & Dedicated Page Action */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12 border-b border-[#D8D0C3] pb-6">
+            <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto sm:overflow-visible sm:flex-wrap [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden py-1 -mx-2 px-2 sm:mx-0 sm:px-0">
+              {categories.map((cat, i) => (
+                <motion.button
+                  key={i}
+                  whileTap={{ scale: 0.96 }}
+                  onMouseEnter={() => setActiveTab(cat.label)}
+                  onClick={() => setActiveTab(cat.label)}
+                  className={`px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shrink-0 cursor-pointer ${
+                    activeTab === cat.label
+                      ? 'bg-[#5F6B45] text-[#FAF7F1] shadow-md border border-[#B89A5A]/50 scale-105'
+                      : 'bg-[#F4EFE6] text-[#293225] hover:bg-[#E8ECDF] hover:text-[#5F6B45] border border-[#D8D0C3]'
+                  }`}
+                  title={`Hover to filter, click to activate ${cat.label}`}
+                >
+                  {cat.label}
+                </motion.button>
+              ))}
+            </div>
+
+            {currentCategory.path !== '/gallery' && (
+              <Link
+                to={currentCategory.path}
+                className="inline-flex items-center gap-2 self-start sm:self-auto px-5 py-2.5 rounded-full bg-[#293225] hover:bg-[#5F6B45] text-[#FAF7F1] hover:text-white border border-[#B89A5A]/60 text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md group shrink-0"
               >
-                {cat}
-              </motion.button>
-            ))}
+                <span>Visit {currentCategory.pageName}</span>
+                <span className="text-[#B89A5A] group-hover:text-white group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            )}
           </div>
 
           {/* 3D Asymmetrical Editorial Gallery Grid with Framer Motion Layout */}

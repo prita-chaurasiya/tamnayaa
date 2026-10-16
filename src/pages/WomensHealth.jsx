@@ -10,6 +10,8 @@ import postnatalImg from '../assets/conditions/postnatal.jpg';
 import backPainImg from '../assets/conditions/back_pain.jpg';
 import menstrualReliefImg from '../assets/conditions/menstrual_relief.jpg';
 import csectionRecoveryImg from '../assets/conditions/csection_recovery.jpg';
+import pelvicConstipationImg from '../assets/conditions/pelvic_constipation.jpg';
+import chronicPelvicPainImg from '../assets/conditions/chronic_pelvic_pain.jpg';
 import woImg from '../assets/wo.jpg';
 import DetailedTreatmentGuide from '../components/DetailedTreatmentGuide';
 import { WOMENS_HEALTH_SERVICES } from '../data/womensHealthServicesData';
@@ -80,6 +82,20 @@ export default function WomensHealth() {
       sub: "Post-Caesarean Scar & Spine Care",
       desc: "Post-surgical scar tissue mobilization, lumbo-pelvic stabilization exercises, and spine alignment to alleviate lower back ache after C-section delivery.",
       image: csectionRecoveryImg
+    },
+    {
+      id: "pelvic-constipation",
+      title: "PELVIC FLOOR CONSTIPATION",
+      sub: "Dyssynergia & Bowel Biofeedback",
+      desc: "Discreet biofeedback, breathing biomechanics, and colonic visceral mobilization to resolve pelvic floor dyssynergia and chronic straining.",
+      image: pelvicConstipationImg
+    },
+    {
+      id: "chronic-pelvic-pain",
+      title: "CHRONIC PELVIC PAIN SYNDROME",
+      sub: "Levator Ani & Pudendal Relief",
+      desc: "Gentle pelvic floor down-training, trigger point release, and pudendal nerve mobilization to relieve deep pelvic tension and painful sitting.",
+      image: chronicPelvicPainImg
     }
   ];
 
@@ -224,7 +240,7 @@ export default function WomensHealth() {
         sectionId="womens-health-treatment-guides"
         sectionBadge="IN-DEPTH WOMEN'S HEALTH GUIDES"
         sectionTitle="Detailed Clinical Explanations for Every Women's Health Service"
-        sectionDescription="Comprehensive, confidential medical guides for all 9 female pelvic floor, maternal, and obstetric health pathways at Tamanya Physio and Health Clinic—explaining conditions treated, procedural steps, equipment used, patient precautions, and FAQs."
+        sectionDescription="Comprehensive, confidential medical guides for all 11 female pelvic floor, maternal, bowel, and obstetric health pathways at Tamanya Physio and Health Clinic—explaining conditions treated, procedural steps, equipment used, patient precautions, and FAQs."
       />
 
       {/* 4. FAQ ACCORDION */}

@@ -7,6 +7,8 @@ import antenatalImg from '../assets/conditions/antenatal.jpg';
 import postnatalImg from '../assets/conditions/postnatal.jpg';
 import menstrualReliefImg from '../assets/conditions/menstrual_relief.jpg';
 import csectionRecoveryImg from '../assets/conditions/csection_recovery.jpg';
+import pelvicConstipationImg from '../assets/conditions/pelvic_constipation.jpg';
+import chronicPelvicPainImg from '../assets/conditions/chronic_pelvic_pain.jpg';
 import woImg from '../assets/wo.jpg';
 
 export const WOMENS_HEALTH_SERVICES = [
@@ -829,5 +831,191 @@ export const WOMENS_HEALTH_SERVICES = [
         }
       ]
     }
+  },
+
+  {
+    id: "pelvic-constipation",
+    name: "Pelvic Floor Dyssynergic Constipation & Bowel Rehabilitation",
+    category: "SPECIALISED WOMEN'S HEALTH",
+    tagline: "Pelvic Floor Relaxation, Bowel Biofeedback & Anorectal Coordination",
+    image: pelvicConstipationImg,
+    imageAlt: "Female pelvic floor constipation and bowel dyssynergia rehabilitation",
+    prescribedTherapy: "Pelvic Floor Down-Training, Defecation Mechanics Coaching & Visceral Mobilization",
+    machineUsed: "Pelvic Biofeedback Visual Displays, Ergonomic Defecation Supports & Transverse Abdominal Calibrators",
+    therapyOutcome: "Restores normal recto-anal coordination, eliminates paradoxical pelvic contractions during bearing down, relieves chronic straining, and supports complete, spontaneous bowel movements without laxatives.",
+    
+    introduction: `Chronic constipation in women is frequently misdiagnosed as purely a dietary or sluggish bowel problem, leading to years of unsuccessful laxative dependence. In up to 50% of chronic constipation cases, the true root cause is pelvic floor dyssynergia (also known as anismus or paradoxical puborectalis contraction). Normally, when attempting to defecate, the puborectalis muscle and anal sphincters must relax completely while the abdominal wall creates gentle downward propulsion. In women with dyssynergic defecation, these pelvic floor muscles involuntarily tighten and clamp shut instead of opening, acting like an anatomical roadblock. At Tamanya Physio and Health Clinic in Varanasi, Dr. Neha Gupta (PT) provides dignified, 100% private female pelvic bowel rehabilitation. Utilizing surface biofeedback, breathing biomechanics, and visceral colon mobilization, we retrain the brain-gut-pelvic connection to restore effortless, natural elimination.`,
+    
+    whyUsed: {
+      conditions: [
+        "Chronic constipation unresponsive to fiber supplements and daily laxatives",
+        "Pelvic floor dyssynergic defecation (paradoxical puborectalis contraction during bearing down)",
+        "Severe straining during bowel movements lasting longer than 10 minutes",
+        "Feeling of incomplete evacuation, rectal fullness, or pelvic heaviness after toileting",
+        "Need for digital splinting (pressing on the perineum or vaginal wall to facilitate stool passage)",
+        "Postpartum bowel evacuation difficulty and anal sphincter spasm following perineal tears"
+      ],
+      purpose: "To re-educate the subconscious neuromuscular coordination between abdominal pressure and pelvic floor relaxation, eliminate habitual pushing against a closed sphincter, mobilize stagnant colonic transit, and restore pain-free toileting.",
+      realisticBenefits: "Significant reduction or complete cessation of daily laxative use, elimination of painful straining, restored sensation of complete bowel emptying, and relief from chronic lower abdominal bloating.",
+      whenFurtherAssessmentNeeded: "Sudden unexplained change in bowel habits in women over 50, visible rectal bleeding (hematochezia), involuntary weight loss, or persistent pencil-thin stools requires medical evaluation and colonoscopy to rule out colorectal malignancy."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Confidential Anorectal Functional Assessment",
+          detail: "Respectful evaluation of pelvic posture, breathing coordination, resting pelvic floor tone, and palpation of puborectalis muscle relaxation capacity in a private female consultation room."
+        },
+        {
+          phase: "Step 2: Surface EMG Biofeedback Retraining",
+          detail: "Visual computer biofeedback displaying real-time pelvic muscle relaxation curves, enabling the patient to visually identify and consciously release paradoxical muscle clamping."
+        },
+        {
+          phase: "Step 3: Defecation Dynamics & Postural Ergonomics (Squatty Potty Biomechanics)",
+          detail: "Training the optimal 35° squat angle (utilizing a footstool) that unkinks the anorectal junction, paired with the 'blow-as-you-go' exhalation technique to prevent harmful breath-holding (Valsalva)."
+        },
+        {
+          phase: "Step 4: Visceral Colonic Massage ('ILU' Protocol)",
+          detail: "Therapist-guided abdominal massage following the anatomical direction of the ascending, transverse, and descending colon to stimulate intrinsic peristaltic motor waves."
+        },
+        {
+          phase: "Step 5: Diaphragmatic Down-Training & Habit Blueprint",
+          detail: "Establishing a daily gastrocolic reflex routine (taking advantage of natural morning intestinal contractions after warm fluids or breakfast) to establish predictable bowel rhythm."
+        }
+      ],
+      expectations: {
+        before: "Empty your bladder before the session. Wear comfortable, non-restrictive clothing. Sessions are conducted in total privacy.",
+        during: "Biofeedback and breathing drills are non-invasive, gentle, and educational. You will feel empowered understanding your pelvic anatomy.",
+        after: "Practice your diaphragmatic breathing and toileting posture at home twice daily. Keep a bowel diary for subsequent clinical reviews."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "Pelvic Muscle Biofeedback Monitors, Anatomical 3D Models & Visceral Mobilizers",
+      description: "Our clinic utilizes gentle, high-precision surface EMG sensors, clinical 3D pelvic models, and ergonomic postural bathroom aids.",
+      manualAspect: "External abdominal visceral colonic mobilization, sacroiliac joint alignment, and gentle external perineal fascial release."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Women struggling with longstanding constipation despite high-fiber diets and adequate hydration",
+        "Postpartum mothers experiencing painful bowel movements or fear of tearing stitches",
+        "Patients with co-existing pelvic organ prolapse aggravated by chronic straining"
+      ],
+      precautionsAndContraindications: "Aggressive abdominal pressure is strictly avoided in early pregnancy, acute diverticulitis flares, abdominal aortic aneurysm, or immediately following recent abdominal surgery."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Bring a list of any current laxatives, stool softeners, or supplements you are taking.",
+      aftercare: "Maintain consistent fluid intake (2 to 2.5 liters of water daily) and incorporate prescribed daily bowel postures.",
+      faqs: [
+        {
+          q: "How does pelvic physiotherapy treat constipation without medicines?",
+          a: "Most chronic constipation is mechanical: your pelvic muscles clamp shut instead of opening when you push. Physiotherapy retrains those specific muscles to relax, allowing stool to pass freely without forceful straining."
+        },
+        {
+          q: "Is the assessment uncomfortable or invasive?",
+          a: "All assessments are conducted by Dr. Neha Gupta (PT) with absolute privacy, gentleness, and respect. Non-invasive surface biofeedback and abdominal mobilization are used to make your experience completely comfortable."
+        },
+        {
+          q: "How soon can I expect regular bowel movements?",
+          a: "Most patients notice easier, less painful bowel movements within 2 to 3 weeks of biofeedback retraining and toilet posture correction."
+        }
+      ]
+    }
+  },
+
+  {
+    id: "chronic-pelvic-pain",
+    name: "Chronic Pelvic Pain Syndrome & Levator Ani Hypertonicity",
+    category: "SPECIALISED WOMEN'S HEALTH",
+    tagline: "Pelvic Myofascial Decompression, Pudendal Nerve Relief & Autonomic Calming",
+    image: chronicPelvicPainImg,
+    imageAlt: "Female chronic pelvic pain and pelvic floor muscle hypertonicity treatment",
+    prescribedTherapy: "Internal & External Pelvic Myofascial Release, Pudendal Nerve Desensitization & Sacral Neuromodulation",
+    machineUsed: "Biofeedback EMG Down-Training Sensors, Therapeutic Deep Moist Heat & Pelvic Release Bolsters",
+    therapyOutcome: "Deactivates painful trigger points in the levator ani, obturator internus, and coccygeus muscles, alleviates pudendal nerve burning, breaks the pain-spasm cycle, and restores pain-free sitting and intimacy.",
+    
+    introduction: `Chronic Pelvic Pain (CPP) in women—defined as non-malignant, persistent or recurrent pain in the pelvic region lasting longer than six months—is one of the most debilitating and frequently misunderstood conditions in women’s healthcare. While patients frequently undergo repeated rounds of antibiotics for suspected urinary infections or undergo diagnostic laparoscopies that reveal no structural pathology, the underlying perpetrator is very often muscular: a severely hypertonic (overactive, chronically spasmed) pelvic floor. Muscles such as the levator ani, obturator internus, and coccygeus remain locked in continuous ischemic contraction, compressing neighboring pudendal nerve branches and causing deep aching, burning vulvar pain, tailbone (coccydynia) tenderness, and painful sitting. At Tamanya Physio and Health Clinic, Dr. Neha Gupta (PT) delivers compassionate, trauma-informed physical rehabilitation dedicated to down-training the overactive pelvic floor, releasing myofascial contractures, and calming the sensitized central nervous system.`,
+    
+    whyUsed: {
+      conditions: [
+        "Chronic pelvic pain lasting over 6 months with negative routine infection screens",
+        "Levator ani syndrome, pelvic floor myalgia, and obturator internus trigger points",
+        "Pudendal neuralgia presenting as burning, shooting, or electric shock pain in the perineum exacerbated by sitting",
+        "Coccydynia (persistent tailbone pain after childbirth, falls, or prolonged chair sitting)",
+        "Interstitial cystitis / Bladder Pain Syndrome (BPS) accompanied by pelvic floor hypertonicity",
+        "Deep dyspareunia (painful sexual intercourse) and secondary pelvic guarding",
+        "Pelvic pain associated with endometriosis or adenomyosis (adjunctive muscular de-tensioning)"
+      ],
+      purpose: "To systematically de-escalate hypertonic pelvic floor muscle guarding, restore resting muscle length, release entrapped pudendal neurovascular bundles, down-regulate central nervous system pain sensitization, and restore normal sitting tolerance.",
+      realisticBenefits: "Substantial relief from constant pelvic pressure and burning sensations, ability to sit comfortably for work and travel, improved bladder holding tolerance without pain, and reduction of intimacy-related anxiety.",
+      whenFurtherAssessmentNeeded: "Unexplained postmenopausal vaginal bleeding, palpable pelvic masses, severe acute unilateral pelvic pain with fever, or sudden gross hematuria require immediate gynecological or urological evaluation."
+    },
+
+    howItWorks: {
+      steps: [
+        {
+          phase: "Step 1: Gentle Pelvic & Lumbo-Sacral Musculoskeletal Mapping",
+          detail: "A compassionate, slow-paced clinical evaluation identifying muscle trigger points, sacroiliac joint asymmetry, coccyx alignment, and neural tension patterns in our private women's suite."
+        },
+        {
+          phase: "Step 2: Autonomic Nervous System Down-Regulation & Diaphragmatic Breath",
+          detail: "Teaching deep 360° diaphragmatic breathing that utilizes the natural piston relationship between the respiratory diaphragm and the pelvic floor to gently stretch pelvic muscles on every inhalation."
+        },
+        {
+          phase: "Step 3: External Myofascial Release & Sacral Decompression",
+          detail: "Gentle manual release of secondary protective guarding in the gluteals, piriformis, iliopsoas, adductors, and abdominal wall that perpetuate pelvic tightness."
+        },
+        {
+          phase: "Step 4: Pudendal Nerve Gliding & Desensitization",
+          detail: "Targeted neural mobilization flossing techniques that restore free sliding of the pudendal nerve through Alcock's canal without provoking nerve irritation."
+        },
+        {
+          phase: "Step 5: Restorative Inversion Postures & Home Down-Training",
+          detail: "Supported restorative positions (such as Child's pose with bolster, Happy Baby modifications, and supported wall squats) to promote sustained pelvic floor elongation."
+        }
+      ],
+      expectations: {
+        before: "Wear comfortable, loose clothing. You will be treated with absolute gentleness, modesty, and continuous consent at every moment.",
+        during: "Treatment focuses on slow releases, soothing warmth, and gentle movements. You will never be pushed through sharp pain.",
+        after: "You may experience a profound sense of physical and emotional release. Stay warm, drink warm water, and avoid strenuous core workouts."
+      }
+    },
+
+    equipmentAndTechniques: {
+      name: "EMG Down-Training Biofeedback, Pelvic Bolsters & Calibrated Moist Heat",
+      description: "Our clinic is equipped with specialized physiological down-training biofeedback units, supportive anatomical pillows, and soothing moist heat packs.",
+      manualAspect: "Thiele massage principles, trigger point pressure release, coccygeal mobilization, and myofascial skin rolling."
+    },
+
+    whoMayBenefit: {
+      candidates: [
+        "Women suffering from chronic, undiagnosed lower pelvic aching or burning that worsens with prolonged sitting",
+        "Mothers suffering from persistent tailbone (coccydynia) pain following difficult deliveries",
+        "Patients told 'everything is normal' on tests yet continuing to suffer daily pelvic discomfort"
+      ],
+      precautionsAndContraindications: "Kegel exercises (pelvic floor tightening exercises) are strictly contraindicated for hypertonic pelvic floors, as squeezing already tight, spasmed muscles will intensify pain."
+    },
+
+    whatPatientsShouldKnow: {
+      preparation: "Write down your symptom triggers (sitting, stress, bowel movements, tight clothing) to help tailor your personalized protocol.",
+      aftercare: "Avoid high-impact jumping or intense abdominal crunches until your pelvic muscles have normalized their resting tone.",
+      faqs: [
+        {
+          q: "Should I do Kegel exercises for my pelvic pain?",
+          a: "No! This is one of the most common and damaging mistakes. Kegel exercises strengthen weak muscles by contracting them. In chronic pelvic pain, the muscles are already in a state of chronic spasm; doing Kegels will worsen your pain. You need pelvic 'down-training' (relaxation and lengthening)."
+        },
+        {
+          q: "Why does my pelvic pain worsen when I am stressed?",
+          a: "The pelvic floor is a major neurological stress responder. Just as some people clench their jaw or hunch their shoulders when stressed, others subconsciously clench their pelvic floor, starving the tissues of oxygen and triggering acute pain flares."
+        },
+        {
+          q: "Can physiotherapy help with tailbone (coccydynia) pain?",
+          a: "Yes. The pelvic floor muscles attach directly to the coccyx. Releasing chronic muscle pull on the tailbone typically provides dramatic, lasting relief from sitting pain."
+        }
+      ]
+    }
   }
 ];
+

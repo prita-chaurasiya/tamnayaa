@@ -25,6 +25,15 @@ import neckPainImg from '../assets/conditions/neck_pain.jpg';
 import kneeArthritisImg from '../assets/conditions/knee_arthritis.jpg';
 import tkrSurgeryImg from '../assets/conditions/tkr_surgery.jpg';
 import strokeParalysisImg from '../assets/conditions/stroke_paralysis.jpg';
+import sportsInjuriesImg from '../assets/conditions/sports_injuries.jpg';
+import parkinsonsImg from '../assets/conditions/parkinsons_rehab.jpg';
+import bellsPalsyImg from '../assets/conditions/bells_palsy.jpg';
+import spinalCordImg from '../assets/conditions/spinal_cord_injury.jpg';
+import ultrasoundLaserImg from '../assets/conditions/ultrasound_laser.jpg';
+import iftTensSwdImg from '../assets/conditions/ift_tens_swd.jpg';
+import spinalTractionImg from '../assets/conditions/spinal_traction.jpg';
+import iastmMfrImg from '../assets/conditions/iastm_mfr_taping.jpg';
+import steamTherapyImg from '../assets/conditions/steam_therapy.jpg';
 import phyImg from '../assets/phy.jpg';
 import cliImg from '../assets/cli.jpeg';
 import woImg from '../assets/wo.jpg';
@@ -73,11 +82,74 @@ export default function Physiotherapy() {
       image: tkrSurgeryImg
     },
     {
+      id: "sports-injuries",
+      title: "SPORTS INJURIES (SPRAIN & STRAIN)",
+      includes: "Ligament Tears, Muscle Strains, Tendonitis & Return-to-Play",
+      desc: "Phased kinetic loading, cryo-compression, eccentric conditioning, and sport-specific agility drills for rapid athletic return without re-injury.",
+      image: sportsInjuriesImg
+    },
+    {
       id: "stroke-paralysis-neuro-rehab",
       title: "PARALYSIS & STROKE NEURO-REHAB",
-      includes: "Stroke, Hemiplegia & Facial Bell's Palsy",
+      includes: "Stroke, Hemiplegia & Motor Coordination Recovery",
       desc: "Targeted neuromuscular re-education, gait balance retraining, and upper limb functional paralysis rehabilitation.",
       image: strokeParalysisImg
+    },
+    {
+      id: "parkinsons-disease",
+      title: "PARKINSON'S NEURO-REHABILITATION",
+      includes: "Gait Initiation, Tremor Control, Posture & Balance",
+      desc: "High-amplitude motor retraining (LSVT-inspired), laser gait cueing, and dynamic balance drills preventing freezing and preserving functional autonomy.",
+      image: parkinsonsImg
+    },
+    {
+      id: "bells-palsy",
+      title: "BELL'S PALSY FACIAL REHABILITATION",
+      includes: "Facial Symmetry, Nerve Stimulation & Synkinesis Care",
+      desc: "Targeted facial microcurrent facilitation, mirror biofeedback, and specialized manual release restoring eyelid closure and symmetric smiles.",
+      image: bellsPalsyImg
+    },
+    {
+      id: "spinal-cord-injury",
+      title: "SPINAL CORD INJURY & PARALYSIS",
+      includes: "Tilt-Table Standing, Spasticity Relief & Transfer Drills",
+      desc: "Computerized tilt-table verticalization, neuro-developmental facilitation (NDT), functional transfers, and bone density preservation protocols.",
+      image: spinalCordImg
+    },
+    {
+      id: "ultrasonic-laser-therapy",
+      title: "ULTRASONIC & LASER THERAPY",
+      includes: "Deep Acoustic Micromassage & Photobiomodulation",
+      desc: "Dual-frequency ultrasound and therapeutic laser promoting cellular ATP synthesis, scar remodeling, and deep chronic pain relief.",
+      image: ultrasoundLaserImg
+    },
+    {
+      id: "ift-tens-swd-therapy",
+      title: "IFT, TENS & SHORTWAVE DIATHERMY",
+      includes: "Interferential Currents & Deep Thermal Diathermy",
+      desc: "Four-pole vector IFT pain-gating and 27.12 MHz solid-state continuous diathermy for stubborn paraspinal spasms and joint stiffness.",
+      image: iftTensSwdImg
+    },
+    {
+      id: "spinal-traction-decompression",
+      title: "CERVICAL & LUMBAR SPINAL TRACTION",
+      includes: "Digital Motorized Decompression & Sciatica Relief",
+      desc: "Computerized vertebral distraction on a frictionless split table, reducing intradiscal pressure and relieving pinched nerve roots.",
+      image: spinalTractionImg
+    },
+    {
+      id: "iastm-pemf-taping-manual",
+      title: "IASTM, PEMF, TAPING & MANUAL CARE",
+      includes: "Stainless Blade Mobilization, Pulsed Magnetics & Taping",
+      desc: "Ergonomic instrumented fascial shearing, high-flux PEMF cellular recharge, elastic kinesiology taping, and Maitland joint glides.",
+      image: iastmMfrImg
+    },
+    {
+      id: "steam-therapy",
+      title: "CLINICAL STEAM & HYDROTHERMAL CARE",
+      includes: "Moist Thermal Hyperthermia & Deep Muscle Relaxation",
+      desc: "Deep penetrating moist thermal vapor relaxing stubborn muscle contractures and preparing stiff joints for pain-free manual therapy.",
+      image: steamTherapyImg
     },
     {
       id: "pelvic-floor-rehab",
@@ -348,7 +420,7 @@ export default function Physiotherapy() {
         sectionId="physiotherapy-treatment-guides"
         sectionBadge="IN-DEPTH PHYSIOTHERAPY GUIDES"
         sectionTitle="Detailed Clinical Explanations for Every Physiotherapy Service"
-        sectionDescription="Comprehensive medical guides for all 9 orthopaedic, spine, and neuro-rehabilitation services at Tamanya Physio and Health Clinic—explaining why each therapy is used, how it works step-by-step, equipment or manual techniques used, candidate suitability, precautions, and patient FAQs."
+        sectionDescription="Comprehensive medical guides for all 18 orthopaedic, neurological, electrotherapy, and advanced rehabilitation services at Tamanya Physio and Health Clinic—explaining why each therapy is used, how it works step-by-step, equipment or manual techniques used, candidate suitability, precautions, and patient FAQs."
       />
 
       {/* 4. ADVANCED THERAPEUTIC MODALITIES & TECHNOLOGY */}
